@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 215 28% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+
+    --primary: 208 88% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 215 28% 17%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 208 88% 94%;
+    --accent-foreground: 208 88% 30%;
+
+    --destructive: 355 78% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 208 88% 40%;
+
+    --radius: 0.75rem;
+
+    --brand-blue: 208 88% 40%;
+    --brand-blue-dark: 210 90% 30%;
+    --brand-red: 355 78% 48%;
+    --brand-green: 152 65% 38%;
+    --brand-sky: 200 90% 60%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 28% 17%;
+    --sidebar-primary: 208 88% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 215 28% 17%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 208 88% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient-brand {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--brand-blue)), hsl(var(--brand-sky)));
+  }
+
+  .text-gradient-hot {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--brand-red)), hsl(25 90% 55%));
+  }
+
+  .glow-blue {
+    box-shadow: 0 10px 40px -10px hsl(var(--brand-blue) / 0.35);
+  }
+
+  .glow-red {
+    box-shadow: 0 10px 40px -10px hsl(var(--brand-red) / 0.3);
+  }
+
+  .shadow-soft {
+    box-shadow: 0 2px 8px -2px hsl(215 28% 17% / 0.05), 0 12px 32px -8px hsl(215 28% 17% / 0.08);
+  }
+
+  .shadow-lifted {
+    box-shadow: 0 8px 24px -8px hsl(var(--brand-blue) / 0.15), 0 20px 48px -12px hsl(215 28% 17% / 0.12);
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.6) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.6) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-mesh-cool {
+    background:
+      radial-gradient(at 20% 10%, hsl(var(--brand-blue) / 0.12) 0, transparent 45%),
+      radial-gradient(at 80% 20%, hsl(var(--brand-sky) / 0.10) 0, transparent 45%),
+      radial-gradient(at 60% 80%, hsl(var(--brand-green) / 0.08) 0, transparent 50%);
+  }
+
+  .divider-brand {
+    @apply h-[2px] w-16;
+    background: linear-gradient(90deg, hsl(var(--brand-red)), hsl(var(--brand-blue)));
+    border-radius: 2px;
+  }
+}
