@@ -16,6 +16,9 @@ import VitrinesRefrigerees from "./pages/VitrinesRefrigerees";
 import Boutique from "./pages/Boutique";
 import Ventilation from "./pages/Ventilation";
 import Contact from "./pages/Contact";
+import MentionsLegales from "./pages/MentionsLegales";
+import CGV from "./pages/CGV";
+import Confidentialite from "./pages/Confidentialite";
 import NotFound from "./pages/NotFound";
 import AdvisorBot from "./components/AdvisorBot";
 import MobileStickyCTA from "./components/MobileStickyCTA";
@@ -43,6 +46,9 @@ const App = () => (
           <Route path="/boutique" element={<Boutique />} />
           <Route path="/ventilation" element={<Ventilation />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
+          <Route path="/cgv" element={<CGV />} />
+          <Route path="/confidentialite" element={<Confidentialite />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <AdvisorBot />

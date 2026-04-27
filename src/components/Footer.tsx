@@ -105,10 +105,10 @@ const Footer = () => {
           <p className="text-xs text-slate-500">
             © {new Date().getFullYear()} eco cvc. Tous droits réservés.
           </p>
-          <div className="flex gap-6 text-xs text-slate-500">
-            <Link to="/contact" className="hover:text-white transition-colors">Mentions légales</Link>
-            <Link to="/contact" className="hover:text-white transition-colors">Politique de confidentialité</Link>
-            <Link to="/contact" className="hover:text-white transition-colors">CGV</Link>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-500 justify-center md:justify-end">
+            <Link to="/mentions-legales" className="hover:text-white transition-colors">Mentions légales</Link>
+            <Link to="/confidentialite" className="hover:text-white transition-colors">Politique de confidentialité</Link>
+            <Link to="/cgv" className="hover:text-white transition-colors">CGV</Link>
           </div>
         </div>
       </div>
