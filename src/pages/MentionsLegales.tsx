@@ -40,7 +40,7 @@ const MentionsLegales = () => {
           Direction : <strong>Abdelazziz BETTAHAR</strong> et <strong>Abdelkader MHAMDI</strong>
         </li>
         <li>
-          Directeur de la publication : <span className="placeholder">[Président de la SAS à préciser parmi les co-dirigeants]</span>
+          Directeur de la publication : <strong>Anthony Rodriguez</strong>
         </li>
       </ul>
 
