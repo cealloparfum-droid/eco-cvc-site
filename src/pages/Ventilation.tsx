@@ -480,44 +480,74 @@ const CalculatorCard = ({ quote }: { quote: QuoteApi }) => {
     [longueur, profondeur, forme, intensite, charbonActif, desenfumageF400]
   );
 
-  const ajouterToutAuDevis = () => {
-    if (result.hotte) {
-      quote.add({
-        id: `calc-hotte-${result.hotte.ref}`,
-        category: result.hotte.categorie,
-        ref: result.hotte.ref,
-        label: `${result.hotte.categorie} — ${result.hotte.ref} (${result.hotte.dim})`,
-        prix: result.hotte.prix,
-      });
-    }
-    if (result.moteur) {
-      quote.add({
-        id: `calc-moteur-${result.moteur.ref}`,
-        category: "Moteur direct TMD",
-        ref: result.moteur.ref,
-        label: `Moteur direct ${result.moteur.ref} (${result.moteur.m3h} m³/h)`,
-        prix: result.moteur.prix,
-      });
-    }
-    if (charbonActif) {
-      quote.add({
-        id: "calc-charbon-actif",
-        category: "Charbon actif",
-        ref: "ALVICARB (à dimensionner)",
-        label: "Caisson charbon actif ALVICARB (à dimensionner selon débit)",
-        prix: null,
-      });
-    }
-    if (desenfumageF400) {
-      quote.add({
-        id: "calc-f400",
-        category: "Désenfumage F400",
-        ref: "PYRAL / ALVYRAL (à dimensionner)",
-        label: "Caisson F400 CE (PYRAL A / R / ALVYRAL — à dimensionner)",
-        prix: null,
-      });
-    }
+  // IDs stables pour les éléments calculés — permet add/remove ciblé
+  const hotteId = result.hotte ? `calc-hotte-${result.hotte.ref}` : null;
+  const moteurId = result.moteur ? `calc-moteur-${result.moteur.ref}` : null;
+  const charbonId = "calc-charbon-actif";
+  const f400Id = "calc-f400";
+
+  const isInQuote = (id: string | null) =>
+    id ? quote.items.some((i) => i.id === id) : false;
+
+  const ajouterHotte = () => {
+    if (!result.hotte || !hotteId) return;
+    quote.add({
+      id: hotteId,
+      category: result.hotte.categorie,
+      ref: result.hotte.ref,
+      label: `${result.hotte.categorie} — ${result.hotte.ref} (${result.hotte.dim})`,
+      prix: result.hotte.prix,
+    });
   };
+  const ajouterMoteur = () => {
+    if (!result.moteur || !moteurId) return;
+    quote.add({
+      id: moteurId,
+      category: "Moteur direct TMD",
+      ref: result.moteur.ref,
+      label: `Moteur direct ${result.moteur.ref} (${result.moteur.m3h} m³/h)`,
+      prix: result.moteur.prix,
+    });
+  };
+  const ajouterCharbon = () => {
+    quote.add({
+      id: charbonId,
+      category: "Charbon actif",
+      ref: "ALVICARB (à dimensionner)",
+      label: "Caisson charbon actif ALVICARB (à dimensionner selon débit)",
+      prix: null,
+    });
+  };
+  const ajouterF400 = () => {
+    quote.add({
+      id: f400Id,
+      category: "Désenfumage F400",
+      ref: "PYRAL / ALVYRAL (à dimensionner)",
+      label: "Caisson F400 CE (PYRAL A / R / ALVYRAL — à dimensionner)",
+      prix: null,
+    });
+  };
+
+  const ajouterToutAuDevis = () => {
+    if (result.hotte && !isInQuote(hotteId)) ajouterHotte();
+    if (result.moteur && !isInQuote(moteurId)) ajouterMoteur();
+    if (charbonActif && !isInQuote(charbonId)) ajouterCharbon();
+    if (desenfumageF400 && !isInQuote(f400Id)) ajouterF400();
+  };
+
+  // Statut combiné — true si tout ce qui devrait être ajouté l'est déjà
+  const toutAjoute =
+    (!result.hotte || isInQuote(hotteId)) &&
+    (!result.moteur || isInQuote(moteurId)) &&
+    (!charbonActif || isInQuote(charbonId)) &&
+    (!desenfumageF400 || isInQuote(f400Id)) &&
+    (quote.items.some(
+      (i) =>
+        i.id === hotteId ||
+        i.id === moteurId ||
+        i.id === charbonId ||
+        i.id === f400Id,
+    ));
 
   return (
     <section id="calculateur" className="relative py-16 md:py-20 -mt-2 scroll-mt-32">
@@ -690,15 +720,35 @@ const CalculatorCard = ({ quote }: { quote: QuoteApi }) => {
 
             {/* Hotte */}
             {result.hotte ? (
-              <div className="mb-3 rounded-2xl bg-white/10 backdrop-blur-sm p-4">
+              <div
+                className={`mb-3 rounded-2xl backdrop-blur-sm p-4 transition-colors ${
+                  isInQuote(hotteId)
+                    ? "bg-brand-green/25 ring-2 ring-brand-green/60"
+                    : "bg-white/10"
+                }`}
+              >
                 <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <div className="text-[11px] uppercase tracking-widest opacity-80">{result.hotte.categorie}</div>
+                  <div className="min-w-0">
+                    <div className="text-[11px] uppercase tracking-widest opacity-80 flex items-center gap-1.5">
+                      {result.hotte.categorie}
+                      {isInQuote(hotteId) && (
+                        <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-white/20 text-[9px] font-bold">
+                          <Check className="w-2.5 h-2.5" /> Au devis
+                        </span>
+                      )}
+                    </div>
                     <div className="font-bold text-lg leading-tight mt-0.5">{result.hotte.ref}</div>
                     <div className="text-[11px] opacity-75 mt-0.5">{result.hotte.dim} mm — {result.hotte.filtres} filtres</div>
                   </div>
-                  <div className="text-right">
-                    <div className="font-extrabold whitespace-nowrap">{formatEur(result.hotte.prix)}</div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <div className="text-right">
+                      <div className="font-extrabold whitespace-nowrap">{formatEur(result.hotte.prix)}</div>
+                    </div>
+                    <ItemToggleButton
+                      added={isInQuote(hotteId)}
+                      onAdd={ajouterHotte}
+                      onRemove={() => hotteId && quote.remove(hotteId)}
+                    />
                   </div>
                 </div>
               </div>
@@ -710,34 +760,90 @@ const CalculatorCard = ({ quote }: { quote: QuoteApi }) => {
 
             {/* Moteur */}
             {result.moteur && (
-              <div className="mb-3 rounded-2xl bg-white/10 backdrop-blur-sm p-4">
+              <div
+                className={`mb-3 rounded-2xl backdrop-blur-sm p-4 transition-colors ${
+                  isInQuote(moteurId)
+                    ? "bg-brand-green/25 ring-2 ring-brand-green/60"
+                    : "bg-white/10"
+                }`}
+              >
                 <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <div className="text-[11px] uppercase tracking-widest opacity-80">Moteur direct</div>
+                  <div className="min-w-0">
+                    <div className="text-[11px] uppercase tracking-widest opacity-80 flex items-center gap-1.5">
+                      Moteur direct
+                      {isInQuote(moteurId) && (
+                        <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-white/20 text-[9px] font-bold">
+                          <Check className="w-2.5 h-2.5" /> Au devis
+                        </span>
+                      )}
+                    </div>
                     <div className="font-bold text-lg leading-tight mt-0.5">{result.moteur.ref}</div>
                     <div className="text-[11px] opacity-75 mt-0.5">
                       {result.moteur.m3h.toLocaleString("fr-FR")} m³/h · {result.moteur.paMax} Pa · {result.moteur.pnomKw} kW
                     </div>
                   </div>
-                  <div className="text-right">
-                    <div className="font-extrabold whitespace-nowrap">{formatEur(result.moteur.prix)}</div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <div className="text-right">
+                      <div className="font-extrabold whitespace-nowrap">{formatEur(result.moteur.prix)}</div>
+                    </div>
+                    <ItemToggleButton
+                      added={isInQuote(moteurId)}
+                      onAdd={ajouterMoteur}
+                      onRemove={() => moteurId && quote.remove(moteurId)}
+                    />
                   </div>
                 </div>
               </div>
             )}
 
             {(charbonActif || desenfumageF400) && (
-              <div className="mb-3 rounded-2xl bg-white/10 backdrop-blur-sm p-4 space-y-1.5 text-sm">
+              <div className="mb-3 rounded-2xl bg-white/10 backdrop-blur-sm p-4 space-y-2 text-sm">
                 {charbonActif && (
-                  <div className="flex items-center justify-between">
-                    <span>Charbon actif ALVICARB</span>
-                    <span className="text-[11px] font-bold uppercase tracking-wider opacity-80">Sur devis</span>
+                  <div
+                    className={`flex items-center justify-between gap-2 -mx-2 px-2 py-1 rounded-lg transition-colors ${
+                      isInQuote(charbonId) ? "bg-brand-green/25" : ""
+                    }`}
+                  >
+                    <span className="flex items-center gap-1.5">
+                      Charbon actif ALVICARB
+                      {isInQuote(charbonId) && (
+                        <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-white/20 text-[9px] font-bold">
+                          <Check className="w-2.5 h-2.5" /> Au devis
+                        </span>
+                      )}
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[11px] font-bold uppercase tracking-wider opacity-80">Sur devis</span>
+                      <ItemToggleButton
+                        added={isInQuote(charbonId)}
+                        onAdd={ajouterCharbon}
+                        onRemove={() => quote.remove(charbonId)}
+                      />
+                    </div>
                   </div>
                 )}
                 {desenfumageF400 && (
-                  <div className="flex items-center justify-between">
-                    <span>Caisson F400 CE</span>
-                    <span className="text-[11px] font-bold uppercase tracking-wider opacity-80">Sur devis</span>
+                  <div
+                    className={`flex items-center justify-between gap-2 -mx-2 px-2 py-1 rounded-lg transition-colors ${
+                      isInQuote(f400Id) ? "bg-brand-green/25" : ""
+                    }`}
+                  >
+                    <span className="flex items-center gap-1.5">
+                      Caisson F400 CE
+                      {isInQuote(f400Id) && (
+                        <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-white/20 text-[9px] font-bold">
+                          <Check className="w-2.5 h-2.5" /> Au devis
+                        </span>
+                      )}
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[11px] font-bold uppercase tracking-wider opacity-80">Sur devis</span>
+                      <ItemToggleButton
+                        added={isInQuote(f400Id)}
+                        onAdd={ajouterF400}
+                        onRemove={() => quote.remove(f400Id)}
+                      />
+                    </div>
                   </div>
                 )}
               </div>
@@ -774,13 +880,34 @@ const CalculatorCard = ({ quote }: { quote: QuoteApi }) => {
                   <div className="text-[10px] opacity-70">+ pose et options sur devis</div>
                 </div>
               </div>
-              <button
-                onClick={ajouterToutAuDevis}
-                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white text-brand-bluedark font-bold hover:bg-accent transition-colors"
-              >
-                <Plus className="w-4 h-4" />
-                Ajouter à mon devis
-              </button>
+              {toutAjoute ? (
+                <div className="space-y-2">
+                  <div className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-brand-green text-white font-bold">
+                    <Check className="w-4 h-4" />
+                    Ajouté à mon devis
+                  </div>
+                  <button
+                    onClick={() => {
+                      if (hotteId) quote.remove(hotteId);
+                      if (moteurId) quote.remove(moteurId);
+                      quote.remove(charbonId);
+                      quote.remove(f400Id);
+                    }}
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-white/15 hover:bg-white/25 text-white text-sm font-semibold transition-colors"
+                  >
+                    <Trash2 className="w-3.5 h-3.5" />
+                    Retirer toute la sélection du devis
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={ajouterToutAuDevis}
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-white text-brand-bluedark font-bold hover:bg-accent transition-colors"
+                >
+                  <Plus className="w-4 h-4" />
+                  Ajouter à mon devis
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -788,6 +915,39 @@ const CalculatorCard = ({ quote }: { quote: QuoteApi }) => {
     </section>
   );
 };
+
+/* ------------------------------------------------------------------ */
+/*  INLINE TOGGLE BUTTON (add/remove a single item from quote)         */
+/* ------------------------------------------------------------------ */
+
+const ItemToggleButton = ({
+  added,
+  onAdd,
+  onRemove,
+}: {
+  added: boolean;
+  onAdd: () => void;
+  onRemove: () => void;
+}) =>
+  added ? (
+    <button
+      onClick={onRemove}
+      aria-label="Retirer du devis"
+      title="Retirer du devis"
+      className="shrink-0 w-9 h-9 rounded-full bg-brand-red/90 hover:bg-brand-red text-white flex items-center justify-center transition-colors shadow-soft"
+    >
+      <X className="w-4 h-4" />
+    </button>
+  ) : (
+    <button
+      onClick={onAdd}
+      aria-label="Ajouter au devis"
+      title="Ajouter au devis"
+      className="shrink-0 w-9 h-9 rounded-full bg-white/95 hover:bg-white text-brand-bluedark flex items-center justify-center transition-colors shadow-soft"
+    >
+      <Plus className="w-4 h-4" />
+    </button>
+  );
 
 /* ------------------------------------------------------------------ */
 /*  PRODUCT CARD WITH ADD                                              */
