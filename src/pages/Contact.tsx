@@ -225,12 +225,12 @@ const Contact = () => {
                   <h3 className="font-extrabold text-slate-900 mb-6">Nous contacter</h3>
                   <ul className="space-y-5">
                     <InfoLine icon={Phone} title="Téléphone" lines={["07 58 45 99 00", "06 29 63 40 45"]} tint="red" />
-                    <InfoLine icon={Mail} title="Email" lines={["contact@ecocvc.fr"]} tint="blue" />
+                    <InfoLine icon={Mail} title="Email" lines={["ecocvc69@gmail.com"]} tint="blue" />
                     <InfoLine icon={MapPin} title="Zone d'intervention" lines={["Région Rhône-Alpes", "Rhône 69 · Loire 42 · Isère 38", "Savoie 73 · Haute-Savoie 74"]} tint="green" />
                     <InfoLine
                       icon={Clock}
                       title="Horaires"
-                      lines={["Lun-Sam : 8h - 19h", "Dépannage d'urgence 7j/7"]}
+                      lines={["Lun. – Sam. : 8 h – 19 h", "Dépannage d'urgence 7j/7"]}
                       tint="slate"
                     />
                   </ul>

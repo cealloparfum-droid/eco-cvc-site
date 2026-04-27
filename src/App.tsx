@@ -17,6 +17,7 @@ import Boutique from "./pages/Boutique";
 import Ventilation from "./pages/Ventilation";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import AdvisorBot from "./components/AdvisorBot";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <AdvisorBot />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

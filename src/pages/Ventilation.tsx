@@ -1204,10 +1204,10 @@ const Ventilation = () => {
       >
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
           {[
-            { name: "Dynamique trapézoïdale",  desc: "Avec moteur intégré 230V", img: hotteDynamique, p: "P. 900 / 750 mm" },
-            { name: "Statique trapézoïdale",   desc: "Sans moteur, avec virole", img: hotteStatique, p: "P. 900 / 750 mm" },
-            { name: "Statique cubique",        desc: "Forme droite, débit haut", img: hotteCubique,  p: "P. 900 / 1200 mm" },
-            { name: "Cubique double flux",     desc: "Soufflage + extraction",   img: hotteCubiqueDetail, p: "P. 1300 mm" },
+            { name: "Dynamique trapézoïdale",  desc: "Avec moteur intégré 230V", img: hotteDynamique, p: "P. 900 / 750 mm", cover: false },
+            { name: "Statique trapézoïdale",   desc: "Sans moteur, avec virole", img: hotteStatique, p: "P. 900 / 750 mm", cover: false },
+            { name: "Statique cubique",        desc: "Forme droite, débit haut", img: hotteCubique,  p: "P. 900 / 1200 mm", cover: false },
+            { name: "Cubique double flux",     desc: "Soufflage + extraction en cuisine pro", img: hotteCubiqueDetail, p: "P. 1300 mm", cover: true },
           ].map((h, i) => (
             <motion.div
               key={i}
@@ -1217,8 +1217,8 @@ const Ventilation = () => {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="rounded-3xl border border-border bg-white shadow-soft overflow-hidden hover:shadow-lifted hover:-translate-y-1 transition-all"
             >
-              <div className="aspect-[4/3] bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-6">
-                <img src={h.img} alt={h.name} className="max-w-full max-h-full object-contain" />
+              <div className={`aspect-[4/3] ${h.cover ? "" : "bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-6"}`}>
+                <img src={h.img} alt={h.name} className={h.cover ? "w-full h-full object-cover" : "max-w-full max-h-full object-contain"} />
               </div>
               <div className="p-5">
                 <div className="text-[10px] uppercase tracking-wider font-bold text-brand-red mb-1">{h.p}</div>
@@ -1541,7 +1541,7 @@ const Ventilation = () => {
                 "Pieds de support optionnels avec amortisseurs caoutchouc",
                 "Moteur IP54 — classe B, 4 ou 6 pôles",
                 "Sondes thermistances et bobinage classe F en option",
-                "Plage de température : -20 °C à +50 °C",
+                "Plage de température : −20 °C à +50 °C",
                 "Débits jusqu'à 10 000 m³/h en pression statique 5/8 ou 15/15",
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3 text-sm">
@@ -1573,7 +1573,7 @@ const Ventilation = () => {
         id="caissons"
         eyebrow="04 — Ventilation"
         title="Caissons de ventilation simple & double ouïe"
-        subtitle="Trois familles : TBD double ouïe avec moteur intégré, CEB 400°C/2h homologuée EN 12101-3:2002 pour le désenfumage, TBS simple ouïe pour les configurations encombrées."
+        subtitle="Trois familles : TBD double ouïe avec moteur intégré, CEB 400 °C / 2 h homologuée EN 12101-3 : 2002 pour le désenfumage, TBS simple ouïe pour les configurations encombrées."
       >
         <div className="grid md:grid-cols-3 gap-6">
           {[
@@ -1586,16 +1586,16 @@ const Ventilation = () => {
             },
             {
               ref: "CEB",
-              title: "Caisson CEB 400°C / 2h",
+              title: "Caisson CEB 400 °C / 2 h",
               desc: "Conforme EN-12101-3:2002 dans un laboratoire certifié. Pour caissons de désenfumage CE. Couverts 5 caissons couvrant les puissances 0,25 kW à 15 kW. Disponible en décharge horizontale (H — fabrication standard) et verticale (V — sur demande).",
               img: caissonCeb,
-              badge: "EN 12101-3 / 400°C",
+              badge: "EN 12101-3 / 400 °C",
               specs: ["Homologué désenfumage", "Acier galvanisé Z-275", "Plage 0,25 → 15 kW", "Versions H & V"],
             },
             {
               ref: "TBS",
               title: "Caisson TBS",
-              desc: "Ventilateur simple ouïe — pour la fabrication ou l'extraction d'air conventionnelle dans les configurations encombrées (400°C/2h). Conforme à la norme UNE EN-12101-3:2002. Pression statique jusqu'à 1100 Pa.",
+              desc: "Ventilateur simple ouïe — pour la fabrication ou l'extraction d'air conventionnelle dans les configurations encombrées (400 °C / 2 h). Conforme à la norme UNE EN-12101-3 : 2002. Pression statique jusqu'à 1 100 Pa.",
               img: caissonTbs,
               specs: ["Tailles 9/9 à 30/14", "Standard / Désenfumage", "Moteur 2 vitesses", "RD-90/DR-1 ou LG-Q/DR-1"],
             },
@@ -1660,9 +1660,9 @@ const Ventilation = () => {
           {[
             { id: "emmos", name: "EMMOS", tag: "Tourelle d'extraction F400 CE", ref: "0370-CPR-2283", desc: "Plage de débits 300 à 20 000 m³/h pour des pressions de 50 à 7 500 Pa. Moteur à bride IP55 classe F, hors du flux d'air et ventilé. Mono ou triphasé 2 vitesses Dalhander.", img: tourelleEmmos },
             { id: "simoun", name: "SIMOUN", tag: "Tourelle de ventilation F400-120", ref: "Cap. 110 °C", desc: "Embase en acier galvanisé peint RAL 7011. Grillage en acier galvanisé à mailles carrées. Moteur ECM (commutateur électronique) avec contrôleur déporté IP65 sous le capot. Mono 230V ou triphasé 400V/3N/50/60 Hz.", img: tourelleSimoun },
-            { id: "pyral-a", name: "PYRAL A", tag: "Caisson F400 CE — 0370-CPR-2260", ref: "Class F400 / -20°C → +80°C", desc: "Manchette lisse pour raccordement à l'aspiration et au refoulement. Pieds supports en acier galvanisé pour fixation. Aspiration et refoulement en ligne, servitude droite. Turbine double ouïe à action.", img: pyralA },
-            { id: "pyral-r", name: "PYRAL R", tag: "Caisson F400 CE — 0370-CPR-2292", ref: "Class F400 / 4 ou 2 pôles", desc: "Caisson en panneaux autoporteurs en acier galvanisé avec panneaux latéraux démontables (4 vis sur tour) pour l'accès au moteur ventilateur. Bac de dégraissage avec purge en partie basse.", img: pyralR },
-            { id: "alvyral", name: "ALVYRAL", tag: "Caisson F400 CE — 0370-CPR-2281", ref: "Class F400 / V90 ou H90", desc: "Débits 200 à 19 000 m³/h pour des pressions 50 à 1 100 Pa. Avec installation possible en position verticale ou horizontale. Enveloppe en acier galvanisé, simple parois (double parois en option) avec trappe d'accès.", img: alvyral },
+            { id: "pyral-a", name: "PYRAL A", tag: "Caisson F400 CE — 0370-CPR-2260", ref: "Classe F400 / −20 °C → +80 °C", desc: "Manchette lisse pour raccordement à l'aspiration et au refoulement. Pieds supports en acier galvanisé pour fixation. Aspiration et refoulement en ligne, servitude droite. Turbine double ouïe à action.", img: pyralA },
+            { id: "pyral-r", name: "PYRAL R", tag: "Caisson F400 CE — 0370-CPR-2292", ref: "Classe F400 / 4 ou 2 pôles", desc: "Caisson en panneaux autoporteurs en acier galvanisé avec panneaux latéraux démontables (4 vis sur tour) pour l'accès au moteur ventilateur. Bac de dégraissage avec purge en partie basse.", img: pyralR },
+            { id: "alvyral", name: "ALVYRAL", tag: "Caisson F400 CE — 0370-CPR-2281", ref: "Classe F400 / V90 ou H90", desc: "Débits 200 à 19 000 m³/h pour des pressions 50 à 1 100 Pa. Avec installation possible en position verticale ou horizontale. Enveloppe en acier galvanisé, simple paroi (double paroi en option) avec trappe d'accès.", img: alvyral },
           ].map((p, i) => (
             <motion.div
               key={p.id}
@@ -1803,7 +1803,7 @@ const Ventilation = () => {
             {[
               { icon: Award, title: "Bureau d'études interne", desc: "Dimensionnement précis : débits, pressions, IT 246/263, conformité ERP." },
               { icon: Wrench, title: "Pose et raccordement", desc: "Notre équipe frigoriste / électricien intervient en Rhône-Alpes." },
-              { icon: ShieldCheck, title: "Garantie constructeur", desc: "Pièces 2 ans, mains d'œuvre 1 an. SAV pris en charge par eco cvc." },
+              { icon: ShieldCheck, title: "Garantie constructeur", desc: "Pièces 2 ans, main-d'œuvre 1 an. SAV pris en charge par eco cvc." },
               { icon: Truck, title: "Livraison France entière", desc: "Stock central — livraison sous 5 à 10 jours ouvrés (selon modèle)." },
               { icon: Package, title: "Pièces détachées", desc: "Filtres G4 / F7, charbon actif, viroles, supports — disponibles toute l'année." },
               { icon: Phone, title: "Support technique", desc: "Hotline dédiée pour vos installateurs. Plans CAD sur demande." },

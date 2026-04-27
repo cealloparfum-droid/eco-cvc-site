@@ -367,7 +367,7 @@ const Index = () => {
             <SectionHeading
               eyebrow="Nos réalisations"
               title={<>Des chantiers <span className="text-gradient-brand">propres</span>, du matériel <span className="text-gradient-brand">qui dure</span>.</>}
-              subtitle="Un aperçu de nos dernières installations et interventions. Toutes nos poses sont soignées, soignées et documentées."
+              subtitle="Un aperçu de nos dernières installations et interventions. Toutes nos poses sont soignées, propres et documentées."
             />
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mt-14">
               {[
@@ -491,7 +491,7 @@ const PromoOffer = () => (
               <br />
               <span className="text-white/90">à partir de</span>{" "}
               <span className="relative inline-block">
-                <span className="text-6xl md:text-7xl lg:text-8xl font-black">990€</span>
+                <span className="text-6xl md:text-7xl lg:text-8xl font-black">990 €</span>
                 <motion.span
                   className="absolute -top-2 -right-6 md:-right-10 rotate-12 text-[10px] md:text-xs font-bold bg-brand-red text-white px-2 py-0.5 rounded-full shadow-lifted"
                   animate={{ rotate: [12, 18, 12] }}

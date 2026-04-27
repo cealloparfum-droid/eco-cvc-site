@@ -630,7 +630,7 @@ const Boutique = () => {
             <div className="mb-6 flex items-center justify-between">
               <div className="text-sm text-muted-foreground">
                 <strong className="text-slate-900">{filtered.length}</strong> référence{filtered.length > 1 ? "s" : ""} affichée{filtered.length > 1 ? "s" : ""}
-                {(activeCategory !== "all" || activeBrand !== "all" || search) && " (filtré)"}
+                {(activeCategory !== "all" || activeBrand !== "all" || search) && ` (filtrée${filtered.length > 1 ? "s" : ""})`}
               </div>
               <div className="text-xs text-muted-foreground hidden md:block">
                 De {formatEur(minPrice)} à {formatEur(maxPrice)} TTC

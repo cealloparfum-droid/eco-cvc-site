@@ -318,24 +318,24 @@ const Produits = () => {
                 transition={{ duration: 0.7 }}
                 className="rounded-3xl overflow-hidden border border-border shadow-lifted aspect-[16/10]"
               >
-                <img src={qSeriesDualTemp} alt="AUX Q Series : chauffe jusqu'à -25°C, refroidit jusqu'à +65°C" className="w-full h-full object-cover" />
+                <img src={qSeriesDualTemp} alt="AUX Q Series : chauffe jusqu'à −25 °C, refroidit jusqu'à +65 °C" className="w-full h-full object-cover" />
               </motion.div>
               <div>
                 <SectionHeading
                   align="left"
                   eyebrow="High performance"
                   title={<>Des climats <span className="text-gradient-hot">extrêmes</span>, sans faiblir.</>}
-                  subtitle="Que l'on soit sous 25°C en hiver ou sous canicule estivale, la gamme Q continue de fonctionner à pleine puissance."
+                  subtitle="Que l'on soit sous −25 °C en hiver ou sous canicule estivale, la gamme Q continue de fonctionner à pleine puissance."
                 />
                 <div className="grid sm:grid-cols-2 gap-4 mt-8">
                   <div className="bg-gradient-to-br from-brand-sky/15 to-brand-blue/10 rounded-2xl p-5 border border-brand-blue/20">
                     <Snowflake className="w-7 h-7 text-brand-blue mb-3" />
-                    <div className="text-3xl font-extrabold text-slate-900">–25°C</div>
+                    <div className="text-3xl font-extrabold text-slate-900">−25 °C</div>
                     <div className="text-xs text-muted-foreground mt-1">Chauffage basse température</div>
                   </div>
                   <div className="bg-gradient-to-br from-brand-red/15 to-orange-100 rounded-2xl p-5 border border-brand-red/20">
                     <Flame className="w-7 h-7 text-brand-red mb-3" />
-                    <div className="text-3xl font-extrabold text-slate-900">+65°C</div>
+                    <div className="text-3xl font-extrabold text-slate-900">+65 °C</div>
                     <div className="text-xs text-muted-foreground mt-1">Refroidissement haute température</div>
                   </div>
                 </div>

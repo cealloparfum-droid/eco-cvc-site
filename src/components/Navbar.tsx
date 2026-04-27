@@ -66,12 +66,12 @@ const Navbar = () => {
             : "bg-white/70 backdrop-blur-lg border-b border-transparent"
         }`}
       >
-        <div className="container mx-auto h-20 flex items-center justify-between gap-6">
-          <RouterNavLink to="/" className="flex items-center gap-3 shrink-0">
-            <img src={logo} alt="eco cvc" className="h-14 md:h-16 w-auto" />
+        <div className="w-full pl-4 pr-3 md:pl-6 md:pr-4 xl:pl-8 xl:pr-6 h-20 flex items-center gap-4">
+          <RouterNavLink to="/" className="flex items-center shrink-0">
+            <img src={logo} alt="eco cvc" className="h-12 md:h-14 w-auto" />
           </RouterNavLink>
 
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-medium text-foreground/70 whitespace-nowrap">
+          <nav className="hidden xl:flex items-center gap-4 2xl:gap-6 text-sm font-medium text-foreground/70 whitespace-nowrap">
             {links.map((link) => (
               <RouterNavLink
                 key={link.href}
@@ -98,17 +98,17 @@ const Navbar = () => {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="ml-auto flex items-center gap-2.5 shrink-0">
             <a
               href="tel:+33758459900"
-              className="hidden xl:inline-flex items-center gap-2 text-sm font-semibold text-brand-red hover:text-brand-bluedark transition-colors whitespace-nowrap"
+              className="hidden 2xl:inline-flex items-center gap-2 text-sm font-semibold text-brand-red hover:text-brand-bluedark transition-colors whitespace-nowrap"
             >
               <Phone className="w-4 h-4" />
               07 58 45 99 00
             </a>
             <motion.a
               href="/contact"
-              className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-brand-blue text-white text-sm font-semibold hover:bg-brand-bluedark transition-colors shadow-lifted relative whitespace-nowrap"
+              className="hidden sm:inline-flex items-center gap-1.5 px-4 md:px-5 py-2.5 rounded-full bg-brand-blue text-white text-sm font-semibold hover:bg-brand-bluedark transition-colors shadow-lifted relative whitespace-nowrap"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >
@@ -122,7 +122,7 @@ const Navbar = () => {
             </motion.a>
 
             <button
-              className="lg:hidden w-10 h-10 flex items-center justify-center text-foreground/80 rounded-full hover:bg-secondary"
+              className="xl:hidden w-10 h-10 flex items-center justify-center text-foreground/80 rounded-full hover:bg-secondary"
               onClick={() => setMobileOpen(true)}
               aria-label="Ouvrir le menu"
             >

@@ -38,7 +38,7 @@ import paciNxLifestyle from "@/assets/cold-room/paci-nx-wine-cellar.jpg";
 import emersonMtPhoto from "@/assets/cold-room/lifestyle-butcher.jpg";
 import emersonLtPhoto from "@/assets/cold-room/products/emerson-zxle-lt.jpg";
 import emersonDigitalPhoto from "@/assets/cold-room/products/emerson-zxde-digital.jpg";
-import danfossLifestyle from "@/assets/cold-room/brand-danfoss-congelo.jpg";
+import danfossLifestyle from "@/assets/cold-room/brand-danfoss-family.jpg";
 import tecumsehLifestyle from "@/assets/cold-room/brand-tecumseh-silensys.jpg";
 import danfossPlusPhoto from "@/assets/cold-room/products/danfoss-plus-p00.jpg";
 import danfossSlimW05Photo from "@/assets/cold-room/products/danfoss-slim-w05.jpg";
@@ -75,7 +75,7 @@ const panasonicSeries: PanasonicSerie[] = [
     reference: "OCU-CR400VF8",
     power: "7,5 kW MT",
     type: "Froid positif",
-    description: "Triphasée moyenne température. Conserve viandes, légumes, produits laitiers entre +2°C et +8°C.",
+    description: "Triphasée moyenne température. Conserve viandes, légumes, produits laitiers entre +2 °C et +8 °C.",
     volume: "≈ 80 m³",
   },
   {
@@ -110,7 +110,7 @@ const emersonSeries = [
     name: "ZX Standard — Moyenne température",
     image: emersonMtPhoto,
     description:
-      "Groupe extérieur scroll Copeland, conçu pour les chambres froides positives (+2°C / +8°C). Idéal pour boucherie, charcuterie, fruitier, traiteur.",
+      "Groupe extérieur scroll Copeland, conçu pour les chambres froides positives (+2 °C / +8 °C). Idéal pour boucherie, charcuterie, fruitier, traiteur.",
     powerRange: "3,6 → 11,9 kW (R404A)",
     models: ["ZXME-020E", "ZXME-025E", "ZXME-030E", "ZXME-040E", "ZXME-050E", "ZXME-060E", "ZXME-075E"],
     badge: "Froid positif",
@@ -120,7 +120,7 @@ const emersonSeries = [
     name: "ZX Standard — Basse température",
     image: emersonLtPhoto,
     description:
-      "Variante basse température pour congélation et surgelés (−18°C / −25°C). Injection de vapeur, séparateur d'huile, anti-coups de liquide. Intégration toiture facile.",
+      "Variante basse température pour congélation et surgelés (−18 °C / −25 °C). Injection de vapeur, séparateur d'huile, anti-coups de liquide. Intégration toiture facile.",
     powerRange: "1,7 → 6,5 kW (R404A)",
     models: ["ZXLE-020E", "ZXLE-025E", "ZXLE-030E", "ZXLE-040E", "ZXLE-050E", "ZXLE-060E", "ZXLE-075E"],
     badge: "Froid négatif",
@@ -462,11 +462,11 @@ const ChambreFroide = () => {
                     <span className="text-[10px] font-bold tracking-widest uppercase text-brand-blue">CO₂ · R744 naturel</span>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                    Gamme <strong className="text-foreground">CR</strong> (4 → 16 kW) au CO₂ naturel et gamme <strong className="text-foreground">PACi NX Elite</strong> (R32, +8°C à +24°C).
+                    Gamme <strong className="text-foreground">CR</strong> (4 → 16 kW) au CO₂ naturel et gamme <strong className="text-foreground">PACi NX Elite</strong> (R32, +8 °C à +24 °C).
                     Garantie 5 ans compresseur. Made in Japan.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {["R744 (CO₂)", "Bi-étagé", "−45°C → −5°C", "Récup. chaleur"].map((tag) => (
+                    {["R744 (CO₂)", "Bi-étagé", "−45 °C → −5 °C", "Récup. chaleur"].map((tag) => (
                       <span key={tag} className="text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-accent text-brand-bluedark">
                         {tag}
                       </span>
@@ -509,7 +509,7 @@ const ChambreFroide = () => {
                 <div className="aspect-[16/10] overflow-hidden relative">
                   <img
                     src={danfossLifestyle}
-                    alt="Solution Danfoss Optyma — congélation négatif jusqu'à -25 °C, groupe extérieur + évaporateur plafonnier"
+                    alt="Gamme Danfoss — Optyma Plus IP54 outdoor + Optyma Slim Pack compact + groupes Maneurop pour chambre froide"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent" />
@@ -599,10 +599,10 @@ const ChambreFroide = () => {
                     value={coldType}
                     onChange={(v) => setColdType(v as ColdType)}
                     options={[
-                      { value: "positif-frais", label: "Positif +6°C / +8°C", sub: "Cave à vin, fleurs" },
-                      { value: "positif-frigo", label: "Positif +2°C / +5°C", sub: "Frais — viande, légumes" },
-                      { value: "negatif-surgele", label: "Négatif −18°C", sub: "Surgelés" },
-                      { value: "negatif-glace", label: "Négatif −25°C", sub: "Glaces, abats" },
+                      { value: "positif-frais", label: "Positif +6 °C / +8 °C", sub: "Cave à vin, fleurs" },
+                      { value: "positif-frigo", label: "Positif +2 °C / +5 °C", sub: "Frais — viande, légumes" },
+                      { value: "negatif-surgele", label: "Négatif −18 °C", sub: "Surgelés" },
+                      { value: "negatif-glace", label: "Négatif −25 °C", sub: "Glaces, abats" },
                     ]}
                   />
                 </Field>
@@ -903,10 +903,10 @@ const ChambreFroide = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/75 via-slate-900/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-7 text-white">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red text-white text-[10px] font-bold tracking-widest uppercase mb-3 shadow-lifted">
-                    Cave à vin · +12°C TH
+                    Cave à vin · +12 °C TH
                   </div>
                   <p className="text-sm text-white/90 leading-relaxed">
-                    Une solution clé en main pour les caves à vin, fleuristes ou stockage léger entre +8 et +24°C TH.
+                    Une solution clé en main pour les caves à vin, fleuristes ou stockage léger entre +8 °C et +24 °C TH.
                   </p>
                 </div>
               </motion.div>
@@ -915,7 +915,7 @@ const ChambreFroide = () => {
                   align="left"
                   eyebrow="Panasonic PACi NX Elite"
                   title={<>L'option <span className="text-gradient-brand">R32</span> pour le froid positif modéré.</>}
-                  subtitle="Pour les caves à vin, fleuristes, supermarchés ou silos à grains entre +8°C et +24°C TH. Plage 2,1 → 23,2 kW. 4 formats : mural, cassette 4 voies, plafonnier, gainable adaptatif."
+                  subtitle="Pour les caves à vin, fleuristes, supermarchés ou silos à grains entre +8 °C et +24 °C TH. Plage 2,1 → 23,2 kW. 4 formats : mural, cassette 4 voies, plafonnier, gainable adaptatif."
                 />
                 <div className="grid grid-cols-2 gap-3 mt-8">
                   {[

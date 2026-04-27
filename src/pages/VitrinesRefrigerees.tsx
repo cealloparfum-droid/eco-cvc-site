@@ -206,7 +206,7 @@ const familleMeta: Record<Famille, {
     color: "sky",
     refrigerated: true,
     hasEtages: true,
-    description: "Froid ventilé +2°C/+8°C pour pâtisseries, charcuterie, fromages, traiteur. Groupe coulissant.",
+    description: "Froid ventilé +2 °C / +8 °C pour pâtisseries, charcuterie, fromages, traiteur. Groupe coulissant.",
   },
   "refrigeree-avec-reserve": {
     label: "Vitrine réfrigérée avec réserve",
@@ -730,7 +730,7 @@ const VitrinesRefrigerees = () => {
             />
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-14">
               {[
-                { icon: Wind, title: "Froid ventilé homogène", desc: "Température uniforme +2°C/+8°C sur tous les niveaux. Évaporateur à dégivrage naturel pour conservation longue." },
+                { icon: Wind, title: "Froid ventilé homogène", desc: "Température uniforme +2 °C / +8 °C sur tous les niveaux. Évaporateur à dégivrage naturel pour conservation longue." },
                 { icon: Wrench, title: "Groupe coulissant", desc: "Accès facile au groupe frigorifique pour la maintenance — sans démontage de la vitrine." },
                 { icon: Snowflake, title: "Système antibuée", desc: "Vitre frontale basculante 100 mm avec remontée anti-buée chauffante : visibilité parfaite des produits." },
                 { icon: Lightbulb, title: "Éclairage LED tous niveaux", desc: "Bandeaux LED chaud sur chaque étage et sous-bandeau de façade. Mise en valeur des couleurs des produits." },
@@ -875,7 +875,7 @@ const VitrinesRefrigerees = () => {
               eyebrow="Vitrines réfrigérées · cœur de gamme"
               title={
                 <>
-                  Froid ventilé +2°C → +8°C, <span className="text-gradient-brand">homogène et silencieux</span>.
+                  Froid ventilé +2 °C → +8 °C, <span className="text-gradient-brand">homogène et silencieux</span>.
                 </>
               }
               subtitle="Les vitrines réfrigérées BVR (sans réserve), BVAISR / BVAESR / BVADSR (avec réserve) et BVAR (angles) couvrent les besoins de la pâtisserie, charcuterie, fromagerie, traiteur. Quatre longueurs standards 1350 → 2550 mm, configurables 0, 1 ou 2 étages."

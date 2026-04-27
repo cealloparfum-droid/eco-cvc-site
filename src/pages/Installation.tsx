@@ -264,7 +264,7 @@ const Installation = () => {
             <div className="grid md:grid-cols-3 gap-5">
               {[
                 { icon: Zap, title: "Économique", text: "Un COP jusqu'à 4,5 : 4,5 kWh de chaleur pour 1 kWh consommé." },
-                { icon: Gauge, title: "Performant", text: "Fonctionne jusqu'à -20°C sur nos modèles Daikin & Mitsubishi." },
+                { icon: Gauge, title: "Performant", text: "Fonctionne jusqu'à −20 °C sur nos modèles Daikin & Mitsubishi." },
                 { icon: Wrench, title: "Silencieux", text: "Unités intérieures à partir de 19 dB — imperceptibles." },
               ].map((s) => (
                 <div key={s.title} className="bg-white rounded-2xl border border-border p-6">

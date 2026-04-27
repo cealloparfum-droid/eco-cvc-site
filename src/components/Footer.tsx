@@ -85,8 +85,8 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 mt-0.5 text-brand-sky shrink-0" />
-                <a href="mailto:contact@ecocvc.fr" className="hover:text-white transition-colors">
-                  contact@ecocvc.fr
+                <a href="mailto:ecocvc69@gmail.com" className="hover:text-white transition-colors">
+                  ecocvc69@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -95,7 +95,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="w-4 h-4 mt-0.5 text-slate-500 shrink-0" />
-                <span>Lun-Sam : 8h-19h<br />Dépannage d'urgence 7j/7</span>
+                <span>Lun. – Sam. : 8 h – 19 h<br />Dépannage d'urgence 7j/7</span>
               </li>
             </ul>
           </div>

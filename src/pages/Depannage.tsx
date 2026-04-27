@@ -17,7 +17,7 @@ import PageTransition from "@/components/PageTransition";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import CTABand from "@/components/CTABand";
-import photoOpen from "@/assets/photo-depannage-open.jpg";
+import photoToiture from "@/assets/photo-depannage-toiture.jpg";
 
 const pannes = [
   {
@@ -73,9 +73,9 @@ const Depannage = () => {
           subtitle="Panne en pleine canicule ? Fuite d'eau ? Erreur affichée ? Nos techniciens interviennent rapidement partout en Rhône-Alpes (69, 42, 38, 73, 74), du lundi au dimanche."
           breadcrumb={[{ label: "Dépannage" }]}
           heroImage={{
-            src: photoOpen,
-            alt: "Groupe extérieur de climatisation ouvert — diagnostic eco cvc (compresseur, ventilateur, condensateur, fluide frigorigène)",
-            caption: "Diagnostic groupe extérieur",
+            src: photoToiture,
+            alt: "Techniciens eco cvc en intervention sur batterie de groupes extérieurs Daikin en toiture",
+            caption: "Intervention multi-splits · toiture",
             badge: "Intervention 7j/7",
           }}
         />

@@ -16,7 +16,7 @@ import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import CTABand from "@/components/CTABand";
 import photoFrigo from "@/assets/photo-maintenance-frigoriste.jpeg";
-import photoDirty from "@/assets/photo-maintenance-dirty.jpg";
+import photoMaintenancePro from "@/assets/photo-maintenance-pro.jpg";
 
 const checks = [
   { icon: Wind, title: "Filtres & échangeurs", text: "Nettoyage complet pour une qualité d'air optimale et un COP préservé." },
@@ -86,10 +86,10 @@ const Maintenance = () => {
           subtitle="L'entretien annuel est obligatoire depuis le décret n° 2020-912. Au-delà de la conformité, c'est la garantie d'une longévité maximale et d'une facture d'énergie maîtrisée."
           breadcrumb={[{ label: "Maintenance" }]}
           heroImage={{
-            src: photoDirty,
-            alt: "Filtre d'unité intérieure climatisation très encrassé — avant entretien eco cvc",
-            caption: "Filtre encrassé · avant entretien",
-            badge: "Sans entretien",
+            src: photoMaintenancePro,
+            alt: "Technicien eco cvc en intervention de maintenance préventive sur installation HVAC — relevé de mesures",
+            caption: "Visite annuelle · relevé de performances",
+            badge: "Maintenance préventive",
           }}
         />
 

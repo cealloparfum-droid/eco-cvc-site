@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, ShieldCheck, Clock, Award } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const Hero = () => {
   return (
@@ -100,12 +100,28 @@ const Hero = () => {
   );
 };
 
+const VIDEO_START = 2; // démarrage à 2 s pour sauter l'intro avec le fond blanc
+
 const HeroVisual = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [ready, setReady] = useState(false);
 
   const handleLoadedMetadata = () => {
     if (videoRef.current) {
-      videoRef.current.currentTime = 2;
+      videoRef.current.currentTime = VIDEO_START;
+    }
+  };
+
+  // Quand le seek à 2 s est terminé, on révèle la vidéo (évite le flash de la frame 0)
+  const handleSeeked = () => {
+    setReady(true);
+  };
+
+  // Boucle manuelle : on repart à 2 s plutôt qu'à 0
+  const handleEnded = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = VIDEO_START;
+      void videoRef.current.play();
     }
   };
 
@@ -114,17 +130,18 @@ const HeroVisual = () => {
       <div className="absolute -top-8 -right-6 w-64 h-64 bg-brand-sky/20 rounded-full blur-3xl" />
       <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-brand-red/15 rounded-full blur-3xl" />
 
-      <div className="relative z-10 h-full rounded-3xl border border-border shadow-lifted overflow-hidden bg-white">
+      <div className="relative z-10 h-full rounded-3xl border border-border shadow-lifted overflow-hidden bg-gradient-to-br from-brand-blue via-brand-bluedark to-brand-red">
         <video
           ref={videoRef}
-          src="/intro-logo.mp4"
-          className="absolute inset-0 w-full h-full object-cover"
+          src="/intro-logo.mp4#t=2"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${ready ? "opacity-100" : "opacity-0"}`}
           autoPlay
           muted
-          loop
           playsInline
           preload="auto"
           onLoadedMetadata={handleLoadedMetadata}
+          onSeeked={handleSeeked}
+          onEnded={handleEnded}
           aria-label="Animation logo eco cvc"
         />
 
