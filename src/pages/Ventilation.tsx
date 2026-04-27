@@ -1950,8 +1950,11 @@ const Ventilation = () => {
                 c.highlight ? "border-2 border-brand-blue" : "border-border"
               }`}
             >
-              <div className="md:w-2/5 aspect-[4/3] md:aspect-auto bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-6">
-                <img src={c.img} alt={c.name} className="max-w-full max-h-full object-contain" />
+              <div className="md:w-2/5 aspect-[4/3] md:aspect-auto relative bg-gradient-to-br from-slate-100 via-white to-slate-200 flex items-center justify-center p-5 overflow-hidden">
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-sky/20 rounded-full blur-3xl" />
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-blue/15 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-3 bg-slate-900/15 rounded-[100%] blur-md" />
+                <img src={c.img} alt={c.name} className="relative max-w-full max-h-full object-contain drop-shadow-2xl" />
               </div>
               <div className="md:w-3/5 p-6 flex flex-col">
                 <div className="text-[10px] uppercase tracking-wider font-bold text-brand-red mb-1">{c.tag}</div>
