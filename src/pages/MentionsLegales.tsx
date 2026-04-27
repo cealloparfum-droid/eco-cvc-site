@@ -19,32 +19,28 @@ const MentionsLegales = () => {
       </p>
       <ul>
         <li>
-          <strong>eco cvc</strong> — entreprise artisanale spécialisée en climatisation,
+          <strong>ECO CVC</strong> — entreprise artisanale spécialisée en climatisation,
           pompe à chaleur, ventilation et froid commercial.
         </li>
+        <li>Forme juridique : <strong>Société par actions simplifiée (SAS)</strong></li>
+        <li>Capital social : <strong>1 000 €</strong></li>
         <li>
-          Forme juridique : <span className="placeholder">[À compléter — SARL / EURL / EI]</span>
+          Siège social : <strong>1074 Route Départementale 1085, 38300 Nivolas-Vermelle</strong>
         </li>
         <li>
-          Capital social : <span className="placeholder">[À compléter]</span>
+          Établissement actif : 25 Avenue de Champ-Fleuri, 38300 Bourgoin-Jallieu
+        </li>
+        <li>SIREN : <strong>909 994 527</strong></li>
+        <li>SIRET (siège) : <strong>909 994 527 00010</strong></li>
+        <li>RCS : <strong>Vienne 909 994 527</strong></li>
+        <li>Code APE / NAF : <strong>43.22B</strong> — Travaux d'installation d'équipements thermiques et de climatisation</li>
+        <li>N° TVA intracommunautaire : <strong>FR73 909 994 527</strong></li>
+        <li>Date d'immatriculation : 8 février 2022</li>
+        <li>
+          Direction : <strong>Abdelazziz BETTAHAR</strong> et <strong>Abdelkader MHAMDI</strong>
         </li>
         <li>
-          Siège social : <span className="placeholder">[Adresse complète à compléter]</span>
-        </li>
-        <li>
-          SIRET : <span className="placeholder">[14 chiffres à compléter]</span>
-        </li>
-        <li>
-          RCS : <span className="placeholder">[Ville + numéro à compléter]</span>
-        </li>
-        <li>
-          N° TVA intracommunautaire : <span className="placeholder">[À compléter]</span>
-        </li>
-        <li>
-          Code APE : <span className="placeholder">[Ex. 4322B - Travaux d'installation d'équipements thermiques et de climatisation]</span>
-        </li>
-        <li>
-          Directeur de la publication : <span className="placeholder">[Nom du gérant à compléter]</span>
+          Directeur de la publication : <span className="placeholder">[Président de la SAS à préciser parmi les co-dirigeants]</span>
         </li>
       </ul>
 
@@ -64,23 +60,24 @@ const MentionsLegales = () => {
 
       <h2>4. Assurance professionnelle</h2>
       <p>
-        eco cvc est couvert par une <strong>assurance responsabilité civile professionnelle et décennale</strong>{" "}
+        ECO CVC est couvert par une <strong>assurance responsabilité civile professionnelle et décennale</strong>{" "}
         souscrite auprès de <strong>MAAF Pro</strong> — police n° <span className="placeholder">[Numéro de police à compléter]</span>.
         Cette garantie couvre l'ensemble des prestations exécutées en France métropolitaine.
       </p>
 
       <h2>5. Qualifications et certifications</h2>
-      <p>
-        L'entreprise dispose des qualifications suivantes :
-      </p>
+      <p>L'entreprise dispose des qualifications suivantes :</p>
       <ul>
         <li>
-          <strong>RGE QualiPAC</strong> (module CET et CCP) — n° de qualification{" "}
-          <span className="placeholder">[À compléter]</span>. Vérifiable sur{" "}
+          <strong>RGE QualiPAC</strong> — qualification reconnue par l'État et vérifiable sur{" "}
           <a href="https://www.qualit-enr.org/annuaire-installateurs/" target="_blank" rel="noopener noreferrer">
             qualit-enr.org
+          </a>{" "}
+          et sur l'annuaire officiel{" "}
+          <a href="https://france-renov.gouv.fr/annuaire-rge" target="_blank" rel="noopener noreferrer">
+            france-renov.gouv.fr/annuaire-rge
           </a>
-          .
+          . N° de qualification : <span className="placeholder">[À compléter]</span>.
         </li>
         <li>
           <strong>Attestation de capacité fluides frigorigènes</strong> (catégorie 1) — n°{" "}
@@ -92,7 +89,7 @@ const MentionsLegales = () => {
       <h2>6. Propriété intellectuelle</h2>
       <p>
         L'ensemble des contenus du site (textes, photographies, logos, vidéos, illustrations,
-        marques, charte graphique, code source) est la propriété exclusive de eco cvc ou de ses
+        marques, charte graphique, code source) est la propriété exclusive de ECO CVC ou de ses
         partenaires, et est protégé par la législation française et internationale relative à la
         propriété intellectuelle.
       </p>
@@ -112,23 +109,23 @@ const MentionsLegales = () => {
       <h2>7. Responsabilité</h2>
       <p>
         Les informations diffusées sur le site sont fournies à titre indicatif. Malgré le soin
-        apporté à leur mise à jour, eco cvc ne peut garantir l'exactitude, la complétude ou
+        apporté à leur mise à jour, ECO CVC ne peut garantir l'exactitude, la complétude ou
         l'actualité des informations publiées (tarifs, disponibilités, caractéristiques techniques,
         montants des aides publiques, etc.).
       </p>
       <p>
         Tout devis ferme nécessite une visite technique préalable. Seul le devis écrit signé par
-        les deux parties engage eco cvc.
+        les deux parties engage ECO CVC.
       </p>
       <p>
-        eco cvc ne saurait être tenu responsable des dommages directs ou indirects résultant de
+        ECO CVC ne saurait être tenu responsable des dommages directs ou indirects résultant de
         l'utilisation du site, ni de l'indisponibilité temporaire de celui-ci.
       </p>
 
       <h2>8. Liens hypertextes</h2>
       <p>
         Le site peut contenir des liens vers des sites tiers (registres officiels, fournisseurs,
-        organismes publics). eco cvc n'exerce aucun contrôle sur ces sites et décline toute
+        organismes publics). ECO CVC n'exerce aucun contrôle sur ces sites et décline toute
         responsabilité quant à leur contenu.
       </p>
 

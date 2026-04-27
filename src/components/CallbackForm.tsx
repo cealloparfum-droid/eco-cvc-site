@@ -2,14 +2,13 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { PhoneCall, CheckCircle2, Send, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { submitForm } from "@/lib/submit-form";
 
 /**
  * CallbackForm — formulaire compact "Rappel sous 30 minutes".
  * À placer en haut des pages de service (notamment Dépannage) pour les
  * utilisateurs qui ne peuvent pas appeler tout de suite (réunion, soir, etc.).
  */
-
-const WEB3FORMS_KEY = (import.meta.env.VITE_WEB3FORMS_KEY as string | undefined) || "";
 
 const NATURES = [
   { v: "ne-fonctionne-plus", l: "Ne fonctionne plus du tout" },
@@ -40,35 +39,32 @@ const CallbackForm = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      if (!WEB3FORMS_KEY) {
-        const subject = `[eco cvc · DÉPANNAGE URGENT] Rappel demandé — ${form.name}`;
-        const body = `Bonjour,\n\nJe demande un rappel d'urgence dépannage.\n\nNom : ${form.name}\nTéléphone : ${form.phone}\nVille : ${form.city}\nNature de la panne : ${NATURES.find((n) => n.v === form.nature)?.l}\nQuand me rappeler : ${form.when === "asap" ? "Dès que possible" : form.when === "matin" ? "Demain matin" : "Demain après-midi"}\n\nMerci.`;
-        window.location.href = `mailto:ecocvc69@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        toast({ title: "Demande prête", description: "Votre client mail s'ouvre avec votre demande." });
-        setSent(true);
-        return;
-      }
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          subject: `[eco cvc · DÉPANNAGE URGENT] Rappel demandé — ${form.name} (${form.city})`,
-          from_name: "eco cvc · dépannage",
-          botcheck: "",
+      const result = await submitForm({
+        subject: `[eco cvc · DÉPANNAGE URGENT] Rappel demandé — ${form.name} (${form.city})`,
+        fields: {
           nom: form.name,
           telephone: form.phone,
           ville: form.city,
-          nature_panne: NATURES.find((n) => n.v === form.nature)?.l,
-          quand_rappeler: form.when,
-        }),
+          nature_panne: NATURES.find((n) => n.v === form.nature)?.l ?? form.nature,
+          quand_rappeler:
+            form.when === "asap"
+              ? "Dès que possible"
+              : form.when === "matin"
+                ? "Demain matin"
+                : "Demain après-midi",
+        },
       });
-      const data = await res.json();
-      if (data.success) {
-        toast({ title: "Rappel programmé", description: "Un technicien vous rappelle au plus vite." });
+      if (result.ok) {
+        toast({
+          title: "Rappel programmé",
+          description:
+            result.via === "mailto"
+              ? "Votre client mail s'ouvre avec votre demande."
+              : "Un technicien vous rappelle au plus vite.",
+        });
         setSent(true);
       } else {
-        throw new Error(data.message || "Erreur");
+        throw new Error(result.message || "Erreur");
       }
     } catch {
       toast({

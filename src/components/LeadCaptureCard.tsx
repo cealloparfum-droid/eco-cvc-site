@@ -2,23 +2,12 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, Phone, User, Send, CheckCircle2, ShieldCheck, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { submitForm } from "@/lib/submit-form";
 
 /**
  * LeadCaptureCard — formulaire compact à insérer juste APRÈS un calculateur
  * pour capter l'email du visiteur sans qu'il ait à recommencer un formulaire long.
- *
- * Usage :
- *  <LeadCaptureCard
- *    context="clim"
- *    summary="Pose Daikin Stylish 3,5 kW · ~1 290 €"
- *    extraData={{ surface: 28, marque: "Daikin" }}
- *  />
- *
- * Pour activer l'envoi réel, créer un compte gratuit sur https://web3forms.com/
- * et remplacer WEB3FORMS_KEY par votre access_key.
  */
-
-const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || "";
 
 type Context = "clim" | "chambre-froide" | "vitrines" | "ventilation" | "calculateur";
 
@@ -77,43 +66,31 @@ const LeadCaptureCard = ({ context, summary, extraData, className = "" }: Props)
     e.preventDefault();
     setLoading(true);
     try {
-      const payload = {
-        access_key: WEB3FORMS_KEY,
+      const result = await submitForm({
         subject: `[eco cvc · ${context}] Nouveau lead calculateur — ${form.name}`,
-        from_name: "eco cvc · calculateur",
-        botcheck: "",
-        contexte: context,
-        recap_calcul: summary || "—",
-        nom: form.name,
-        email: form.email,
-        telephone: form.phone,
-        code_postal: form.zip,
-        ...extraData,
-      };
-      // Si pas de clé configurée, on passe en mode dégradé (mailto + toast).
-      if (!WEB3FORMS_KEY) {
-        const body = `Bonjour,\n\nJe souhaite recevoir mon ${cfg.cta.toLowerCase()}.\n\n${summary ? "Récap calcul : " + summary + "\n\n" : ""}Nom : ${form.name}\nEmail : ${form.email}\nTéléphone : ${form.phone}\nCode postal : ${form.zip}\n\nMerci.`;
-        window.location.href = `mailto:ecocvc69@gmail.com?subject=${encodeURIComponent(payload.subject)}&body=${encodeURIComponent(body)}`;
+        fields: {
+          contexte: context,
+          recap_calcul: summary || "—",
+          nom: form.name,
+          email: form.email,
+          telephone: form.phone,
+          code_postal: form.zip,
+          ...extraData,
+        },
+      });
+      if (result.ok) {
         toast({
-          title: "Demande prête à envoyer",
-          description: "Votre client mail s'ouvre avec votre demande pré-remplie.",
+          title: "Demande bien reçue",
+          description:
+            result.via === "mailto"
+              ? "Votre client mail s'ouvre avec votre demande."
+              : "Vous recevez votre récap par email sous quelques minutes.",
         });
         setSent(true);
-        return;
-      }
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(payload),
-      });
-      const data = await res.json();
-      if (data.success) {
-        toast({ title: "Demande bien reçue", description: "Vous recevez votre récap par email sous quelques minutes." });
-        setSent(true);
       } else {
-        throw new Error(data.message || "Erreur d'envoi");
+        throw new Error(result.message || "Erreur d'envoi");
       }
-    } catch (err) {
+    } catch {
       toast({
         title: "Oups, problème d'envoi",
         description: "Appelez-nous au 07 58 45 99 00, on s'occupe de tout.",

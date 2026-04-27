@@ -17,6 +17,7 @@ import {
   ShoppingBag,
   Refrigerator,
 } from "lucide-react";
+import { submitForm } from "@/lib/submit-form";
 
 /** ------------------------------------------------------------------
  *  Configuration
@@ -501,32 +502,16 @@ const AdvisorBot = () => {
   };
 
   /**
-   * Envoi direct via Web3Forms (https://web3forms.com/) — gratuit, sans compte requis côté client.
-   * Pour activer, créez un compte gratuit, copiez votre access_key et ajoutez-la dans .env :
-   *   VITE_WEB3FORMS_KEY=votre-cle
-   * Sans clé configurée, on retombe automatiquement sur l'envoi mailto:.
+   * Envoi direct via le helper unifié submitForm (Web3Forms si clé,
+   * sinon Formsubmit.co, sinon mailto en dernier recours).
    */
   const sendDirect = async () => {
     setSendError(null);
-    const apiKey = (import.meta.env.VITE_WEB3FORMS_KEY as string | undefined) || "";
-
-    if (!apiKey) {
-      // Fallback : ouvre le client mail
-      window.location.href = mailHref();
-      setSent(true);
-      return;
-    }
-
     setSending(true);
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: apiKey,
-          subject: buildEmailSubject(),
-          from_name: "eco cvc · AdvisorBot",
-          botcheck: "",
+      const result = await submitForm({
+        subject: buildEmailSubject(),
+        fields: {
           message: buildEmailBody(),
           service: SERVICES.find((s) => s.key === service)?.label || "Demande",
           nom: coords.name,
@@ -535,13 +520,12 @@ const AdvisorBot = () => {
           code_postal: coords.zip,
           note: coords.note,
           ...Object.fromEntries(answers.map((a, i) => [`q${i + 1}_${a.question.slice(0, 30)}`, a.value])),
-        }),
+        },
       });
-      const data = await res.json();
-      if (data.success) {
+      if (result.ok) {
         setSent(true);
       } else {
-        throw new Error(data.message || "Erreur d'envoi");
+        throw new Error(result.message || "Erreur d'envoi");
       }
     } catch (err) {
       const msg = err instanceof Error ? err.message : "Erreur d'envoi";

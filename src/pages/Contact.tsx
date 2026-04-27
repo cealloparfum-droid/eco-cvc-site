@@ -19,6 +19,7 @@ import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import PageHeader from "@/components/PageHeader";
 import { useDevisList } from "@/hooks/use-devis-list";
+import { submitForm } from "@/lib/submit-form";
 
 type ServiceType =
   | "installation"
@@ -74,8 +75,6 @@ const AIDES: Record<string, string> = {
   tva: "TVA réduite 5,5 %",
   ecoptz: "Éco-PTZ",
 };
-
-const WEB3FORMS_KEY = (import.meta.env.VITE_WEB3FORMS_KEY as string | undefined) || "";
 
 const formatEur = (v: number) =>
   v.toLocaleString("fr-FR", { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + " €";
@@ -190,31 +189,13 @@ const Contact = () => {
     const subject = `[eco cvc · CONTACT] ${SERVICE_LABELS[form.service]} — ${form.name}`;
 
     try {
-      if (!WEB3FORMS_KEY) {
-        // Fallback mailto si la clé n'est pas configurée
-        const body = `Bonjour,\n\nNom : ${form.name}\nEmail : ${form.email}\nTéléphone : ${form.phone}\nCode postal : ${form.zip}\nVille : ${form.city || "—"}\nService : ${SERVICE_LABELS[form.service]}\n${realService && realService !== form.service ? `Précision : ${SERVICE_LABELS[realService]}\n` : ""}${urlOffre && OFFRES[urlOffre] ? `Offre : ${OFFRES[urlOffre]}\n` : ""}${urlAide && AIDES[urlAide] ? `Aide : ${AIDES[urlAide]}\n` : ""}${urlModele ? `Modèle : ${urlModele}\n` : ""}\nMessage :\n${form.message}\n\nMerci.`;
-        window.location.href = `mailto:ecocvc69@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        toast({
-          title: "Demande prête à envoyer",
-          description: "Votre client mail s'ouvre avec votre demande.",
-        });
-        setSubmitted(true);
-        if (devisItems.length > 0) clearDevis();
-        return;
-      }
-
       const devisLines = devisItems
         .map((it) => `${it.brand ? `[${it.brand}] ` : ""}${it.name} — ${formatEur(it.price)}${it.qty && it.qty > 1 ? ` × ${it.qty}` : ""}`)
         .join("\n");
 
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          subject,
-          from_name: "eco cvc · contact",
-          botcheck: "",
+      const result = await submitForm({
+        subject,
+        fields: {
           nom: form.name,
           email: form.email,
           telephone: form.phone,
@@ -229,19 +210,20 @@ const Contact = () => {
           devis_total_eur: devisTotal,
           devis_produits: devisLines,
           message: form.message,
-        }),
+        },
       });
-      const data = await res.json();
-      if (data.success) {
+      if (result.ok) {
         toast({
           title: "Demande bien reçue",
-          description: "Nous vous rappelons sous 24h ouvrées.",
+          description:
+            result.via === "mailto"
+              ? "Votre client mail s'ouvre avec votre demande."
+              : "Nous vous rappelons sous 24h ouvrées.",
         });
         setSubmitted(true);
-        // Vider le devis localStorage après envoi réussi
         if (devisItems.length > 0) clearDevis();
       } else {
-        throw new Error(data.message || "Erreur serveur");
+        throw new Error(result.message || "Erreur serveur");
       }
     } catch {
       toast({

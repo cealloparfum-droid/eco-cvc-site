@@ -16,7 +16,7 @@ const Confidentialite = () => {
       <h2>1. Responsable du traitement</h2>
       <p>
         Le responsable du traitement des données personnelles collectées sur le site eco-cvc.fr
-        est <strong>eco cvc</strong> — coordonnées indiquées dans nos{" "}
+        est <strong>ECO CVC</strong> — coordonnées indiquées dans nos{" "}
         <a href="/mentions-legales">mentions légales</a>.
       </p>
       <p>
@@ -51,7 +51,7 @@ const Confidentialite = () => {
       </ul>
       <p>
         Aucune donnée sensible (santé, opinion politique, religion, etc.) n'est demandée ni
-        traitée par eco cvc.
+        traitée par ECO CVC.
       </p>
 
       <h2>3. Finalités du traitement</h2>
@@ -92,7 +92,7 @@ const Confidentialite = () => {
         tiers à des fins commerciales. Elles peuvent être communiquées :
       </p>
       <ul>
-        <li>aux salariés et techniciens de eco cvc, dans la limite de leurs missions ;</li>
+        <li>aux salariés et techniciens de ECO CVC, dans la limite de leurs missions ;</li>
         <li>
           aux prestataires techniques nous accompagnant (hébergement web, service d'envoi de
           formulaires, comptabilité), dans le cadre d'un contrat de sous-traitance conforme à
@@ -153,7 +153,7 @@ const Confidentialite = () => {
 
       <h2>9. Sécurité des données</h2>
       <p>
-        eco cvc met en œuvre les mesures techniques et organisationnelles appropriées pour
+        ECO CVC met en œuvre les mesures techniques et organisationnelles appropriées pour
         garantir la sécurité de vos données : connexion HTTPS sur l'ensemble du site, accès
         restreints, sauvegardes régulières, sensibilisation des salariés à la confidentialité.
       </p>

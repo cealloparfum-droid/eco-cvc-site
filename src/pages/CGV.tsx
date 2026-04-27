@@ -9,16 +9,18 @@ const CGV = () => {
           Conditions générales <span className="text-gradient-brand">de vente</span>
         </>
       }
-      subtitle="Conditions applicables aux prestations d'installation, d'entretien et de dépannage réalisées par eco cvc, ainsi qu'à toute commande passée via la boutique en ligne."
+      subtitle="Conditions applicables aux prestations d'installation, d'entretien et de dépannage réalisées par la société ECO CVC, ainsi qu'à toute commande passée via la boutique en ligne."
       breadcrumbLabel="CGV"
       lastUpdate="27 avril 2026"
     >
       <h2>Article 1 — Objet et champ d'application</h2>
       <p>
         Les présentes conditions générales de vente (« CGV ») régissent l'ensemble des relations
-        contractuelles entre <strong>eco cvc</strong> (ci-après « le Prestataire ») et toute personne
-        physique ou morale (ci-après « le Client ») commandant une prestation ou un produit auprès
-        du Prestataire.
+        contractuelles entre la société <strong>ECO CVC</strong>, SAS au capital de 1 000 €,
+        immatriculée au RCS de Vienne sous le numéro 909 994 527, dont le siège social est situé
+        1074 Route Départementale 1085, 38300 Nivolas-Vermelle (ci-après « le Prestataire »), et
+        toute personne physique ou morale (ci-après « le Client ») commandant une prestation ou un
+        produit auprès du Prestataire.
       </p>
       <p>
         Les CGV s'appliquent aux prestations d'installation de climatisation, de pompe à chaleur,
