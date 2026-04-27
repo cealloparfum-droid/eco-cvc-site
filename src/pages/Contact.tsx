@@ -1,37 +1,232 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Send, Phone, Mail, MapPin, Clock, CheckCircle2 } from "lucide-react";
+import {
+  Send,
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  CheckCircle2,
+  Sparkles,
+  X,
+} from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import PageHeader from "@/components/PageHeader";
 
-type ServiceType = "installation" | "maintenance" | "depannage" | "autre";
+type ServiceType =
+  | "installation"
+  | "maintenance"
+  | "depannage"
+  | "chambre-froide"
+  | "vitrines"
+  | "ventilation"
+  | "boutique"
+  | "autre";
+
+const SERVICE_LABELS: Record<ServiceType, string> = {
+  installation: "Installation climatisation",
+  maintenance: "Contrat d'entretien",
+  depannage: "Dépannage",
+  "chambre-froide": "Chambre froide",
+  vitrines: "Vitrine réfrigérée",
+  ventilation: "Ventilation / hotte",
+  boutique: "Achat boutique",
+  autre: "Autre demande",
+};
+
+// Services proposés dans la barre de boutons radio (les 4 principaux)
+const PRIMARY_OPTIONS: { v: ServiceType; l: string }[] = [
+  { v: "installation", l: "Installation" },
+  { v: "maintenance", l: "Entretien" },
+  { v: "depannage", l: "Dépannage" },
+  { v: "autre", l: "Autre" },
+];
+
+// Mapping des services "secondaires" reçus en URL → service primaire à cocher
+const SERVICE_FALLBACK: Record<ServiceType, ServiceType> = {
+  installation: "installation",
+  maintenance: "maintenance",
+  depannage: "depannage",
+  "chambre-froide": "installation",
+  vitrines: "installation",
+  ventilation: "installation",
+  boutique: "installation",
+  autre: "autre",
+};
+
+const OFFRES: Record<string, string> = {
+  aux990: "Offre AUX 990 € posée",
+  daikin: "Daikin Perfera",
+  mitsubishi: "Mitsubishi MSZ-LN",
+  panasonic: "Panasonic Etherea",
+};
+
+const AIDES: Record<string, string> = {
+  mpr: "MaPrimeRénov'",
+  cee: "Certificats d'Économie d'Énergie",
+  tva: "TVA réduite 5,5 %",
+  ecoptz: "Éco-PTZ",
+};
+
+const WEB3FORMS_KEY = (import.meta.env.VITE_WEB3FORMS_KEY as string | undefined) || "";
 
 const Contact = () => {
   const { toast } = useToast();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  // Lecture des paramètres d'URL (depuis CTABand, Boutique, etc.)
+  const urlService = (searchParams.get("service") || "").toLowerCase() as ServiceType | "";
+  const urlOffre = (searchParams.get("offre") || "").toLowerCase();
+  const urlAide = (searchParams.get("aide") || "").toLowerCase();
+  const urlVille = searchParams.get("ville") || "";
+  const urlModele = searchParams.get("modele") || "";
+
+  // Service initial : on prend le service de l'URL s'il est valide, sinon installation
+  const initialService: ServiceType = useMemo(() => {
+    if (urlService && (urlService in SERVICE_LABELS)) {
+      return SERVICE_FALLBACK[urlService as ServiceType];
+    }
+    return "installation";
+  }, [urlService]);
+
+  // Le service "réel" (avant fallback) sert à la chip et au pre-fill du message
+  const realService: ServiceType | "" = (urlService && urlService in SERVICE_LABELS ? (urlService as ServiceType) : "");
+
+  // Pré-remplissage automatique du message selon le contexte
+  const initialMessage = useMemo(() => {
+    const parts: string[] = [];
+    if (realService) {
+      parts.push(`Demande : ${SERVICE_LABELS[realService]}.`);
+    }
+    if (urlOffre && OFFRES[urlOffre]) {
+      parts.push(`Offre qui m'intéresse : ${OFFRES[urlOffre]}.`);
+    }
+    if (urlModele) {
+      parts.push(`Modèle : ${urlModele}.`);
+    }
+    if (urlAide && AIDES[urlAide]) {
+      parts.push(`Je souhaite être accompagné·e pour l'aide ${AIDES[urlAide]}.`);
+    }
+    if (parts.length > 0) {
+      parts.push("\nMerci de me recontacter pour échanger sur mon projet.");
+    }
+    return parts.join("\n");
+  }, [realService, urlOffre, urlModele, urlAide]);
+
   const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
     zip: "",
-    service: "installation" as ServiceType,
-    message: "",
+    city: urlVille,
+    service: initialService,
+    message: initialMessage,
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  // Si l'URL change après le mount (changement de variante de CTA pendant la même session SPA)
+  useEffect(() => {
+    setForm((prev) => ({
+      ...prev,
+      service: initialService,
+      city: urlVille || prev.city,
+      message: prev.message || initialMessage,
+    }));
+    // scroll vers le formulaire si on arrive avec un contexte
+    if (urlService || urlOffre || urlAide) {
+      const el = document.getElementById("contact-form");
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 200);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialService, initialMessage, urlVille]);
+
+  // Construction de la "chip de contexte" affichée en haut du formulaire
+  const contextChip = useMemo(() => {
+    const bits: string[] = [];
+    if (realService) bits.push(SERVICE_LABELS[realService]);
+    if (urlOffre && OFFRES[urlOffre]) bits.push(OFFRES[urlOffre]);
+    if (urlAide && AIDES[urlAide]) bits.push(`Aide : ${AIDES[urlAide]}`);
+    if (urlModele) bits.push(`Modèle : ${urlModele}`);
+    if (urlVille) bits.push(urlVille);
+    return bits.length > 0 ? bits.join(" · ") : "";
+  }, [realService, urlOffre, urlAide, urlModele, urlVille]);
+
+  const clearContext = () => {
+    setSearchParams({}, { replace: true });
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Demande bien reçue",
-      description: "Nous vous rappelons sous 24h ouvrées.",
-    });
-    setSubmitted(true);
+    setLoading(true);
+
+    const subject = `[eco cvc · CONTACT] ${SERVICE_LABELS[form.service]} — ${form.name}`;
+
+    try {
+      if (!WEB3FORMS_KEY) {
+        // Fallback mailto si la clé n'est pas configurée
+        const body = `Bonjour,\n\nNom : ${form.name}\nEmail : ${form.email}\nTéléphone : ${form.phone}\nCode postal : ${form.zip}\nVille : ${form.city || "—"}\nService : ${SERVICE_LABELS[form.service]}\n${realService && realService !== form.service ? `Précision : ${SERVICE_LABELS[realService]}\n` : ""}${urlOffre && OFFRES[urlOffre] ? `Offre : ${OFFRES[urlOffre]}\n` : ""}${urlAide && AIDES[urlAide] ? `Aide : ${AIDES[urlAide]}\n` : ""}${urlModele ? `Modèle : ${urlModele}\n` : ""}\nMessage :\n${form.message}\n\nMerci.`;
+        window.location.href = `mailto:ecocvc69@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        toast({
+          title: "Demande prête à envoyer",
+          description: "Votre client mail s'ouvre avec votre demande.",
+        });
+        setSubmitted(true);
+        return;
+      }
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject,
+          from_name: "eco cvc · contact",
+          botcheck: "",
+          nom: form.name,
+          email: form.email,
+          telephone: form.phone,
+          code_postal: form.zip,
+          ville: form.city,
+          service: SERVICE_LABELS[form.service],
+          contexte_service: realService ? SERVICE_LABELS[realService] : "",
+          contexte_offre: urlOffre && OFFRES[urlOffre] ? OFFRES[urlOffre] : "",
+          contexte_aide: urlAide && AIDES[urlAide] ? AIDES[urlAide] : "",
+          contexte_modele: urlModele,
+          message: form.message,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        toast({
+          title: "Demande bien reçue",
+          description: "Nous vous rappelons sous 24h ouvrées.",
+        });
+        setSubmitted(true);
+      } else {
+        throw new Error(data.message || "Erreur serveur");
+      }
+    } catch {
+      toast({
+        title: "Problème d'envoi",
+        description: "Réessayez ou appelez-nous au 07 58 45 99 00.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -49,7 +244,7 @@ const Contact = () => {
           breadcrumb={[{ label: "Contact" }]}
         />
 
-        <section className="py-12 md:py-20">
+        <section id="contact-form" className="py-12 md:py-20">
           <div className="container mx-auto">
             <div className="grid lg:grid-cols-[1.3fr,1fr] gap-12">
               {/* Form */}
@@ -82,18 +277,40 @@ const Contact = () => {
                       <p className="text-sm text-muted-foreground">Réponse sous 24h ouvrées, sans engagement.</p>
                     </div>
 
+                    {/* Context chip — uniquement si on arrive avec des params */}
+                    {contextChip && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="flex items-start gap-3 p-3.5 rounded-xl bg-gradient-to-r from-brand-blue/10 via-brand-sky/10 to-brand-blue/5 border border-brand-blue/20"
+                      >
+                        <div className="shrink-0 w-8 h-8 rounded-lg bg-brand-blue/15 flex items-center justify-center">
+                          <Sparkles className="w-4 h-4 text-brand-blue" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="text-[10px] font-bold tracking-widest uppercase text-brand-blue mb-0.5">
+                            Votre demande
+                          </div>
+                          <div className="text-sm font-semibold text-slate-900 truncate">{contextChip}</div>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={clearContext}
+                          aria-label="Effacer le contexte"
+                          className="shrink-0 w-7 h-7 rounded-lg hover:bg-white/60 text-muted-foreground hover:text-foreground flex items-center justify-center transition-colors"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </motion.div>
+                    )}
+
                     {/* Service selector */}
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-2">
                         Type de demande <span className="text-brand-red">*</span>
                       </label>
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                        {[
-                          { v: "installation", l: "Installation" },
-                          { v: "maintenance", l: "Entretien" },
-                          { v: "depannage", l: "Dépannage" },
-                          { v: "autre", l: "Autre" },
-                        ].map((opt) => (
+                        {PRIMARY_OPTIONS.map((opt) => (
                           <label key={opt.v} className="relative cursor-pointer">
                             <input
                               type="radio"
@@ -162,10 +379,21 @@ const Contact = () => {
                       </Field>
                     </div>
 
+                    <Field label="Ville (optionnel)">
+                      <input
+                        name="city"
+                        type="text"
+                        value={form.city}
+                        onChange={handleChange}
+                        placeholder="Lyon, Annecy, Grenoble…"
+                        className="input"
+                      />
+                    </Field>
+
                     <Field label="Votre message">
                       <textarea
                         name="message"
-                        rows={4}
+                        rows={5}
                         value={form.message}
                         onChange={handleChange}
                         placeholder="Décrivez votre projet : surface à climatiser, nombre de pièces, délais souhaités..."
@@ -180,10 +408,17 @@ const Contact = () => {
 
                     <button
                       type="submit"
-                      className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-brand-blue hover:bg-brand-bluedark text-white font-bold transition-colors shadow-lifted"
+                      disabled={loading}
+                      className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-brand-blue hover:bg-brand-bluedark text-white font-bold transition-colors shadow-lifted disabled:opacity-60"
                     >
-                      Envoyer ma demande
-                      <Send className="w-4 h-4" />
+                      {loading ? (
+                        "Envoi en cours…"
+                      ) : (
+                        <>
+                          Envoyer ma demande
+                          <Send className="w-4 h-4" />
+                        </>
+                      )}
                     </button>
                   </form>
                 )}
