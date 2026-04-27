@@ -1867,9 +1867,19 @@ const Ventilation = () => {
               transition={{ duration: 0.5, delay: (i % 3) * 0.08 }}
               className="rounded-3xl border border-border bg-white shadow-soft overflow-hidden flex flex-col hover:shadow-lifted hover:-translate-y-1 transition-all"
             >
-              <div className="aspect-[5/4] bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-8 relative">
-                <img src={p.img} alt={p.name} className="max-w-full max-h-full object-contain" />
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-brand-red text-white text-[10px] font-bold tracking-widest uppercase">
+              <div className="relative aspect-[5/4] bg-gradient-to-br from-slate-100 via-white to-slate-200 flex items-center justify-center p-5 overflow-hidden">
+                {/* halo lumineux */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="w-3/4 h-3/4 rounded-full bg-brand-blue/10 blur-3xl" />
+                </div>
+                {/* reflet sol */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-6 bg-slate-900/15 blur-xl rounded-full" />
+                <img
+                  src={p.img}
+                  alt={p.name}
+                  className="relative max-w-full max-h-full object-contain drop-shadow-2xl"
+                />
+                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-brand-red text-white text-[10px] font-bold tracking-widest uppercase shadow-soft z-10">
                   F400
                 </div>
               </div>
@@ -1898,8 +1908,11 @@ const Ventilation = () => {
             transition={{ duration: 0.5, delay: 0.24 }}
             className="rounded-3xl border-2 border-brand-blue bg-gradient-to-br from-brand-blue/5 to-brand-sky/5 shadow-soft overflow-hidden flex flex-col"
           >
-            <div className="aspect-[5/4] bg-gradient-to-br from-brand-blue/10 to-brand-sky/10 flex items-center justify-center p-8">
-              <ShieldCheck className="w-24 h-24 text-brand-blue/60" />
+            <div className="relative aspect-[5/4] bg-gradient-to-br from-brand-blue/15 via-white to-brand-sky/15 flex items-center justify-center p-5 overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-3/4 h-3/4 rounded-full bg-brand-blue/15 blur-3xl" />
+              </div>
+              <ShieldCheck className="relative w-28 h-28 text-brand-blue/70 drop-shadow-lg" />
             </div>
             <div className="p-6 flex-1 flex flex-col">
               <div className="text-[10px] uppercase tracking-wider font-bold text-brand-red mb-1">Désenfumage ERP</div>
