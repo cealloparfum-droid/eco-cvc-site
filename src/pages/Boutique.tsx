@@ -26,7 +26,10 @@ import {
   Settings,
   Wifi,
   ThermometerSun,
+  Plus,
+  Check,
 } from "lucide-react";
+import { useDevisList, usePersistentState } from "@/hooks/use-devis-list";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -197,6 +200,9 @@ const ProductCard = ({ product, index }: { product: Product; index: number }) =>
   const discount = product.priceOld
     ? Math.round(((product.priceOld - product.price) / product.priceOld) * 100)
     : 0;
+  const { has, toggle } = useDevisList();
+  const ref = `${product.brand}-${product.gamme}-${product.name}`.replace(/\s+/g, "_").toLowerCase();
+  const inDevis = has(ref);
 
   return (
     <motion.div
@@ -252,14 +258,37 @@ const ProductCard = ({ product, index }: { product: Product; index: number }) =>
             )}
           </div>
           <div className="text-[11px] text-muted-foreground mb-3">TTC · livré · pose en option</div>
-          <Link
-            to="/contact"
-            state={{ product: { name: product.name, ref: product.gamme, price: product.price } }}
-            className="group inline-flex w-full items-center justify-center gap-1.5 px-4 py-2.5 rounded-full bg-brand-blue text-white text-xs font-bold hover:bg-brand-bluedark transition-colors"
+          <button
+            type="button"
+            onClick={() =>
+              toggle({
+                ref,
+                name: product.name,
+                brand: product.brand,
+                price: product.price,
+                kw: product.kw,
+                category: product.category,
+              })
+            }
+            className={`group inline-flex w-full items-center justify-center gap-1.5 px-4 py-2.5 rounded-full text-xs font-bold transition-colors ${
+              inDevis
+                ? "bg-brand-green text-white hover:bg-emerald-600"
+                : "bg-brand-blue text-white hover:bg-brand-bluedark"
+            }`}
+            aria-pressed={inDevis}
           >
-            Devis pose comprise
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-          </Link>
+            {inDevis ? (
+              <>
+                <Check className="w-3.5 h-3.5" />
+                Dans mon devis
+              </>
+            ) : (
+              <>
+                <Plus className="w-3.5 h-3.5" />
+                Ajouter au devis
+              </>
+            )}
+          </button>
         </div>
       </div>
     </motion.div>
@@ -271,10 +300,10 @@ const ProductCard = ({ product, index }: { product: Product; index: number }) =>
 // ────────────────────────────────────────────────────────────
 
 const Boutique = () => {
-  const [activeCategory, setActiveCategory] = useState<ProductCategory | "all">("all");
-  const [activeBrand, setActiveBrand] = useState<string | "all">("all");
-  const [search, setSearch] = useState("");
-  const [sortBy, setSortBy] = useState<"price-asc" | "price-desc" | "kw-asc" | "kw-desc">("price-asc");
+  const [activeCategory, setActiveCategory] = usePersistentState<ProductCategory | "all">("ecocvc-boutique-cat", "all");
+  const [activeBrand, setActiveBrand] = usePersistentState<string | "all">("ecocvc-boutique-brand", "all");
+  const [search, setSearch] = usePersistentState<string>("ecocvc-boutique-search", "");
+  const [sortBy, setSortBy] = usePersistentState<"price-asc" | "price-desc" | "kw-asc" | "kw-desc">("ecocvc-boutique-sort", "price-asc");
   const [showFilters, setShowFilters] = useState(false);
 
   const brands = useMemo(() => Array.from(new Set(PRODUCTS.map((p) => p.brand))).sort(), []);
@@ -755,31 +784,7 @@ const Boutique = () => {
             />
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-14">
               {accessoires.map((a, i) => (
-                <motion.div
-                  key={a.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="bg-white rounded-2xl border border-border p-6 hover:shadow-lifted hover:border-brand-blue/40 transition-all"
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-11 h-11 rounded-xl bg-accent flex items-center justify-center">
-                      <a.icon className="w-5 h-5 text-brand-blue" />
-                    </div>
-                    <div className="text-lg font-extrabold text-slate-900">{formatEur(a.price)}</div>
-                  </div>
-                  <h3 className="font-extrabold text-slate-900 mb-2 leading-tight text-sm">{a.name}</h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed mb-4">{a.description}</p>
-                  <Link
-                    to="/contact"
-                    state={{ accessoire: a.name, price: a.price }}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-blue hover:text-brand-bluedark transition-colors"
-                  >
-                    Ajouter au devis
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </motion.div>
+                <AccessoireCard key={a.name} a={a} index={i} />
               ))}
             </div>
 
@@ -875,5 +880,62 @@ const FilterChip = ({
     {children}
   </button>
 );
+
+// ────────────────────────────────────────────────────────────
+// Accessoire card — toggle ajout au devis
+// ────────────────────────────────────────────────────────────
+
+interface Accessoire {
+  name: string;
+  description: string;
+  price: number;
+  icon: typeof Wind;
+}
+
+const AccessoireCard = ({ a, index }: { a: Accessoire; index: number }) => {
+  const { has, toggle } = useDevisList();
+  const ref = `accessoire-${a.name}`.replace(/\s+/g, "_").toLowerCase();
+  const inDevis = has(ref);
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.05 }}
+      className="bg-white rounded-2xl border border-border p-6 hover:shadow-lifted hover:border-brand-blue/40 transition-all flex flex-col"
+    >
+      <div className="flex items-start justify-between mb-4">
+        <div className="w-11 h-11 rounded-xl bg-accent flex items-center justify-center">
+          <a.icon className="w-5 h-5 text-brand-blue" />
+        </div>
+        <div className="text-lg font-extrabold text-slate-900">{formatEur(a.price)}</div>
+      </div>
+      <h3 className="font-extrabold text-slate-900 mb-2 leading-tight text-sm">{a.name}</h3>
+      <p className="text-xs text-muted-foreground leading-relaxed mb-4 flex-1">{a.description}</p>
+      <button
+        type="button"
+        onClick={() => toggle({ ref, name: a.name, price: a.price, brand: "Accessoire" })}
+        className={`inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-colors ${
+          inDevis
+            ? "bg-brand-green text-white hover:bg-emerald-600"
+            : "bg-brand-blue/10 text-brand-blue hover:bg-brand-blue hover:text-white"
+        }`}
+        aria-pressed={inDevis}
+      >
+        {inDevis ? (
+          <>
+            <Check className="w-3.5 h-3.5" />
+            Dans mon devis
+          </>
+        ) : (
+          <>
+            <Plus className="w-3.5 h-3.5" />
+            Ajouter au devis
+          </>
+        )}
+      </button>
+    </motion.div>
+  );
+};
 
 export default Boutique;

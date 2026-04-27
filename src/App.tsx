@@ -19,6 +19,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import AdvisorBot from "./components/AdvisorBot";
 import MobileStickyCTA from "./components/MobileStickyCTA";
+import DevisFloatingBar from "./components/DevisFloatingBar";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => (
         </Routes>
         <AdvisorBot />
         <MobileStickyCTA />
+        <DevisFloatingBar />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
