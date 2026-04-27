@@ -152,7 +152,7 @@ const About = () => {
           </div>
         </section>
 
-        <CTABand title="Parlons de votre projet" subtitle="On vous rappelle sous 24h pour un premier échange sans engagement." />
+        <CTABand variant="about" />
         <Footer />
       </div>
     </PageTransition>

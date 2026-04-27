@@ -17,6 +17,7 @@ import PageTransition from "@/components/PageTransition";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import CTABand from "@/components/CTABand";
+import TestimonialStrip from "@/components/TestimonialStrip";
 import photoToiture from "@/assets/photo-depannage-toiture.jpg";
 
 const pannes = [
@@ -243,10 +244,13 @@ const Depannage = () => {
           </div>
         </section>
 
-        <CTABand
-          title="Votre clim ne fonctionne plus ?"
-          subtitle="Un technicien est disponible. Appelez maintenant ou demandez un rappel."
+        <TestimonialStrip
+          context="depannage"
+          title="Pannes résolues, clients soulagés"
+          className="bg-slate-50/60 border-y border-border"
         />
+
+        <CTABand variant="depannage" />
         <Footer />
       </div>
     </PageTransition>

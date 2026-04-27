@@ -29,6 +29,8 @@ import PageTransition from "@/components/PageTransition";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import CTABand from "@/components/CTABand";
+import LeadCaptureCard from "@/components/LeadCaptureCard";
+import TestimonialStrip from "@/components/TestimonialStrip";
 
 import heroLifestyle from "@/assets/cold-room/hero-cold-room-chic.jpg";
 import panasonicLifestyle from "@/assets/cold-room/brand-panasonic-cr-range.jpg";
@@ -812,6 +814,24 @@ const ChambreFroide = () => {
                 </motion.div>
               </div>
             </div>
+
+            <div className="mt-10 max-w-5xl mx-auto">
+              <LeadCaptureCard
+                context="chambre-froide"
+                summary={`${result.volume} m³ · ${result.kw.toFixed(1)} kW · ${result.reco.brand} ${result.reco.name}`}
+                extraData={{
+                  surface_m2: surface,
+                  hauteur_m: hauteur,
+                  volume_m3: result.volume,
+                  type_chambre: coldType,
+                  produits: product,
+                  isolation,
+                  ouvertures: doorOpenings,
+                  modele_recommande: `${result.reco.brand} ${result.reco.name}`,
+                  reference: result.reco.reference,
+                }}
+              />
+            </div>
           </div>
         </section>
 
@@ -1213,10 +1233,13 @@ const ChambreFroide = () => {
           </div>
         </section>
 
-        <CTABand
-          title="Un projet de chambre froide ?"
-          subtitle="Bilan thermique gratuit chez vous, choix de la marque (Panasonic ou Emerson) selon votre usage, et devis détaillé sous 48h."
+        <TestimonialStrip
+          context="froid"
+          title="Des artisans du froid satisfaits"
+          className="bg-slate-50/60 border-y border-border"
         />
+
+        <CTABand variant="chambre-froide" />
         <Footer />
       </div>
     </PageTransition>

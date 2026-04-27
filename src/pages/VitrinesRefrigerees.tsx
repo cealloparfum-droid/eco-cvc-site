@@ -32,6 +32,8 @@ import PageTransition from "@/components/PageTransition";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import CTABand from "@/components/CTABand";
+import LeadCaptureCard from "@/components/LeadCaptureCard";
+import TestimonialStrip from "@/components/TestimonialStrip";
 
 import heroVitrines from "@/assets/vitrines/hero-marbre-premium.jpg";
 import vitrineNeutreLed from "@/assets/vitrines/vitrine-neutre-bois-led.jpg";
@@ -713,6 +715,20 @@ const VitrinesRefrigerees = () => {
                 </motion.div>
               </div>
             </div>
+
+            <div className="mt-10 max-w-5xl mx-auto">
+              <LeadCaptureCard
+                context="vitrines"
+                summary={`${meta.label} · ${lineaire.toFixed(2)} m linéaire · ${resultEffective.modele?.code ?? "Sur mesure"}`}
+                extraData={{
+                  famille,
+                  lineaire_m: lineaire,
+                  plateau,
+                  etagere: effectiveEtagere,
+                  modele_recommande: resultEffective.modele?.code ?? "sur-mesure",
+                }}
+              />
+            </div>
           </div>
         </section>
 
@@ -1220,10 +1236,13 @@ const VitrinesRefrigerees = () => {
           </div>
         </section>
 
-        <CTABand
-          title="Un projet de vitrine ?"
-          subtitle="Visite gratuite chez vous, plan d'implantation 2D/3D, fabrication 3A Distribution sur mesure et installation par eco cvc en Rhône-Alpes."
+        <TestimonialStrip
+          context="froid"
+          title="Vitrines posées, commerces transformés"
+          className="bg-slate-50/60 border-y border-border"
         />
+
+        <CTABand variant="vitrines" />
         <Footer />
       </div>
     </PageTransition>

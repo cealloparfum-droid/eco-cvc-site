@@ -15,6 +15,7 @@ import PageTransition from "@/components/PageTransition";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import CTABand from "@/components/CTABand";
+import TestimonialStrip from "@/components/TestimonialStrip";
 import photoFrigo from "@/assets/photo-maintenance-frigoriste.jpeg";
 import photoMaintenancePro from "@/assets/photo-maintenance-pro.jpg";
 
@@ -243,10 +244,13 @@ const Maintenance = () => {
           </div>
         </section>
 
-        <CTABand
-          title="Un contrat d'entretien clé en main"
-          subtitle="Oubliez la date de votre prochaine visite : on s'occupe de tout."
+        <TestimonialStrip
+          context="maintenance"
+          title="Ils ont signé un contrat d'entretien chez nous"
+          className="bg-slate-50/60 border-y border-border"
         />
+
+        <CTABand variant="maintenance" />
         <Footer />
       </div>
     </PageTransition>

@@ -19,6 +19,7 @@ import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
+import LeadCaptureCard from "@/components/LeadCaptureCard";
 import jSeries from "@/assets/catalog/j-series-cozy.jpg";
 import cSeries from "@/assets/catalog/c-series-living.jpg";
 import qSeries from "@/assets/catalog/q-series-quiet.jpg";
@@ -402,6 +403,23 @@ const Calculateur = () => {
                   </div>
                 </motion.div>
               </div>
+            </div>
+
+            <div className="mt-10 max-w-5xl mx-auto">
+              <LeadCaptureCard
+                context="calculateur"
+                summary={`${result.kw.toFixed(1)} kW · ${result.btu} BTU/h · ${result.reco.name}`}
+                extraData={{
+                  surface_m2: surface,
+                  hauteur_m: hauteur,
+                  piece,
+                  isolation: insulation,
+                  exposition,
+                  etage,
+                  occupants,
+                  modele_recommande: result.reco.name,
+                }}
+              />
             </div>
           </div>
         </section>

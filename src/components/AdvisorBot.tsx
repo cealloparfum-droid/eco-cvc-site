@@ -358,6 +358,9 @@ const AdvisorBot = () => {
     zip: "",
     note: "",
   });
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
 
   const panelRef = useRef<HTMLDivElement>(null);
 
@@ -390,6 +393,9 @@ const AdvisorBot = () => {
     setAnswers([]);
     setTextValue("");
     setCoords({ name: "", email: "", phone: "", zip: "", note: "" });
+    setSending(false);
+    setSent(false);
+    setSendError(null);
   };
 
   const close = () => {
@@ -492,6 +498,57 @@ const AdvisorBot = () => {
     const subject = encodeURIComponent(buildEmailSubject());
     const body = encodeURIComponent(buildEmailBody());
     return `mailto:${TARGET_EMAIL}?subject=${subject}&body=${body}`;
+  };
+
+  /**
+   * Envoi direct via Web3Forms (https://web3forms.com/) — gratuit, sans compte requis côté client.
+   * Pour activer, créez un compte gratuit, copiez votre access_key et ajoutez-la dans .env :
+   *   VITE_WEB3FORMS_KEY=votre-cle
+   * Sans clé configurée, on retombe automatiquement sur l'envoi mailto:.
+   */
+  const sendDirect = async () => {
+    setSendError(null);
+    const apiKey = (import.meta.env.VITE_WEB3FORMS_KEY as string | undefined) || "";
+
+    if (!apiKey) {
+      // Fallback : ouvre le client mail
+      window.location.href = mailHref();
+      setSent(true);
+      return;
+    }
+
+    setSending(true);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: apiKey,
+          subject: buildEmailSubject(),
+          from_name: "eco cvc · AdvisorBot",
+          botcheck: "",
+          message: buildEmailBody(),
+          service: SERVICES.find((s) => s.key === service)?.label || "Demande",
+          nom: coords.name,
+          email: coords.email,
+          telephone: coords.phone,
+          code_postal: coords.zip,
+          note: coords.note,
+          ...Object.fromEntries(answers.map((a, i) => [`q${i + 1}_${a.question.slice(0, 30)}`, a.value])),
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSent(true);
+      } else {
+        throw new Error(data.message || "Erreur d'envoi");
+      }
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "Erreur d'envoi";
+      setSendError(msg);
+    } finally {
+      setSending(false);
+    }
   };
 
   const totalSteps = currentFlow.length;
@@ -814,13 +871,35 @@ const AdvisorBot = () => {
         </div>
 
         <div className="space-y-2">
-          <a
-            href={mailHref()}
-            className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-brand-blue hover:bg-brand-bluedark text-white font-bold text-sm transition-colors shadow-lifted"
-          >
-            <Mail className="w-4 h-4" />
-            Envoyer par e-mail
-          </a>
+          {sent ? (
+            <div className="rounded-2xl border border-brand-green/30 bg-brand-green/10 p-4 text-center">
+              <CheckCircle2 className="w-6 h-6 text-brand-green mx-auto mb-2" />
+              <div className="text-sm font-bold text-slate-900 mb-1">Demande envoyée !</div>
+              <p className="text-xs text-slate-600">
+                Un technicien vous rappelle au {coords.phone} sous 24h ouvrées.
+              </p>
+            </div>
+          ) : (
+            <>
+              <button
+                type="button"
+                onClick={sendDirect}
+                disabled={sending}
+                className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-brand-blue hover:bg-brand-bluedark text-white font-bold text-sm transition-colors shadow-lifted disabled:opacity-60"
+              >
+                <Mail className="w-4 h-4" />
+                {sending ? "Envoi en cours..." : "Envoyer ma demande"}
+              </button>
+              {sendError && (
+                <a
+                  href={mailHref()}
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full border border-brand-red/30 text-brand-red font-semibold text-xs hover:bg-brand-red/5 transition-colors"
+                >
+                  Échec — ouvrir mon client mail à la place
+                </a>
+              )}
+            </>
+          )}
           <div className="grid grid-cols-2 gap-2">
             <a
               href={PHONE_1_HREF}

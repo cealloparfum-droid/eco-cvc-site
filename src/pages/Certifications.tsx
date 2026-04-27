@@ -237,10 +237,7 @@ const Certifications = () => {
           </div>
         </section>
 
-        <CTABand
-          title="Votre projet mérite un artisan certifié"
-          subtitle="RGE QualiPAC, assurance décennale, partenaires agréés. Vous êtes entre de bonnes mains."
-        />
+        <CTABand variant="certifications" />
         <Footer />
       </div>
     </PageTransition>

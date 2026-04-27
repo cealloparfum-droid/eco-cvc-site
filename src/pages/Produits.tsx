@@ -517,7 +517,7 @@ const Produits = () => {
           </div>
         </section>
 
-        <CTABand title="Un projet d'installation AUX ?" subtitle="Partenaire officiel AUX France, matériel en stock et garantie constructeur étendue." />
+        <CTABand variant="produits" />
         <Footer />
       </div>
     </PageTransition>

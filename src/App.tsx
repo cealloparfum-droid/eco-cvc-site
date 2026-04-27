@@ -18,6 +18,7 @@ import Ventilation from "./pages/Ventilation";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import AdvisorBot from "./components/AdvisorBot";
+import MobileStickyCTA from "./components/MobileStickyCTA";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <AdvisorBot />
+        <MobileStickyCTA />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

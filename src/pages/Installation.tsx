@@ -17,6 +17,7 @@ import PageTransition from "@/components/PageTransition";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import CTABand from "@/components/CTABand";
+import TestimonialStrip from "@/components/TestimonialStrip";
 import photoInstall from "@/assets/photo-install-interieur.jpeg";
 import photoRoof from "@/assets/photo-install-toit.jpeg";
 import photoIndoorAux from "@/assets/photo-installation-interieur-clim.jpg";
@@ -299,10 +300,13 @@ const Installation = () => {
           </div>
         </section>
 
-        <CTABand
-          title="Un projet d'installation en tête ?"
-          subtitle="Visite technique gratuite et devis détaillé sous 24h. Sans engagement."
+        <TestimonialStrip
+          context="installation"
+          title="Des installations qui parlent d'elles-mêmes"
+          className="bg-slate-50/60 border-y border-border"
         />
+
+        <CTABand variant="installation" />
         <Footer />
       </div>
     </PageTransition>

@@ -34,6 +34,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
+import LeadCaptureCard from "@/components/LeadCaptureCard";
 
 import heroImg from "@/assets/ventilation/hero-cuisine-pro.jpg";
 import hotteDynamique from "@/assets/ventilation/hotte-dynamique-trapezoidale.jpg";
@@ -1328,6 +1329,13 @@ const Ventilation = () => {
 
       {/* CALCULATEUR */}
       <CalculatorCard quote={quote} />
+
+      {/* CAPTURE EMAIL POST-CALC */}
+      <section className="py-8 md:py-10 bg-slate-50/60">
+        <div className="container mx-auto max-w-5xl">
+          <LeadCaptureCard context="ventilation" />
+        </div>
+      </section>
 
       {/* Sticky catalog nav */}
       <div className="sticky top-28 z-30 bg-white/90 backdrop-blur-md border-y border-border">

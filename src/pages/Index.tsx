@@ -445,7 +445,7 @@ const Index = () => {
           </div>
         </section>
 
-        <CTABand />
+        <CTABand variant="default" />
         <Footer />
       </div>
     </PageTransition>

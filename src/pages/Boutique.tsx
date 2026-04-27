@@ -33,6 +33,7 @@ import PageTransition from "@/components/PageTransition";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
 import CTABand from "@/components/CTABand";
+import TestimonialStrip from "@/components/TestimonialStrip";
 
 import { PRODUCTS, type Product, type ProductCategory } from "@/data/products";
 
@@ -836,10 +837,13 @@ const Boutique = () => {
           </div>
         </section>
 
-        <CTABand
-          title="Une question, un projet ?"
-          subtitle="Visite gratuite chez vous, dimensionnement précis et devis matériel + pose sous 48h. Pose certifiée F-Gaz catégorie 1 partout en Rhône-Alpes."
+        <TestimonialStrip
+          context="boutique"
+          title="Acheteurs ravis, climatisations qui durent"
+          className="bg-slate-50/60 border-y border-border"
         />
+
+        <CTABand variant="boutique" />
         <Footer />
       </div>
     </PageTransition>
