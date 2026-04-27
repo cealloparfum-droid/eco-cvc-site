@@ -1793,10 +1793,20 @@ const Ventilation = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="rounded-3xl border border-border bg-white shadow-soft overflow-hidden flex flex-col hover:shadow-lifted hover:-translate-y-1 transition-all"
             >
-              <div className="aspect-[5/4] bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-8 relative">
-                <img src={c.img} alt={c.title} className="max-w-full max-h-full object-contain" />
+              <div className="relative aspect-[5/4] bg-gradient-to-br from-slate-100 via-white to-slate-200 flex items-center justify-center p-5 overflow-hidden">
+                {/* halo lumineux */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="w-3/4 h-3/4 rounded-full bg-brand-blue/10 blur-3xl" />
+                </div>
+                {/* reflet sol */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-6 bg-slate-900/15 blur-xl rounded-full" />
+                <img
+                  src={c.img}
+                  alt={c.title}
+                  className="relative max-w-full max-h-full object-contain drop-shadow-2xl"
+                />
                 {(c as { badge?: string }).badge && (
-                  <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-brand-red text-white text-[10px] font-bold tracking-widest uppercase">
+                  <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-brand-red text-white text-[10px] font-bold tracking-widest uppercase shadow-soft z-10">
                     {(c as { badge?: string }).badge}
                   </div>
                 )}
