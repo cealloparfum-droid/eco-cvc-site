@@ -1712,8 +1712,12 @@ const Ventilation = () => {
         subtitle="Groupe TMD : ventilateurs centrifuges à double ouïe et basse pression. Volute en acier galvanisé. Turbine à action, dotée d'aubes inversées. Moteur IP54, classe B, avec refoulement vertical centré sur toute la longueur."
       >
         <div className="grid lg:grid-cols-[1.2fr,1fr] gap-8 items-center mb-10">
-          <div className="rounded-3xl bg-gradient-to-br from-slate-50 to-slate-100 border border-border p-8 shadow-soft">
-            <img src={moteurDirect} alt="Moteur direct TMD" className="w-full h-auto object-contain" />
+          <div className="rounded-3xl border border-border shadow-lifted overflow-hidden bg-slate-900">
+            <img
+              src={moteurDirect}
+              alt="Moteur direct TMD — ventilateur centrifuge à double ouïe"
+              className="w-full h-auto object-cover"
+            />
           </div>
           <div>
             <ul className="space-y-3">
