@@ -209,9 +209,14 @@ const Maintenance = () => {
                   }`}
                 >
                   {plan.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-brand-red text-white text-[10px] font-bold tracking-widest uppercase">
-                      Le plus choisi
-                    </div>
+                    <>
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-brand-red text-white text-[10px] font-bold tracking-widest uppercase shadow-lifted">
+                        Le plus choisi
+                      </div>
+                      <div className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-brand-green/15 text-brand-green text-[10px] font-bold border border-brand-green/30">
+                        312 contrats actifs
+                      </div>
+                    </>
                   )}
                   <CalendarCheck className={`w-8 h-8 mb-4 ${plan.popular ? "text-brand-blue" : "text-brand-green"}`} />
                   <h3 className="text-2xl font-extrabold text-slate-900 mb-1">{plan.name}</h3>
@@ -241,6 +246,99 @@ const Maintenance = () => {
                 </motion.div>
               ))}
             </div>
+
+            {/* Tableau comparatif détaillé */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mt-14 max-w-5xl mx-auto"
+            >
+              <div className="text-center mb-6">
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent text-brand-bluedark text-[10px] font-bold tracking-widest uppercase mb-3">
+                  Comparatif détaillé
+                </span>
+                <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900">
+                  Quelle <span className="text-gradient-brand">formule</span> pour vous ?
+                </h3>
+              </div>
+
+              <div className="bg-white rounded-3xl border border-border shadow-soft overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="bg-slate-50/80 border-b border-border">
+                        <th className="text-left px-5 md:px-6 py-4 font-bold text-slate-900 w-2/5">Prestation</th>
+                        <th className="px-3 py-4 font-bold text-foreground/70 text-center min-w-[100px]">
+                          Essentiel
+                          <div className="text-[11px] font-normal text-muted-foreground">89 €/an</div>
+                        </th>
+                        <th className="px-3 py-4 font-extrabold text-brand-blue text-center min-w-[100px] bg-accent/30">
+                          Confort
+                          <div className="text-[11px] font-normal text-brand-bluedark">149 €/an</div>
+                        </th>
+                        <th className="px-3 py-4 font-bold text-foreground/70 text-center min-w-[100px]">
+                          Sérénité
+                          <div className="text-[11px] font-normal text-muted-foreground">349 €/an</div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { l: "Visite annuelle planifiée", e: true, c: true, s: true },
+                        { l: "Contrôle d'étanchéité fluide frigorigène", e: true, c: true, s: true },
+                        { l: "Nettoyage filtres & échangeurs", e: true, c: true, s: true },
+                        { l: "Rapport d'entretien normatif", e: true, c: true, s: true },
+                        { l: "Désinfection bactéricide", e: false, c: true, s: true },
+                        { l: "Déplacement & main-d'œuvre inclus", e: false, c: true, s: true },
+                        { l: "Priorité sur les dépannages (sous 24h)", e: false, c: true, s: true },
+                        { l: "Remise sur les pièces", e: "—", c: "−15 %", s: "−25 %" },
+                        { l: "Interventions illimitées", e: false, c: false, s: true },
+                        { l: "Pièces standard comprises", e: false, c: false, s: true },
+                        { l: "Astreinte 7j/7 (week-end + jours fériés)", e: false, c: false, s: true },
+                        { l: "Prêt d'appareil en cas de panne longue", e: false, c: false, s: true },
+                        { l: "Engagement", e: "1 an", c: "1 an", s: "2 ans" },
+                      ].map((row, idx) => (
+                        <tr key={row.l} className={idx % 2 ? "bg-slate-50/40" : ""}>
+                          <td className="px-5 md:px-6 py-3 text-foreground/85">{row.l}</td>
+                          {(["e", "c", "s"] as const).map((k) => (
+                            <td
+                              key={k}
+                              className={`px-3 py-3 text-center ${k === "c" ? "bg-accent/15" : ""}`}
+                            >
+                              {typeof row[k] === "boolean" ? (
+                                row[k] ? (
+                                  <Check className="w-5 h-5 text-brand-green inline" strokeWidth={2.5} />
+                                ) : (
+                                  <span className="text-muted-foreground/50">—</span>
+                                )
+                              ) : (
+                                <span className="font-semibold text-foreground/85 text-xs">
+                                  {row[k] as string}
+                                </span>
+                              )}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="p-4 md:p-5 bg-slate-50/60 border-t border-border text-xs text-muted-foreground text-center">
+                  Tous nos contrats sont sans engagement après la première année · Résiliation par lettre simple · TVA 10 % comprise.
+                </div>
+              </div>
+
+              <div className="mt-6 text-center">
+                <a
+                  href="/contact?service=maintenance"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white font-bold text-sm hover:bg-brand-bluedark transition-colors shadow-lifted"
+                >
+                  Choisir mon forfait — devis sous 24 h
+                </a>
+              </div>
+            </motion.div>
           </div>
         </section>
 

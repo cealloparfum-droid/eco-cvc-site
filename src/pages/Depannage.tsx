@@ -11,6 +11,7 @@ import {
   Snowflake,
   Wind,
 } from "lucide-react";
+import CallbackForm from "@/components/CallbackForm";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -109,6 +110,13 @@ const Depannage = () => {
                 </a>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Demande de rappel rapide */}
+        <section className="py-12 md:py-14 -mt-6 relative z-10">
+          <div className="container mx-auto max-w-3xl">
+            <CallbackForm />
           </div>
         </section>
 

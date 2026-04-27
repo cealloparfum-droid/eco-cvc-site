@@ -22,6 +22,7 @@ import PageTransition from "@/components/PageTransition";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
 import CTABand from "@/components/CTABand";
+import StatsBand from "@/components/StatsBand";
 import photoExt1 from "@/assets/photo-install-exterieur-1.jpeg";
 import photoExt3 from "@/assets/photo-install-exterieur-3.jpeg";
 import photoInt from "@/assets/photo-install-interieur.jpeg";
@@ -115,6 +116,9 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* Stats band — preuve sociale animée */}
+        <StatsBand />
 
         {/* Promotional offer */}
         <PromoOffer />

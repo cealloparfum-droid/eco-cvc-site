@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Award, ShieldCheck, FileCheck, BadgeCheck, Leaf } from "lucide-react";
+import { Award, ShieldCheck, FileCheck, BadgeCheck, Leaf, ExternalLink, Euro, Banknote, Wallet, Sparkles, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -20,6 +21,8 @@ const certifs = [
     description:
       "Reconnu par l'État, Qualit'EnR est l'organisme qui délivre les qualifications RGE QualiPAC, QualiPV, QualiBois, QualiSol… Notre adhésion garantit le suivi continu de nos compétences et notre engagement qualité dans la transition énergétique.",
     logo: logoQualitEnR,
+    verifyUrl: "https://www.qualit-enr.org/professionnels/",
+    verifyLabel: "Annuaire Qualit'EnR",
   },
   {
     code: "RGE QualiPAC",
@@ -27,6 +30,8 @@ const certifs = [
     description:
       "Délivrée par Qualit'EnR, cette qualification atteste de notre compétence sur les pompes à chaleur air-air, air-eau, eau-eau et hybrides. Indispensable pour MaPrimeRénov' et les CEE.",
     logo: logoQualiPAC,
+    verifyUrl: "https://france-renov.gouv.fr/annuaire-rge",
+    verifyLabel: "Annuaire RGE — France Rénov'",
   },
   {
     code: "RGE QualiPV",
@@ -34,6 +39,8 @@ const certifs = [
     description:
       "Délivrée par Qualit'EnR, elle atteste de notre maîtrise des installations solaires photovoltaïques. Permet de proposer des solutions hybrides clim + solaire et d'accéder aux aides dédiées.",
     logo: logoQualiPV,
+    verifyUrl: "https://france-renov.gouv.fr/annuaire-rge",
+    verifyLabel: "Annuaire RGE — France Rénov'",
   },
   {
     code: "MAAF Pro",
@@ -41,6 +48,8 @@ const certifs = [
     description:
       "Notre garantie décennale est souscrite auprès de MAAF Pro, partenaire de référence des artisans français depuis 1950. Elle couvre vos chantiers pendant 10 ans après la réception des travaux : un véritable gage de qualité et de sérieux pour nos clients.",
     logo: logoMaafPro,
+    verifyUrl: "https://www.maaf.fr/professionnels",
+    verifyLabel: "MAAF Pro · Assurance artisans",
   },
   {
     code: "Bureau Veritas",
@@ -48,8 +57,52 @@ const certifs = [
     description:
       "Organisme international fondé en 1828, Bureau Veritas vérifie nos process qualité et notre conformité réglementaire. Une garantie supplémentaire pour vos chantiers exigeants.",
     logo: logoBureauVeritas,
+    verifyUrl: "https://www.bureauveritas.fr/",
+    verifyLabel: "Bureau Veritas · Officiel",
   },
 ];
+
+const aides = [
+  {
+    code: "MaPrimeRénov'",
+    montant: "Jusqu'à 5 000 €",
+    icon: Banknote,
+    desc: "Aide de l'État pour la rénovation énergétique. Versée directement par l'Anah après travaux. Cumulable avec les CEE.",
+    eligibility: "Sous conditions de revenus · résidence principale · 15 ans d'âge",
+    color: "blue" as const,
+  },
+  {
+    code: "Certificats Économies d'Énergie (CEE)",
+    montant: "Jusqu'à 4 000 €",
+    icon: Sparkles,
+    desc: "Prime versée par les fournisseurs d'énergie pour financer vos travaux de rénovation thermique. Sans condition de revenus.",
+    eligibility: "Tous propriétaires · résidence principale ou secondaire",
+    color: "green" as const,
+  },
+  {
+    code: "TVA réduite 5,5 %",
+    montant: "−14,5 % vs 20 %",
+    icon: Euro,
+    desc: "Taux de TVA réduit appliqué directement sur la facture pour les pompes à chaleur installées par un professionnel RGE.",
+    eligibility: "Logement de plus de 2 ans · pose par artisan RGE",
+    color: "amber" as const,
+  },
+  {
+    code: "Éco-PTZ",
+    montant: "Jusqu'à 50 000 €",
+    icon: Wallet,
+    desc: "Prêt à taux zéro sur 20 ans pour financer le reste à charge de vos travaux. Compatible avec les autres aides.",
+    eligibility: "Sans condition de revenus · résidence principale",
+    color: "red" as const,
+  },
+];
+
+const aideTints = {
+  blue: "from-brand-blue/10 to-brand-sky/10 border-brand-blue/30 text-brand-blue",
+  green: "from-brand-green/10 to-emerald-100/30 border-brand-green/30 text-brand-green",
+  amber: "from-amber-100/40 to-yellow-100/30 border-amber-300/50 text-amber-600",
+  red: "from-brand-red/10 to-orange-100/30 border-brand-red/30 text-brand-red",
+};
 
 const partners = [
   {
@@ -112,7 +165,17 @@ const Certifications = () => {
                     <div>
                       <h3 className="text-xl md:text-2xl font-extrabold text-slate-900 mb-1">{c.code}</h3>
                       <div className="text-sm font-semibold text-muted-foreground mb-3">{c.name}</div>
-                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{c.description}</p>
+                      <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">{c.description}</p>
+                      <a
+                        href={c.verifyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-blue hover:text-brand-bluedark transition-colors group"
+                      >
+                        <BadgeCheck className="w-3.5 h-3.5 text-brand-green" />
+                        Vérifier sur {c.verifyLabel}
+                        <ExternalLink className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
+                      </a>
                     </div>
                   </div>
                 </motion.div>
@@ -233,6 +296,90 @@ const Certifications = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Mémo Aides 2026 */}
+        <section className="py-16 md:py-24 bg-gradient-to-br from-brand-bluedark via-brand-blue to-slate-900 text-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-grid opacity-[0.06]" />
+          <motion.div
+            className="absolute inset-0 opacity-30"
+            animate={{
+              background: [
+                "radial-gradient(500px circle at 10% 30%, rgba(59,130,246,0.4), transparent 60%)",
+                "radial-gradient(500px circle at 90% 70%, rgba(16,185,129,0.3), transparent 60%)",
+                "radial-gradient(500px circle at 10% 30%, rgba(59,130,246,0.4), transparent 60%)",
+              ],
+            }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          <div className="container mx-auto relative">
+            <div className="max-w-3xl mx-auto text-center mb-14">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-white text-[10px] font-bold tracking-widest uppercase mb-4">
+                <Sparkles className="w-3 h-3" />
+                Aides 2026
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold font-display leading-tight mb-4">
+                Avec un artisan RGE, vous cumulez <span className="text-gradient-hot">jusqu'à 9 000 €</span> d'aides.
+              </h2>
+              <p className="text-lg text-white/85 leading-relaxed">
+                MaPrimeRénov', CEE, TVA 5,5 %, Éco-PTZ : nos certifications ouvrent l'accès aux principales aides de l'État. On vous accompagne dans le montage de chaque dossier.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+              {aides.map((a, i) => (
+                <motion.div
+                  key={a.code}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08 }}
+                  className={`bg-gradient-to-br ${aideTints[a.color]} backdrop-blur-md rounded-2xl border bg-white/5 p-6 hover:bg-white/10 transition-colors`}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="shrink-0 w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center">
+                      <a.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-baseline justify-between gap-3 mb-1">
+                        <h3 className="text-lg font-extrabold text-white">{a.code}</h3>
+                        <span className="text-sm font-bold text-white/95 whitespace-nowrap">{a.montant}</span>
+                      </div>
+                      <p className="text-sm text-white/80 leading-relaxed mb-3">{a.desc}</p>
+                      <div className="text-[11px] text-white/65 border-t border-white/15 pt-2.5">
+                        <span className="font-bold">Éligibilité :</span> {a.eligibility}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-10 max-w-3xl mx-auto rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 p-6 text-center">
+              <p className="text-sm text-white/85 mb-4">
+                Vous voulez savoir précisément à combien vous avez droit ? On simule pour vous en moins d'une minute.
+              </p>
+              <Link
+                to="/contact?service=installation&aide=mpr"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-brand-bluedark font-extrabold hover:bg-slate-100 transition-colors shadow-lifted"
+              >
+                Estimer mes aides en 1 min
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <div className="mt-3 text-[11px] text-white/60">
+                Source officielle :{" "}
+                <a
+                  href="https://france-renov.gouv.fr/aides"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-white"
+                >
+                  france-renov.gouv.fr
+                </a>
+              </div>
             </div>
           </div>
         </section>
