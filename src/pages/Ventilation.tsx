@@ -1582,8 +1582,18 @@ const Ventilation = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {/* ALVENE */}
           <div className="rounded-3xl border border-border bg-white shadow-soft overflow-hidden flex flex-col">
-            <div className="aspect-[4/3] bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-8">
-              <img src={variateurAlvene} alt="Variateur ALVENE" className="max-h-full object-contain" />
+            <div className="relative aspect-[4/5] bg-gradient-to-br from-slate-100 via-white to-slate-200 flex items-center justify-center p-5 overflow-hidden">
+              {/* halo lumineux derrière le produit */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-3/4 h-3/4 rounded-full bg-brand-blue/10 blur-3xl" />
+              </div>
+              {/* reflet sol */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-6 bg-slate-900/15 blur-xl rounded-full" />
+              <img
+                src={variateurAlvene}
+                alt="Variateur ALVENE"
+                className="relative max-h-full max-w-full object-contain drop-shadow-2xl"
+              />
             </div>
             <div className="p-6 flex-1 flex flex-col">
               <div className="text-[10px] uppercase tracking-wider font-bold text-brand-red mb-1">Variateur de fréquence</div>
@@ -1614,8 +1624,16 @@ const Ventilation = () => {
             <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-brand-red text-white text-[10px] font-bold tracking-widest uppercase z-10">
               Premium
             </div>
-            <div className="aspect-[4/3] bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-8">
-              <img src={variateurSenseo} alt="SENSEO DRIVE" className="max-h-full object-contain" />
+            <div className="relative aspect-[4/5] bg-gradient-to-br from-slate-100 via-white to-slate-200 flex items-center justify-center p-5 overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-3/4 h-3/4 rounded-full bg-brand-blue/10 blur-3xl" />
+              </div>
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-6 bg-slate-900/15 blur-xl rounded-full" />
+              <img
+                src={variateurSenseo}
+                alt="SENSEO DRIVE"
+                className="relative max-h-full max-w-full object-contain drop-shadow-2xl"
+              />
             </div>
             <div className="p-6 flex-1 flex flex-col">
               <div className="text-[10px] uppercase tracking-wider font-bold text-brand-red mb-1">Haute performance</div>
@@ -1643,8 +1661,11 @@ const Ventilation = () => {
           </div>
           {/* AUTOTRANSFOS */}
           <div className="rounded-3xl border border-border bg-white shadow-soft overflow-hidden flex flex-col">
-            <div className="aspect-[4/3] bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-8 relative">
-              <Settings className="w-24 h-24 text-brand-blue/40" />
+            <div className="relative aspect-[4/5] bg-gradient-to-br from-slate-100 via-white to-slate-200 flex items-center justify-center p-5 overflow-hidden">
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-3/4 h-3/4 rounded-full bg-brand-blue/10 blur-3xl" />
+              </div>
+              <Settings className="relative w-32 h-32 text-brand-blue/40" />
               <div className="absolute bottom-4 left-4 px-3 py-1 rounded-full bg-white/95 backdrop-blur-sm text-[10px] font-bold tracking-wider uppercase text-brand-bluedark shadow-soft">
                 5 positions
               </div>
