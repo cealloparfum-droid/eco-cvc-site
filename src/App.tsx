@@ -23,6 +23,7 @@ import NotFound from "./pages/NotFound";
 import AdvisorBot from "./components/AdvisorBot";
 import MobileStickyCTA from "./components/MobileStickyCTA";
 import DevisFloatingBar from "./components/DevisFloatingBar";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const queryClient = new QueryClient();
 
@@ -32,28 +33,30 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/qui-sommes-nous" element={<About />} />
-          <Route path="/installation" element={<Installation />} />
-          <Route path="/maintenance" element={<Maintenance />} />
-          <Route path="/depannage" element={<Depannage />} />
-          <Route path="/produits" element={<Produits />} />
-          <Route path="/certifications" element={<Certifications />} />
-          <Route path="/calculateur" element={<Calculateur />} />
-          <Route path="/chambre-froide" element={<ChambreFroide />} />
-          <Route path="/vitrines-refrigerees" element={<VitrinesRefrigerees />} />
-          <Route path="/boutique" element={<Boutique />} />
-          <Route path="/ventilation" element={<Ventilation />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/mentions-legales" element={<MentionsLegales />} />
-          <Route path="/cgv" element={<CGV />} />
-          <Route path="/confidentialite" element={<Confidentialite />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <AdvisorBot />
-        <MobileStickyCTA />
-        <DevisFloatingBar />
+        <ErrorBoundary>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/qui-sommes-nous" element={<About />} />
+            <Route path="/installation" element={<Installation />} />
+            <Route path="/maintenance" element={<Maintenance />} />
+            <Route path="/depannage" element={<Depannage />} />
+            <Route path="/produits" element={<Produits />} />
+            <Route path="/certifications" element={<Certifications />} />
+            <Route path="/calculateur" element={<Calculateur />} />
+            <Route path="/chambre-froide" element={<ChambreFroide />} />
+            <Route path="/vitrines-refrigerees" element={<VitrinesRefrigerees />} />
+            <Route path="/boutique" element={<Boutique />} />
+            <Route path="/ventilation" element={<Ventilation />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/mentions-legales" element={<MentionsLegales />} />
+            <Route path="/cgv" element={<CGV />} />
+            <Route path="/confidentialite" element={<Confidentialite />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <AdvisorBot />
+          <MobileStickyCTA />
+          <DevisFloatingBar />
+        </ErrorBoundary>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

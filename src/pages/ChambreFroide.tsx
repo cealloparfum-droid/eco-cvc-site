@@ -825,7 +825,7 @@ const ChambreFroide = () => {
                   volume_m3: result.volume,
                   type_chambre: coldType,
                   produits: product,
-                  isolation,
+                  isolation: insulation,
                   ouvertures: doorOpenings,
                   modele_recommande: `${result.reco.brand} ${result.reco.name}`,
                   reference: result.reco.reference,
