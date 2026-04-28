@@ -16,6 +16,7 @@ import {
   LifeBuoy,
   ShoppingBag,
   Refrigerator,
+  Mic,
 } from "lucide-react";
 import { submitForm } from "@/lib/submit-form";
 import { MicButton } from "@/components/MicButton";
@@ -40,6 +41,7 @@ type ServiceKey =
 
 type Step =
   | "welcome"
+  | "voice"
   | "questions"
   | "coordinates"
   | "summary";
@@ -353,6 +355,7 @@ const AdvisorBot = () => {
   const [qIndex, setQIndex] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [textValue, setTextValue] = useState("");
+  const [voiceText, setVoiceText] = useState("");
   const [coords, setCoords] = useState({
     name: "",
     email: "",
@@ -394,6 +397,7 @@ const AdvisorBot = () => {
     setQIndex(0);
     setAnswers([]);
     setTextValue("");
+    setVoiceText("");
     setCoords({ name: "", email: "", phone: "", zip: "", note: "" });
     setSending(false);
     setSent(false);
@@ -573,6 +577,28 @@ const AdvisorBot = () => {
         </div>
       </div>
 
+      {/* Voix : décrire son projet à voix haute en un clic */}
+      <button
+        type="button"
+        onClick={() => setStep("voice")}
+        className="w-full flex items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-bluedark text-white shadow-lifted hover:shadow-xl transition-shadow"
+      >
+        <div className="shrink-0 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+          <Mic className="w-5 h-5" />
+        </div>
+        <div className="flex-1 text-left">
+          <div className="text-sm font-bold leading-tight">Décrire mon projet à voix haute</div>
+          <div className="text-[11px] text-white/85 mt-0.5">Parlez librement, on s'occupe du reste</div>
+        </div>
+        <ChevronRight className="w-4 h-4 shrink-0" />
+      </button>
+
+      <div className="relative flex items-center gap-3 my-1">
+        <div className="flex-1 h-px bg-border" />
+        <span className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">ou</span>
+        <div className="flex-1 h-px bg-border" />
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
         {SERVICES.map((s) => (
           <button
@@ -720,6 +746,72 @@ const AdvisorBot = () => {
       </motion.div>
     );
   };
+
+  const renderVoice = () => (
+    <motion.div
+      key="voice"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      className="space-y-4"
+    >
+      <button
+        type="button"
+        onClick={() => setStep("welcome")}
+        className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-brand-blue"
+      >
+        <ArrowLeft className="w-3.5 h-3.5" /> Retour
+      </button>
+
+      <div className="bg-gradient-to-br from-brand-blue/10 via-brand-sky/10 to-transparent rounded-2xl p-5 border border-brand-blue/20">
+        <div className="flex items-start gap-3">
+          <div className="w-10 h-10 shrink-0 rounded-full bg-brand-blue text-white flex items-center justify-center">
+            <Mic className="w-5 h-5" />
+          </div>
+          <div>
+            <p className="text-sm font-bold text-slate-900 mb-1">Décrivez votre projet</p>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Cliquez sur le micro et parlez librement : type de logement, surface, équipement actuel, ce que vous souhaitez. On s'occupe du reste.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative">
+        <textarea
+          value={voiceText}
+          onChange={(e) => setVoiceText(e.target.value)}
+          placeholder="Parlez ou écrivez votre projet ici…"
+          rows={5}
+          className="w-full px-4 py-3 pr-14 rounded-xl border-2 border-border bg-white text-sm focus:outline-none focus:border-brand-blue resize-none"
+        />
+        <div className="absolute right-3 top-3">
+          <MicButton
+            value={voiceText}
+            onChange={setVoiceText}
+            size={36}
+            title="Dicter"
+          />
+        </div>
+      </div>
+
+      <button
+        type="button"
+        disabled={!voiceText.trim()}
+        onClick={() => {
+          setAnswers([{ question: "Description du projet (vocal)", value: voiceText.trim() }]);
+          setStep("coordinates");
+        }}
+        className="w-full py-3 rounded-xl bg-brand-blue text-white text-sm font-bold hover:bg-brand-bluedark disabled:bg-slate-200 disabled:text-slate-400 transition-colors inline-flex items-center justify-center gap-2"
+      >
+        Continuer <ChevronRight className="w-4 h-4" />
+      </button>
+
+      <p className="text-[11px] text-slate-500 text-center">
+        Compatible Chrome, Safari et Edge. Sur Firefox, écrivez directement.
+      </p>
+    </motion.div>
+  );
 
   const renderCoordinates = () => (
     <motion.div
@@ -1050,6 +1142,7 @@ const AdvisorBot = () => {
               <div className="flex-1 overflow-y-auto px-5 py-5">
                 <AnimatePresence mode="wait">
                   {step === "welcome" && renderWelcome()}
+                  {step === "voice" && renderVoice()}
                   {step === "questions" && renderQuestions()}
                   {step === "coordinates" && renderCoordinates()}
                   {step === "summary" && renderSummary()}
