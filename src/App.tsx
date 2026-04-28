@@ -24,12 +24,23 @@ import Blog from "./pages/Blog";
 import Article from "./pages/Article";
 import Avis from "./pages/Avis";
 import Faq from "./pages/Faq";
+import DevisLanding from "./pages/DevisLanding";
+import Glossaire from "./pages/Glossaire";
 import NotFound from "./pages/NotFound";
 import AdvisorBot from "./components/AdvisorBot";
 import MobileStickyCTA from "./components/MobileStickyCTA";
 import DevisFloatingBar from "./components/DevisFloatingBar";
 import ExitIntentPopup from "./components/ExitIntentPopup";
 import ErrorBoundary from "./components/ErrorBoundary";
+
+import { useParams, Navigate } from "react-router-dom";
+import { findDevis } from "./data/devis";
+
+const DevisLandingWrapper = () => {
+  const { slug } = useParams<{ slug: string }>();
+  if (slug && findDevis(slug)) return <DevisLanding />;
+  return <NotFound />;
+};
 
 const queryClient = new QueryClient();
 
@@ -62,6 +73,8 @@ const App = () => (
             <Route path="/blog/:slug" element={<Article />} />
             <Route path="/avis" element={<Avis />} />
             <Route path="/faq" element={<Faq />} />
+            <Route path="/glossaire" element={<Glossaire />} />
+            <Route path="/:slug" element={<DevisLandingWrapper />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <AdvisorBot />

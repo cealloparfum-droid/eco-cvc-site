@@ -20,6 +20,7 @@ const columns = [
       { href: "/certifications", label: "Certifications RGE" },
       { href: "/blog", label: "Blog & guides" },
       { href: "/faq", label: "FAQ" },
+      { href: "/glossaire", label: "Glossaire CVC" },
       { href: "/avis", label: "Avis clients" },
       { href: "/contact", label: "Nous contacter" },
       { href: "/contact", label: "Demander un devis" },
