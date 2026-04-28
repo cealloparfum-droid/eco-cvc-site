@@ -18,6 +18,7 @@ import {
   Refrigerator,
 } from "lucide-react";
 import { submitForm } from "@/lib/submit-form";
+import { MicButton } from "@/components/MicButton";
 
 /** ------------------------------------------------------------------
  *  Configuration
@@ -689,12 +690,22 @@ const AdvisorBot = () => {
                 }}
                 placeholder={currentQuestion.placeholder}
                 autoFocus
-                className="w-full px-4 py-3 pr-14 rounded-xl border-2 border-border bg-white text-sm focus:outline-none focus:border-brand-blue transition-colors"
+                className="w-full px-4 py-3 pr-20 rounded-xl border-2 border-border bg-white text-sm focus:outline-none focus:border-brand-blue transition-colors"
               />
               {currentQuestion.unit && (
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                <span className="absolute right-12 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
                   {currentQuestion.unit}
                 </span>
+              )}
+              {currentQuestion.type !== "number" && (
+                <div className="absolute right-2 top-1/2 -translate-y-1/2">
+                  <MicButton
+                    value={textValue}
+                    onChange={setTextValue}
+                    size={32}
+                    title="Dicter la réponse"
+                  />
+                </div>
               )}
             </div>
             <button
@@ -769,13 +780,23 @@ const AdvisorBot = () => {
           placeholder="Email"
           className="w-full px-4 py-3 rounded-xl border-2 border-border bg-white text-sm focus:outline-none focus:border-brand-blue transition-colors"
         />
-        <textarea
-          value={coords.note}
-          onChange={(e) => setCoords({ ...coords, note: e.target.value })}
-          placeholder="Précision libre (optionnel)…"
-          rows={2}
-          className="w-full px-4 py-3 rounded-xl border-2 border-border bg-white text-sm focus:outline-none focus:border-brand-blue transition-colors resize-none"
-        />
+        <div className="relative">
+          <textarea
+            value={coords.note}
+            onChange={(e) => setCoords({ ...coords, note: e.target.value })}
+            placeholder="Précision libre (optionnel)…"
+            rows={2}
+            className="w-full px-4 py-3 pr-12 rounded-xl border-2 border-border bg-white text-sm focus:outline-none focus:border-brand-blue transition-colors resize-none"
+          />
+          <div className="absolute right-2 top-2">
+            <MicButton
+              value={coords.note}
+              onChange={(next) => setCoords({ ...coords, note: next })}
+              size={32}
+              title="Dicter la précision"
+            />
+          </div>
+        </div>
         <p className="text-[11px] text-slate-500">
           * champs obligatoires. Vos données ne servent qu'à vous recontacter.
         </p>
