@@ -7,6 +7,7 @@ import PageTransition from "@/components/PageTransition";
 import CTABand from "@/components/CTABand";
 import { articles } from "@/data/articles";
 import { useSeo } from "@/lib/useSeo";
+import NewsletterInline from "@/components/NewsletterInline";
 
 const Blog = () => {
   const baseUrl = "https://ecocvc.pro";
@@ -99,6 +100,10 @@ const Blog = () => {
                   </div>
                 </Link>
               ))}
+            </div>
+
+            <div className="mt-16 max-w-3xl mx-auto">
+              <NewsletterInline source="blog_hub" />
             </div>
           </div>
         </section>

@@ -8,6 +8,7 @@ import CTABand from "@/components/CTABand";
 import { findArticle, articles } from "@/data/articles";
 import { findCity } from "@/data/cities";
 import { useSeo } from "@/lib/useSeo";
+import NewsletterInline from "@/components/NewsletterInline";
 
 const Article = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -86,32 +87,45 @@ const Article = () => {
         </article>
 
         <div className="container mx-auto max-w-3xl pb-14 md:pb-20">
-          {article.sections.map((section, i) => (
-            <section key={i} className="mb-12">
-              <h2 className="font-display text-2xl md:text-3xl font-bold mb-5 mt-10">{section.heading}</h2>
-              {section.paragraphs.map((p, j) => (
-                <p key={j} className="text-foreground/80 leading-relaxed mb-4">
-                  {p}
-                </p>
-              ))}
-              {section.list && (
-                <ul className="space-y-3 my-6 pl-1">
-                  {section.list.map((item, k) => (
-                    <li key={k} className="flex gap-3 items-start">
-                      <Check className="w-5 h-5 text-brand-green shrink-0 mt-0.5" />
-                      <span className="text-foreground/85">{item}</span>
-                    </li>
+          {article.sections.map((section, i) => {
+            const midPoint = Math.floor(article.sections.length / 2);
+            return (
+              <div key={i}>
+                <section className="mb-12">
+                  <h2 className="font-display text-2xl md:text-3xl font-bold mb-5 mt-10">{section.heading}</h2>
+                  {section.paragraphs.map((p, j) => (
+                    <p key={j} className="text-foreground/80 leading-relaxed mb-4">
+                      {p}
+                    </p>
                   ))}
-                </ul>
-              )}
-              {section.callout && (
-                <div className="my-7 rounded-2xl border border-brand-blue/20 bg-brand-blue/5 p-6">
-                  <p className="text-xs font-bold uppercase tracking-wider text-brand-blue mb-2">{section.callout.title}</p>
-                  <p className="text-foreground/85 leading-relaxed">{section.callout.body}</p>
-                </div>
-              )}
-            </section>
-          ))}
+                  {section.list && (
+                    <ul className="space-y-3 my-6 pl-1">
+                      {section.list.map((item, k) => (
+                        <li key={k} className="flex gap-3 items-start">
+                          <Check className="w-5 h-5 text-brand-green shrink-0 mt-0.5" />
+                          <span className="text-foreground/85">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {section.callout && (
+                    <div className="my-7 rounded-2xl border border-brand-blue/20 bg-brand-blue/5 p-6">
+                      <p className="text-xs font-bold uppercase tracking-wider text-brand-blue mb-2">{section.callout.title}</p>
+                      <p className="text-foreground/85 leading-relaxed">{section.callout.body}</p>
+                    </div>
+                  )}
+                </section>
+                {i === midPoint && (
+                  <NewsletterInline
+                    source={`article_${article.slug}_mid`}
+                    className="my-12"
+                    title="Cet article vous est utile ?"
+                    subtitle="Recevez nos guides experts par email — aides, tarifs, retours d'expérience. Pas de spam, désinscription en 1 clic."
+                  />
+                )}
+              </div>
+            );
+          })}
 
           <section className="mt-16 pt-10 border-t border-border">
             <h2 className="font-display text-2xl md:text-3xl font-bold mb-7">Questions fréquentes</h2>

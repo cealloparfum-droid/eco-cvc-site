@@ -26,6 +26,7 @@ import NotFound from "./pages/NotFound";
 import AdvisorBot from "./components/AdvisorBot";
 import MobileStickyCTA from "./components/MobileStickyCTA";
 import DevisFloatingBar from "./components/DevisFloatingBar";
+import ExitIntentPopup from "./components/ExitIntentPopup";
 import ErrorBoundary from "./components/ErrorBoundary";
 
 const queryClient = new QueryClient();
@@ -62,6 +63,7 @@ const App = () => (
           <AdvisorBot />
           <MobileStickyCTA />
           <DevisFloatingBar />
+          <ExitIntentPopup />
         </ErrorBoundary>
       </BrowserRouter>
     </TooltipProvider>
