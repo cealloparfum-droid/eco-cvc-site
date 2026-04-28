@@ -17,6 +17,13 @@
   <url><loc>https://ecocvc.pro/cgv</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://ecocvc.pro/confidentialite</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
 
+  <url><loc>https://ecocvc.pro/blog</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/blog/maprimerenov-2026-pompe-a-chaleur</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/blog/prix-pompe-a-chaleur-2026</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/blog/pompe-a-chaleur-air-air-vs-air-eau</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/blog/aides-cee-pompe-a-chaleur-2026</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/blog/quelle-pac-pour-maison-100m2</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
   <url><loc>https://ecocvc.pro/pompe-a-chaleur/bourgoin-jallieu</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://ecocvc.pro/pompe-a-chaleur/l-isle-d-abeau</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://ecocvc.pro/pompe-a-chaleur/la-verpilliere</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>

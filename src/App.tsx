@@ -20,6 +20,8 @@ import MentionsLegales from "./pages/MentionsLegales";
 import CGV from "./pages/CGV";
 import Confidentialite from "./pages/Confidentialite";
 import CityPage from "./pages/CityPage";
+import Blog from "./pages/Blog";
+import Article from "./pages/Article";
 import NotFound from "./pages/NotFound";
 import AdvisorBot from "./components/AdvisorBot";
 import MobileStickyCTA from "./components/MobileStickyCTA";
@@ -53,6 +55,8 @@ const App = () => (
             <Route path="/cgv" element={<CGV />} />
             <Route path="/confidentialite" element={<Confidentialite />} />
             <Route path="/pompe-a-chaleur/:ville" element={<CityPage />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<Article />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <AdvisorBot />
