@@ -23,6 +23,7 @@ import CityPage from "./pages/CityPage";
 import Blog from "./pages/Blog";
 import Article from "./pages/Article";
 import Avis from "./pages/Avis";
+import Faq from "./pages/Faq";
 import NotFound from "./pages/NotFound";
 import AdvisorBot from "./components/AdvisorBot";
 import MobileStickyCTA from "./components/MobileStickyCTA";
@@ -60,6 +61,7 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<Article />} />
             <Route path="/avis" element={<Avis />} />
+            <Route path="/faq" element={<Faq />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <AdvisorBot />

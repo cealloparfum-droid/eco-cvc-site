@@ -980,6 +980,456 @@ export const articles: Article[] = [
       { href: "/maintenance", label: "Service maintenance" },
     ],
   },
+  {
+    slug: "pompe-a-chaleur-piscine",
+    title: "Pompe à chaleur piscine : prix, choix et installation en 2026",
+    metaTitle: "Pompe à chaleur piscine 2026 — prix, COP, choix [guide ECO CVC]",
+    metaDescription:
+      "PAC piscine 2026 : prix, calcul de la puissance selon le volume, COP, modèles inverter, installation. Guide pour piscines en Isère et Rhône-Alpes par ECO CVC.",
+    category: "Choisir sa PAC",
+    publishedAt: "2026-04-22",
+    updatedAt: "2026-04-28",
+    readingMinutes: 7,
+    excerpt:
+      "Allonger la saison de baignade de 2 à 4 mois sans exploser sa facture : c'est ce que permet une pompe à chaleur piscine bien dimensionnée. Voici comment choisir.",
+    intro: [
+      "À partir de mai, le téléphone d'ECO CVC sonne pour les PAC piscine. Le timing est bon : posée en mai, la PAC est rentable dès la première saison. Mais entre les modèles à 600 € qu'on trouve sur Internet et les unités professionnelles à 6 000 €, il y a un monde — et un mauvais choix se paie en consommation électrique.",
+    ],
+    sections: [
+      {
+        heading: "Comment fonctionne une PAC piscine",
+        paragraphs: [
+          "Le principe est identique à une PAC chauffage : capter les calories de l'air ambiant pour les transférer à l'eau de la piscine via un échangeur titane (résistant au chlore et sel).",
+          "À la différence d'une PAC chauffage maison, la PAC piscine fonctionne sur des écarts de température faibles (passer de 18 °C à 28 °C) et peut donc afficher des COP exceptionnels — souvent 5 à 7 contre 3-4 pour une PAC chauffage.",
+        ],
+      },
+      {
+        heading: "Calculer la puissance nécessaire",
+        paragraphs: [
+          "La règle simplifiée : 0,2 kW de PAC par m³ d'eau pour une montée en température raisonnable (1 °C/jour). Pour des montées plus rapides ou des bassins exposés au vent, monter à 0,3 kW/m³.",
+        ],
+        list: [
+          "Piscine 30 m³ (5 × 3 × 1,5 m) : PAC 6 à 9 kW, prix posé 1 800 à 2 800 €",
+          "Piscine 50 m³ (8 × 4 × 1,5 m) : PAC 10 à 15 kW, prix posé 2 600 à 4 200 €",
+          "Piscine 75 m³ (10 × 5 × 1,5 m) : PAC 16 à 21 kW, prix posé 3 800 à 5 800 €",
+          "Piscine 100 m³+ : PAC 21 kW+ ou solution multi-PAC, sur devis",
+        ],
+        callout: {
+          title: "Bonus inverter",
+          body: "Privilégier une PAC inverter (à puissance variable) plutôt qu'on/off : 30 à 40% d'économies électriques, fonctionnement silencieux, durée de vie supérieure. Surcoût d'achat amorti en 1-2 saisons.",
+        },
+      },
+      {
+        heading: "Les 4 critères qui changent tout",
+        paragraphs: [
+          "Au-delà de la puissance brute, voici ce qu'il faut regarder :",
+        ],
+        list: [
+          "COP à 15 °C / 24 °C eau : doit être ≥ 5 pour une PAC moderne. Méfiance des fiches techniques qui n'indiquent que le COP à 28 °C (mensonger)",
+          "Plage de fonctionnement : tient-elle jusqu'à 5 °C ? 0 °C ? Important pour étendre la saison à mai et septembre",
+          "Niveau sonore : ≤ 40 dB à 10 m est souhaitable (sinon nuisance pour les voisins et les soirées piscine)",
+          "Échangeur titane (pas inox) : obligatoire pour piscines au sel ou avec traitement chlore intensif",
+        ],
+      },
+      {
+        heading: "Installation : ce qui se passe sur site",
+        paragraphs: [
+          "Une PAC piscine s'installe en 1/2 à 1 journée :",
+        ],
+        list: [
+          "Pose sur dalle béton à proximité du local technique (5 à 15 m max idéalement)",
+          "Raccordement hydraulique : départ et retour vers le filtre via vannes 3 voies (la PAC ne tourne pas H24)",
+          "Raccordement électrique 230V monophasé pour les petites, 400V triphasé pour les grosses",
+          "Programmation horaire pour optimiser tarifs heures creuses",
+          "Mise en service avec contrôle pression et calibrage thermostat",
+        ],
+      },
+      {
+        heading: "Coût d'usage réel",
+        paragraphs: [
+          "Pour une piscine 50 m³ chauffée à 28 °C de mai à septembre en Isère, avec une PAC inverter de 12 kW (COP moyen 6) :",
+        ],
+        list: [
+          "Consommation saison : ~1 200 à 1 800 kWh",
+          "Coût annuel : 240 à 360 € (tarif réglementé 0,20 €/kWh 2026)",
+          "Vs réchauffeur électrique direct : 6x plus cher (≈ 1 500 € la même saison)",
+          "Vs absence de chauffage : saison utile passe de 2 mois à 5 mois",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Quand allumer la PAC piscine en début de saison ?",
+        a: "Dès que l'eau dépasse 12 °C (généralement fin avril en Isère). En dessous, la PAC s'use plus vite. Combinez avec une bâche à bulles pour limiter les pertes nocturnes.",
+      },
+      {
+        q: "Bâche à bulles : indispensable ?",
+        a: "Oui, c'est l'investissement le plus rentable de tous. Une bâche à bulles divise par 2 les besoins de chauffage (les pertes par évaporation sont énormes). 200 € qui économisent 200 €/an sur l'élec.",
+      },
+      {
+        q: "PAC piscine ou réchauffeur électrique ?",
+        a: "PAC : 6 fois moins cher à l'usage, mais 4 fois plus cher à l'achat. Rentable en 2-3 saisons d'utilisation normale.",
+      },
+    ],
+    relatedCities: ["bourgoin-jallieu", "lyon", "vienne", "morestel", "meyzieu"],
+    relatedServices: [{ href: "/contact", label: "Devis PAC piscine" }],
+  },
+  {
+    slug: "entretien-pompe-a-chaleur-obligatoire",
+    title: "Entretien d'une pompe à chaleur : obligatoire, prix, ce qui est contrôlé",
+    metaTitle: "Entretien pompe à chaleur — obligatoire, prix, ce qui est contrôlé",
+    metaDescription:
+      "Entretien annuel d'une pompe à chaleur : obligatoire ou non, ce qui est contrôlé, prix 2026, sanctions. Service maintenance ECO CVC, RGE QualiPAC en Isère et Rhône-Alpes.",
+    category: "Pratique",
+    publishedAt: "2026-03-30",
+    updatedAt: "2026-04-28",
+    readingMinutes: 5,
+    excerpt:
+      "Depuis le décret 2020-912, l'entretien des PAC > 4 kW est obligatoire tous les 2 ans. Ce qui est vérifié, le coût, et ce qu'on risque à ne pas le faire.",
+    intro: [
+      "C'est une question qu'on nous pose à chaque appel SAV : \"l'entretien, c'est vraiment obligatoire ?\". Réponse courte : oui, depuis 2020. Voici la réponse longue.",
+    ],
+    sections: [
+      {
+        heading: "Ce que dit la loi (décret 2020-912)",
+        paragraphs: [
+          "Le décret du 28 juillet 2020 impose un entretien des pompes à chaleur de puissance > 4 kW et < 70 kW, par un professionnel qualifié, **tous les 2 ans**. Cela couvre la quasi-totalité des PAC résidentielles : air-air, air-eau, géothermique.",
+          "Le professionnel doit remettre une attestation d'entretien que vous devez conserver 2 ans. Cette attestation est à présenter en cas de contrôle ou de revente du logement.",
+        ],
+      },
+      {
+        heading: "Ce qui est contrôlé pendant l'entretien",
+        paragraphs: [
+          "Une visite d'entretien dure 1 à 2h selon le matériel. Les points obligatoires :",
+        ],
+        list: [
+          "Vérification de l'étanchéité du circuit frigorifique (pas de fuite de fluide frigorigène)",
+          "Mesure des performances thermodynamiques (COP en marche)",
+          "Nettoyage des échangeurs intérieur et extérieur",
+          "Contrôle du débit d'air (filtres, ventilateur)",
+          "Vérification des protections électriques",
+          "Contrôle du circuit hydraulique (PAC air-eau) : pression, vase d'expansion, soupapes",
+          "Conseils d'utilisation et bonnes pratiques",
+        ],
+      },
+      {
+        heading: "Prix 2026 d'un entretien PAC",
+        paragraphs: [
+          "Les fourchettes constatées sur le marché en Isère et Rhône-Alpes :",
+        ],
+        list: [
+          "Visite ponctuelle PAC air-eau ≤ 16 kW : 150 à 250 € TTC",
+          "Visite ponctuelle PAC air-air mono ou bi-split : 130 à 200 € TTC",
+          "Visite ponctuelle PAC air-air multi-split (≥ 4 unités) : 200 à 320 € TTC",
+          "Contrat d'entretien annuel (1 visite + dépannages prioritaires) : 180 à 280 €/an",
+          "Contrat 2 ans (1 visite annuelle + main d'œuvre dépannage incluse) : 350 à 480 €",
+        ],
+      },
+      {
+        heading: "Pourquoi le contrat d'entretien vaut le coup",
+        paragraphs: [
+          "Au-delà de la conformité légale :",
+        ],
+        list: [
+          "Garantie constructeur préservée : la plupart des marques exigent une preuve d'entretien annuel pour appliquer la garantie pièces (5-10 ans)",
+          "Performances maintenues : un échangeur sale = 15-25% de surconsommation invisible sur la facture",
+          "Détection précoce de pannes : une fuite de fluide d'1 g par jour devient une panne grave en 2 ans, une révision la repère immédiatement",
+          "Priorité dépannage : nos clients sous contrat sont vus sous 24-48h, hors contrat 5-10 jours en saison",
+        ],
+      },
+      {
+        heading: "Que se passe-t-il si on ne le fait pas ?",
+        paragraphs: [
+          "Pas de contrôle systématique aujourd'hui, mais plusieurs risques concrets :",
+        ],
+        list: [
+          "Refus de prise en charge constructeur en cas de panne (garantie annulée)",
+          "Refus assureur en cas de sinistre lié (incendie, dégât des eaux)",
+          "Sanction en cas de contrôle DGCCRF : amende jusqu'à 750 €",
+          "Risque revente : un acquéreur peut exiger l'attestation, faute de quoi le prix baisse ou la vente échoue",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "L'entretien d'une PAC inférieure à 4 kW est-il obligatoire ?",
+        a: "Légalement non. Mais la garantie constructeur l'impose souvent. Et techniquement, la PAC perd quand même en performance sans entretien.",
+      },
+      {
+        q: "Puis-je faire l'entretien moi-même ?",
+        a: "Non — l'attestation doit être délivrée par un pro qualifié, et toute manipulation du fluide frigorigène est réservée aux titulaires d'une attestation F-Gaz (que nous avons).",
+      },
+      {
+        q: "Quand prendre rendez-vous ?",
+        a: "Idéalement en mars-avril pour les PAC réversibles (avant la saison clim) ou octobre-novembre pour les PAC chauffage. Cela évite les rushs de saison.",
+      },
+    ],
+    relatedCities: ["bourgoin-jallieu", "lyon", "vienne", "saint-priest"],
+    relatedServices: [
+      { href: "/maintenance", label: "Notre service maintenance" },
+      { href: "/contact", label: "Demander un contrat" },
+    ],
+  },
+  {
+    slug: "daikin-mitsubishi-atlantic-quelle-marque-pac",
+    title: "Daikin, Mitsubishi, Atlantic : quelle marque de pompe à chaleur en 2026",
+    metaTitle: "Daikin vs Mitsubishi vs Atlantic : quelle PAC choisir en 2026",
+    metaDescription:
+      "Comparatif marques de pompe à chaleur 2026 : Daikin, Mitsubishi Electric, Atlantic, AUX. Forces, prix, garanties, retours d'expérience artisan ECO CVC en Isère.",
+    category: "Choisir sa PAC",
+    publishedAt: "2026-03-12",
+    updatedAt: "2026-04-28",
+    readingMinutes: 8,
+    excerpt:
+      "On nous demande sans arrêt \"quelle marque vous recommandez ?\". Voici notre vrai avis terrain — sans clientélisme — sur les 4 marques que nous installons le plus.",
+    intro: [
+      "La fiche technique d'une PAC de 12 kW chez Daikin ressemble à celle d'une Mitsubishi : COP, ETAS, plage de fonctionnement… presque identique sur le papier. Mais sur 10 ans d'usage, les différences réelles apparaissent : fiabilité, SAV, pièces détachées, durabilité. Voici ce que nous voyons sur le terrain.",
+    ],
+    sections: [
+      {
+        heading: "Daikin : la référence haut de gamme",
+        paragraphs: [
+          "Marque japonaise qui domine le marché européen de la PAC haut de gamme. Leur gamme Altherma (air-eau) et leurs splits réversibles sont chez nous les plus demandés.",
+          "Forces : performance constante sur 15-20 ans, SAV réactif (pièces sous 48h en France), interface utilisateur claire, modèles très silencieux (≤ 35 dB en mode nuit).",
+          "Limites : prix d'achat 15-25% plus élevé que la moyenne, certains modèles complexes nécessitent un installateur formé (pas tous les artisans).",
+        ],
+      },
+      {
+        heading: "Mitsubishi Electric : l'alternative équivalente",
+        paragraphs: [
+          "Concurrent direct de Daikin sur le créneau premium. Leurs gammes Ecodan (air-eau) et Multi-split sont au coude à coude.",
+          "Forces : excellente fiabilité, plage de fonctionnement étendue (-20 °C garantis), garantie constructeur 5 à 7 ans selon modèle, application MELCloud très complète.",
+          "Limites : tarif équivalent à Daikin (premium), distribution réseau plus serrée — moins d'artisans formés en zone rurale.",
+        ],
+      },
+      {
+        heading: "Atlantic : la marque française grand public",
+        paragraphs: [
+          "Marque française historique (chauffe-eau Atlantic) qui a gagné le marché PAC. Très bon rapport qualité-prix sur le milieu de gamme.",
+          "Forces : prix 20-30% inférieurs à Daikin/Mitsubishi à performance équivalente, SAV national rapide, gamme adaptée à la rénovation française.",
+          "Limites : niveau sonore légèrement supérieur, durabilité observée 12-15 ans contre 17-20 ans chez les japonais sur des cas comparables.",
+        ],
+      },
+      {
+        heading: "AUX : le challenger qui monte",
+        paragraphs: [
+          "Marque chinoise (groupe AUX, 30 milliards de dollars de CA) très présente sur le marché européen depuis 2020. Notre revendeur principal en climatisation.",
+          "Forces : tarif imbattable (50-60% du prix Daikin), fiabilité moderne (compresseurs Mitsubishi sous-traités), gamme R32 complète.",
+          "Limites : SAV réseau encore en construction, image moins prestigieuse à la revente immobilière, garantie 3-5 ans plus courte.",
+        ],
+        callout: {
+          title: "Notre offre AUX",
+          body: "ECO CVC propose AUX en première gamme accessible, et Daikin/Mitsubishi en montée de gamme. Le client choisit le compromis prix/durabilité qui lui convient — nous installons les deux mondes avec la même rigueur.",
+        },
+      },
+      {
+        heading: "Comment choisir vraiment",
+        paragraphs: [
+          "Notre méthode pour orienter nos prospects :",
+        ],
+        list: [
+          "Si projet à 5 ans (revente prévue) : Atlantic ou AUX — pas la peine de surinvestir",
+          "Si projet 15-20 ans (résidence principale long terme) : Daikin ou Mitsubishi, l'écart de prix se rentabilise sur la durée",
+          "Si zone climatique froide (Voiron, Chambéry, Annecy) : Mitsubishi Ecodan plage étendue ou Daikin Altherma 3 H HT",
+          "Si budget serré et besoin urgent : AUX en multi-split réversible, on installe en 1 jour",
+          "Si esthétique premium intérieur : Daikin Stylish ou Mitsubishi Kirigamine, design plus soigné",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Toshiba, Panasonic, Hitachi : pourquoi vous n'en parlez pas ?",
+        a: "On les installe à la demande, mais elles sont moins fréquentes en rénovation française. Leurs gammes air-eau sont bonnes mais leur réseau de pièces détachées est plus difficile en zone rurale.",
+      },
+      {
+        q: "Une PAC 'no-name' à 50% du prix, mauvaise idée ?",
+        a: "Oui dans la plupart des cas. Pas pour la performance première année (souvent OK), mais pour la durabilité, le SAV, et les pièces 5-10 ans après. Une PAC qui doit être remplacée à 8 ans coûte plus cher au final.",
+      },
+      {
+        q: "AUX ou Daikin pour un investissement locatif ?",
+        a: "AUX. Le locataire ne fait pas la différence, vous gardez 4 000-6 000 € de marge sur un T3 par exemple. Mais comptez un remplacement à 12-15 ans plutôt que 18-20.",
+      },
+    ],
+    relatedCities: ["bourgoin-jallieu", "lyon", "vienne"],
+    relatedServices: [
+      { href: "/produits", label: "Voir notre gamme AUX" },
+      { href: "/installation", label: "Devis installation" },
+    ],
+  },
+  {
+    slug: "coup-de-pouce-chauffage-2026",
+    title: "Coup de pouce chauffage 2026 : montants, conditions, cumul aides",
+    metaTitle: "Coup de pouce chauffage 2026 — PAC, montants, conditions",
+    metaDescription:
+      "Coup de pouce chauffage 2026 (Certificats d'Économies d'Énergie) : montants pour PAC air-eau et géothermique, conditions, cumul MaPrimeRénov'. Guide ECO CVC.",
+    category: "Aides",
+    publishedAt: "2026-02-05",
+    updatedAt: "2026-04-28",
+    readingMinutes: 5,
+    excerpt:
+      "Le Coup de pouce chauffage est une déclinaison \"musclée\" de la prime CEE. Pour un remplacement de chaudière par une PAC, il peut atteindre 5 000 € — cumulables avec MaPrimeRénov'.",
+    intro: [
+      "Le \"Coup de pouce chauffage\" est un dispositif spécifique aux Certificats d'Économies d'Énergie qui majore les primes pour certains gestes prioritaires : remplacer une chaudière fossile par une PAC ou par une chaudière biomasse. Il est reconduit en 2026 avec quelques ajustements.",
+    ],
+    sections: [
+      {
+        heading: "Qui peut en bénéficier en 2026",
+        paragraphs: [
+          "Le Coup de pouce s'adresse à tous les ménages, propriétaires occupants ou bailleurs, dans une résidence principale construite depuis plus de 2 ans. Aucune exclusion par revenus — mais le montant varie.",
+          "Le seul critère technique : remplacer une chaudière au charbon, fioul, ou gaz (sauf à condensation < 25 ans), par une PAC air-eau, géothermique, ou un système solaire combiné.",
+        ],
+      },
+      {
+        heading: "Les montants 2026",
+        paragraphs: [
+          "Pour le remplacement d'une chaudière par une PAC :",
+        ],
+        list: [
+          "PAC air-eau, ménages très modestes (Bleu) : 5 000 €",
+          "PAC air-eau, ménages modestes (Jaune) : 4 500 €",
+          "PAC air-eau, ménages classiques (Violet) : 3 000 €",
+          "PAC air-eau, ménages aisés (Rose) : 2 500 €",
+          "PAC géothermique : ajout de 1 000 € sur ces montants",
+          "Sortie de chaudière fioul : ajout de 1 200 € forfaitaire",
+        ],
+        callout: {
+          title: "Cas le plus avantageux",
+          body: "Ménage très modeste, sortie de fioul vers PAC géothermique : 5 000 + 1 000 + 1 200 = 7 200 € de Coup de pouce. + MaPrimeRénov' Bleu géothermique 11 000 €. Soit jusqu'à 18 200 € d'aides cumulées.",
+        },
+      },
+      {
+        heading: "Comment l'obtenir",
+        paragraphs: [
+          "Le Coup de pouce s'obtient via les mandataires CEE — les mêmes que pour la prime CEE classique :",
+        ],
+        list: [
+          "Étape 1 : choisir un mandataire (EDF Prime Énergie, TotalEnergies, Engie…)",
+          "Étape 2 : déposer le devis non signé d'un artisan RGE QualiPAC",
+          "Étape 3 : recevoir l'attestation Coup de pouce (24-72h)",
+          "Étape 4 : signer le devis et faire poser",
+          "Étape 5 : envoyer la facture acquittée + attestation",
+          "Étape 6 : virement sous 3-6 semaines",
+        ],
+      },
+      {
+        heading: "Cumul avec MaPrimeRénov'",
+        paragraphs: [
+          "Le cumul est total : Coup de pouce + MaPrimeRénov' s'additionnent intégralement, dans la limite de 100% du coût des travaux. En pratique, on n'atteint jamais ce plafond — les aides cumulées plafonnent en général à 50-80% du projet selon le profil.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Coup de pouce et prime CEE classique : c'est la même chose ?",
+        a: "Le Coup de pouce est une catégorie spéciale de la prime CEE, avec montants majorés pour certains gestes. Le mandataire applique automatiquement le bonus si vous êtes éligible.",
+      },
+      {
+        q: "Et si j'ai déjà une PAC, le Coup de pouce s'applique ?",
+        a: "Non. Le Coup de pouce ne couvre que le remplacement d'une chaudière fossile par une PAC. Le simple ajout d'une PAC en complément n'est pas éligible.",
+      },
+    ],
+    relatedCities: ["bourgoin-jallieu", "morestel", "vienne", "voiron"],
+    relatedServices: [
+      { href: "/calculateur", label: "Estimer toutes les aides" },
+      { href: "/installation", label: "Demander un devis PAC" },
+    ],
+  },
+  {
+    slug: "climatisation-gainable",
+    title: "Climatisation gainable : prix, avantages et installation en 2026",
+    metaTitle: "Climatisation gainable 2026 — prix, installation, choix",
+    metaDescription:
+      "Climatisation gainable 2026 : prix posé, avantages, contraintes d'installation, choix des grilles. Guide ECO CVC pour maisons individuelles en Isère et Rhône-Alpes.",
+    category: "Choisir sa PAC",
+    publishedAt: "2026-01-25",
+    updatedAt: "2026-04-28",
+    readingMinutes: 7,
+    excerpt:
+      "Invisible, silencieuse, intégrée — la climatisation gainable est la solution premium pour climatiser une maison sans compromis esthétique. À quel prix ?",
+    intro: [
+      "Quand un client veut climatiser toute une maison sans voir un seul split mural, la réponse est simple : gainable. C'est plus cher, plus contraignant à l'installation, mais c'est aussi le must absolu en confort. Voici ce qu'il faut savoir avant de signer.",
+    ],
+    sections: [
+      {
+        heading: "Le principe en 1 paragraphe",
+        paragraphs: [
+          "Une climatisation gainable est composée d'une unité extérieure (comme un split classique) reliée à un caisson intérieur (placé dans les combles ou un faux-plafond), qui distribue l'air conditionné dans toutes les pièces via un réseau de gaines isolées et de grilles discrètes au plafond.",
+        ],
+      },
+      {
+        heading: "Avantages : pourquoi c'est la solution premium",
+        paragraphs: [
+          "Pour les clients qui peuvent se le permettre :",
+        ],
+        list: [
+          "Discrétion totale : aucun appareil visible dans les pièces, juste des grilles plates au plafond",
+          "Confort acoustique : pas de bruit de ventilateur dans la pièce (le caisson est dans les combles)",
+          "Diffusion homogène : pas d'effet \"jet d'air froid\" comme avec un split mural",
+          "Multi-zones possible : pilotage indépendant pièce par pièce avec registres motorisés",
+          "Réversible : chauffage et rafraîchissement avec le même équipement",
+        ],
+      },
+      {
+        heading: "Contraintes : pour qui ce n'est pas adapté",
+        paragraphs: [
+          "Le gainable demande des conditions précises :",
+        ],
+        list: [
+          "Combles accessibles d'au moins 1,2 m de hauteur (sinon impossible de poser le caisson)",
+          "Si pas de combles : faux-plafond à créer (perte 25-30 cm de hauteur sous plafond)",
+          "Réseau de gaines à passer dans toute la maison — gros chantier en rénovation",
+          "Budget : 8 000 à 14 000 € posé pour 100 m², soit le double d'un multi-split équivalent",
+        ],
+      },
+      {
+        heading: "Prix 2026 et facteurs de variation",
+        paragraphs: [
+          "Voici les fourchettes constatées chez ECO CVC :",
+        ],
+        list: [
+          "Maison 80 m² (3 chambres) gainable simple zone : 7 500 à 9 500 € posé",
+          "Maison 100 m² (4 chambres) multi-zone (2 zones) : 9 500 à 12 500 € posé",
+          "Maison 130 m² (5 chambres) multi-zone (3 zones) : 11 500 à 14 500 € posé",
+          "Maison > 150 m² ou en étage : sur devis, généralement 14 000 à 18 000 €",
+        ],
+        callout: {
+          title: "Ce qui fait varier",
+          body: "Longueur des gaines (plus la maison est longue, plus c'est cher), nombre de zones de pilotage (chaque zone = un registre motorisé + thermostat), accessibilité des combles, choix des grilles (linéaires luxe vs plafonnières standard).",
+        },
+      },
+      {
+        heading: "Le déroulement type d'un chantier gainable",
+        paragraphs: [
+          "Compter 3 à 5 jours de travaux selon configuration :",
+        ],
+        list: [
+          "Jour 1 : pose de l'unité extérieure et du caisson dans les combles",
+          "Jour 2-3 : passage des gaines isolées vers chaque pièce + percement des plafonds",
+          "Jour 4 : pose des grilles, raccordement électrique, mise en pression frigo",
+          "Jour 5 : mise en service, calibrage, formation à l'application mobile",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Le gainable est-il éligible MaPrimeRénov' ?",
+        a: "Non, comme tous les systèmes air-air. Mais éligible à la prime CEE : 250 à 1 100 € selon revenus.",
+      },
+      {
+        q: "Peut-on installer du gainable en rénovation, en appartement ?",
+        a: "Très rarement. Cela demande des combles ou un faux-plafond, conditions presque jamais réunies en appartement. Sauf grand duplex de standing avec faux-plafond préexistant.",
+      },
+      {
+        q: "Bruit du caisson dans les combles, gênant ?",
+        a: "Avec un caisson moderne bien isolé acoustiquement, ≤ 30 dB perçus en pièce de vie. C'est moins qu'un réfrigérateur. Aucune gêne en pratique.",
+      },
+    ],
+    relatedCities: ["bourgoin-jallieu", "l-isle-d-abeau", "lyon", "meyzieu", "annecy"],
+    relatedServices: [
+      { href: "/installation", label: "Notre service installation" },
+      { href: "/contact", label: "Demander un devis gainable" },
+    ],
+  },
 ];
 
 export const findArticle = (slug: string) => articles.find((a) => a.slug === slug);

@@ -19,6 +19,7 @@ const columns = [
       { href: "/qui-sommes-nous", label: "Qui sommes-nous" },
       { href: "/certifications", label: "Certifications RGE" },
       { href: "/blog", label: "Blog & guides" },
+      { href: "/faq", label: "FAQ" },
       { href: "/avis", label: "Avis clients" },
       { href: "/contact", label: "Nous contacter" },
       { href: "/contact", label: "Demander un devis" },
