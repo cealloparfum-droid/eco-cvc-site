@@ -7,10 +7,23 @@ import PageTransition from "@/components/PageTransition";
 import CTABand from "@/components/CTABand";
 import { reviews, aggregateRating } from "@/data/reviews";
 import { useSeo } from "@/lib/useSeo";
+import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
+import { useEffect, useState } from "react";
+import type { GoogleReviewsData } from "@/components/GoogleReviewsWidget";
 
 const Avis = () => {
   const baseUrl = "https://ecocvc.pro";
   const stats = aggregateRating();
+  const [googleData, setGoogleData] = useState<GoogleReviewsData | null>(null);
+
+  useEffect(() => {
+    fetch("/api/google-reviews")
+      .then((r) => r.json())
+      .then(setGoogleData)
+      .catch(() => setGoogleData(null));
+  }, []);
+
+  const hasGoogleReviews = googleData && googleData.configured && googleData.ok && googleData.reviews.length > 0;
 
   useSeo({
     title: "Avis clients ECO CVC — pompe à chaleur, climatisation, maintenance",
@@ -93,7 +106,13 @@ const Avis = () => {
           </div>
         </section>
 
-        {reviews.length === 0 ? (
+        <section className="pb-14 md:pb-20">
+          <div className="container mx-auto">
+            <GoogleReviewsWidget />
+          </div>
+        </section>
+
+        {!hasGoogleReviews && reviews.length === 0 && (
           <section className="pb-14 md:pb-20">
             <div className="container mx-auto max-w-3xl">
               <div className="rounded-3xl border-2 border-dashed border-brand-blue/30 bg-gradient-to-br from-brand-blue/5 via-white to-brand-green/5 p-8 md:p-12 text-center">
@@ -125,7 +144,8 @@ const Avis = () => {
               </div>
             </div>
           </section>
-        ) : (
+        )}
+        {reviews.length > 0 && (
           <section className="pb-14 md:pb-20">
             <div className="container mx-auto">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
