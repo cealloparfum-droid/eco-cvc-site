@@ -53,9 +53,10 @@ const MentionsLegales = () => {
 
       <h2>3. Hébergement</h2>
       <p>
-        Le site est hébergé par : <span className="placeholder">[Nom de l'hébergeur — ex. OVH, Vercel, Netlify]</span>,
-        dont le siège social est situé à <span className="placeholder">[Adresse hébergeur à compléter]</span>.
-        Téléphone : <span className="placeholder">[À compléter]</span>.
+        Le site est hébergé par : <strong>Vercel Inc.</strong>, société de droit américain
+        dont le siège social est situé au <strong>440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis</strong>.
+        Vercel ne publie pas de numéro de téléphone client : le support est assuré exclusivement
+        en ligne via <a href="https://vercel.com/help" target="_blank" rel="noopener noreferrer">vercel.com/help</a>.
       </p>
 
       <h2>4. Assurance professionnelle</h2>
