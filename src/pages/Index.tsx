@@ -23,6 +23,7 @@ import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
 import CTABand from "@/components/CTABand";
 import StatsBand from "@/components/StatsBand";
+import VoiceLeadSection from "@/components/VoiceLeadSection";
 import photoExt1 from "@/assets/photo-install-exterieur-1.jpeg";
 import photoExt3 from "@/assets/photo-install-exterieur-3.jpeg";
 import photoInt from "@/assets/photo-install-interieur.jpeg";
@@ -119,6 +120,9 @@ const Index = () => {
 
         {/* Stats band — preuve sociale animée */}
         <StatsBand />
+
+        {/* Voice lead — décrire son projet à voix haute */}
+        <VoiceLeadSection />
 
         {/* Promotional offer */}
         <PromoOffer />
