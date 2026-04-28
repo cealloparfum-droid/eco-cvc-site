@@ -17,6 +17,7 @@ const links = [
   { href: "/produits", label: "Produits AUX" },
   { href: "/certifications", label: "Certifications" },
   { href: "/blog", label: "Blog" },
+  { href: "/avis", label: "Avis" },
   { href: "/qui-sommes-nous", label: "À propos" },
   { href: "/contact", label: "Contact" },
 ];

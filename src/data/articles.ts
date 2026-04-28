@@ -491,6 +491,495 @@ export const articles: Article[] = [
       { href: "/calculateur", label: "Estimer aides + budget" },
     ],
   },
+  {
+    slug: "sortir-du-fioul-2026",
+    title: "Sortir du fioul en 2026 : aides, démarches et solutions de remplacement",
+    metaTitle: "Sortir du fioul 2026 — aides, démarches, PAC ou autre [guide complet]",
+    metaDescription:
+      "Comment remplacer une chaudière fioul en 2026 : pompe à chaleur, biomasse, hybride. Aides MaPrimeRénov' majorées, prime CEE, démarches étape par étape. ECO CVC, RGE QualiPAC en Isère.",
+    category: "Aides",
+    publishedAt: "2026-04-12",
+    updatedAt: "2026-04-28",
+    readingMinutes: 9,
+    excerpt:
+      "Les chaudières fioul sont en sursis. Bonne nouvelle : 2026 reste l'année des aides majorées pour basculer vers une PAC ou une solution biomasse. Mode d'emploi.",
+    intro: [
+      "Depuis juillet 2022, l'installation d'une chaudière fioul neuve dans un logement est interdite. En 2026, ce qui reste possible : continuer à entretenir l'existant, le remplacer en panne par une chaudière haute performance (très encadrée), ou — le plus rentable — basculer vers une énergie renouvelable.",
+      "Voici comment fonctionne le calendrier, quelles aides sont disponibles cette année, et comment ECO CVC accompagne les sorties de fioul en Isère et Rhône-Alpes.",
+    ],
+    sections: [
+      {
+        heading: "Le cadre légal en 2026",
+        paragraphs: [
+          "Contrairement à ce que beaucoup pensent, vous n'êtes pas obligés de retirer votre chaudière fioul aujourd'hui. La loi vous impose simplement de ne plus en installer de neuves, et limite fortement le remplacement à l'identique en cas de panne (seuils d'émissions de CO₂ très restrictifs).",
+          "En pratique, à la première grosse panne, votre chauffagiste vous proposera très probablement une bascule vers une PAC ou une chaudière biomasse — c'est le bon moment pour le faire avec les aides au plus haut.",
+        ],
+      },
+      {
+        heading: "Pourquoi sortir du fioul est rentable en 2026",
+        paragraphs: [
+          "Trois raisons concrètes :",
+        ],
+        list: [
+          "Le prix du fioul est passé de 0,80 €/L en 2020 à plus de 1,30 €/L en 2026 — une maison moyenne consomme 1 800 à 2 500 L/an, soit 2 400 à 3 200 €/an de chauffage",
+          "MaPrimeRénov' majorée \"sortie de fioul\" : +1 000 € sur les profils Bleu et Jaune (très modestes/modestes)",
+          "Coup de pouce chauffage : prime CEE de 4 000 à 5 000 € pour les ménages modestes basculant fioul → PAC",
+        ],
+        callout: {
+          title: "Cas concret traité chez ECO CVC",
+          body: "Pavillon 110 m² à Bourgoin-Jallieu, chaudière fioul de 1998 : coût annuel chauffage avant = 2 900 €. Après PAC air-eau 11 kW (devis 14 200 €, reste à charge 4 800 € après aides) : coût annuel = 850 €. Économie cumulée 5 ans : 10 250 € — la PAC est amortie en 2,3 ans.",
+        },
+      },
+      {
+        heading: "Quelle solution choisir pour remplacer le fioul ?",
+        paragraphs: [
+          "Trois alternatives sérieuses selon votre logement :",
+        ],
+        list: [
+          "PAC air-eau : la plus universelle, garde vos radiateurs, éligible MaPrimeRénov' + CEE — recommandée dans 80% des cas",
+          "Chaudière biomasse (granulés ou bûches) : plus chère à l'achat (15 000-22 000 €) mais coût combustible bas, idéale en zone forestière (Voironnais, Chartreuse)",
+          "PAC hybride (PAC + chaudière condensation gaz) : si raccordement gaz disponible, très bon compromis pour grandes maisons mal isolées",
+        ],
+      },
+      {
+        heading: "La cuve à fioul : que faire ?",
+        paragraphs: [
+          "Une fois la chaudière déposée, il faut traiter la cuve — souvent enterrée ou en sous-sol. Trois options :",
+        ],
+        list: [
+          "Dégazage et neutralisation par sablage (cuve laissée sur place, inertée) : 600 à 1 200 €",
+          "Dégazage et enlèvement complet : 1 200 à 2 500 € selon accès",
+          "Conservation pour stocker eau de pluie (rare, mais possible si cuve métal) : 200 € de neutralisation",
+        ],
+        callout: {
+          title: "Bon à savoir",
+          body: "Cette dépose peut entrer dans le périmètre du chantier global pour bénéficier de la TVA à 5,5%. Nous coordonnons avec un partenaire agréé certifié pour gérer ça simplement.",
+        },
+      },
+      {
+        heading: "Les aides 2026 cumulées",
+        paragraphs: [
+          "Pour une bascule fioul → PAC air-eau, voici ce que vous pouvez espérer cumuler :",
+        ],
+        list: [
+          "MaPrimeRénov' : 3 000 à 5 000 € selon revenus",
+          "Bonus sortie de fioul : +1 000 € pour Bleu/Jaune",
+          "Prime CEE Coup de pouce : 2 500 à 5 000 €",
+          "TVA réduite à 5,5%",
+          "Éco-PTZ jusqu'à 50 000 € pour étaler le reste à charge sans intérêts",
+          "Aides locales (selon collectivité, jusqu'à 2 500 €)",
+        ],
+      },
+      {
+        heading: "La démarche concrète avec ECO CVC",
+        paragraphs: [
+          "Voici comment se déroule une sortie de fioul que nous traitons :",
+        ],
+        list: [
+          "Visite technique gratuite — étude de votre installation, isolation, dimensionnement PAC",
+          "Devis détaillé sous 48h avec simulation de toutes les aides cumulables",
+          "Aide au dépôt MaPrimeRénov' et CEE avant signature",
+          "Pose de la PAC (2-3 jours), dépose chaudière, neutralisation cuve",
+          "Mise en service, remise carnet d'entretien et certificats RGE",
+          "Constitution dossier MaPrimeRénov' final pour déclencher le paiement",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Vais-je être obligé de retirer ma chaudière fioul ?",
+        a: "Non, pas de date d'obligation. Mais le remplacement à l'identique sera quasi-impossible aux prochaines pannes, et le fioul devient économiquement intenable. Mieux vaut anticiper.",
+      },
+      {
+        q: "Et si ma chaudière tombe en panne en plein hiver ?",
+        a: "Nous mettons en place une solution de chauffage temporaire (radiateurs électriques mobiles ou réparation provisoire) le temps de poser la PAC. Pour les contrats d'entretien, nous garantissons une intervention sous 24h.",
+      },
+      {
+        q: "Le fioul que j'ai dans ma cuve, je peux le revendre ?",
+        a: "Oui, certains revendeurs reprennent du fioul propre. Nous vous mettons en relation. À défaut, le partenaire de dépose peut récupérer le résidu pour traitement.",
+      },
+    ],
+    relatedCities: ["bourgoin-jallieu", "vienne", "morestel", "voiron"],
+    relatedServices: [
+      { href: "/installation", label: "Installation pompe à chaleur" },
+      { href: "/calculateur", label: "Calculer mes aides" },
+    ],
+  },
+  {
+    slug: "pompe-a-chaleur-vs-poele-a-granules",
+    title: "Pompe à chaleur ou poêle à granulés : que choisir en 2026 ?",
+    metaTitle: "PAC ou poêle à granulés ? Comparatif 2026 — guide ECO CVC",
+    metaDescription:
+      "Pompe à chaleur ou poêle à granulés : comparatif complet 2026 (prix, confort, aides, coût d'usage). Notre conseil objectif d'artisan RGE en Isère et Rhône-Alpes.",
+    category: "Choisir sa PAC",
+    publishedAt: "2026-04-08",
+    updatedAt: "2026-04-28",
+    readingMinutes: 8,
+    excerpt:
+      "Les deux solutions sont éligibles à MaPrimeRénov' et représentent les alternatives les plus crédibles au gaz et au fioul. Voici comment trancher selon votre maison, votre budget et vos habitudes.",
+    intro: [
+      "Pompe à chaleur ou poêle à granulés ? C'est probablement la deuxième question la plus posée par nos clients (après \"air-air ou air-eau\"). Les deux ont leurs forces et leurs limites — et parfois, c'est le combo des deux qui s'impose.",
+    ],
+    sections: [
+      {
+        heading: "Le poêle à granulés : autonomie et chaleur radiante",
+        paragraphs: [
+          "Un poêle à granulés brûle des pellets (sciures compressées) pour chauffer une pièce principale ou — avec hydraulique — l'ensemble de la maison via un réseau de radiateurs.",
+          "Avantages : prix d'achat raisonnable (3 500 à 8 500 € posé), chaleur très agréable (rayonnement), indépendant du réseau électrique en cas de coupure (modèles à convection naturelle), autonomie de 1 à 5 jours selon le réservoir.",
+          "Limites : nécessite stockage des sacs de granulés (5-10 m² de local sec), entretien plus contraignant (vidange du cendrier 1 fois/semaine, ramonage 2 fois/an), bruit léger du brûleur, ne refroidit pas en été.",
+        ],
+      },
+      {
+        heading: "La pompe à chaleur : la solution complète et automatique",
+        paragraphs: [
+          "Comme on l'a vu dans nos autres guides, la PAC (air-eau ou air-air) capte les calories de l'air pour chauffer (et parfois rafraîchir).",
+          "Avantages : couvre 100% des besoins de chauffage et eau chaude, automatique sans intervention manuelle, programmation à distance, peut rafraîchir l'été, durée de vie 17-20 ans.",
+          "Limites : prix plus élevé (11 000 à 19 000 € pour PAC air-eau), dépendant du courant électrique, légère baisse de COP en grand froid, unité extérieure visible.",
+        ],
+      },
+      {
+        heading: "Le tableau comparatif",
+        paragraphs: [
+          "Pour comparer objectivement, voici les chiffres 2026 sur une maison de 110 m² en Isère :",
+        ],
+        list: [
+          "Investissement initial : Poêle hydraulique 9 000 € | PAC air-eau 13 500 €",
+          "Reste à charge après aides (revenus modestes) : Poêle 4 500 € | PAC 4 200 €",
+          "Coût annuel chauffage + ECS : Poêle 850 € (granulés + élec) | PAC 1 050 € (élec uniquement)",
+          "Confort : Poêle = chaleur radiante très agréable mais inégale | PAC = température homogène, programmable",
+          "Effort : Poêle = recharger et nettoyer | PAC = aucun (entretien annuel par pro)",
+          "Été : Poêle = inutile | PAC réversible = climatise",
+        ],
+      },
+      {
+        heading: "Le combo qu'on recommande souvent",
+        paragraphs: [
+          "Pour les maisons isolées en zone forestière (Voironnais, Chartreuse, Bauges) ou pour les amateurs de feu de bois, nous recommandons souvent un combo : PAC air-eau pour le chauffage central + poêle à granulés (ou bûches) en appoint dans le séjour.",
+          "Avantages : redondance énergétique (si une source manque, l'autre prend le relais), confort rayonnant dans la pièce de vie, économies sur la pointe d'hiver (la PAC peut être pilotée pour s'effacer quand le poêle tourne).",
+        ],
+      },
+      {
+        heading: "Notre conseil par profil",
+        paragraphs: [
+          "Voici comment nous orientons nos clients :",
+        ],
+        list: [
+          "Maison < 100 m² bien isolée, propriétaire absent en journée : PAC air-eau seule",
+          "Maison 100-150 m² avec séjour cathédrale, présence en journée : PAC + poêle d'appoint",
+          "Maison > 150 m² mal isolée, zone forestière, autonomie recherchée : poêle hydraulique principal",
+          "Besoin de climatisation en été : PAC obligatoirement",
+          "Coupures électriques fréquentes : poêle à convection naturelle en sécurité",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Le poêle à granulés est-il aussi bien aidé que la PAC ?",
+        a: "Quasiment : MaPrimeRénov' jusqu'à 4 000 € pour le poêle hydraulique, plus la prime CEE. La PAC reçoit un peu plus en cas de sortie de fioul.",
+      },
+      {
+        q: "Peut-on chauffer toute la maison avec un seul poêle ?",
+        a: "Oui mais sous conditions : maison ouverte (pas de cloisons), surface < 80 m² ou poêle hydraulique relié aux radiateurs. Sinon les pièces éloignées resteront froides.",
+      },
+      {
+        q: "Vous installez aussi des poêles à granulés ?",
+        a: "ECO CVC est spécialisé PAC et CVC ; pour les poêles, nous travaillons avec des partenaires de confiance et coordonnons les chantiers combinés PAC + poêle.",
+      },
+    ],
+    relatedCities: ["voiron", "chambery", "morestel", "la-tour-du-pin"],
+    relatedServices: [
+      { href: "/installation", label: "Installation pompe à chaleur" },
+      { href: "/contact", label: "Demander conseil" },
+    ],
+  },
+  {
+    slug: "climatisation-appartement-copropriete",
+    title: "Climatisation en appartement : démarches en copropriété (2026)",
+    metaTitle: "Climatisation appartement copropriété — accord syndic, démarches",
+    metaDescription:
+      "Installer une climatisation en appartement copropriété : ce que la loi autorise, les démarches en AG, les solutions sans accord syndic. Guide ECO CVC pour Lyon, Grenoble, Vienne et Rhône-Alpes.",
+    category: "Pratique",
+    publishedAt: "2026-03-28",
+    updatedAt: "2026-04-28",
+    readingMinutes: 7,
+    excerpt:
+      "Avant de signer un devis pour climatiser votre appartement, il y a un détour obligé : l'assemblée générale de copropriété. Voici ce qui est faisable, ce qui demande accord, et les solutions légales sans rien demander.",
+    intro: [
+      "À Lyon, Grenoble, Villeurbanne, Vienne — les demandes de climatisation en appartement explosent depuis les canicules de 2022 et 2024. Mais une majorité de prospects qui nous appellent ne savent pas qu'il faut presque toujours passer par l'assemblée générale du syndicat des copropriétaires. Voici les règles 2026.",
+    ],
+    sections: [
+      {
+        heading: "Pourquoi la copropriété a son mot à dire",
+        paragraphs: [
+          "Une climatisation split classique nécessite une unité extérieure posée sur la façade, le balcon, la terrasse ou en toiture. Or, l'aspect extérieur du bâtiment est un élément collectif : toute modification visible relève du règlement de copropriété et doit être votée en AG.",
+          "C'est l'article 25 (et parfois 26) de la loi du 10 juillet 1965 qui s'applique : majorité simple ou majorité absolue selon la nature des travaux et les termes du règlement.",
+        ],
+      },
+      {
+        heading: "Le processus en AG",
+        paragraphs: [
+          "Concrètement, voici comment se passe une demande de pose en copropriété :",
+        ],
+        list: [
+          "Étape 1 — Demande au syndic d'inscrire le point à l'ordre du jour de la prochaine AG (au moins 2 mois avant)",
+          "Étape 2 — Joindre un dossier technique : plans 2D de l'emplacement, fiche technique du matériel, mesure du niveau sonore, photo simulée",
+          "Étape 3 — Vote en AG (majorité simple si simple aspect, majorité absolue si modification de gros œuvre)",
+          "Étape 4 — Procès-verbal d'AG = autorisation officielle, à conserver",
+          "Étape 5 — Pose par artisan (qui doit respecter strictement les conditions votées)",
+        ],
+        callout: {
+          title: "Notre service inclus",
+          body: "ECO CVC fournit à tous ses prospects en copropriété un dossier complet \"prêt pour AG\" : plans, mesures acoustiques, fiches techniques, exemple de résolution. C'est ce qui fait la différence entre un vote accepté du premier coup et une demande recalée.",
+        },
+      },
+      {
+        heading: "Les arguments qui font passer le vote",
+        paragraphs: [
+          "Pour maximiser les chances de validation :",
+        ],
+        list: [
+          "Choisir une unité extérieure < 38 dB (modèle silencieux) : les voisins ne peuvent plus dire \"ça va faire du bruit\"",
+          "Proposer un emplacement non visible depuis la rue (cour intérieure, balcon arrière)",
+          "Si possible, masquage par claustra bois ou habillage RAL teinté",
+          "Engagement écrit de remise en état en cas de revente",
+          "Citer l'article L.111-7-1 du Code de la construction (droit à un logement décent face à la chaleur)",
+        ],
+      },
+      {
+        heading: "Les solutions sans accord syndic",
+        paragraphs: [
+          "Si votre AG refuse, ou si vous voulez éviter toute la procédure, voici les options légales :",
+        ],
+        list: [
+          "Climatisation mobile à roulettes (avec gaine d'évacuation par la fenêtre) — efficacité limitée mais 100% libre",
+          "Climatisation monobloc fenêtre (un seul bloc encastré dans une baie) — autorisée si \"sans modification de l'aspect extérieur\"",
+          "Brasseur d'air plafond — efficace en été, aucune autorisation nécessaire",
+          "Rafraîchisseur d'air par évaporation — utile mais peu performant en climat humide",
+        ],
+      },
+      {
+        heading: "Cas particulier des immeubles classés",
+        paragraphs: [
+          "À Lyon Vieux Lyon, Presqu'île, ou dans les centres anciens de Vienne, Grenoble — la zone ABF (Architecte des Bâtiments de France) ajoute une couche : déclaration préalable obligatoire en plus de l'accord copropriété.",
+          "Délai supplémentaire : 1-2 mois. Mais 80% des dossiers passent si l'unité extérieure est invisible depuis l'espace public.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Combien de temps faut-il entre la demande et l'installation ?",
+        a: "Comptez 4 à 8 mois en copropriété : 2 mois avant l'AG (envoi de la demande), 2-4 mois après le vote pour les délais administratifs et la pose. Hors période chaude, c'est moins tendu.",
+      },
+      {
+        q: "Mon syndic refuse de mettre la question à l'ordre du jour ?",
+        a: "Il y est obligé sur demande écrite. Envoyez votre demande en LRAR, c'est légalement opposable.",
+      },
+      {
+        q: "Et si je suis le seul propriétaire à vouloir une clim, ça passe ?",
+        a: "Statistiquement, dans 70% des cas oui — les copropriétaires votent en pensant qu'ils en voudront aussi un jour. Notre dossier technique aide énormément.",
+      },
+    ],
+    relatedCities: ["lyon", "villeurbanne", "grenoble", "vienne"],
+    relatedServices: [
+      { href: "/installation", label: "Installation climatisation" },
+      { href: "/contact", label: "Demander conseil copropriété" },
+    ],
+  },
+  {
+    slug: "vmc-double-flux-2026",
+    title: "VMC double flux : prix, avantages et aides en 2026",
+    metaTitle: "VMC double flux 2026 — prix, avantages, MaPrimeRénov' [guide]",
+    metaDescription:
+      "Tout savoir sur la VMC double flux en 2026 : principe, économies de chauffage, prix posé, aides MaPrimeRénov' et CEE. Guide ECO CVC, installateur ventilation en Isère.",
+    category: "Choisir sa PAC",
+    publishedAt: "2026-03-15",
+    updatedAt: "2026-04-28",
+    readingMinutes: 7,
+    excerpt:
+      "La VMC double flux est l'investissement caché qui fait baisser de 15-25% la facture de chauffage d'une maison rénovée. Encore faut-il qu'elle soit bien dimensionnée et bien posée.",
+    intro: [
+      "On en parle moins que des PAC, mais la VMC double flux est l'un des leviers les plus rentables d'une rénovation énergétique sérieuse. Le principe : récupérer 80-90% de la chaleur de l'air sortant pour préchauffer l'air entrant, sans courant d'air ni perte d'énergie.",
+    ],
+    sections: [
+      {
+        heading: "Différence VMC simple flux vs double flux",
+        paragraphs: [
+          "Une VMC simple flux extrait l'air vicié des pièces humides (cuisine, salle de bain, WC) et laisse l'air frais entrer par des grilles dans les chambres et le séjour. Simple, peu coûteux, mais on perd toute la chaleur de l'air rejeté.",
+          "Une VMC double flux fonctionne en circuit fermé : l'air sortant traverse un échangeur thermique qui récupère sa chaleur pour la transférer à l'air entrant filtré. Le résultat : air neuf à ~18 °C en hiver au lieu de 0-5 °C.",
+        ],
+      },
+      {
+        heading: "Combien ça coûte en 2026",
+        paragraphs: [
+          "Les prix posé d'une VMC double flux dépendent surtout de la complexité du réseau de gaines :",
+        ],
+        list: [
+          "VMC double flux maison neuve (gaines en attente) : 4 500 à 6 500 € posé",
+          "VMC double flux rénovation maison plain-pied : 5 500 à 8 000 € posé",
+          "VMC double flux rénovation maison étagée : 7 000 à 10 500 € posé",
+          "VMC double flux thermodynamique (avec mini-PAC intégrée) : 8 000 à 12 000 € posé",
+        ],
+      },
+      {
+        heading: "Aides 2026 pour une VMC double flux",
+        paragraphs: [
+          "Bonne nouvelle, la VMC double flux est éligible à plusieurs dispositifs :",
+        ],
+        list: [
+          "MaPrimeRénov' : 2 500 € (Bleu), 2 000 € (Jaune), 1 500 € (Violet) — non éligible Rose hors parcours accompagné",
+          "Prime CEE : 200 à 800 € selon revenus et zone climatique",
+          "TVA réduite à 5,5% sur le matériel et la main d'œuvre",
+          "Éco-PTZ inclus si combiné avec un autre geste de rénovation",
+        ],
+      },
+      {
+        heading: "Quand c'est rentable",
+        paragraphs: [
+          "Une VMC double flux est particulièrement rentable si :",
+        ],
+        list: [
+          "Vous rénovez l'isolation (sinon les pertes par défaut d'étanchéité annulent les gains)",
+          "Votre maison est étanche à l'air (test infiltrométrie < 1,5 m³/h.m²)",
+          "Vous restez 5+ ans dans le logement (amortissement 6-10 ans)",
+          "Vous êtes sensible à la qualité de l'air (allergies, pollution urbaine)",
+          "Vous combinez avec PAC : la VMC double flux thermodynamique récupère encore plus d'énergie",
+        ],
+      },
+      {
+        heading: "Limites et attention",
+        paragraphs: [
+          "Une VMC double flux mal posée perd 80% de son intérêt. Les pièges fréquents :",
+        ],
+        list: [
+          "Maison non étanche : l'air entre par des fuites au lieu de passer par l'échangeur",
+          "Gaines mal isolées : récupération de chaleur diminuée",
+          "Filtres non remplacés (tous les 6-12 mois) : débit d'air et qualité dégradés",
+          "Caisson placé en zone non chauffée (combles non isolés) : pertes",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "VMC double flux ou puits canadien ?",
+        a: "Le puits canadien préchauffe l'air par le sol (10-15 °C constants). Combiné à une VMC double flux, c'est la solution ultime — mais 5 000 à 10 000 € de plus, rentabilisé sur 15-20 ans.",
+      },
+      {
+        q: "Le bruit, c'est gênant ?",
+        a: "Une VMC double flux moderne tourne à 25-30 dB en débit normal. Le caisson est généralement placé dans les combles ou un local technique, donc imperceptible dans les pièces.",
+      },
+      {
+        q: "Faut-il l'arrêter en été ?",
+        a: "Non, surtout pas. Beaucoup de modèles ont un bypass été qui désactive l'échange thermique pour rafraîchir la maison la nuit. C'est un avantage net.",
+      },
+    ],
+    relatedCities: ["bourgoin-jallieu", "lyon", "grenoble", "voiron"],
+    relatedServices: [
+      { href: "/ventilation", label: "Notre service ventilation" },
+      { href: "/contact", label: "Devis VMC double flux" },
+    ],
+  },
+  {
+    slug: "bruit-pompe-a-chaleur",
+    title: "Bruit d'une pompe à chaleur : règles 2026 et solutions concrètes",
+    metaTitle: "Bruit pompe à chaleur — réglementation, dB, solutions [2026]",
+    metaDescription:
+      "Niveau sonore d'une pompe à chaleur : réglementation, dB par modèle, distance aux voisins, solutions anti-bruit (plots, écran, emplacement). Guide ECO CVC.",
+    category: "Pratique",
+    publishedAt: "2026-02-25",
+    updatedAt: "2026-04-28",
+    readingMinutes: 6,
+    excerpt:
+      "L'inquiétude n°1 des prospects PAC : et le bruit pour les voisins ? Voici la vérité technique, la loi, et les vraies solutions qui marchent.",
+    intro: [
+      "Sur 10 prospects PAC, 7 nous posent la question du bruit dès la première visite. C'est légitime : il y a eu des installations bâclées par le passé qui ont créé des conflits de voisinage. Avec un matériel moderne et une pose soignée, le problème est résolu en 2026 — voici comment.",
+    ],
+    sections: [
+      {
+        heading: "Ce que dit la réglementation",
+        paragraphs: [
+          "L'arrêté du 5 décembre 2006 et le Code de la santé publique (article R.1334-30) imposent des seuils précis pour les bruits de voisinage. En zone résidentielle, l'émergence sonore (différence entre bruit de fond et bruit avec PAC en marche) ne doit pas dépasser :",
+        ],
+        list: [
+          "Période diurne (7h-22h) : +5 dB par rapport au bruit ambiant",
+          "Période nocturne (22h-7h) : +3 dB seulement",
+          "Mesure prise en limite de propriété, fenêtre du voisin la plus exposée",
+        ],
+        callout: {
+          title: "À retenir",
+          body: "+3 dB la nuit, c'est très restrictif. C'est pour cela que choisir une PAC moderne ≤ 38 dB et bien la positionner est crucial. Un mauvais choix peut devenir un cauchemar juridique.",
+        },
+      },
+      {
+        heading: "Niveau sonore des PAC modernes",
+        paragraphs: [
+          "Les PAC haut de gamme 2026 ont fait d'énormes progrès. Voici les ordres de grandeur à 1 m de l'unité extérieure :",
+        ],
+        list: [
+          "PAC air-eau silencieuses (Daikin Altherma, Mitsubishi Ecodan) : 35-40 dB en mode silence nuit",
+          "PAC air-eau standard : 45-55 dB",
+          "PAC air-air monosplit moderne : 38-44 dB unité ext.",
+          "Pour comparer : une conversation normale = 60 dB, un réfrigérateur = 40 dB, une chambre la nuit = 30 dB",
+        ],
+      },
+      {
+        heading: "Les 6 règles d'or pour une PAC silencieuse",
+        paragraphs: [
+          "Notre check-list lors de chaque pose :",
+        ],
+        list: [
+          "Choisir un modèle ≤ 40 dB en mode \"silence\" (vérifier la fiche technique sous régime nominal, pas en mode silencieux temporaire)",
+          "Distance ≥ 3 m de la fenêtre du voisin la plus proche (gros confort, mais 1,5 m peut suffire avec écran)",
+          "Pose sur plots anti-vibrations (caoutchouc ou ressorts) — jamais directement au sol",
+          "Éviter les coins et angles de mur qui créent un effet de réflexion sonore",
+          "Activer le mode \"nuit silencieux\" automatique de 22h à 7h (toutes les PAC modernes l'ont)",
+          "Installer un écran acoustique (panneau bois ou métal absorbant) si distance < 2 m du voisin",
+        ],
+      },
+      {
+        heading: "Solutions si la PAC est déjà installée et bruyante",
+        paragraphs: [
+          "Si vous nous appelez avec une PAC d'un autre installateur qui crée du bruit, voici les leviers :",
+        ],
+        list: [
+          "Reposer sur plots anti-vibrations si ce n'est pas le cas (200 à 400 €)",
+          "Installer un caisson acoustique autour de l'unité ext. (600 à 1 200 €)",
+          "Remplacer le ventilateur par un modèle EC silencieux (à voir avec le constructeur)",
+          "En dernier recours : déplacement de l'unité (1 500 à 3 000 €)",
+        ],
+      },
+      {
+        heading: "Que faire si un voisin se plaint",
+        paragraphs: [
+          "La marche à suivre raisonnable :",
+        ],
+        list: [
+          "Faire mesurer objectivement par un acousticien indépendant (300-500 €)",
+          "Si dépassement réel des seuils : agir techniquement (plots, écran, mode silence)",
+          "Si conformité prouvée : la plainte n'a pas de base juridique, mais autant arranger le voisinage si possible",
+          "Médiation locale (mairie, conciliateur de justice) avant tribunal",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Mon voisin a installé une PAC bruyante, que faire ?",
+        a: "Demandez une mesure acoustique. Si l'émergence dépasse +5 dB jour ou +3 dB nuit, vous pouvez exiger une mise en conformité. La mairie a un pouvoir de police en bruit de voisinage.",
+      },
+      {
+        q: "La PAC est-elle plus bruyante en hiver ?",
+        a: "Légèrement, oui — quand la PAC dégivre (cycles courts en grand froid), le ventilateur tourne plus fort. Mais cela reste dans les limites réglementaires si l'installation est conforme.",
+      },
+      {
+        q: "Vous mesurez le bruit avant pose ?",
+        a: "Pour les cas sensibles (mitoyenneté, copropriété, ABF), oui — nous fournissons une étude acoustique prévisionnelle. C'est ce qui sécurise les dossiers d'AG.",
+      },
+    ],
+    relatedCities: ["lyon", "villeurbanne", "grenoble", "vienne"],
+    relatedServices: [
+      { href: "/installation", label: "Installation pompe à chaleur" },
+      { href: "/maintenance", label: "Service maintenance" },
+    ],
+  },
 ];
 
 export const findArticle = (slug: string) => articles.find((a) => a.slug === slug);
