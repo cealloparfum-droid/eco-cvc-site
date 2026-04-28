@@ -5,6 +5,7 @@ import { ChevronRight, Phone, Check, ShieldCheck, Clock, Euro, Award, Mail, User
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
+import MicButton from "@/components/MicButton";
 import { findDevis } from "@/data/devis";
 import { useSeo } from "@/lib/useSeo";
 import { submitForm } from "@/lib/submit-form";
@@ -196,7 +197,15 @@ const DevisLanding = () => {
 
                     <div className="relative">
                       <MessageSquare className="w-4 h-4 absolute left-4 top-3.5 text-muted-foreground" />
-                      <textarea name="message" rows={3} value={form.message} onChange={handleChange} placeholder={`Précisions (optionnel) : surface, type de logement, ${cfg.service.toLowerCase()} actuel…`} className="w-full pl-11 pr-4 py-3 rounded-xl border border-border focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/15" />
+                      <textarea name="message" rows={3} value={form.message} onChange={handleChange} placeholder={`Précisions (optionnel) : surface, type de logement, ${cfg.service.toLowerCase()} actuel… (ou cliquez sur le micro pour dicter)`} className="w-full pl-11 pr-12 py-3 rounded-xl border border-border focus:border-brand-blue focus:outline-none focus:ring-2 focus:ring-brand-blue/15" />
+                      <div className="absolute right-3 top-3">
+                        <MicButton
+                          value={form.message}
+                          onChange={(v) => setForm({ ...form, message: v })}
+                          size={32}
+                          title="Dicter votre message"
+                        />
+                      </div>
                     </div>
 
                     <button type="submit" disabled={loading} className="w-full py-3 rounded-xl bg-brand-blue text-white font-semibold hover:bg-brand-blue/90 transition-colors disabled:opacity-50 inline-flex items-center justify-center gap-2">

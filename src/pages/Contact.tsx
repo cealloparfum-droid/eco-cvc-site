@@ -18,6 +18,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import PageHeader from "@/components/PageHeader";
+import MicButton from "@/components/MicButton";
 import { useDevisList } from "@/hooks/use-devis-list";
 import { submitForm } from "@/lib/submit-form";
 
@@ -453,14 +454,24 @@ const Contact = () => {
                     </Field>
 
                     <Field label="Votre message">
-                      <textarea
-                        name="message"
-                        rows={5}
-                        value={form.message}
-                        onChange={handleChange}
-                        placeholder="Décrivez votre projet : surface à climatiser, nombre de pièces, délais souhaités..."
-                        className="input resize-none"
-                      />
+                      <div className="relative">
+                        <textarea
+                          name="message"
+                          rows={5}
+                          value={form.message}
+                          onChange={handleChange}
+                          placeholder="Décrivez votre projet : surface à climatiser, nombre de pièces, délais souhaités... (ou cliquez sur le micro pour dicter)"
+                          className="input resize-none pr-12"
+                        />
+                        <div className="absolute right-3 top-3">
+                          <MicButton
+                            value={form.message}
+                            onChange={(v) => setForm({ ...form, message: v })}
+                            size={32}
+                            title="Dicter votre message"
+                          />
+                        </div>
+                      </div>
                     </Field>
 
                     <p className="text-xs text-muted-foreground">
