@@ -13,7 +13,7 @@ const CityPage = () => {
   const { ville } = useParams<{ ville: string }>();
   const city = ville ? findCity(ville) : undefined;
   const baseUrl = "https://ecocvc.pro";
-  const canonical = `${baseUrl}/pompe-a-chaleur-${ville}`;
+  const canonical = `${baseUrl}/pompe-a-chaleur/${ville}`;
 
   useSeo({
     title: city

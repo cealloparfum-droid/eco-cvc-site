@@ -25,12 +25,12 @@ const columns = [
   {
     title: "Zones d'intervention",
     links: [
-      { href: "/pompe-a-chaleur-bourgoin-jallieu", label: "Bourgoin-Jallieu" },
-      { href: "/pompe-a-chaleur-l-isle-d-abeau", label: "L'Isle-d'Abeau" },
-      { href: "/pompe-a-chaleur-vienne", label: "Vienne" },
-      { href: "/pompe-a-chaleur-lyon", label: "Lyon" },
-      { href: "/pompe-a-chaleur-grenoble", label: "Grenoble" },
-      { href: "/pompe-a-chaleur-chambery", label: "Chambéry" },
+      { href: "/pompe-a-chaleur/bourgoin-jallieu", label: "Bourgoin-Jallieu" },
+      { href: "/pompe-a-chaleur/l-isle-d-abeau", label: "L'Isle-d'Abeau" },
+      { href: "/pompe-a-chaleur/vienne", label: "Vienne" },
+      { href: "/pompe-a-chaleur/lyon", label: "Lyon" },
+      { href: "/pompe-a-chaleur/grenoble", label: "Grenoble" },
+      { href: "/pompe-a-chaleur/chambery", label: "Chambéry" },
     ],
   },
 ];

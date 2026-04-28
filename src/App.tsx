@@ -52,7 +52,7 @@ const App = () => (
             <Route path="/mentions-legales" element={<MentionsLegales />} />
             <Route path="/cgv" element={<CGV />} />
             <Route path="/confidentialite" element={<Confidentialite />} />
-            <Route path="/pompe-a-chaleur-:ville" element={<CityPage />} />
+            <Route path="/pompe-a-chaleur/:ville" element={<CityPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <AdvisorBot />
