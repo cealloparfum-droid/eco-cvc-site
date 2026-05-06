@@ -27,35 +27,47 @@ const CityPage = () => {
     jsonLd: city
       ? {
           "@context": "https://schema.org",
-          "@type": "Service",
-          serviceType: "Installation et entretien de pompe à chaleur et climatisation",
-          provider: {
-            "@type": "HVACBusiness",
-            name: "ECO CVC",
-            url: baseUrl,
-            telephone: "+33758459900",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "1074 Route Départementale 1085",
-              addressLocality: "Nivolas-Vermelle",
-              postalCode: "38300",
-              addressRegion: "Isère",
-              addressCountry: "FR",
+          "@graph": [
+            {
+              "@type": "Service",
+              serviceType: "Installation et entretien de pompe à chaleur et climatisation",
+              provider: {
+                "@type": "HVACBusiness",
+                name: "ECO CVC",
+                url: baseUrl,
+                telephone: "+33758459900",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "1074 Route Départementale 1085",
+                  addressLocality: "Nivolas-Vermelle",
+                  postalCode: "38300",
+                  addressRegion: "Isère",
+                  addressCountry: "FR",
+                },
+              },
+              areaServed: {
+                "@type": "City",
+                name: city.name,
+                address: {
+                  "@type": "PostalAddress",
+                  postalCode: city.postalCode,
+                  addressLocality: city.name,
+                  addressRegion: city.department,
+                  addressCountry: "FR",
+                },
+              },
+              url: canonical,
+              mainEntityOfPage: canonical,
             },
-          },
-          areaServed: {
-            "@type": "City",
-            name: city.name,
-            address: {
-              "@type": "PostalAddress",
-              postalCode: city.postalCode,
-              addressLocality: city.name,
-              addressRegion: city.department,
-              addressCountry: "FR",
+            {
+              "@type": "FAQPage",
+              mainEntity: city.faq.map((item) => ({
+                "@type": "Question",
+                name: item.q,
+                acceptedAnswer: { "@type": "Answer", text: item.a },
+              })),
             },
-          },
-          url: canonical,
-          mainEntityOfPage: canonical,
+          ],
         }
       : undefined,
   });
@@ -250,7 +262,26 @@ const SectionHabitat = ({ city }: { city: ReturnType<typeof findCity> & object }
 const SectionCommunes = ({ city }: { city: ReturnType<typeof findCity> & object }) => (
   <section className="py-14 md:py-20 bg-slate-50/60">
     <div className="container mx-auto">
-      <span className="text-xs font-bold uppercase tracking-wider text-brand-blue mb-3 block">Zone d'intervention</span>
+      {city.quartiers && city.quartiers.length > 0 && (
+        <div className="mb-12">
+          <span className="text-xs font-bold uppercase tracking-wider text-brand-blue mb-3 block">Quartiers desservis à {city.name}</span>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 max-w-3xl">
+            Tous les quartiers de {city.name} couverts
+          </h2>
+          <p className="text-muted-foreground mb-8 max-w-3xl">
+            Quel que soit votre secteur dans {city.name}, nous intervenons sans frais de déplacement supplémentaires :
+          </p>
+          <div className="flex flex-wrap gap-2.5">
+            {city.quartiers.map((q, i) => (
+              <span key={i} className="px-3.5 py-1.5 rounded-full bg-brand-blue/5 border border-brand-blue/20 text-sm text-brand-blue font-medium">
+                {q}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <span className="text-xs font-bold uppercase tracking-wider text-brand-blue mb-3 block">Zone d'intervention élargie</span>
       <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 max-w-3xl">
         Nous intervenons aussi autour de {city.name}
       </h2>
