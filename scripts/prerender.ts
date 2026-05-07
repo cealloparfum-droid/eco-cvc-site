@@ -834,6 +834,89 @@ for (const ch of [
   generated.push(`/${slug}`);
 }
 
+// PAC vs chaudière granulés : comparatif honnête
+{
+  const title =
+    "PAC vs chaudière à granulés : comparatif honnête 2026 (12 critères) | ECO CVC";
+  const description =
+    "Pompe à chaleur ou chaudière à granulés ? Comparatif détaillé en 12 critères : coût, entretien, écologie, confort, espace, autonomie. Verdict transparent par ECO CVC.";
+  const slug = "pac-vs-granules";
+  const criteres = [
+    { c: "Coût d'investissement", pac: "11 000 à 17 000 € posée", g: "17 000 à 25 000 € posée" },
+    { c: "Aides 2026", pac: "Jusqu'à 13 000 € (MPR + CEE)", g: "Jusqu'à 11 000 € (MPR + CEE)" },
+    { c: "Coût d'usage annuel", pac: "550 à 850 €/an (100 m²)", g: "900 à 1 400 €/an (100 m²)" },
+    { c: "Rendement / efficacité", pac: "SCOP 4 à 5 (1 kWh élec → 4-5 kWh chaleur)", g: "Rendement 88-95 %" },
+    { c: "Entretien obligatoire", pac: "1 visite / 2 ans (~150 €)", g: "1 ramonage + 1 entretien / an (~250 €)" },
+    { c: "Espace nécessaire", pac: "Unité ext. ~1 m² + module int. placard", g: "Chaudière + silo granulés (3 à 6 m²)" },
+    { c: "Approvisionnement", pac: "Aucun (électricité du réseau)", g: "Livraison granulés 2-3 fois/an (camion souffleur)" },
+    { c: "Bruit", pac: "35-45 dB unité extérieure", g: "Quasi silencieux (ventilateur uniquement)" },
+    { c: "Écologie / CO2", pac: "Très faible si élec décarbonée", g: "Neutre carbone (biomasse, mais particules fines)" },
+    { c: "Climatisation l'été", pac: "Oui (PAC réversible)", g: "Non (chauffage seul)" },
+    { c: "Autonomie en cas de coupure élec", pac: "Aucune (s'arrête)", g: "Aucune (régulation électrique)" },
+    { c: "Durée de vie", pac: "15 à 20 ans", g: "20 à 25 ans" },
+  ];
+  const faq = [
+    { q: "PAC ou granulés : que choisir en 2026 ?", a: "Dans 80 % des cas (maison correctement isolée, raccordée au réseau électrique), la pompe à chaleur est plus rentable et plus simple. Le granulé reste pertinent pour les vieilles maisons mal isolées en zone froide où la PAC seule ne suffirait pas." },
+    { q: "Quel système coûte le moins cher sur 20 ans ?", a: "PAC air-eau : ~43 700 € (achat + énergie + entretien sur 20 ans). Chaudière granulés : ~44 050 €. Quasi égalité, mais la PAC démarre 6 000 € moins cher à l'achat et offre la clim incluse." },
+    { q: "Le granulé est-il vraiment écologique ?", a: "Oui sur le CO2 (neutre carbone car biomasse), mais la combustion émet des particules fines (PM2.5). Une PAC sur électricité française (90 % décarbonée) est globalement plus propre." },
+    { q: "Peut-on coupler PAC et chaudière granulés ?", a: "Oui, en système hybride. La PAC fait le chauffage de base et le granulé prend le relais quand il fait très froid. Coût élevé mais imbattable en zone montagne." },
+  ];
+  const bodyHtml = `
+    ${breadcrumbHtml([
+      { label: "Accueil", href: "/" },
+      { label: "PAC vs Granulés" },
+    ])}
+    <h1>Pompe à chaleur ou chaudière à granulés : le comparatif honnête</h1>
+    <p>Vous hésitez entre une <strong>pompe à chaleur air-eau</strong> et une <strong>chaudière à granulés</strong> ? Ce comparatif détaillé analyse les 12 critères qui comptent vraiment, sans biais commercial. ECO CVC pose uniquement les pompes à chaleur, mais on vous dit honnêtement quand le granulé est plus pertinent pour votre profil.</p>
+    <h2>Comparatif en 12 critères</h2>
+    <ul>${criteres.map((x) => `<li><strong>${escape(x.c)}</strong> — PAC : ${escape(x.pac)} / Granulés : ${escape(x.g)}</li>`).join("")}</ul>
+    <h2>Choisissez la PAC si...</h2>
+    <ul>
+      <li>Votre maison est correctement isolée (DPE C, D ou mieux)</li>
+      <li>Vous voulez la climatisation l'été (PAC réversible)</li>
+      <li>Vous n'avez pas de place pour un silo à granulés</li>
+      <li>Vous ne voulez aucune corvée d'approvisionnement</li>
+      <li>Votre budget initial est plus serré (~6 000 € de moins)</li>
+      <li>Vous habitez en plaine ou semi-montagne (jusqu'à 800 m)</li>
+      <li>Vous êtes sensible aux particules fines (asthme, allergies)</li>
+    </ul>
+    <h2>Choisissez le granulé si...</h2>
+    <ul>
+      <li>Maison ancienne mal isolée que vous ne pouvez pas rénover</li>
+      <li>Vous habitez en zone très froide (haute montagne, &gt; 1 000 m)</li>
+      <li>Vous avez de la place (chaufferie + silo 3-6 m²)</li>
+      <li>Vous aimez le côté "feu" et l'autonomie locale (filière française)</li>
+      <li>Vous remplacez une chaudière fioul / gaz ancienne sans gros travaux annexes</li>
+      <li>Vous avez accès facile à un fournisseur de granulés local</li>
+      <li>Vous voulez garder votre installation radiateurs haute température</li>
+    </ul>
+    <h2>Coût total sur 20 ans (maison 100 m²)</h2>
+    <ul>
+      <li><strong>PAC air-eau :</strong> 14 000 € achat (après aides) + 14 000 € énergie + 1 500 € entretien + 14 200 € remplacement à 18 ans = <strong>43 700 €</strong></li>
+      <li><strong>Chaudière granulés :</strong> 13 000 € achat (après aides) + 23 000 € énergie + 5 000 € entretien + 3 050 € ramonage = <strong>44 050 €</strong></li>
+      <li>Égalité quasi parfaite — mais la PAC offre la clim et zéro corvée d'approvisionnement.</li>
+    </ul>
+    ${faqHtml(faq)}
+    <p><a href="/comparateur-chauffages">Comparateur tous chauffages</a> · <a href="/simulateur-aides">Simulateur aides 2026</a> · <a href="/audit-devis-pac">Auditer un devis</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+  `;
+  await writeRoute(`/${slug}`, {
+    title,
+    description,
+    canonical: `${BASE}/${slug}`,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faq.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+    bodyHtml,
+  });
+  generated.push(`/${slug}`);
+}
+
 // Pages dimensionnement par pièce
 for (const d of dimensionnements) {
   const canonical = `${BASE}/dimensionnement/${d.slug}`;
