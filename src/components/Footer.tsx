@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import logo from "@/assets/logo-ecocvc-officiel.jpeg";
+import { cities } from "@/data/cities";
 
 const columns = [
   {
@@ -116,7 +117,25 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
+        {/* Maillage interne SEO : toutes les zones d'intervention */}
+        <div className="pt-8 border-t border-slate-800">
+          <h4 className="text-white font-display font-semibold mb-4 text-sm tracking-wider uppercase">
+            Toutes nos zones d'intervention
+          </h4>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-slate-400">
+            {cities.map((c) => (
+              <Link
+                key={c.slug}
+                to={`/pompe-a-chaleur/${c.slug}`}
+                className="hover:text-white transition-colors whitespace-nowrap"
+              >
+                Pompe à chaleur {c.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className="pt-8 mt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-500">
             © {new Date().getFullYear()} eco cvc. Tous droits réservés.
           </p>
