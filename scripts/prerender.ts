@@ -30,6 +30,7 @@ import { depannageCases } from "../src/data/depannage-cases";
 import { aidesCollectivites } from "../src/data/aides-collectivites";
 import { marques } from "../src/data/marques";
 import { codesErreur } from "../src/data/codes-erreur";
+import { comparatifsMarques } from "../src/data/comparatifs-marques";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "../dist");
@@ -621,6 +622,65 @@ for (const d of depannageCases) {
     bodyHtml,
   });
   generated.push(`/depannage/${d.slug}`);
+}
+
+// Comparatifs marque vs marque
+for (const c of comparatifsMarques) {
+  const canonical = `${BASE}/comparatif/${c.slug}`;
+  const bodyHtml = `
+    ${breadcrumbHtml([{ label: "Accueil", href: "/" }, { label: "Comparatifs" }, { label: `${c.marqueA} vs ${c.marqueB}` }])}
+    <h1>${escape(c.h1)}</h1>
+    <p>${escape(c.intro)}</p>
+    <h2>Comparatif détaillé</h2>
+    <table>
+      <thead><tr><th>Critère</th><th>${escape(c.marqueA)}</th><th>${escape(c.marqueB)}</th><th>Top</th></tr></thead>
+      <tbody>${c.criteres.map((cr) => `<tr><td>${escape(cr.critere)}</td><td>${escape(cr.marqueA)}</td><td>${escape(cr.marqueB)}</td><td>${cr.gagnant === "egal" ? "=" : cr.gagnant === "A" ? c.marqueA : c.marqueB}</td></tr>`).join("")}</tbody>
+    </table>
+    <h2>Conclusion</h2>
+    <p>${escape(c.conclusion)}</p>
+    <h2>Recommandation selon votre profil</h2>
+    <ul>${c.recoSelon.map((r) => `<li>${escape(r.profil)} → <strong>${r.reco === "A" ? c.marqueA : c.marqueB}</strong></li>`).join("")}</ul>
+    ${faqHtml(c.faq)}
+  `;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: c.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  };
+  await writeRoute(`/comparatif/${c.slug}`, {
+    title: c.metaTitle,
+    description: c.metaDescription,
+    canonical,
+    jsonLd,
+    bodyHtml,
+  });
+  generated.push(`/comparatif/${c.slug}`);
+}
+
+// Parrainage
+{
+  const title = "Programme de parrainage ECO CVC : 100 € à chaque recommandation";
+  const description =
+    "Programme parrainage ECO CVC : 100 € pour vous + 100 € pour votre filleul à chaque pose de pompe à chaleur. Recommandez un voisin.";
+  const bodyHtml = `
+    <h1>Recommandez ECO CVC, 100 € pour vous, 100 € pour eux</h1>
+    <p>${escape(description)}</p>
+    <h2>Comment ça marche</h2>
+    <ol>
+      <li>Vous nous recommandez un proche via formulaire ou téléphone (07 58 45 99 00)</li>
+      <li>Nous contactons le filleul sous 48h pour visite technique gratuite</li>
+      <li>Si pose réalisée : 100 € pour vous (parrain) + 100 € de remise pour votre filleul</li>
+    </ol>
+    <h2>Conditions</h2>
+    <ul>
+      <li>Filleul nouveau client (pas déjà connu d'ECO CVC)</li>
+      <li>Pose effective et facturée nécessaire pour déclencher la prime</li>
+      <li>Pas de plafond : recommandez autant de proches que vous voulez</li>
+      <li>Cumulable avec MaPrimeRénov', CEE, toutes aides</li>
+    </ul>
+  `;
+  await writeRoute("/parrainage", { title, description, canonical: `${BASE}/parrainage`, bodyHtml });
+  generated.push("/parrainage");
 }
 
 // Audit de devis PAC

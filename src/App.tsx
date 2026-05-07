@@ -51,6 +51,8 @@ const QuizEligibilite = lazy(() => import("./pages/QuizEligibilite"));
 const SolairePac = lazy(() => import("./pages/SolairePac"));
 const Recrutement = lazy(() => import("./pages/Recrutement"));
 const AuditDevis = lazy(() => import("./pages/AuditDevis"));
+const ComparatifMarquesPage = lazy(() => import("./pages/ComparatifMarquesPage"));
+const Parrainage = lazy(() => import("./pages/Parrainage"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -108,6 +110,8 @@ const App = () => (
               <Route path="/solaire-pompe-a-chaleur" element={<SolairePac />} />
               <Route path="/recrutement" element={<Recrutement />} />
               <Route path="/audit-devis-pac" element={<AuditDevis />} />
+              <Route path="/comparatif/:slug" element={<ComparatifMarquesPage />} />
+              <Route path="/parrainage" element={<Parrainage />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

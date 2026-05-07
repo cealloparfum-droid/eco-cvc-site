@@ -24,6 +24,7 @@ const columns = [
       { href: "/glossaire", label: "Glossaire CVC" },
       { href: "/avis", label: "Avis clients" },
       { href: "/recrutement", label: "Recrutement" },
+      { href: "/parrainage", label: "Parrainage" },
       { href: "/contact", label: "Nous contacter" },
       { href: "/contact", label: "Demander un devis" },
     ],
