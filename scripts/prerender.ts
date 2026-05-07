@@ -917,6 +917,164 @@ for (const ch of [
   generated.push(`/${slug}`);
 }
 
+// Tarifs climatisation détaillés (transparence totale)
+{
+  const title =
+    "Tarifs climatisation réversible 2026 : tous nos prix posés | ECO CVC";
+  const description =
+    "Tarifs détaillés climatisation AUX posée : mono-split (890 €), 3,5 kW (990 €), 5 kW (1 690 €), 7 kW (2 290 €), bi-split (2 490 €), tri-split (3 990 €), gainable (6 900 €). Transparence totale.";
+  const slug = "tarifs-climatisation-reversible";
+  const tarifs = [
+    { c: "Mono-split AUX 2,5 kW (10-22 m²)", p: "890 € TTC posé" },
+    { c: "Mono-split AUX 3,5 kW (22-35 m²) — best-seller", p: "990 € TTC posé" },
+    { c: "Mono-split AUX 5,0 kW (35-55 m²)", p: "1 690 € TTC posé" },
+    { c: "Mono-split AUX 7,0 kW (50-75 m²)", p: "2 290 € TTC posé" },
+    { c: "Bi-split (2 unités intérieures)", p: "à partir de 2 490 € TTC posé" },
+    { c: "Tri-split (3 unités intérieures)", p: "à partir de 3 990 € TTC posé" },
+    { c: "Quadri-split (4 unités intérieures)", p: "à partir de 5 290 € TTC posé" },
+    { c: "Gainable invisible (faux-plafond)", p: "à partir de 6 900 € TTC posé" },
+  ];
+  const supplements = [
+    "Création ligne électrique dédiée : 150 à 300 €",
+    "Liaisons frigo > 3 m : 45 €/m supplémentaire",
+    "Échafaudage si pose en hauteur : 200 à 400 €",
+    "Goulottes peintes au choix : 80 à 150 €",
+    "Pompe de relevage condensats : 180 à 250 €",
+    "Module wifi connecté : 120 à 180 €",
+  ];
+  const faq = [
+    { q: "Pourquoi ECO CVC est moins cher que les concurrents ?", a: "Structure familiale légère (pas de siège, pas de pub TV), achats AUX en direct gros volume, zone d'intervention concentrée Isère/Rhône/Lyon (pas de frais de déplacement nationaux). On se rémunère sur la pose, pas sur le matériel." },
+    { q: "Le prix peut-il dépasser le tarif annoncé ?", a: "Oui dans 3 cas : ligne électrique à créer, liaisons frigo > 3 m, échafaudage en hauteur. Tout est annoncé en visite technique avant signature, jamais après." },
+    { q: "Faut-il un acompte ?", a: "30 % à la commande, 70 % à la fin de pose après mise en service. On ne demande jamais 50 % ou plus à la commande (signal d'alarme)." },
+    { q: "Pourquoi AUX et pas Daikin ou Mitsubishi ?", a: "AUX = grand industriel chinois, 14e producteur mondial, 40 millions d'unités/an. Qualité solide, R32, garantie 3 ans. Le rapport qualité-prix est imbattable. On pose aussi Daikin/Mitsubishi sur demande (+800 à +1 500 €/split)." },
+    { q: "Eligible aux aides ?", a: "Non, la clim réversible (PAC air-air) n'est pas éligible MaPrimeRénov'/CEE. C'est pour ça qu'on propose des prix tout compris ultra-compétitifs." },
+    { q: "Délais ?", a: "Basse saison (oct-mars) : 2-3 semaines. Haute saison (avr-sept) : 4-8 semaines. Conseil : commandez en hiver pour avoir la clim avant l'été." },
+  ];
+  const bodyHtml = `
+    ${breadcrumbHtml([
+      { label: "Accueil", href: "/" },
+      { label: "Tarifs climatisation" },
+    ])}
+    <h1>Tous nos tarifs climatisation réversible posée</h1>
+    <p>Mono-split, bi-split, tri-split, gainable : voici <strong>tous nos prix tout compris</strong>, du plus petit modèle (890 €) à la grande maison gainable (6 900 €). Aucun "devis sur mesure" pour cacher les prix : on affiche, on assume, on respecte.</p>
+    <h2>Tarifs ECO CVC 2026 (matériel + pose + mise en service)</h2>
+    <ul>${tarifs.map((t) => `<li><strong>${escape(t.c)}</strong> — ${escape(t.p)}</li>`).join("")}</ul>
+    <h2>Suppléments éventuels (transparence)</h2>
+    <p>Les prix ci-dessus couvrent 95 % des poses. Voici les cas où un supplément peut s'appliquer :</p>
+    <ul>${supplements.map((s) => `<li>${escape(s)}</li>`).join("")}</ul>
+    <h2>Pourquoi nos prix sont plus bas ?</h2>
+    <ul>
+      <li>Structure familiale légère (pas de pub TV, pas d'armée commerciale)</li>
+      <li>Achats AUX en direct gros volume</li>
+      <li>Zone d'intervention concentrée (Isère, Rhône, Lyon, Ain, Savoie)</li>
+      <li>On se rémunère sur la pose, pas sur le matériel</li>
+    </ul>
+    ${faqHtml(faq)}
+    <p><a href="/climatisation-reversible-990-euros">Détail offre 990 €</a> · <a href="/calculateur">Calculateur de puissance</a> · <a href="/produits">Gamme AUX</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+  `;
+  await writeRoute(`/${slug}`, {
+    title,
+    description,
+    canonical: `${BASE}/${slug}`,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faq.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+    bodyHtml,
+  });
+  generated.push(`/${slug}`);
+}
+
+// Landing pages locales : climatisation réversible par ville
+// (réutilise la data cities pour générer 33 landings géo-locales)
+for (const city of cities) {
+  const slug = `climatisation-reversible/${city.slug}`;
+  const title = `Climatisation réversible ${city.name} (${city.postalCode}) : pose à partir de 990 € | ECO CVC`;
+  const description = `Installation climatisation réversible AUX à ${city.name} (${city.department}). Pose à partir de 990 € TTC. Visite technique gratuite, RGE QualiPAC, garantie 3 ans.`;
+  const canonical = `${BASE}/${slug}`;
+  const tarifsLocaux = [
+    "Mono-split 2,5 kW (10-22 m²) : 890 € TTC posé",
+    "Mono-split 3,5 kW (22-35 m²) : 990 € TTC posé — best-seller",
+    "Mono-split 5,0 kW (35-55 m²) : 1 690 € TTC posé",
+    "Bi-split (2 pièces) : à partir de 2 490 € TTC posé",
+    "Tri-split (3 pièces) : à partir de 3 990 € TTC posé",
+  ];
+  const bodyHtml = `
+    ${breadcrumbHtml([
+      { label: "Accueil", href: "/" },
+      { label: "Climatisation réversible", href: "/climatisation-reversible-990-euros" },
+      { label: city.name },
+    ])}
+    <h1>Climatisation réversible à ${escape(city.name)} (${escape(city.postalCode)})</h1>
+    <p>Installation pose-comprise <strong>à partir de 990 € TTC</strong> en mono-split, jusqu'au gainable invisible. Équipe locale ECO CVC à ${city.distanceKm} km de ${escape(city.name)}, RGE QualiPAC, certifiée F-Gaz catégorie 1. Visite technique gratuite sous 48h.</p>
+    <h2>Pourquoi la clim réversible à ${escape(city.name)} ?</h2>
+    <p>${escape(city.intro)}</p>
+    <p>${escape(city.localContext)}</p>
+    <p>${escape(city.habitatNotes)}</p>
+    <h2>Spécificités à ${escape(city.name)}</h2>
+    <ul>${city.specificites.map((s) => `<li>${escape(s)}</li>`).join("")}</ul>
+    <h2>Tarifs climatisation à ${escape(city.name)}</h2>
+    <ul>${tarifsLocaux.map((t) => `<li>${escape(t)}</li>`).join("")}</ul>
+    <h2>Zones d'intervention autour de ${escape(city.name)}</h2>
+    <p>Sans frais de déplacement supplémentaires : ${city.communesVoisines.map(escape).join(", ")}.</p>
+    ${city.quartiers && city.quartiers.length > 0 ? `<h2>Quartiers de ${escape(city.name)} desservis</h2><p>${city.quartiers.map(escape).join(" · ")}</p>` : ""}
+    ${faqHtml(city.faq)}
+    <p><a href="/climatisation-reversible-990-euros">Offre 990 € détaillée</a> · <a href="/tarifs-climatisation-reversible">Tous nos tarifs</a> · <a href="/pompe-a-chaleur/${city.slug}">PAC à ${escape(city.name)}</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+  `;
+  await writeRoute(`/${slug}`, {
+    title,
+    description,
+    canonical,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          name: `ECO CVC — Climatisation ${city.name}`,
+          telephone: "+33758459900",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: city.name,
+            postalCode: city.postalCode,
+            addressRegion: city.department,
+            addressCountry: "FR",
+          },
+          areaServed: { "@type": "City", name: city.name },
+          serviceType: "Installation climatisation réversible",
+          priceRange: "€€",
+        },
+        {
+          "@type": "Service",
+          name: `Installation climatisation réversible ${city.name}`,
+          provider: { "@type": "Organization", name: "ECO CVC" },
+          areaServed: city.name,
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "EUR",
+            price: "990",
+            availability: "https://schema.org/InStock",
+          },
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: city.faq.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        },
+      ],
+    },
+    bodyHtml,
+  });
+  generated.push(`/${slug}`);
+}
+
 // Landing page offre phare : Climatisation réversible 990 € posée
 {
   const title =
