@@ -235,4 +235,26 @@
   <url><loc>https://ecocvc.pro/pompe-a-chaleur/cessieu</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://ecocvc.pro/pompe-a-chaleur/saint-didier-de-la-tour</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ecocvc.pro/pompe-a-chaleur/trept</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <url><loc>https://ecocvc.pro/pompe-a-chaleur/venissieux</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/pompe-a-chaleur/vaulx-en-velin</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/pompe-a-chaleur/bron</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/pompe-a-chaleur/caluire-et-cuire</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/pompe-a-chaleur/rillieux-la-pape</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/pompe-a-chaleur/tassin-la-demi-lune</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/pompe-a-chaleur/givors</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/pompe-a-chaleur/oullins-pierre-benite</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/pompe-a-chaleur/sainte-foy-les-lyon</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/pompe-a-chaleur/ecully</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <url><loc>https://ecocvc.pro/climatisation-reversible/venissieux</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/climatisation-reversible/vaulx-en-velin</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/climatisation-reversible/bron</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/climatisation-reversible/caluire-et-cuire</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/climatisation-reversible/rillieux-la-pape</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/climatisation-reversible/tassin-la-demi-lune</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/climatisation-reversible/givors</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/climatisation-reversible/oullins-pierre-benite</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/climatisation-reversible/sainte-foy-les-lyon</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/climatisation-reversible/ecully</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
 </urlset>

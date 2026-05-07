@@ -1432,6 +1432,317 @@ cities.push(
     ],
     variant: "C",
   },
+  {
+    slug: "venissieux",
+    name: "Vénissieux",
+    postalCode: "69200",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "66 000 habitants",
+    distanceKm: 35,
+    intro:
+      "3ᵉ ville du Rhône, Vénissieux est un terrain SEO majeur pour la rénovation énergétique : pavillonnaire ancien des Minguettes, copropriétés des années 60-70 et programmes neufs côté Parilly. ECO CVC intervient à Vénissieux toutes les semaines.",
+    localContext:
+      "La ville cumule deux profils : copropriétés HLM ou privées chauffées au gaz collectif (à basculer en PAC collective ou en clim individuelle) et pavillons des années 50-80 souvent encore au fioul ou électrique direct. Dans les deux cas, MaPrimeRénov' Copro et CEE ouvrent des aides massives.",
+    habitatNotes:
+      "Maisons en bande du Moulin-à-Vent, pavillons des Minguettes (rénovation ANRU), copropriétés tour Parilly : chaque secteur demande un traitement différent. Visite technique gratuite avant chaque devis.",
+    quartiers: ["Minguettes", "Parilly", "Moulin-à-Vent", "Centre", "Charréard", "Max-Barel", "Léo-Lagrange"],
+    communesVoisines: ["Saint-Fons", "Feyzin", "Corbas", "Saint-Priest", "Lyon 8e", "Bron"],
+    specificites: [
+      "Copropriétés gaz collectif des années 60-70 : nous accompagnons les syndics du dossier AG à la pose PAC collective",
+      "Pavillonnaire Minguettes / Moulin-à-Vent : PAC air-eau 8-10 kW, reste à charge < 6 000 € pour foyers modestes après MaPrimeRénov'",
+      "Clim réversible 990 € très demandée en appartement (été > 35 °C en plein cœur urbain)",
+      "Zone industrielle Lyon-Sud / Vénissieux : froid commercial, climatisation entrepôts, dépannage 24/48h",
+      "Aides Métropole de Lyon Éco-rénov' cumulables avec MaPrimeRénov' (jusqu'à 4 000 € supplémentaires)",
+    ],
+    faq: [
+      { q: "Vous intervenez sur les copropriétés de Vénissieux ?", a: "Oui : étude technique, dossier AG (article 25), déclaration préalable mairie, pose coordonnée. Voir notre page dédiée copropriété." },
+      { q: "Combien coûte une clim réversible à Vénissieux ?", a: "Mono-split à partir de 990 € TTC posé. Bi-split 2 490 €. En appartement, comptez 1 jour de pose, sans démarche urbanisme dans la majorité des cas." },
+      { q: "Quel délai d'intervention dépannage ?", a: "Sous 24-48h en chauffe ou clim. Atelier à 35 km, équipe sur Lyon-Sud quasi quotidiennement." },
+      { q: "Aides Métropole de Lyon disponibles ?", a: "Oui : Éco-rénov' jusqu'à 4 000 €, cumulable avec MaPrimeRénov' et CEE. Nous montons le dossier." },
+      { q: "Maison fioul à passer en PAC à Vénissieux ?", a: "Bonus sortie fioul + MaPrimeRénov' Sérénité = jusqu'à 11 000 € d'aides. Reste à charge typique : 4 000 à 6 000 € pour 100 m²." },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "vaulx-en-velin",
+    name: "Vaulx-en-Velin",
+    postalCode: "69120",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "53 000 habitants",
+    distanceKm: 30,
+    intro:
+      "Voisine immédiate de Villeurbanne, Vaulx-en-Velin connaît une vague de rénovation énergétique massive (programme ANRU + écoquartier du Carré-de-Soie). ECO CVC y intervient régulièrement, en pavillonnaire comme en copropriété.",
+    localContext:
+      "Mix entre Mas-du-Taureau / Grappinière (rénovation lourde, PAC collective éligible MaPrimeRénov' Copro), pavillonnaire du Village et Vernay, et programmes neufs RE2020 du Carré-de-Soie où la clim réversible 3,5 kW à 990 € fait fureur.",
+    habitatNotes:
+      "Beaucoup de logements anciens à isoler avant pose PAC : nous validons toujours l'isolation combles et menuiseries lors de la visite technique gratuite.",
+    quartiers: ["Village", "Vernay", "Mas-du-Taureau", "Grappinière", "Carré-de-Soie", "La Côte", "Pont-des-Planches"],
+    communesVoisines: ["Villeurbanne", "Décines-Charpieu", "Bron", "Lyon 3e", "Meyzieu", "Rillieux-la-Pape"],
+    specificites: [
+      "Programmes neufs Carré-de-Soie : clim réversible 990 € installable en 1 jour (mono-split T3-T4)",
+      "Pavillons du Village / Vernay : PAC air-eau 7-9 kW, ballon thermodynamique pour ECS",
+      "Copropriétés en rénovation ANRU : chauffage collectif gaz à basculer en PAC géothermique ou aérothermique collective",
+      "Aides Métropole de Lyon Éco-rénov' + ANAH renforcée sur certains secteurs",
+      "Centre de formation aux métiers de l'énergie ENTPE : nous accueillons régulièrement des stagiaires",
+    ],
+    faq: [
+      { q: "Clim réversible appartement neuf Carré-de-Soie ?", a: "Oui, mono-split 3,5 kW à 990 € TTC posé. Pose en 1 journée, sans démarche urbanisme si l'unité ext. est sur le balcon prévu." },
+      { q: "PAC pour pavillon au Vernay ?", a: "PAC air-eau 7-9 kW. Devis 12-15 k€ posé, reste à charge 4-7 k€ après aides selon revenus." },
+      { q: "Vous travaillez avec les bailleurs sociaux ?", a: "Oui, marché public ou prestation directe. Étude énergétique amont incluse." },
+      { q: "Bruit unité ext. en zone dense ?", a: "Modèles ≤ 38 dB + plots anti-vibrations + mode nuit silencieux. Conforme à l'arrêté préfectoral en limite de propriété." },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "bron",
+    name: "Bron",
+    postalCode: "69500",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "41 000 habitants",
+    distanceKm: 32,
+    intro:
+      "Située à l'Est de Lyon, Bron est un secteur résidentiel et tertiaire dense (hôpital Édouard-Herriot voisin, université Lyon-2 Bron, zone aéroport). ECO CVC y équipe maisons individuelles, copropriétés et bureaux.",
+    localContext:
+      "Pavillonnaire des années 50-80 dominant (secteurs Terraillon, Parilly, Genas), avec programmes neufs RE2020 vers Bron-Parilly. Demande forte pour la clim réversible en été (îlot de chaleur urbain) et la PAC en remplacement de chaudières gaz vétustes.",
+    habitatNotes:
+      "Zone aéroport : nuisance sonore extérieure existante, ce qui rend la pose PAC moins contraignante côté voisinage. Les maisons mitoyennes du Terraillon demandent une étude d'emplacement précise.",
+    quartiers: ["Terraillon", "Parilly", "Centre", "Le Fort", "Les Genêts", "Caravelle"],
+    communesVoisines: ["Vénissieux", "Saint-Priest", "Décines-Charpieu", "Vaulx-en-Velin", "Lyon 8e", "Lyon 3e"],
+    specificites: [
+      "Pavillonnaire dense Terraillon / Genêts : PAC air-eau 7-9 kW, ballon thermodynamique en sous-sol",
+      "Copropriétés des années 70 : passage gaz collectif → PAC collective ou individuelle selon configuration",
+      "Programmes neufs Bron-Parilly : pré-câblage clim réversible inclus dans la majorité des appartements",
+      "Aides Métropole de Lyon Éco-rénov' + MaPrimeRénov' cumulables",
+      "Climatisation tertiaire (cabinets médicaux, bureaux Bron-Parilly) : VRV multi-zones, devis sous 48h",
+    ],
+    faq: [
+      { q: "Clim réversible à Bron pour appartement ?", a: "Mono-split 3,5 kW à 990 € TTC posé. Bi-split 2 490 €. Pose 1 jour, intervention sans gros œuvre." },
+      { q: "Délai PAC à Bron ?", a: "Visite sous 48h, devis 24h, pose 3-5 semaines selon disponibilité. Mise en service immédiate." },
+      { q: "Vous équipez les cabinets médicaux du secteur Édouard-Herriot ?", a: "Oui, climatisation tertiaire, VRV multi-zones, contrats d'entretien annuels. Devis gratuit." },
+      { q: "Maison ancienne au Terraillon : PAC adaptée ?", a: "Oui, PAC moyenne ou haute température compatible radiateurs fonte. Validation par calcul thermique en visite." },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "caluire-et-cuire",
+    name: "Caluire-et-Cuire",
+    postalCode: "69300",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "43 000 habitants",
+    distanceKm: 38,
+    intro:
+      "Au nord immédiat de Lyon, Caluire-et-Cuire est un secteur résidentiel cossu (Saint-Clair, Vassieux, plateau) avec un fort pouvoir d'achat. La clim réversible et la PAC y sont en demande croissante, autant pour le confort que pour valoriser le patrimoine immobilier.",
+    localContext:
+      "Maisons des années 1900-1960 sur le plateau, pavillonnaire 70-90 vers Bissardon et Cuire-le-Bas, copropriétés bourgeoises en bord de Saône. Beaucoup de chaudières gaz à remplacer avant 2030 (objectif RE2020).",
+    habitatNotes:
+      "Maisons anciennes en pierre : PAC haute température (jusqu'à 65 °C) compatible radiateurs fonte. Combles souvent à isoler avant pose pour optimiser le COP.",
+    quartiers: ["Saint-Clair", "Vassieux", "Plateau", "Bissardon", "Cuire-le-Haut", "Cuire-le-Bas", "Montessuy"],
+    communesVoisines: ["Lyon 4e", "Rillieux-la-Pape", "Sathonay-Camp", "Fontaines-sur-Saône", "Cailloux-sur-Fontaines"],
+    specificites: [
+      "Maisons en pierre 1900-1950 : PAC haute température, radiateurs fonte conservés",
+      "Pavillonnaire Bissardon / Cuire : PAC air-eau 9-12 kW, plancher chauffant rénovation possible",
+      "Copropriétés bord de Saône : étude impact unité ext. en façade Saône, ABF parfois requis",
+      "Bornes de recharge VE + PAC + photovoltaïque : projet global énergétique fréquent",
+      "Aides Métropole de Lyon Éco-rénov' cumulables avec MaPrimeRénov'",
+    ],
+    faq: [
+      { q: "ABF nécessaire à Caluire pour clim ?", a: "Selon le secteur (proximité Saône classée). Nous vérifions et déposons la déclaration préalable si requise." },
+      { q: "PAC pour maison de maître à Saint-Clair ?", a: "PAC air-eau haute température, radiateurs fonte conservés. Devis 14-18 k€ pour 150-200 m², reste à charge selon revenus." },
+      { q: "Pack PAC + photovoltaïque + borne VE ?", a: "Oui, étude énergétique globale gratuite. Cumul aides MaPrimeRénov' + Prime CEE + Advenir VE." },
+      { q: "Délai à Caluire ?", a: "Visite 48h, pose sous 4-6 semaines en saison." },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "rillieux-la-pape",
+    name: "Rillieux-la-Pape",
+    postalCode: "69140",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "30 000 habitants",
+    distanceKm: 36,
+    intro:
+      "Au nord-est de Lyon, Rillieux-la-Pape combine programmes ANRU (rénovation copropriétés Ville-Nouvelle) et pavillonnaire ancien des Vorgines, Crépieux-la-Pape, Bottet. ECO CVC y équipe particuliers et bailleurs.",
+    localContext:
+      "La Ville-Nouvelle (années 60-70) est en pleine rénovation énergétique avec MaPrimeRénov' Copro. Pavillonnaire de Crépieux et Bottet : remplacement chaudières gaz et fioul par PAC air-eau.",
+    habitatNotes:
+      "Logements collectifs nombreux : nous accompagnons les syndics et bailleurs pour les PAC collectives. Pavillonnaire de Crépieux : sous-sols semi-enterrés idéaux pour intégration unité intérieure.",
+    quartiers: ["Ville-Nouvelle", "Crépieux-la-Pape", "Vancia", "Bottet", "Les Vorgines", "Le Loup-Pendu"],
+    communesVoisines: ["Caluire-et-Cuire", "Sathonay-Camp", "Fontaines-Saint-Martin", "Miribel", "Vaulx-en-Velin"],
+    specificites: [
+      "Copropriétés Ville-Nouvelle : MaPrimeRénov' Copro + CEE + ANAH renforcée, dossier monté avec syndic",
+      "Pavillons Crépieux : PAC air-eau + ballon thermodynamique, intégration sous-sol",
+      "Bailleurs sociaux (Lyon Métropole Habitat) : marchés publics ou prestations directes",
+      "Climatisation réversible 990 € très demandée en logements collectifs (été chaud, étages élevés)",
+      "Aides cumulées : MaPrimeRénov' + CEE + Éco-rénov' Métropole jusqu'à 70 % du montant",
+    ],
+    faq: [
+      { q: "Copropriété Ville-Nouvelle : on peut basculer en PAC collective ?", a: "Oui, étude technique gratuite, accompagnement AG, montage MaPrimeRénov' Copro. Subvention jusqu'à 35 % pour la copro + aides individuelles cumulables." },
+      { q: "Combien de temps de pose en pavillon Crépieux ?", a: "1 à 2 jours pour la PAC air-eau + 1 jour pour le ballon thermodynamique. Total : 2-3 jours d'intervention." },
+      { q: "Vous travaillez avec Lyon Métropole Habitat ?", a: "Oui, soit en marché public, soit en sous-traitance. Référencés QualiPAC depuis 2018." },
+      { q: "Délai dépannage à Rillieux ?", a: "Sous 24-48h. Atelier à 36 km, intervention dans la journée si appel matin." },
+    ],
+    variant: "C",
+  },
+  {
+    slug: "tassin-la-demi-lune",
+    name: "Tassin-la-Demi-Lune",
+    postalCode: "69160",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "23 000 habitants",
+    distanceKm: 42,
+    intro:
+      "À l'ouest de Lyon, Tassin-la-Demi-Lune est un secteur résidentiel haut de gamme (Le Méginand, Alaï, centre) avec demande forte en PAC haute performance et clim discrète. ECO CVC intervient sur tout l'ouest lyonnais.",
+    localContext:
+      "Maisons bourgeoises 1900-1970 sur grands terrains, pavillonnaire 80-2000, copropriétés récentes. Beaucoup de propriétaires aisés cherchent une solution haut de gamme : Daikin Altherma 3, PAC géothermique, gainable invisible.",
+    habitatNotes:
+      "Grands terrains permettent l'intégration paysagère discrète de l'unité extérieure. Géothermie possible sur certaines parcelles ≥ 1 500 m². Sur les copropriétés, ABF parfois nécessaire (proximité monuments).",
+    quartiers: ["Le Méginand", "Alaï", "Centre", "Gorge-de-Loup", "Les Verrières", "La Raude"],
+    communesVoisines: ["Lyon 5e", "Lyon 9e", "Sainte-Foy-lès-Lyon", "Écully", "Charbonnières-les-Bains", "Francheville"],
+    specificites: [
+      "Maisons de maître : PAC haute température + radiateurs fonte ou plancher chauffant rénovation",
+      "Géothermie sur grands terrains : COP > 4 toute l'année, rentabilité longue durée",
+      "Gainable invisible : aucune unité visible, idéal pour patrimoine architectural préservé",
+      "Pack PAC + photovoltaïque + batterie domestique : autoconsommation 70 % atteignable",
+      "ABF parfois requis : nous gérons la déclaration préalable mairie",
+    ],
+    faq: [
+      { q: "PAC géothermique à Tassin sur 2 000 m² ?", a: "Oui, sondes verticales ou capteurs horizontaux selon nappe. Investissement 22-28 k€, COP > 4, rentable sur 15-20 ans." },
+      { q: "Clim réversible discrète pour maison de maître ?", a: "Gainable invisible (bouches plafond) ou cassette encastrée. Devis 6 900 € gainable / 1 990 € cassette par pièce." },
+      { q: "Aides MaPrimeRénov' à Tassin ?", a: "Oui mais souvent secteur 'intermédiaire' ou 'supérieur' (revenus). Cumul possible avec CEE et Éco-rénov' Métropole." },
+      { q: "Vous équipez les bureaux d'Alaï ?", a: "Oui, climatisation tertiaire VRV, contrat d'entretien annuel, dépannage sous 24h." },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "givors",
+    name: "Givors",
+    postalCode: "69700",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "20 000 habitants",
+    distanceKm: 38,
+    intro:
+      "Au sud de la Métropole de Lyon, Givors est en pleine reconversion énergétique (Plan ANRU, écoquartier des Vernes). Pavillonnaire ancien et copropriétés à rénover : terrain de rénovation énergétique massif.",
+    localContext:
+      "Mix entre maisons ouvrières des années 1900-1960 (ancien bassin sidérurgique), copropriétés des années 60-70, et programmes neufs RE2020 vers les Vernes. Forte demande PAC pour remplacement fioul/gaz et clim réversible 990 € en appartement.",
+    habitatNotes:
+      "Maisons en pierre du centre ancien : PAC haute température. Copropriétés des Vernes : étude collective possible avec syndic, MaPrimeRénov' Copro éligible.",
+    quartiers: ["Centre", "Les Vernes", "Bans", "Canal", "Freydière", "Combe Robert"],
+    communesVoisines: ["Grigny", "Loire-sur-Rhône", "Saint-Romain-en-Gier", "Chasse-sur-Rhône", "Ternay", "Communay"],
+    specificites: [
+      "Maisons ouvrières en pierre : PAC air-eau haute température 65 °C, radiateurs fonte conservés",
+      "Copropriétés Vernes : MaPrimeRénov' Copro + ANAH + aides Métropole = 60-70 % du montant",
+      "Climat plus chaud que Lyon nord (effet vallée) : clim réversible très demandée",
+      "Bonus sortie fioul jusqu'à 4 000 € + MaPrimeRénov' Sérénité pour foyers modestes",
+      "Bornes de recharge VE en complément PAC : pack global Advenir + CEE",
+    ],
+    faq: [
+      { q: "PAC pour maison ouvrière en pierre à Givors ?", a: "PAC air-eau haute température, radiateurs fonte d'origine conservés. Devis 11-13 k€, reste à charge 3-5 k€ pour foyers modestes." },
+      { q: "Aides cumulées maximales à Givors ?", a: "MaPrimeRénov' Sérénité (jusqu'à 11 000 €) + CEE (jusqu'à 4 500 €) + Éco-rénov' Métropole (4 000 €) = 19 500 € possibles." },
+      { q: "Clim réversible appartement aux Vernes ?", a: "Mono-split 990 € posé. Si copropriété refuse mur extérieur visible : cassette encastrée 1 990 € /pièce." },
+      { q: "Délai dépannage Givors ?", a: "Sous 48h. Atelier à 38 km, équipe sur Lyon-Sud très souvent." },
+    ],
+    variant: "C",
+  },
+  {
+    slug: "oullins-pierre-benite",
+    name: "Oullins-Pierre-Bénite",
+    postalCode: "69600",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "37 000 habitants",
+    distanceKm: 36,
+    intro:
+      "Au sud immédiat de Lyon, la commune nouvelle Oullins-Pierre-Bénite combine secteur résidentiel ancien (centre Oullins, La Saulaie) et zones industrielles en mutation (Pierre-Bénite). ECO CVC y intervient PAC, clim et froid commercial.",
+    localContext:
+      "Pavillonnaire 1900-1970 dominant côté Oullins, copropriétés années 60-80 vers La Saulaie, zone industrielle Pierre-Bénite (Total, Arkema) avec demande froid industriel. Demande croissante PAC pour remplacement chaudières fioul/gaz.",
+    habitatNotes:
+      "Centre ancien Oullins : maisons mitoyennes en pierre, attention emplacement unité ext. en cour. Copropriétés Saulaie : montage dossier AG inclus.",
+    quartiers: ["Centre Oullins", "La Saulaie", "Les Bouddhas", "Le Bac", "Pierre-Bénite Centre", "Hauts de Pierre-Bénite"],
+    communesVoisines: ["Lyon 5e", "Lyon 7e", "Sainte-Foy-lès-Lyon", "Saint-Genis-Laval", "Irigny", "La Mulatière"],
+    specificites: [
+      "Maisons mitoyennes en pierre Oullins centre : PAC haute température, étude emplacement cour intérieure",
+      "Copropriétés Saulaie : dossier AG + déclaration préalable inclus, MaPrimeRénov' Copro éligible",
+      "Zone industrielle Pierre-Bénite : froid commercial, climatisation entrepôts, dépannage 24/48h",
+      "Climat plus chaud (vallée du Rhône) : clim réversible très rentable été",
+      "Aides Métropole de Lyon Éco-rénov' cumulables MaPrimeRénov' + CEE",
+    ],
+    faq: [
+      { q: "Maison mitoyenne Oullins centre : où mettre l'unité ext. ?", a: "Cour intérieure côté arrière dans 90 % des cas. Étude technique gratuite + photo-montage avant devis." },
+      { q: "Vous équipez les industriels de Pierre-Bénite ?", a: "Oui, froid industriel, climatisation tertiaire, contrat d'entretien et astreinte 24h. Devis sous 48h." },
+      { q: "Aides cumulées à Oullins ?", a: "MaPrimeRénov' + CEE + Éco-rénov' Métropole. Jusqu'à 60-70 % du montant pour foyers modestes en passage fioul → PAC." },
+      { q: "Délai pose en copro Saulaie ?", a: "AG : 2-6 mois. Pose après vote : 1 jour. Total moyen : 3-7 mois selon calendrier syndic." },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "sainte-foy-les-lyon",
+    name: "Sainte-Foy-lès-Lyon",
+    postalCode: "69110",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "22 000 habitants",
+    distanceKm: 40,
+    intro:
+      "Banlieue cossue à l'ouest de Lyon, Sainte-Foy-lès-Lyon est un secteur de villas et grands appartements où la qualité de l'installation prime sur le prix. ECO CVC y propose des solutions premium : Daikin Altherma 3, gainable invisible, géothermie.",
+    localContext:
+      "Villas 1900-1970 sur grands terrains, copropriétés haut de gamme du Plateau, pavillonnaire récent vers le Plan-du-Loup. Patrimoine architectural à préserver : ABF parfois requis.",
+    habitatNotes:
+      "Grandes parcelles propices à la géothermie. Villas anciennes : PAC haute température + radiateurs fonte. Copropriétés du Plateau : étude collective avec syndic.",
+    quartiers: ["Centre", "Plateau", "Plan-du-Loup", "Beaunant", "La Gravière", "Saint-Luc"],
+    communesVoisines: ["Lyon 5e", "Tassin-la-Demi-Lune", "Francheville", "Oullins", "La Mulatière"],
+    specificites: [
+      "Villas bourgeoises 1900-1960 : PAC haute température + radiateurs fonte conservés, ou plancher chauffant rénovation",
+      "Géothermie possible sur terrains ≥ 1 500 m² : COP > 4 toute l'année",
+      "Gainable invisible : aucune unité visible, préservation patrimoine architectural",
+      "Pack PAC + photovoltaïque + batterie : autoconsommation 70-80 % atteignable",
+      "ABF parfois requis pour façades classées : déclaration préalable gérée par nos soins",
+    ],
+    faq: [
+      { q: "Villa 200 m² Sainte-Foy : PAC adaptée ?", a: "PAC air-eau 12-14 kW haute température. Devis 16-22 k€ posé selon options. Reste à charge selon revenus." },
+      { q: "Géothermie sur 2 500 m² ?", a: "Oui, sondes verticales 80-100 m. Investissement 24-32 k€, COP 4-4.5, rentabilité 12-18 ans." },
+      { q: "Gainable invisible : ça marche en rénovation ?", a: "Oui si on a accès aux combles ou faux-plafonds. Étude technique gratuite avant devis." },
+      { q: "ABF obligatoire à Sainte-Foy ?", a: "Selon le secteur (proximité monuments classés Lyon 5e). Nous vérifions et déposons la DP avec photo-montage." },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "ecully",
+    name: "Écully",
+    postalCode: "69130",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "18 500 habitants",
+    distanceKm: 42,
+    intro:
+      "Commune résidentielle haut de gamme à l'ouest de Lyon (EM Lyon, Centrale Lyon), Écully concentre villas familiales, copropriétés bourgeoises et bureaux d'études. Demande forte en PAC haute performance et clim discrète.",
+    localContext:
+      "Maisons 1950-2000 sur grands terrains arborés, copropriétés récentes vers le Pérollier, secteur tertiaire dense (Bel-Air Camp, écoles). Beaucoup de propriétaires renouvellent chaudières gaz par PAC dans une démarche RE2020 anticipée.",
+    habitatNotes:
+      "Grands terrains permettent intégration paysagère unité ext. ou géothermie. Copropriétés bourgeoises : étude collective fréquente. Tertiaire : VRV multi-zones, devis sous 48h.",
+    quartiers: ["Centre", "Le Pérollier", "Bel-Air Camp", "Charrière-Blanche", "La Sablière", "Les Cuvettes"],
+    communesVoisines: ["Tassin-la-Demi-Lune", "Lyon 9e", "Champagne-au-Mont-d'Or", "Dardilly", "Charbonnières-les-Bains"],
+    specificites: [
+      "Villas familiales : PAC air-eau 9-12 kW + ballon thermodynamique 200 L pour ECS",
+      "Géothermie possible : grands terrains, COP > 4, rentabilité longue durée",
+      "Pack PAC + photovoltaïque + borne VE : étude énergétique globale gratuite",
+      "Tertiaire (EM Lyon, écoles) : climatisation VRV, contrat d'entretien annuel, dépannage 24h",
+      "Aides Métropole de Lyon Éco-rénov' jusqu'à 4 000 € cumulables MaPrimeRénov'",
+    ],
+    faq: [
+      { q: "PAC pour villa 180 m² Écully ?", a: "PAC air-eau 11-13 kW. Devis 15-20 k€ posé selon options et radiateurs. Reste à charge selon revenus." },
+      { q: "Vous équipez les bureaux de Bel-Air Camp ?", a: "Oui, VRV multi-zones, contrat d'entretien, dépannage sous 24h. Devis gratuit." },
+      { q: "Clim réversible discrète Écully ?", a: "Gainable invisible (bouches plafond) ou multi-split avec unité ext. en façade arrière. Devis 2 490-6 900 €." },
+      { q: "Délai pose à Écully ?", a: "Visite 48h, devis 24h, pose 3-5 semaines. Mise en service immédiate." },
+    ],
+    variant: "C",
+  },
 );
 
 export const findCity = (slug: string) => cities.find((c) => c.slug === slug);
