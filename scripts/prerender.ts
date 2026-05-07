@@ -759,6 +759,81 @@ for (const ch of [
   generated.push(`/${ch.slug}`);
 }
 
+// Comment choisir un installateur PAC : 12 questions + 8 pièges
+{
+  const title =
+    "Choisir un installateur de pompe à chaleur : 12 questions + 8 pièges 2026 | ECO CVC";
+  const description =
+    "Comment choisir un installateur de PAC en 2026 : les 12 questions à poser obligatoirement et les 8 signaux d'arnaque à fuir. Guide indépendant par ECO CVC, RGE QualiPAC en Isère.";
+  const slug = "choisir-installateur-pompe-a-chaleur";
+  const questions = [
+    "Êtes-vous certifié RGE QualiPAC, et pouvez-vous me donner le numéro ?",
+    "Avez-vous l'attestation de capacité fluides frigorigènes (F-Gaz) catégorie 1 ?",
+    "Allez-vous dimensionner ma PAC après une visite technique, ou par téléphone ?",
+    "Pouvez-vous me montrer un devis-type avec le détail matériel + main d'œuvre + aides ?",
+    "Quelles marques proposez-vous, et pourquoi celles-ci ?",
+    "Quelles sont les garanties exactes, et que couvrent-elles ?",
+    "Combien de temps après la commande pour la pose ?",
+    "Qui posera concrètement chez moi, et combien d'années d'expérience ?",
+    "Comment se passe le SAV en cas de panne hors saison vs en plein hiver ?",
+    "Quelle est l'unité extérieure et où sera-t-elle posée ?",
+    "Que se passe-t-il si j'ai des problèmes après la pose ?",
+    "Pouvez-vous m'aider à monter le dossier MaPrimeRénov' / CEE ?",
+  ];
+  const pieges = [
+    "« PAC à 1 € » ou « PAC à coût zéro grâce aux aides »",
+    "Démarchage téléphonique ou porte-à-porte agressif",
+    "Pression commerciale : « il faut signer aujourd'hui »",
+    "Devis flou ou « forfait tout compris » sans détail",
+    "Marque inconnue ou « importation directe d'usine »",
+    "Pas de RGE QualiPAC vérifiable",
+    "Acompte > 30 % avant le début des travaux",
+    "Promesse d'économies extraordinaires (-90 %, facture divisée par 5)",
+  ];
+  const bodyHtml = `
+    ${breadcrumbHtml([
+      { label: "Accueil", href: "/" },
+      { label: "Choisir un installateur PAC" },
+    ])}
+    <h1>Comment choisir un installateur de pompe à chaleur en 2026</h1>
+    <p>Vous avez déjà reçu 2 ou 3 devis et vous ne savez pas comment les comparer objectivement ? Ce guide rassemble les <strong>12 questions à poser à chaque installateur</strong> et les <strong>8 signaux d'arnaque à fuir</strong>, basés sur 200+ chantiers ECO CVC et les signalements DGCCRF du secteur.</p>
+    <h2>Les 12 questions à poser à chaque installateur</h2>
+    <ol>${questions.map((q) => `<li>${escape(q)}</li>`).join("")}</ol>
+    <h2>Les 8 pièges et signaux d'arnaque à fuir</h2>
+    <ol>${pieges.map((p) => `<li>${escape(p)}</li>`).join("")}</ol>
+    <h2>Critères concrets pour comparer 3 devis</h2>
+    <ul>
+      <li><strong>Marque + modèle exact</strong> (Daikin Altherma 3 H 11 kW vs PAC « premium » : pas pareil)</li>
+      <li><strong>Puissance et SCOP</strong> (SCOP > 4 = bon, > 4,5 = excellent)</li>
+      <li><strong>Prix € / kW posé</strong> (standard 2026 : 1 100 à 1 600 €/kW posé pour PAC air-eau)</li>
+      <li><strong>Délai de pose</strong> (réaliste : 3 à 6 semaines)</li>
+      <li><strong>Garanties écrites</strong> (constructeur 5-10 ans, pose 2 ans, décennale)</li>
+      <li><strong>Aides simulées + montage du dossier</strong> (inclus, pas en option)</li>
+    </ul>
+    <p><a href="/audit-devis-pac">Auditer un devis reçu</a> · <a href="/simulateur-aides">Simulateur aides 2026</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+  `;
+  await writeRoute(`/${slug}`, {
+    title,
+    description,
+    canonical: `${BASE}/${slug}`,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: questions.map((q) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text:
+            "Réponse détaillée et critères de comparaison disponibles sur la page complète.",
+        },
+      })),
+    },
+    bodyHtml,
+  });
+  generated.push(`/${slug}`);
+}
+
 // Pages dimensionnement par pièce
 for (const d of dimensionnements) {
   const canonical = `${BASE}/dimensionnement/${d.slug}`;

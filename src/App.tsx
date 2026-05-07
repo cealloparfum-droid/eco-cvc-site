@@ -71,6 +71,7 @@ const RemplacementChaudiereGaz = lazy(() =>
     default: m.RemplacementChaudiereGaz,
   })),
 );
+const ChoisirInstallateur = lazy(() => import("./pages/ChoisirInstallateur"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -140,6 +141,7 @@ const App = () => (
               <Route path="/pac-solaire-batterie" element={<PacSolaireBatterie />} />
               <Route path="/remplacement-chaudiere-fioul" element={<RemplacementChaudiereFioul />} />
               <Route path="/remplacement-chaudiere-gaz" element={<RemplacementChaudiereGaz />} />
+              <Route path="/choisir-installateur-pompe-a-chaleur" element={<ChoisirInstallateur />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
