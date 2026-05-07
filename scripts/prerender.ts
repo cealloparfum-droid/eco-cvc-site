@@ -1251,6 +1251,149 @@ for (const city of cities) {
   generated.push(`/${slug}`);
 }
 
+// Landing B2B : climatisation en copropriété
+{
+  const slug = "climatisation-copropriete";
+  const canonical = `${BASE}/${slug}`;
+  const faq = [
+    { q: "Faut-il l'autorisation de la copropriété pour installer une clim ?", a: "Oui, dans 99 % des cas. Toute modification de l'aspect extérieur (unité ext. visible) doit être votée en AG (article 25). En pratique on vote toujours pour éviter un litige ultérieur." },
+    { q: "Combien de temps prend la procédure complète ?", a: "Visite + devis : 1 semaine. Vote AG : 2-6 mois. Déclaration préalable mairie : 1 mois (2 mois si ABF). Pose : 1 jour. Total moyen : 3 à 8 mois." },
+    { q: "Que faire si le syndic refuse de mettre la résolution à l'ordre du jour ?", a: "Le syndic est obligé d'inscrire toute résolution proposée par un copropriétaire (article 10 décret 1967). Demande à faire par recommandé AR avec le devis et les photo-montages." },
+    { q: "Quelles solutions si le règlement interdit toute clim visible ?", a: "Trois options : gainable intégral (aucune unité visible), cassettes encastrées plafond, ou multi-split avec unité ext. en cour intérieure côté arrière." },
+    { q: "Combien coûte une clim en copropriété ?", a: "Mêmes tarifs que le particulier classique (mono-split 990 €, bi-split 2 490 €, tri-split 3 990 €), à quoi peut s'ajouter : DP mairie (incluse), photo-montage AG (inclus), nacelle si pose en façade haute (200-600 €)." },
+    { q: "ECO CVC peut-elle facturer directement le syndic ?", a: "Oui pour les parties communes (clim hall, locaux gardien, salle de réunion). Pour un appartement privé, la facture est au nom du copropriétaire (TVA 10 % si rénovation logement > 2 ans)." },
+    { q: "Que se passe-t-il en cas de panne après la pose ?", a: "Garantie constructeur AUX 3 ans + garantie pose ECO CVC 2 ans. SAV sous 48h ouvrées. Contrat d'entretien annuel possible pour les parties communes." },
+    { q: "Vous intervenez pour des immeubles complets ?", a: "Oui : tarif négocié pour 5+ lots équipés, planning coordonné avec le syndic, équipe dédiée. Idéal pour résidences services, appart-hôtels, ou opérations de rénovation globale." },
+  ];
+  const bodyHtml = `
+    ${breadcrumbHtml([{ label: "Accueil", href: "/" }, { label: "Climatisation réversible", href: "/climatisation-reversible-990-euros" }, { label: "Copropriété" }])}
+    <h1>Climatisation en copropriété : démarches, AG, prix</h1>
+    <p>Installer une climatisation réversible en copropriété demande un peu plus de méthode qu'en maison individuelle, mais c'est tout à fait faisable. ECO CVC vous accompagne du dossier AG à la pose, en passant par la déclaration préalable en mairie.</p>
+    <h2>Les 4 étapes clés</h2>
+    <ol>
+      <li><strong>Étude technique gratuite :</strong> visite de votre logement et des parties communes (passage gaine, emplacement unité extérieure, contraintes ABF), photo-montages pour l'AG.</li>
+      <li><strong>Dossier AG :</strong> rédaction de la résolution, photo-montages, devis détaillé, transmis au syndic pour inscription à l'ordre du jour. Vote en AG (article 25, majorité absolue).</li>
+      <li><strong>Déclaration préalable mairie :</strong> dépôt du dossier DP (formulaire Cerfa 13404, plan de masse, photos), instruction sous 1 mois (2 mois en site classé / ABF).</li>
+      <li><strong>Pose :</strong> intervention en 1 journée, équipe RGE QualiPAC, tous échafaudages et nacelles inclus.</li>
+    </ol>
+    <h2>3 solutions pour copropriété</h2>
+    <ul>
+      <li><strong>Cassette encastrée plafond (1 990 € / pièce) :</strong> discrète, idéale si le règlement interdit le split mural visible.</li>
+      <li><strong>Gainable invisible (6 900 €) :</strong> aucune unité visible à l'intérieur, bouches discrètes au plafond.</li>
+      <li><strong>Multi-split discret (à partir de 2 490 €) :</strong> unité extérieure en cour intérieure ou façade arrière, peu visible depuis la rue.</li>
+    </ul>
+    <h2>Points juridiques à connaître</h2>
+    <ul>
+      <li>Vote en AG obligatoire (article 25 loi 1965) pour toute modification d'aspect extérieur</li>
+      <li>Niveau sonore : ≤ 30 dB la nuit en limite de propriété (arrêté préfectoral type)</li>
+      <li>Architecte des Bâtiments de France (ABF) si site classé : avis conforme obligatoire</li>
+      <li>Déclaration préalable mairie obligatoire pour toute unité extérieure visible</li>
+      <li>Servitudes de cour : vérifier que l'emplacement n'enclave pas un voisin</li>
+      <li>Règlement de copropriété : lire l'article sur les modifications de façade</li>
+    </ul>
+    ${faqHtml(faq)}
+    <p><a href="/climatisation-reversible-990-euros">Offre 990 € détaillée</a> · <a href="/tarifs-climatisation-reversible">Tous nos tarifs</a> · <a href="/climatisation-gite-airbnb">Clim pour gîte / Airbnb</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+  `;
+  await writeRoute(`/${slug}`, {
+    title: "Climatisation en copropriété : démarches, AG, prix | ECO CVC Lyon Isère",
+    description: "Installer une climatisation en copropriété : étude technique, dossier AG, déclaration préalable, vote article 25, ABF. ECO CVC accompagne du dossier au chantier. Devis gratuit.",
+    canonical,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          name: "Installation climatisation en copropriété",
+          provider: { "@type": "Organization", name: "ECO CVC" },
+          areaServed: ["Isère", "Rhône", "Lyon", "Savoie", "Haute-Savoie"],
+          description: "Pose de climatisation réversible en copropriété : étude technique, montage dossier AG, déclaration préalable mairie, pose coordonnée.",
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: faq.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        },
+      ],
+    },
+    bodyHtml,
+  });
+  generated.push(`/${slug}`);
+}
+
+// Landing B2C : climatisation pour gîte et Airbnb
+{
+  const slug = "climatisation-gite-airbnb";
+  const canonical = `${BASE}/${slug}`;
+  const faq = [
+    { q: "Mon gîte est-il rentable s'il n'est pas climatisé ?", a: "En 2024, 67 % des locataires Airbnb/Booking en France filtrent leurs recherches sur 'climatisation' en saison estivale. Sans clim, vous perdez ~30 % de visibilité dans les résultats et devez baisser vos tarifs de 15-25 % pour compenser." },
+    { q: "Combien de temps pour rentabiliser l'installation ?", a: "Cas typique : gîte 4 personnes en Isère/Savoie/Rhône, 3,5 kW à 990 €. Plus-value tarifaire moyenne : +25 à +35 €/nuit en juillet-août. Avec 60 nuits sur juillet-août, soit +1 800 € de revenus supp. La clim est rentabilisée dès la 1ère saison." },
+    { q: "Comment éviter que les locataires fassent exploser ma facture ?", a: "Trois leviers : bornage de température 18-28 °C dans le menu installateur, module wifi pour piloter à distance, programmation auto on/off selon les check-in/out. ECO CVC paramètre tout pour vous lors de la pose." },
+    { q: "Que faire si un locataire casse la télécommande ?", a: "On fournit 2 télécommandes à la pose (1 d'usage + 1 de secours). Si elles sont perdues : commande wifi via app smartphone (si module installé) ou télécommande de remplacement à 25-35 €." },
+    { q: "L'installation est-elle déductible des revenus locatifs ?", a: "Oui, en LMNP ou en régime réel des revenus fonciers, les travaux d'amélioration sont amortissables sur 10-20 ans. Pour un gîte rural classé, certains conseils départementaux (Isère, Savoie) proposent aussi des subventions." },
+    { q: "Quelle puissance pour un gîte 4-6 personnes ?", a: "Pour le séjour (35-50 m²) : 3,5 à 5,0 kW. Pour les chambres (10-15 m²) : 2,5 kW chacune. Configuration typique gîte 6 pers : tri-split 5 kW + 2x 2,5 kW. Total 4 500-5 500 € posé." },
+    { q: "Combien de temps prend la pose ?", a: "Mono-split : 1 journée. Bi/tri-split : 1-2 jours. Gainable : 3-5 jours. Idéalement, on intervient en intersaison (octobre-mars) pour ne pas perturber les locations." },
+    { q: "Vous proposez un contrat d'entretien adapté gîte ?", a: "Oui : visite préventive 1x/an avant la haute saison (mai-juin), nettoyage filtres, contrôle pression. Tarif : 120 à 180 €/an selon nombre de splits. Priorité SAV en haute saison." },
+  ];
+  const bodyHtml = `
+    ${breadcrumbHtml([{ label: "Accueil", href: "/" }, { label: "Climatisation réversible", href: "/climatisation-reversible-990-euros" }, { label: "Gîte / Airbnb" }])}
+    <h1>Climatisation pour gîte et Airbnb : ROI dès la 1ère saison</h1>
+    <p>Vous louez un gîte, un meublé de tourisme ou un Airbnb ? La climatisation réversible est devenue un standard recherché par les voyageurs. ECO CVC installe des solutions optimisées pour la location saisonnière, avec bornage de température et pilotage wifi pour éviter les abus.</p>
+    <h2>Le ROI en chiffres</h2>
+    <ul>
+      <li><strong>Tarif nuitée moyen sans clim :</strong> 85 € (juillet-août)</li>
+      <li><strong>Tarif nuitée moyen avec clim :</strong> 115 € (+30 €/nuit)</li>
+      <li><strong>Plus-value mensuelle estivale :</strong> +1 670 € pour 56 nuits/mois</li>
+      <li><strong>Investissement initial :</strong> 990 € (mono-split 3,5 kW posé)</li>
+      <li><strong>ROI :</strong> dès la première saison estivale</li>
+    </ul>
+    <h2>Fonctions spécifiques location saisonnière</h2>
+    <ul>
+      <li><strong>Bornage de température 18-28 °C :</strong> impossible pour les locataires de descendre sous 18 °C ou monter au-dessus de 28 °C — facture maîtrisée.</li>
+      <li><strong>Pilotage wifi :</strong> module Smart-Wifi inclus, vous éteignez tout entre 2 locations depuis votre smartphone.</li>
+      <li><strong>Programmation hebdomadaire :</strong> on/off auto selon vos check-in/out.</li>
+      <li><strong>Modèles renforcés :</strong> filtres lavables, télécommande IR + 1 secours, finition robuste.</li>
+    </ul>
+    ${faqHtml(faq)}
+    <p><a href="/climatisation-reversible-990-euros">Offre 990 € détaillée</a> · <a href="/tarifs-climatisation-reversible">Tous nos tarifs</a> · <a href="/climatisation-copropriete">Clim en copropriété</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+  `;
+  await writeRoute(`/${slug}`, {
+    title: "Climatisation pour gîte / Airbnb : ROI dès la 1ère saison | ECO CVC",
+    description: "Installer une climatisation dans votre gîte ou Airbnb : limitation de température, pilotage wifi, programmation, ROI dès la première saison estivale. Mono-split à partir de 990 €. Devis gratuit.",
+    canonical,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          name: "Installation climatisation pour gîte et Airbnb",
+          provider: { "@type": "Organization", name: "ECO CVC" },
+          areaServed: ["Isère", "Rhône", "Lyon", "Savoie", "Haute-Savoie"],
+          description: "Pose de climatisation réversible pour locations saisonnières : bornage de température, pilotage wifi, programmation hebdomadaire.",
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "EUR",
+            price: "990",
+            availability: "https://schema.org/InStock",
+          },
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: faq.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        },
+      ],
+    },
+    bodyHtml,
+  });
+  generated.push(`/${slug}`);
+}
+
 // Pages dimensionnement par pièce
 for (const d of dimensionnements) {
   const canonical = `${BASE}/dimensionnement/${d.slug}`;

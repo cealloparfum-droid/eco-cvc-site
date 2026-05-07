@@ -77,6 +77,8 @@ const PacVsClimReversible = lazy(() => import("./pages/PacVsClimReversible"));
 const ClimReversible990 = lazy(() => import("./pages/ClimatisationReversible990"));
 const TarifsClim = lazy(() => import("./pages/TarifsClimatisation"));
 const ClimVille = lazy(() => import("./pages/ClimVille"));
+const ClimCopro = lazy(() => import("./pages/ClimCopropriete"));
+const ClimGite = lazy(() => import("./pages/ClimGiteAirbnb"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -152,6 +154,8 @@ const App = () => (
               <Route path="/climatisation-reversible-990-euros" element={<ClimReversible990 />} />
               <Route path="/tarifs-climatisation-reversible" element={<TarifsClim />} />
               <Route path="/climatisation-reversible/:ville" element={<ClimVille />} />
+              <Route path="/climatisation-copropriete" element={<ClimCopro />} />
+              <Route path="/climatisation-gite-airbnb" element={<ClimGite />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
