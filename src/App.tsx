@@ -27,6 +27,8 @@ import Faq from "./pages/Faq";
 import DevisLanding from "./pages/DevisLanding";
 import Glossaire from "./pages/Glossaire";
 import SimulateurAides from "./pages/SimulateurAides";
+import MetierProPage from "./pages/MetierProPage";
+import DepannageCasePage from "./pages/DepannageCasePage";
 import NotFound from "./pages/NotFound";
 import AdvisorBot from "./components/AdvisorBot";
 import MobileStickyCTA from "./components/MobileStickyCTA";
@@ -76,6 +78,8 @@ const App = () => (
             <Route path="/faq" element={<Faq />} />
             <Route path="/glossaire" element={<Glossaire />} />
             <Route path="/simulateur-aides" element={<SimulateurAides />} />
+            <Route path="/froid-commercial/:slug" element={<MetierProPage />} />
+            <Route path="/depannage/:slug" element={<DepannageCasePage />} />
             <Route path="/:slug" element={<DevisLandingWrapper />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

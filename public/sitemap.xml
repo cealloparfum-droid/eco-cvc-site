@@ -43,6 +43,26 @@
   <url><loc>https://ecocvc.pro/devis-vmc</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://ecocvc.pro/devis-froid-commercial</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
 
+  <url><loc>https://ecocvc.pro/froid-commercial/boulangerie-patisserie</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/froid-commercial/restaurant-brasserie</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/froid-commercial/pharmacie</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/froid-commercial/boucherie-charcuterie</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/froid-commercial/fromager-cremerie</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/froid-commercial/fleuriste</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/froid-commercial/traiteur</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/froid-commercial/super%C3%A9tte-%C3%A9picerie</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <url><loc>https://ecocvc.pro/depannage/pompe-a-chaleur-ne-chauffe-plus</loc><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://ecocvc.pro/depannage/code-erreur-daikin</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/depannage/code-erreur-mitsubishi</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/depannage/code-erreur-atlantic</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/depannage/pompe-a-chaleur-givre</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/depannage/pompe-a-chaleur-bruit-anormal</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/depannage/pompe-a-chaleur-fuite-eau</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/depannage/climatisation-ne-froid-plus</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/depannage/thermostat-pac-ne-fonctionne-plus</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ecocvc.pro/depannage/facture-electricite-explose-pac</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
   <url><loc>https://ecocvc.pro/pompe-a-chaleur/bourgoin-jallieu</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://ecocvc.pro/pompe-a-chaleur/l-isle-d-abeau</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://ecocvc.pro/pompe-a-chaleur/la-verpilliere</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
