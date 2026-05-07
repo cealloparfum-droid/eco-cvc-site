@@ -2241,4 +2241,537 @@ cities.push(
   },
 );
 
+// ─── Lot 4 : Lyon Sud, Vienne agglo et Nord-Isère manquant ────────
+// Territoire core ECO CVC où la concurrence Google est faible et le taux
+// de conversion élevé (chantiers groupés par bouche-à-oreille).
+cities.push(
+  {
+    slug: "pont-de-beauvoisin",
+    name: "Pont-de-Beauvoisin",
+    postalCode: "38480",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "2 700 habitants",
+    distanceKm: 33,
+    intro:
+      "Pont-de-Beauvoisin est à la frontière Isère-Savoie, sur l'axe Bourgoin → Chambéry. Petite ville historique avec maisons anciennes de centre-bourg et lotissements pavillonnaires en périphérie.",
+    localContext:
+      "Centre-bourg en pierre nécessitant des PAC haute température. Périphérie 80-2000 standard pour PAC air-eau directe. Climat un peu plus froid (270 m d'altitude) qu'à Bourgoin : SCOP > 3,8 recommandé.",
+    habitatNotes:
+      "Maisons rurales de hameaux, grandes parcelles : géothermie possible. Beaucoup de chaudières fioul restantes — sortie obligatoire 2030.",
+    quartiers: ["Centre-bourg", "Faubourg", "Les Granges", "La Bridoire (Savoie)"],
+    communesVoisines: ["Saint-Béron", "Le Pin", "Belmont-Tramonet", "La Bauche", "Les Abrets-en-Dauphiné"],
+    specificites: [
+      "Sortie fioul prioritaire : MaPrimeRénov' + CEE jusqu'à 11 000 €",
+      "Maisons en pierre : PAC haute température (jusqu'à 65 °C)",
+      "Climat froid : modèles -25 °C minimum (Daikin Altherma, Atlantic Alfea Excellia)",
+      "Atelier ECO CVC à 33 km — visite technique sous 48h",
+    ],
+    faq: [
+      {
+        q: "PAC pour maison ancienne en pierre Pont-de-Beauvoisin ?",
+        a: "PAC haute température air-eau (Daikin Altherma HT, Atlantic Alfea Excellia A.I.), compatible radiateurs fonte. 14-18 k€ posé après aides.",
+      },
+      {
+        q: "Aides sortie fioul Pont-de-Beauvoisin ?",
+        a: "Profil Bleu : jusqu'à 11 000 € (MaPrimeRénov' + CEE Coup de Pouce). Profil Jaune : 9 500 €. Visite gratuite pour calcul personnalisé.",
+      },
+      {
+        q: "Distance et délai depuis Nivolas-Vermelle ?",
+        a: "33 km par A43. Visite technique sous 48h, dépannage en 24-48h. Sans frais déplacement.",
+      },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "frontonas",
+    name: "Frontonas",
+    postalCode: "38290",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "2 300 habitants",
+    distanceKm: 12,
+    intro:
+      "Frontonas, petit village au nord de L'Isle-d'Abeau, est en plein développement résidentiel. Lotissements récents 2010-2020, pavillonnaire dominant — terrain idéal pour PAC air-eau standard.",
+    localContext:
+      "Habitat majoritairement RT2012 et post-2020, parfois pré-équipé pour PAC. Population de cadres et jeunes familles, sensibles aux économies d'énergie et à l'écologie.",
+    habitatNotes:
+      "Maisons RT2012 : 8-10 kW suffit pour 110-130 m². Quelques maisons anciennes dans le centre nécessitant approche haute température.",
+    quartiers: ["Centre village", "Les Charpennes", "Le Bois", "La Combe"],
+    communesVoisines: ["L'Isle-d'Abeau", "Saint-Quentin-Fallavier", "Chamagnieu", "Veyssilieu", "Crémieu"],
+    specificites: [
+      "Maisons RT2012 récentes : PAC 8-10 kW + ballon thermo 200L",
+      "Pavillonnaire neuf : pose en 2-3 jours sans gros œuvre",
+      "Atelier à 12 km — intervention rapide",
+    ],
+    faq: [
+      {
+        q: "PAC pour maison RT2012 Frontonas 120 m² ?",
+        a: "PAC air-eau 8-10 kW : 12 000 à 15 000 € posé. Reste à charge ~5-8 k€ après MaPrimeRénov' + CEE.",
+      },
+      {
+        q: "Délai à Frontonas ?",
+        a: "Visite sous 48h, devis 24h, pose 2-4 semaines en saison creuse, 4-6 en haute saison.",
+      },
+      {
+        q: "Vous gérez les dossiers MaPrimeRénov' à ma place ?",
+        a: "Oui, accompagnement complet : montage dossier, CEE, suivi paiement. Inclus dans la prestation.",
+      },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "diemoz",
+    name: "Diémoz",
+    postalCode: "38790",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "3 200 habitants",
+    distanceKm: 18,
+    intro:
+      "Diémoz est sur l'axe stratégique entre Lyon et Bourgoin. Pavillonnaire dominant en zone résidentielle calme, quelques zones agricoles autour. Demande PAC en forte croissance.",
+    localContext:
+      "Plateau de Diémoz : tissu pavillonnaire 1980-2010, peu de copropriétés. Population de propriétaires installés, bonne capacité d'auto-financement.",
+    habitatNotes:
+      "Maisons individuelles 110-150 m² majoritaires. Quelques fermes rénovées en habitat principal (PAC haute température + isolation).",
+    quartiers: ["Centre Diémoz", "Le Bourg", "Les Communaux", "Bel-Air"],
+    communesVoisines: ["Saint-Pierre-de-Chandieu", "Heyrieux", "Bonnefamille", "Roche", "Valencin"],
+    specificites: [
+      "Pavillons 1980-2010 : PAC air-eau directe sans gros œuvre",
+      "Quelques fermes rénovées : approche haute température + isolation préalable",
+      "Concurrence Google quasi nulle = ranking rapide",
+    ],
+    faq: [
+      {
+        q: "PAC pour pavillon Diémoz 130 m² ?",
+        a: "PAC air-eau 9-11 kW : 13-16 k€ posé. Reste à charge 5-9 k€ selon profil de revenus.",
+      },
+      {
+        q: "Aides cumulables à Diémoz ?",
+        a: "MaPrimeRénov' + CEE Coup de Pouce + Eco-PTZ (taux 0). Cumul jusqu'à 11 000 € pour Profil Bleu.",
+      },
+      {
+        q: "Vous intervenez aussi sur fermes rénovées ?",
+        a: "Oui, fréquemment : isolation préalable conseillée, PAC haute température (Daikin Altherma HT) compatible radiateurs fonte.",
+      },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "corbas",
+    name: "Corbas",
+    postalCode: "69960",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "11 500 habitants",
+    distanceKm: 30,
+    intro:
+      "Corbas, sud-est de Lyon, mélange zones pavillonnaires denses et grandes zones logistiques (Plaine de Corbas). Forte demande clim réversible (effet îlot de chaleur estival) et PAC en remplacement de chaudière gaz.",
+    localContext:
+      "Pavillonnaire 1970-2010 dominant. Climat estival sévère (35-38 °C en juillet), demande clim explosive. Aides Métropole de Lyon Éco-rénov' cumulables avec MaPrimeRénov'.",
+    habitatNotes:
+      "Maisons individuelles 100-140 m², quelques copropriétés en centre. Zones logistiques : tertiaire (climatisation bureaux, chambres froides).",
+    quartiers: ["Centre", "Les Razes", "Le Montmartin", "Mi-Plaine", "Les Taillis"],
+    communesVoisines: ["Vénissieux", "Saint-Priest", "Mions", "Feyzin", "Solaize"],
+    specificites: [
+      "Climat urbain sévère : clim réversible 990 € très demandée",
+      "Aides Éco-rénov' Métropole de Lyon : jusqu'à 4 000 € en plus",
+      "Pavillons 70-90 sortie de gaz : PAC air-eau standard",
+      "Zone logistique : tertiaire VRV multi-zones et chambres froides",
+    ],
+    faq: [
+      {
+        q: "Clim réversible Corbas : ABF nécessaire ?",
+        a: "Non, Corbas n'est pas en secteur sauvegardé. Pose simplifiée : déclaration préalable mairie pour façade visible, sinon rien.",
+      },
+      {
+        q: "PAC + clim combinés à Corbas ?",
+        a: "Oui, fréquent : PAC air-eau pour le chauffage central + clim réversible split mural pour 1-2 pièces été. Devis tout-en-un possible.",
+      },
+      {
+        q: "Vous équipez les entrepôts logistiques de la Plaine ?",
+        a: "Oui, clim tertiaire VRV (10-200 kW), chambres froides commerciales, ventilation logistique. Devis 48h.",
+      },
+    ],
+    variant: "C",
+  },
+  {
+    slug: "saint-symphorien-d-ozon",
+    name: "Saint-Symphorien-d'Ozon",
+    postalCode: "69360",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "6 500 habitants",
+    distanceKm: 38,
+    intro:
+      "Saint-Symphorien-d'Ozon, sur l'axe A7 entre Lyon et Vienne, est une commune résidentielle prisée. Centre-bourg ancien, périphérie pavillonnaire récente, demande PAC en forte croissance.",
+    localContext:
+      "Centre-bourg avec maisons en pierre nécessitant approche haute température. Périphérie : pavillonnaire 1990-2020 standard. Couloir A7 : nuisance sonore parfois, choix d'unité ext. silencieuse important.",
+    habitatNotes:
+      "Maisons 110-160 m² individuelles dominantes. Quelques copropriétés modernes en centre. Fioul encore présent en zones rurales périphériques.",
+    quartiers: ["Centre", "Inverse", "Le Pré-Léger", "Champagne"],
+    communesVoisines: ["Communay", "Sérézin-du-Rhône", "Solaize", "Marennes", "Chaponnay"],
+    specificites: [
+      "Couloir A7 : modèles ext. ≤ 35 dB en mode nuit obligatoires",
+      "Centre-bourg pierre : PAC haute température compatible radiateurs fonte",
+      "Aides Métropole de Lyon Éco-rénov' (commune membre)",
+      "Sortie fioul : 11 000 € d'aides pour Profil Bleu",
+    ],
+    faq: [
+      {
+        q: "PAC sortie fioul Saint-Symphorien-d'Ozon ?",
+        a: "PAC air-eau 11-14 kW selon surface. 14-19 k€ posé. Aides jusqu'à 11 000 € pour Profil Bleu MaPrimeRénov'.",
+      },
+      {
+        q: "Bruit unité extérieure sur l'A7 ?",
+        a: "Modèles ≤ 35 dB en mode silence nuit + plots anti-vibration + emplacement façade arrière. Mesure d'émergence possible.",
+      },
+      {
+        q: "Délai à Saint-Symphorien-d'Ozon ?",
+        a: "Visite sous 48h, devis 24h, pose 3-5 semaines. Sans frais déplacement.",
+      },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "communay",
+    name: "Communay",
+    postalCode: "69360",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "3 500 habitants",
+    distanceKm: 36,
+    intro:
+      "Communay, commune résidentielle de la Métropole de Lyon, jouxte Saint-Symphorien-d'Ozon. Pavillonnaire dominant 1980-2010, demande PAC + clim en forte croissance.",
+    localContext:
+      "Tissu pavillonnaire homogène, propriétaires installés. Aides Éco-rénov' Métropole de Lyon. Effet de mode communal : un voisin équipe → plusieurs autres suivent dans l'année.",
+    habitatNotes:
+      "Maisons 100-140 m² majoritaires. Centre-bourg avec maisons anciennes en pierre. Période RT2005 dominante (1990-2010).",
+    quartiers: ["Centre Communay", "Les Iles", "La Vallée", "Le Châtelard"],
+    communesVoisines: ["Saint-Symphorien-d'Ozon", "Sérézin-du-Rhône", "Ternay", "Marennes", "Chaponnay"],
+    specificites: [
+      "Pavillons RT2005 : PAC air-eau 9-11 kW, pose en 3-4 jours",
+      "Aides Métropole Lyon Éco-rénov' jusqu'à 4 000 €",
+      "Effet communal : devis pour 2-3 voisins à la fois possible (remise négociée)",
+    ],
+    faq: [
+      {
+        q: "PAC pour pavillon Communay 120 m² ?",
+        a: "PAC air-eau 9-11 kW : 13-16 k€ posé. Reste à charge 5-9 k€ selon profil + 4 000 € Éco-rénov'.",
+      },
+      {
+        q: "Remise pour chantiers groupés voisins ?",
+        a: "Oui : -3 à -5 % par chantier groupé sur le même quartier (mutualisation logistique). Idéal pour lotissements.",
+      },
+      {
+        q: "Vous travaillez avec syndic copro Communay ?",
+        a: "Oui, dossiers techniques fournis pour vote AG, étude collective possible (PAC mutualisée si configuration adaptée).",
+      },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "pont-eveque",
+    name: "Pont-Évêque",
+    postalCode: "38780",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "5 500 habitants",
+    distanceKm: 35,
+    intro:
+      "Pont-Évêque, agglomération de Vienne, est sur l'axe A7 et la rive gauche du Rhône. Habitat varié : centre-bourg ancien, copropriétés 1970-1990, pavillonnaire récent.",
+    localContext:
+      "Centre ancien en pierre + copros familiales 70-90. Bord du Rhône : couloir de chaleur l'été. Demande clim réversible en forte hausse + PAC en remplacement de chaudière gaz.",
+    habitatNotes:
+      "Maisons individuelles dominantes en périphérie, copropriétés 70-90 en centre. Quelques bâtiments anciens en pierre nécessitant haute température.",
+    quartiers: ["Centre Pont-Évêque", "Estressin (limitrophe Vienne)", "Le Plan", "Les Sétives"],
+    communesVoisines: ["Vienne", "Estrablin", "Chuzelles", "Seyssuel", "Reventin-Vaugris"],
+    specificites: [
+      "Climat estival sévère (vallée du Rhône) : clim réversible très demandée",
+      "Vienne Condrieu Agglomération : aides locales cumulables",
+      "Centre-bourg pierre : PAC haute température compatible radiateurs",
+      "Sortie fioul : aides jusqu'à 11 000 €",
+    ],
+    faq: [
+      {
+        q: "Aides Vienne Condrieu Agglo à Pont-Évêque ?",
+        a: "Aides locales cumulables avec MaPrimeRénov'. Voir notre page /aides-locales/vienne-condrieu-agglomeration. Jusqu'à 12 500 € de cumul possible.",
+      },
+      {
+        q: "Clim réversible 990 € à Pont-Évêque ?",
+        a: "Oui, offre disponible. Pose en 1 jour pour T2-T3, idéal vallée du Rhône où l'été est sévère.",
+      },
+      {
+        q: "Délai depuis Nivolas-Vermelle ?",
+        a: "35 km. Visite sous 48h, dépannage urgent sous 24h.",
+      },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "estrablin",
+    name: "Estrablin",
+    postalCode: "38780",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "3 700 habitants",
+    distanceKm: 38,
+    intro:
+      "Estrablin, agglomération de Vienne, est essentiellement résidentiel. Pavillonnaire 1980-2010 dominant, quelques fermes rénovées en hameaux. Demande PAC en forte croissance.",
+    localContext:
+      "Plateau d'Estrablin : tissu pavillonnaire calme, propriétaires installés. Climat un peu plus tempéré que la vallée du Rhône (300 m altitude).",
+    habitatNotes:
+      "Maisons 110-160 m² majoritaires. Hameaux ruraux : grandes parcelles, géothermie possible. Quelques chaudières fioul restantes.",
+    quartiers: ["Estrablin centre", "Les Sétives", "Combe Bayard", "La Côte-Saint-André"],
+    communesVoisines: ["Vienne", "Pont-Évêque", "Eyzin-Pinet", "Septème", "Moidieu-Détourbe"],
+    specificites: [
+      "Plateau 300 m : SCOP > 3,8 recommandé pour rendement hiver",
+      "Hameaux ruraux : géothermie capteurs horizontaux possible",
+      "Aides Vienne Condrieu Agglomération cumulables",
+      "Sortie fioul : 11 000 € pour Profil Bleu",
+    ],
+    faq: [
+      {
+        q: "PAC pour ferme rénovée Estrablin ?",
+        a: "Approche en 2 temps : isolation préalable (combles, murs) + PAC haute température 14-18 kW. Investissement 18-25 k€ posé après aides.",
+      },
+      {
+        q: "Géothermie envisageable ?",
+        a: "Oui pour parcelles ≥ 1 500 m². Capteurs horizontaux 24-32 k€ posé, COP > 4, rentabilité 12-15 ans.",
+      },
+      {
+        q: "Aides locales Estrablin ?",
+        a: "Vienne Condrieu Agglomération : cumul possible avec MaPrimeRénov' + CEE jusqu'à 12 500 €.",
+      },
+    ],
+    variant: "C",
+  },
+  {
+    slug: "chasse-sur-rhone",
+    name: "Chasse-sur-Rhône",
+    postalCode: "38670",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "5 800 habitants",
+    distanceKm: 42,
+    intro:
+      "Chasse-sur-Rhône, à la limite Isère/Rhône sur l'axe A7, mélange zones pavillonnaires, centre-bourg ancien et zones industrielles. Demande clim explosive (couloir de chaleur Rhône).",
+    localContext:
+      "Vallée du Rhône, climat estival le plus sévère du département (jusqu'à 40 °C en juillet). Clim réversible quasi indispensable. PAC en sortie de chaudière gaz/fioul également très demandée.",
+    habitatNotes:
+      "Maisons individuelles 1970-2010 dominantes. Copropriétés en centre-bourg et près de la gare. Habitat ancien en pierre dans le vieux Chasse.",
+    quartiers: ["Centre", "Bois Joli", "Le Trêve", "Les Olmes"],
+    communesVoisines: ["Givors", "Ternay", "Communay", "Seyssuel", "Pont-Évêque"],
+    specificites: [
+      "Climat estival extrême (jusqu'à 40 °C) : clim réversible quasi obligatoire",
+      "Ligne TER Lyon-Vienne-Valence : demande locataires cherchant logements clim",
+      "Sortie fioul/gaz : aides jusqu'à 11 000 €",
+      "Aides Vienne Condrieu Agglo cumulables",
+    ],
+    faq: [
+      {
+        q: "Combien de jours > 30 °C à Chasse-sur-Rhône ?",
+        a: "En 2024 : 78 jours > 30 °C, 22 jours > 35 °C (Météo France). La clim réversible est devenue indispensable, pas un luxe.",
+      },
+      {
+        q: "Clim 990 € + PAC : combiné ?",
+        a: "Oui, beaucoup le font : PAC air-eau pour chauffage central + 1-2 splits clim pour les pièces les plus exposées. Devis combiné possible.",
+      },
+      {
+        q: "Délai depuis Nivolas ?",
+        a: "42 km par A7. Visite sous 48h, dépannage 24-48h. Sans frais déplacement.",
+      },
+    ],
+    variant: "C",
+  },
+  {
+    slug: "saint-pierre-de-chandieu",
+    name: "Saint-Pierre-de-Chandieu",
+    postalCode: "69780",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "5 200 habitants",
+    distanceKm: 22,
+    intro:
+      "Saint-Pierre-de-Chandieu, Métropole de Lyon, est sur l'axe Lyon-Chambéry. Pavillonnaire dominant, en croissance résidentielle forte ces dernières années.",
+    localContext:
+      "Tissu pavillonnaire 1980-2020 mixte : ancien (RT2005) et neuf (RT2012, RE2020). Aides Métropole Éco-rénov' actives. Population jeunes familles + cadres.",
+    habitatNotes:
+      "Maisons 110-150 m² majoritaires. Lotissements neufs RE2020 souvent pré-équipés PAC. Quelques fermes rénovées en hameaux.",
+    quartiers: ["Centre Saint-Pierre", "L'Étang", "Les Plantées", "La Carbière"],
+    communesVoisines: ["Heyrieux", "Toussieu", "Saint-Bonnet-de-Mure", "Diémoz", "Marennes"],
+    specificites: [
+      "Maisons RE2020 : pré-équipement PAC fréquent (raccordement rapide)",
+      "Aides Métropole Lyon Éco-rénov' jusqu'à 4 000 €",
+      "Effet de mode communal : chantiers groupés en lotissement",
+      "Atelier à 22 km — intervention rapide",
+    ],
+    faq: [
+      {
+        q: "Mon lotissement neuf est-il pré-équipé pour PAC ?",
+        a: "Souvent oui depuis 2020 (RE2020). On vérifie en visite : si oui, raccordement en 1-2 jours pour 8-10 k€ au lieu de 13-16 k€.",
+      },
+      {
+        q: "Aides Métropole Lyon Saint-Pierre-de-Chandieu ?",
+        a: "Éco-rénov' jusqu'à 4 000 € en plus des aides nationales. Cumul jusqu'à 15 000 € possible pour Profil Bleu.",
+      },
+      {
+        q: "Clim réversible aussi à Saint-Pierre ?",
+        a: "Oui, offre 990 € disponible. Délai 2-4 semaines selon saison.",
+      },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "chaponnay",
+    name: "Chaponnay",
+    postalCode: "69970",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "4 500 habitants",
+    distanceKm: 28,
+    intro:
+      "Chaponnay, Métropole de Lyon, est résidentiel et calme. Centre-bourg ancien + lotissements pavillonnaires récents. Population de propriétaires installés, bonne capacité d'investissement énergétique.",
+    localContext:
+      "Tissu pavillonnaire 1980-2015 dominant. Quelques fermes anciennes au sud. Aides Éco-rénov' Métropole Lyon. Demande clim en hausse (vallée du Rhône proche).",
+    habitatNotes:
+      "Maisons 110-150 m² majoritaires. Centre ancien en pierre nécessitant haute température. Lotissements récents standard.",
+    quartiers: ["Centre Chaponnay", "Le Plan", "Les Brosses", "Les Trois Communes"],
+    communesVoisines: ["Mions", "Marennes", "Toussieu", "Saint-Pierre-de-Chandieu", "Communay"],
+    specificites: [
+      "Centre-bourg pierre : PAC haute température (Daikin Altherma HT)",
+      "Lotissements 1990-2015 : PAC air-eau directe sans gros œuvre",
+      "Aides Métropole Lyon Éco-rénov' : 4 000 €",
+      "Sortie fioul : aides cumulées jusqu'à 11 000 €",
+    ],
+    faq: [
+      {
+        q: "PAC pour maison de centre Chaponnay en pierre ?",
+        a: "PAC haute température air-eau, 11-14 kW. Compatible radiateurs fonte. 16-21 k€ posé après aides.",
+      },
+      {
+        q: "Délai à Chaponnay ?",
+        a: "Visite sous 48h, devis 24h, pose 3-5 semaines. 28 km depuis notre atelier.",
+      },
+      {
+        q: "Clim 990 € à Chaponnay ?",
+        a: "Oui, offre disponible. Idéal mono-split T2-T3 pour pièce de vie principale.",
+      },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "toussieu",
+    name: "Toussieu",
+    postalCode: "69780",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "3 100 habitants",
+    distanceKm: 23,
+    intro:
+      "Toussieu, Métropole de Lyon, est une petite commune résidentielle calme. Pavillonnaire dominant, peu de copropriétés. Population de propriétaires installés.",
+    localContext:
+      "Tissu pavillonnaire 1980-2015 homogène. Faible concurrence locale = ranking SEO rapide. Aides Éco-rénov' Métropole de Lyon actives.",
+    habitatNotes:
+      "Maisons individuelles 100-140 m². Quelques anciennes fermes rénovées au sud. Chauffage gaz et électrique direct dominants à remplacer.",
+    quartiers: ["Centre Toussieu", "Les Brosses", "La Cure", "Le Sermenas"],
+    communesVoisines: ["Saint-Pierre-de-Chandieu", "Mions", "Saint-Bonnet-de-Mure", "Marennes", "Chaponnay"],
+    specificites: [
+      "Concurrence Google quasi nulle : ranking en 4-8 semaines",
+      "Aides Métropole Lyon Éco-rénov' jusqu'à 4 000 €",
+      "Atelier à 23 km — intervention rapide",
+    ],
+    faq: [
+      {
+        q: "PAC pour pavillon Toussieu 110 m² ?",
+        a: "PAC air-eau 9-10 kW : 12-15 k€ posé. Reste à charge 4-8 k€ selon profil de revenus + 4 000 € Éco-rénov'.",
+      },
+      {
+        q: "Aides Métropole Lyon Toussieu ?",
+        a: "Éco-rénov' jusqu'à 4 000 €. Cumulable avec MaPrimeRénov' + CEE Coup de Pouce. Cumul max ~15 000 €.",
+      },
+      {
+        q: "Délai à Toussieu ?",
+        a: "Visite sous 48h, devis 24h, pose 3-5 semaines.",
+      },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "les-avenieres-veyrins-thuellin",
+    name: "Les Avenières Veyrins-Thuellin",
+    postalCode: "38630",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "5 800 habitants",
+    distanceKm: 36,
+    intro:
+      "Les Avenières, commune nouvelle (fusion Avenières + Veyrins-Thuellin), est sur l'axe Bourgoin → Belley → Aix-les-Bains. Habitat varié : centre-bourg ancien, hameaux ruraux, pavillonnaire récent.",
+    localContext:
+      "Tissu mixte avec beaucoup de chaudières fioul restantes (zone rurale). Sortie fioul prioritaire. Climat un peu plus froid (250 m altitude).",
+    habitatNotes:
+      "Maisons rurales en pierre dominantes au centre, pavillonnaire récent en périphérie. Grandes parcelles : géothermie possible.",
+    quartiers: ["Avenières centre", "Veyrins", "Thuellin", "Curtille"],
+    communesVoisines: ["Morestel", "Brangues", "Saint-Genix-les-Villages", "Belley", "Aoste"],
+    specificites: [
+      "Sortie fioul : aides jusqu'à 11 000 € (Profil Bleu)",
+      "Maisons rurales pierre : PAC haute température compatible radiateurs",
+      "Hameaux : géothermie capteurs horizontaux possible (parcelles ≥ 1 500 m²)",
+      "Climat froid : modèles -25 °C minimum",
+    ],
+    faq: [
+      {
+        q: "PAC sortie fioul Les Avenières ?",
+        a: "PAC air-eau haute température 11-14 kW : 16-22 k€ posé. Aides 11 000 € cumul Profil Bleu.",
+      },
+      {
+        q: "Géothermie aux Avenières ?",
+        a: "Oui, fréquent en hameaux : capteurs horizontaux 24-32 k€, COP > 4 toute l'année. Rentabilité 12-15 ans.",
+      },
+      {
+        q: "Délai depuis Nivolas-Vermelle ?",
+        a: "36 km. Visite sous 48h, dépannage urgent sous 24-48h.",
+      },
+    ],
+    variant: "C",
+  },
+  {
+    slug: "marennes",
+    name: "Marennes",
+    postalCode: "69970",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "1 800 habitants",
+    distanceKm: 27,
+    intro:
+      "Marennes, petite commune Métropole de Lyon, est résidentielle et calme. Pavillonnaire dominant, faible concurrence locale = très bon ratio coût/conversion en SEO.",
+    localContext:
+      "Tissu pavillonnaire 1980-2015 homogène. Population stable, propriétaires installés. Aides Éco-rénov' Métropole Lyon cumulables.",
+    habitatNotes:
+      "Maisons individuelles 100-140 m². Quelques anciennes fermes rénovées en habitat principal. Chauffage gaz et fioul à remplacer.",
+    quartiers: ["Marennes centre", "Le Bourg", "La Cordière"],
+    communesVoisines: ["Chaponnay", "Mions", "Saint-Pierre-de-Chandieu", "Toussieu", "Communay"],
+    specificites: [
+      "Concurrence Google quasi nulle : top 3 atteignable en 4-6 semaines",
+      "Aides Métropole Lyon Éco-rénov' : 4 000 €",
+      "Atelier à 27 km",
+    ],
+    faq: [
+      {
+        q: "PAC pour pavillon Marennes 120 m² ?",
+        a: "PAC air-eau 9-11 kW : 13-15 k€ posé. Reste à charge ~5-8 k€ après aides cumulées.",
+      },
+      {
+        q: "Sortie fioul à Marennes ?",
+        a: "Aides cumulées jusqu'à 11 000 € pour Profil Bleu (MaPrimeRénov' + CEE Coup de Pouce + 4 000 € Éco-rénov').",
+      },
+      {
+        q: "Délai à Marennes ?",
+        a: "Visite sous 48h, pose 3-5 semaines selon saison.",
+      },
+    ],
+    variant: "A",
+  },
+);
+
 export const findCity = (slug: string) => cities.find((c) => c.slug === slug);
