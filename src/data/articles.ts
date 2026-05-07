@@ -1430,6 +1430,597 @@ export const articles: Article[] = [
       { href: "/contact", label: "Demander un devis gainable" },
     ],
   },
+  {
+    slug: "plafonds-revenus-maprimerenov-2026",
+    title: "Plafonds de revenus MaPrimeRénov' 2026 : à quel profil appartenez-vous ?",
+    metaTitle: "Plafonds revenus MaPrimeRénov' 2026 — Bleu, Jaune, Violet, Rose",
+    metaDescription:
+      "Plafonds de revenus MaPrimeRénov' 2026 par profil (Bleu, Jaune, Violet, Rose) et par composition de foyer. Île-de-France et hors Île-de-France. Mise à jour officielle Anah.",
+    category: "Aides",
+    publishedAt: "2026-04-30",
+    updatedAt: "2026-05-06",
+    readingMinutes: 6,
+    excerpt:
+      "MaPrimeRénov' fonctionne par tranches de revenus : Bleu (très modestes), Jaune (modestes), Violet (intermédiaires), Rose (aisés). Voici les plafonds exacts 2026.",
+    intro: [
+      "Avant de prétendre à MaPrimeRénov', encore faut-il savoir dans quelle tranche on est. L'Anah classe les ménages en 4 profils colorés selon leur revenu fiscal de référence (RFR) et la composition du foyer. Voici les plafonds officiels 2026, hors Île-de-France et IDF.",
+    ],
+    sections: [
+      {
+        heading: "Comment se situer rapidement",
+        paragraphs: [
+          "Prenez votre dernier avis d'imposition. Le revenu fiscal de référence (RFR) figure en haut à gauche. Comptez ensuite combien de personnes vivent dans votre foyer (vous + conjoint + enfants à charge). Croisez avec le tableau ci-dessous pour identifier votre profil.",
+        ],
+      },
+      {
+        heading: "Plafonds 2026 — hors Île-de-France",
+        paragraphs: ["Pour les départements hors IDF (Isère, Rhône, Savoie, Haute-Savoie, Loire…) :"],
+        list: [
+          "1 personne — Bleu : ≤ 17 173 € | Jaune : ≤ 22 015 € | Violet : ≤ 30 844 € | Rose : > 30 844 €",
+          "2 personnes — Bleu : ≤ 25 115 € | Jaune : ≤ 32 197 € | Violet : ≤ 45 340 € | Rose : > 45 340 €",
+          "3 personnes — Bleu : ≤ 30 206 € | Jaune : ≤ 38 719 € | Violet : ≤ 54 592 € | Rose : > 54 592 €",
+          "4 personnes — Bleu : ≤ 35 285 € | Jaune : ≤ 45 234 € | Violet : ≤ 63 844 € | Rose : > 63 844 €",
+          "5 personnes — Bleu : ≤ 40 388 € | Jaune : ≤ 51 775 € | Violet : ≤ 73 098 € | Rose : > 73 098 €",
+          "+1 personne supplémentaire : +5 094 € (Bleu), +6 525 € (Jaune), +9 250 € (Violet)",
+        ],
+        callout: {
+          title: "Profil = montant",
+          body: "Bleu = aides maximales (jusqu'à 5 000 € PAC air-eau, 11 000 € géothermie). Jaune = -20%. Violet = -40%. Rose = non éligible PAC air-eau simple en 2026 (sauf rénovation globale parcours accompagné).",
+        },
+      },
+      {
+        heading: "Plafonds 2026 — Île-de-France (régime majoré)",
+        paragraphs: ["L'Anah applique des plafonds plus élevés en IDF (coût de la vie) :"],
+        list: [
+          "1 personne — Bleu : ≤ 23 768 € | Jaune : ≤ 28 933 € | Violet : ≤ 40 404 €",
+          "2 personnes — Bleu : ≤ 34 884 € | Jaune : ≤ 42 463 € | Violet : ≤ 59 394 €",
+          "3 personnes — Bleu : ≤ 41 893 € | Jaune : ≤ 51 000 € | Violet : ≤ 71 060 €",
+          "4 personnes — Bleu : ≤ 48 914 € | Jaune : ≤ 59 549 € | Violet : ≤ 83 637 €",
+          "+1 personne suppl. : +7 028 € (Bleu), +8 551 € (Jaune), +12 156 € (Violet)",
+        ],
+      },
+      {
+        heading: "Comment optimiser son dossier",
+        paragraphs: [
+          "Plusieurs astuces légales pour maximiser vos aides :",
+        ],
+        list: [
+          "Utiliser le RFR de l'année N-1 ou N-2 (le plus avantageux pour vous est accepté)",
+          "Si revenus en baisse récente : justifier (chômage, retraite) pour basculer dans une tranche plus aidée",
+          "Couples : déposer le dossier au nom du conjoint avec le RFR le plus bas si déclaration séparée",
+          "Cumul avec Coup de pouce CEE : tous profils éligibles, donc même les Roses touchent la prime CEE",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Mon profil va-t-il changer entre 2026 et 2027 ?",
+        a: "Les plafonds sont actualisés chaque année (~+2-3% indexés sur l'inflation). Pour un dossier 2026, c'est le RFR 2024 ou 2025 qui compte.",
+      },
+      {
+        q: "Je suis propriétaire bailleur, suis-je éligible ?",
+        a: "Oui, depuis 2021, sous condition de mise en location au tarif normal pendant 6 ans. Les plafonds bailleur sont les mêmes que pour les propriétaires occupants.",
+      },
+      {
+        q: "Que se passe-t-il si mon profil change après dépôt du dossier ?",
+        a: "Le profil est figé à la date de dépôt. Une amélioration de revenus après ne fait pas baisser votre prime.",
+      },
+    ],
+    relatedCities: ["bourgoin-jallieu", "lyon", "vienne"],
+    relatedServices: [
+      { href: "/simulateur-aides", label: "Simuler vos aides personnalisées" },
+      { href: "/blog/maprimerenov-2026-pompe-a-chaleur", label: "Tout sur MaPrimeRénov' 2026" },
+    ],
+  },
+  {
+    slug: "quelle-pac-pour-grande-maison-200m2",
+    title: "Quelle pompe à chaleur pour une grande maison de 200 m² ?",
+    metaTitle: "PAC pour maison 200 m² : puissance, choix, prix 2026 | ECO CVC",
+    metaDescription:
+      "Pompe à chaleur pour maison de 200 m² : puissance recommandée, types adaptés (haute température, géothermie), prix 2026. Guide ECO CVC, RGE QualiPAC en Isère.",
+    category: "Choisir sa PAC",
+    publishedAt: "2026-04-25",
+    updatedAt: "2026-05-06",
+    readingMinutes: 8,
+    excerpt:
+      "200 m² = 16-22 kW de puissance, des contraintes spécifiques et des choix techniques particuliers. Voici comment dimensionner et choisir sans se tromper.",
+    intro: [
+      "Une grande maison de 200 m² a des besoins de chauffage massifs : 16 à 22 kW de puissance, eau chaude pour 5-7 personnes, parfois piscine. À cette échelle, les choix techniques que vous faites déterminent 5 000 à 15 000 € de différence sur 10 ans en consommation. Voici comment décider.",
+    ],
+    sections: [
+      {
+        heading: "Calcul de la puissance pour 200 m²",
+        paragraphs: ["Selon l'isolation et la zone climatique :"],
+        list: [
+          "Maison RT2012+ bien isolée, plaine isère : 14 à 16 kW",
+          "Maison années 2000 isolée standard : 16 à 18 kW",
+          "Maison années 80 rénovée partiellement : 18 à 20 kW",
+          "Maison ancienne non rénovée : 20 à 24 kW (mais isolation prioritaire avant pose !)",
+          "+1 kW si zone froide (Voiron, Chambéry, Annecy) ou hauts plafonds",
+        ],
+        callout: {
+          title: "Erreur fréquente",
+          body: "Sur-dimensionner pour 'avoir de la marge' = catastrophe. Une PAC trop puissante fait de courts cycles, s'use 2x plus vite et consomme + 15-20%. Le bon dimensionnement n'est ni trop gros ni trop petit.",
+        },
+      },
+      {
+        heading: "Quel type de PAC pour 200 m²",
+        paragraphs: ["Trois options sérieuses selon votre projet :"],
+        list: [
+          "PAC air-eau monobloc 16-22 kW : solution la plus universelle, 17 000 à 22 000 € posée. Compatible radiateurs existants si haute température.",
+          "PAC géothermique 14-18 kW : meilleur COP toute l'année (>4), 22 000 à 32 000 € posée. Rentable sur 15-20 ans si grande propriété (capteurs horizontaux ≥ 300 m²).",
+          "PAC hybride (PAC + chaudière condensation gaz) : si raccordement gaz, 18 000 à 24 000 € posée. La PAC tourne en saison douce, la chaudière prend le relais en grand froid. Idéale pour grandes maisons mal isolées.",
+        ],
+      },
+      {
+        heading: "Eau chaude sanitaire pour 5-7 personnes",
+        paragraphs: ["Avec autant d'occupants, l'ECS devient un vrai poste :"],
+        list: [
+          "Ballon thermodynamique 300-400 L (intégré ou séparé) : couvre 90% des besoins via la PAC",
+          "Cumulus électrique de secours 200 L : appoint en pic de consommation",
+          "Solaire thermique en complément : si toiture bien orientée, divise encore la conso ECS par 2",
+        ],
+      },
+      {
+        heading: "Diffusion : radiateurs ou plancher chauffant ?",
+        paragraphs: ["À 200 m², le plancher chauffant a un avantage majeur : régularité de la chaleur sur grande surface."],
+        list: [
+          "Plancher chauffant + PAC basse température : COP optimal (4+), confort homogène. Investissement gros œuvre 100-180 €/m² en rénovation lourde.",
+          "Radiateurs basse température (modèles modernes) + PAC basse température : compromis intermédiaire, pas de gros œuvre.",
+          "Radiateurs fonte d'origine + PAC haute température : conserve l'existant, COP un peu inférieur (3,5).",
+          "Mix plancher chauffant RDC + radiateurs étage : courant en rénovation, fonctionne très bien.",
+        ],
+      },
+      {
+        heading: "Coût annuel et amortissement",
+        paragraphs: ["Pour 200 m² bien isolée, climat plaine isère, 5 occupants :"],
+        list: [
+          "PAC air-eau : 1 600 à 2 200 €/an de chauffage + ECS",
+          "PAC géothermique : 1 200 à 1 700 €/an",
+          "PAC hybride : 1 800 à 2 400 €/an (mix gaz + élec)",
+          "Vs ancienne chaudière fioul : économie 2 500 à 3 800 €/an",
+          "Amortissement typique : 5 à 9 ans selon profil aides + énergie remplacée",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Une seule PAC suffit-elle pour 200 m² ?",
+        a: "Oui dans la quasi-totalité des cas. Les modèles 16-22 kW sont conçus pour ces volumes. Au-delà de 250 m², on commence à envisager 2 PAC en cascade.",
+      },
+      {
+        q: "Géothermie : combien d'aides pour 200 m² ?",
+        a: "MaPrimeRénov' Bleu : 11 000 € + Coup de pouce 6 000 € + bonus fioul 1 000 € = 18 000 € + TVA 5,5% (~3 800 € d'économie). Sur projet 28 000 € : reste à charge ~6 200 €.",
+      },
+      {
+        q: "Faut-il refaire toute l'isolation avant pose ?",
+        a: "Si maison RT2005-RT2012+ : non, la PAC fonctionne bien. Si antérieure non rénovée : isoler combles + murs avant ou en parallèle est indispensable, sinon la PAC tournera en mode appoint électrique = factures explosées.",
+      },
+      {
+        q: "Combien de temps de chantier pour 200 m² ?",
+        a: "PAC air-eau classique : 3-4 jours. Avec dépose chaudière fioul + cuve : 4-5 jours. Géothermie avec capteurs horizontaux : 1-2 semaines. Avec forage vertical : 2-3 semaines.",
+      },
+    ],
+    relatedCities: ["voiron", "chambery", "morestel", "vienne"],
+    relatedServices: [
+      { href: "/simulateur-aides", label: "Simuler les aides pour 200 m²" },
+      { href: "/installation", label: "Installation PAC haute puissance" },
+    ],
+  },
+  {
+    slug: "pompe-a-chaleur-en-hiver-performance-reelle",
+    title: "Pompe à chaleur en hiver : performance réelle quand il fait froid",
+    metaTitle: "PAC en hiver : performance par grand froid (-10, -15, -20 °C) | ECO CVC",
+    metaDescription:
+      "Performance réelle d'une pompe à chaleur en hiver et grand froid (-10, -15, -20 °C). COP réel, dégivrage, appoint électrique. Témoignages terrain ECO CVC en Isère et Rhône-Alpes.",
+    category: "Choisir sa PAC",
+    publishedAt: "2026-04-18",
+    updatedAt: "2026-05-06",
+    readingMinutes: 7,
+    excerpt:
+      "Le grand mythe : 'la PAC ne marche pas en hiver'. Faux. Mais le COP varie selon la température extérieure. Voici la vraie performance par grand froid en Isère et Rhône-Alpes.",
+    intro: [
+      "C'est la question que nous posent 90% de nos prospects : 'Et quand il fait -10 °C, ça marche encore ?' Réponse courte : oui. Réponse complète : ça dépend du modèle, de l'isolation et de la zone géographique. Voici la vérité technique avec des chiffres réels.",
+    ],
+    sections: [
+      {
+        heading: "Le COP réel selon la température extérieure",
+        paragraphs: ["Le COP (coefficient de performance) baisse logiquement quand il fait froid dehors. Voici les ordres de grandeur sur une PAC moderne (Daikin Altherma 3, Mitsubishi Ecodan, Atlantic Alféa) :"],
+        list: [
+          "+15 °C extérieur : COP 5,0 (1 kWh élec → 5 kWh chaleur). Idéal demi-saison.",
+          "+7 °C extérieur (température nominale) : COP 4,2",
+          "0 °C extérieur : COP 3,5",
+          "-5 °C extérieur : COP 2,8",
+          "-10 °C extérieur : COP 2,2 — toujours 2 fois plus efficace qu'un radiateur électrique",
+          "-15 °C extérieur : COP 1,8 sur les meilleurs modèles, l'appoint commence à se déclencher",
+          "-20 °C extérieur : appoint électrique majoritaire, COP global ~1,3",
+        ],
+        callout: {
+          title: "Conclusion chiffrée",
+          body: "Sur une saison entière en Isère du Nord (moyenne 200 jours de chauffe), le SCOP (COP saisonnier) d'une PAC bien dimensionnée tourne autour de 3,8-4,2. Donc 1 kWh élec = 4 kWh chaleur en moyenne annuelle.",
+        },
+      },
+      {
+        heading: "Le rôle de l'appoint électrique",
+        paragraphs: ["Toutes les PAC modernes intègrent une résistance électrique d'appoint qui se déclenche automatiquement quand la PAC ne suffit plus."],
+        list: [
+          "À -15 °C ou en-dessous, l'appoint complète la PAC pour atteindre la consigne",
+          "Sur une saison normale en Isère, l'appoint représente 5-15% de la conso totale",
+          "Sur une vague de froid exceptionnelle (10 jours à -15 °C), peut grimper à 25%",
+          "L'appoint coûte plus cher (COP 1) mais sa contribution annuelle reste minoritaire",
+        ],
+      },
+      {
+        heading: "Le dégivrage automatique",
+        paragraphs: ["Quand l'humidité de l'air gèle sur l'unité extérieure, la PAC bascule en mode dégivrage : elle inverse temporairement son cycle pour faire fondre le givre."],
+        list: [
+          "Cycle dégivrage : 5-10 min toutes les 30-60 min selon humidité et froid",
+          "Pendant ce cycle, la PAC ne chauffe pas la maison (mais l'inertie compense)",
+          "Une PAC qui dégivre = c'est normal. Inquiétez-vous seulement si elle reste givrée > 2h.",
+          "Les modèles haut de gamme (Daikin, Mitsubishi) ont un dégivrage 'reverse-cycle' plus efficace que les modèles bas de gamme.",
+        ],
+      },
+      {
+        heading: "Choix du modèle selon votre zone",
+        paragraphs: ["En Rhône-Alpes, voici nos recommandations selon le froid moyen :"],
+        list: [
+          "Plaine Isère du Nord (-8 °C max), Lyon, Vienne : tout modèle moderne fait l'affaire",
+          "Voiron, La Tour-du-Pin (-12 °C max), bassin Annécien : modèle 'plage étendue' garanti -20 °C (Daikin Altherma 3 H, Mitsubishi Ecodan Plus)",
+          "Chambéry, Aix-les-Bains, hauts d'Annecy (-15 à -18 °C max) : modèle plage étendue OBLIGATOIRE + résistance d'appoint dimensionnée",
+          "Hameaux d'altitude > 600 m : géothermie souvent préférable (T° du sol stable à 10-12 °C)",
+        ],
+      },
+      {
+        heading: "Témoignages terrain",
+        paragraphs: ["Nos clients dans les zones froides nous remontent ces chiffres :"],
+        list: [
+          "Maison 130 m² à Voiron, PAC air-eau 12 kW Mitsubishi Ecodan : facture annuelle 950 € (vs 2 600 € avec ancien fioul)",
+          "Maison 110 m² à Coublevie (550 m d'altitude), PAC plage étendue : confort identique à l'ancienne chaudière même par -12 °C",
+          "Maison 180 m² à Saint-Étienne-de-Crossey, PAC géothermique : COP annuel 4,1 mesuré par compteur",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Et si la PAC n'arrive pas à chauffer assez ?",
+        a: "Cela arrive quand : 1) PAC sous-dimensionnée (erreur d'installation), 2) maison mal isolée. Solution : améliorer isolation OU ajouter un poêle en appoint pour les pics. Sur une PAC bien dimensionnée et une maison correctement isolée, c'est très rare.",
+      },
+      {
+        q: "Le COP affiché par le constructeur correspond-il à la réalité ?",
+        a: "Le COP nominal (à +7 °C) est testé en laboratoire et fiable. Le SCOP (saisonnier) prend en compte les variations annuelles, plus proche de la réalité. Vérifiez toujours le SCOP, pas le COP nominal.",
+      },
+      {
+        q: "Faut-il prévoir un système d'appoint complémentaire (poêle) ?",
+        a: "Pas obligatoire mais agréable. Sur 200 jours de chauffe en Isère, votre PAC seule fait 95% du travail. Un poêle dans le séjour apporte le confort radiant et sécurise les coupures électriques (5-10% des cas).",
+      },
+      {
+        q: "Mes voisins disent que leur PAC ne tient pas le froid : pourquoi ?",
+        a: "3 raisons typiques : 1) modèle bas de gamme acheté pour le prix, 2) PAC sous-dimensionnée par un installateur peu sérieux, 3) isolation maison défaillante. Aucune de ces causes ne remet en question la technologie elle-même.",
+      },
+    ],
+    relatedCities: ["voiron", "chambery", "annecy", "morestel"],
+    relatedServices: [
+      { href: "/installation", label: "Installation PAC plage étendue" },
+      { href: "/simulateur-aides", label: "Simuler aides PAC" },
+    ],
+  },
+  {
+    slug: "consommation-electrique-pompe-a-chaleur",
+    title: "Consommation électrique d'une pompe à chaleur : combien ça coûte vraiment ?",
+    metaTitle: "Consommation électrique PAC : kWh/an et coût annuel 2026 | ECO CVC",
+    metaDescription:
+      "Combien consomme une pompe à chaleur en kWh/an et en € sur la facture ? Estimation par surface et par type de PAC. Comparaison avec gaz, fioul et électrique direct. Guide ECO CVC.",
+    category: "Tarifs",
+    publishedAt: "2026-04-10",
+    updatedAt: "2026-05-06",
+    readingMinutes: 6,
+    excerpt:
+      "Avant de signer pour une PAC, beaucoup veulent savoir : 'Combien ça va vraiment me coûter en électricité ?' Voici les chiffres réels 2026 par surface et type d'équipement.",
+    intro: [
+      "L'argument économique est le n°1 pour passer à la pompe à chaleur. Mais les chiffres marketing ('jusqu'à 70% d'économies !') sont parfois trompeurs. Voici la consommation électrique réelle d'une PAC en France en 2026, basée sur des compteurs de nos clients.",
+    ],
+    sections: [
+      {
+        heading: "Consommation moyenne en kWh/an selon surface et isolation",
+        paragraphs: ["Pour une maison française moyenne en Auvergne-Rhône-Alpes :"],
+        list: [
+          "Maison 80 m² bien isolée (RT2012+) : 2 500 à 3 200 kWh/an de chauffage + ECS",
+          "Maison 100 m² isolée standard : 3 200 à 4 500 kWh/an",
+          "Maison 130 m² années 2000 : 4 500 à 6 000 kWh/an",
+          "Maison 150 m² années 80 partiellement rénovée : 6 000 à 8 000 kWh/an",
+          "Maison 200 m² : 7 500 à 10 500 kWh/an",
+        ],
+      },
+      {
+        heading: "Coût annuel électrique 2026",
+        paragraphs: ["Au tarif réglementé EDF 2026 (~0,2516 €/kWh option base) :"],
+        list: [
+          "Maison 80 m² : 630 à 805 €/an de chauffage + ECS",
+          "Maison 100 m² : 805 à 1 130 €/an",
+          "Maison 130 m² : 1 130 à 1 510 €/an",
+          "Maison 150 m² : 1 510 à 2 010 €/an",
+          "Maison 200 m² : 1 890 à 2 640 €/an",
+        ],
+        callout: {
+          title: "Astuce tarif",
+          body: "Les options Tempo (rouge/blanc/bleu) permettent d'économiser 30-40% supplémentaires si vous programmez votre PAC pour réduire pendant les jours rouges (max 22/an). Couplé à un poêle d'appoint, c'est ultra-efficace.",
+        },
+      },
+      {
+        heading: "Comparaison avec les autres énergies (même maison 130 m²)",
+        paragraphs: ["Pour une maison 130 m² isolée standard, voici la facture annuelle 2026 par énergie :"],
+        list: [
+          "Pompe à chaleur air-eau (notre cible) : 1 130 à 1 510 €/an",
+          "Pompe à chaleur géothermique : 850 à 1 200 €/an (-25 à -30%)",
+          "Chaudière gaz condensation moderne : 1 800 à 2 200 €/an",
+          "Chaudière fioul ancienne : 2 500 à 3 200 €/an",
+          "Chauffage électrique direct (convecteurs) : 3 000 à 4 200 €/an",
+          "Chaudière granulés : 1 200 à 1 600 €/an (combustible + élec auxiliaire)",
+        ],
+      },
+      {
+        heading: "Ce qui fait varier la consommation réelle",
+        paragraphs: ["Sur un même équipement, la consommation peut varier du simple au double selon :"],
+        list: [
+          "Qualité de l'isolation (combles, murs, fenêtres)",
+          "Température de consigne (chaque +1 °C = +7% de conso)",
+          "Programmation horaire (pas de chauffe nuit/absence = -15 à -25%)",
+          "Réglage de la loi d'eau (PAC air-eau)",
+          "Nombre d'occupants (impact eau chaude sanitaire)",
+          "Localisation (Lyon vs Annecy : -5 à +15% selon climat)",
+        ],
+      },
+      {
+        heading: "Optimiser la consommation",
+        paragraphs: ["Quelques gestes simples qui font baisser la facture :"],
+        list: [
+          "Programmer une baisse de 2-3 °C la nuit et en absence",
+          "Maintenir consigne 19-20 °C (au lieu de 22 °C) : -10 à -20%",
+          "Entretien annuel (filtres, pression eau) : préserve le COP de la PAC",
+          "Remplacer un thermostat ancien par un thermostat connecté apprenant",
+          "Coupler avec un poêle pour les pointes de froid (dépend du logement)",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Comment savoir précisément combien je consommerai ?",
+        a: "Demandez un calcul thermique pendant la visite technique. Nous vous donnons une estimation à ±10% basée sur votre logement réel. C'est gratuit et sans engagement.",
+      },
+      {
+        q: "Faut-il changer mon abonnement EDF ?",
+        a: "Souvent oui. Une PAC tirée à pleine puissance demande 5-9 kVA. Vérifiez votre puissance actuelle (sur facture EDF). Si insuffisant, vous risquez de disjoncter en pic de chauffe.",
+      },
+      {
+        q: "Puis-je revendre l'électricité d'un panneau solaire pour rentabiliser ma PAC ?",
+        a: "Oui, autoconsommation solaire + PAC = combo gagnant. Un kit 3 kWc (~7 000 € posé) couvre 30-50% des besoins annuels d'une PAC. Amortissement 6-10 ans.",
+      },
+    ],
+    relatedCities: ["bourgoin-jallieu", "vienne", "voiron"],
+    relatedServices: [
+      { href: "/simulateur-aides", label: "Simulateur d'aides" },
+      { href: "/blog/prix-pompe-a-chaleur-2026", label: "Prix d'une PAC en 2026" },
+    ],
+  },
+  {
+    slug: "pompe-a-chaleur-geothermique-prix-installation",
+    title: "Pompe à chaleur géothermique : prix, principe, installation 2026",
+    metaTitle: "PAC géothermique 2026 — prix, capteurs, forage [guide complet] | ECO CVC",
+    metaDescription:
+      "Pompe à chaleur géothermique : principe, types (capteurs horizontaux, forage vertical, eau-eau), prix posée 2026, aides, COP. Guide ECO CVC, RGE QualiPAC en Isère et Rhône-Alpes.",
+    category: "Choisir sa PAC",
+    publishedAt: "2026-04-02",
+    updatedAt: "2026-05-06",
+    readingMinutes: 9,
+    excerpt:
+      "La géothermie reste la PAC la plus performante (COP > 4 toute l'année), mais son installation demande des conditions précises. Voici si c'est fait pour vous, et combien ça coûte vraiment.",
+    intro: [
+      "La pompe à chaleur géothermique exploite la chaleur stable du sol (10-15 °C en profondeur, été comme hiver) pour chauffer votre maison. Performance imbattable, coût initial élevé : voici quand ça vaut le coup, et tous les chiffres 2026.",
+    ],
+    sections: [
+      {
+        heading: "Les 3 technologies géothermiques",
+        paragraphs: ["Selon votre terrain et votre budget, 3 options techniques :"],
+        list: [
+          "Capteurs horizontaux : tubes en spirale enterrés à 80 cm, sur une surface ≥ 1,5x la surface chauffée. Le plus économique mais demande un grand jardin.",
+          "Forage vertical : sondes plongées à 80-150 m. Convient à toutes les parcelles, plus cher (forage = 80-130 €/mètre).",
+          "Eau-eau (sur nappe phréatique) : pompage de l'eau souterraine. Excellent rendement, mais autorisations préfectorales et étude hydrogéologique nécessaires.",
+        ],
+        callout: {
+          title: "Quelle option choisir",
+          body: "80% de nos chantiers géothermiques en Isère/Rhône-Alpes sont en capteurs horizontaux (parcelles dégagées). Le forage vertical est privilégié pour les petits terrains ou maisons mitoyennes.",
+        },
+      },
+      {
+        heading: "Performance : pourquoi le COP est exceptionnel",
+        paragraphs: ["Contrairement à la PAC air-eau qui dépend de la T° extérieure (variable), la géothermie pioche dans une source stable :"],
+        list: [
+          "À 1-2 m de profondeur : sol entre 8 et 15 °C toute l'année",
+          "À 50-150 m : sol stable à 10-13 °C",
+          "Conséquence : COP de la PAC entre 4 et 5,5 toute l'année (vs 2,5-4 pour l'air-eau selon saison)",
+          "SCOP saisonnier moyen : 4,2 à 4,8 (vs 3,5-4 pour air-eau)",
+          "Économie 25-35% sur la facture vs PAC air-eau, à isolation égale",
+        ],
+      },
+      {
+        heading: "Prix posée 2026 (matériel + travaux complets)",
+        paragraphs: ["Voici les fourchettes constatées chez ECO CVC pour une maison 130-150 m² :"],
+        list: [
+          "Capteurs horizontaux + PAC 12 kW : 18 000 à 23 000 € posée (forage exclu)",
+          "Forage vertical (2 sondes 100 m) + PAC 12 kW : 24 000 à 30 000 €",
+          "Eau-eau sur nappe (rare en Isère du Nord) : 19 000 à 26 000 € + autorisations",
+          "Pour grandes maisons 200-300 m² : 28 000 à 40 000 €",
+        ],
+      },
+      {
+        heading: "Aides 2026 majorées pour la géothermie",
+        paragraphs: ["L'État incite particulièrement à la géothermie :"],
+        list: [
+          "MaPrimeRénov' Bleu : 11 000 € (vs 5 000 € pour air-eau) — DOUBLE",
+          "MaPrimeRénov' Jaune : 9 000 €",
+          "MaPrimeRénov' Violet : 6 000 €",
+          "Coup de pouce CEE géothermie : 6 000 € (Bleu) à 3 500 € (Rose)",
+          "Bonus sortie fioul Bleu/Jaune : +1 000 €",
+          "TVA 5,5% : ~3 800 € d'économie sur projet 25 000 €",
+          "Total cumulé pour profil Bleu sortant du fioul : jusqu'à 22 000 €",
+        ],
+      },
+      {
+        heading: "Conditions et contraintes à anticiper",
+        paragraphs: ["Avant de signer :"],
+        list: [
+          "Terrain dégagé ≥ 200-300 m² disponible (capteurs horizontaux)",
+          "Permis de construire ou déclaration préalable selon profondeur de forage",
+          "Études géotechnique conseillée (300-800 €) pour le forage vertical",
+          "Pose : 1-3 semaines selon configuration (vs 3-4 jours pour air-eau)",
+          "Pas de plantation d'arbres au-dessus des capteurs (racines profondes)",
+          "Maison existante : peu d'aménagements paysagers récents si on doit creuser le terrain",
+        ],
+      },
+      {
+        heading: "Pour qui c'est rentable",
+        paragraphs: ["La géothermie est particulièrement intéressante si :"],
+        list: [
+          "Maison ≥ 130 m² avec terrain disponible",
+          "Logement à long terme (≥ 15 ans)",
+          "Climat froid (Voiron, Chambéry, Annecy, hauts d'Isère)",
+          "Sortie de chaudière fioul (aides cumulées maximales)",
+          "Profil Bleu ou Jaune : reste à charge final souvent < 8 000 € sur projet 25 000 €",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Combien d'années pour amortir une PAC géothermique ?",
+        a: "Avec aides maximales (profil Bleu) et sortie fioul : 4-7 ans. Profil Violet : 9-13 ans. Profil Rose : souvent non rentable, on conseille plutôt l'air-eau.",
+      },
+      {
+        q: "Le forage vertical perturbe-t-il les fondations ?",
+        a: "Non, à condition de respecter une distance de sécurité (3-5 m de la maison). L'étude géotechnique vérifie ça avant validation.",
+      },
+      {
+        q: "Et si je vends ma maison plus tard ?",
+        a: "La géothermie est un atout réel à la revente : étiquette DPE A ou B, factures basses prouvées. Plus-value immobilière estimée 5-10% selon zone.",
+      },
+      {
+        q: "Durée de vie des capteurs/forage ?",
+        a: "Capteurs et forage : durée de vie 50+ ans (matière inerte). Compresseur PAC : 20-25 ans. Vous renouvelez juste la PAC à la fin, pas le captage.",
+      },
+    ],
+    relatedCities: ["voiron", "chambery", "annecy", "morestel"],
+    relatedServices: [
+      { href: "/simulateur-aides", label: "Simuler aides géothermie" },
+      { href: "/installation", label: "Installation pompe à chaleur" },
+    ],
+  },
+  {
+    slug: "duree-de-vie-pompe-a-chaleur",
+    title: "Combien de temps dure une pompe à chaleur ?",
+    metaTitle: "Durée de vie pompe à chaleur 2026 — air-air, air-eau, géothermique | ECO CVC",
+    metaDescription:
+      "Durée de vie d'une pompe à chaleur 2026 : air-air, air-eau, géothermique. Facteurs d'usure, signes de fin de vie, garanties constructeurs, retours terrain ECO CVC.",
+    category: "Pratique",
+    publishedAt: "2026-03-25",
+    updatedAt: "2026-05-06",
+    readingMinutes: 6,
+    excerpt:
+      "Une PAC dure typiquement 15-20 ans, mais ça dépend énormément du type, de l'entretien et de la marque. Voici les vrais chiffres terrain et comment maximiser la durée de vie.",
+    intro: [
+      "Avant d'investir 12 000 à 25 000 € dans une pompe à chaleur, on veut savoir combien de temps elle va durer. Voici les chiffres réels constatés sur les milliers d'installations passées en France et chez nos clients en Isère/Rhône-Alpes.",
+    ],
+    sections: [
+      {
+        heading: "Durée de vie moyenne par type de PAC",
+        paragraphs: ["Selon les données constructeurs et nos retours terrain :"],
+        list: [
+          "PAC air-air (climatisation réversible) : 12 à 15 ans en moyenne",
+          "PAC air-eau : 17 à 20 ans",
+          "PAC géothermique : 20 à 25 ans (compresseur), capteurs/forage 50 ans+",
+          "PAC hybride (PAC + chaudière condensation) : 15-18 ans",
+        ],
+        callout: {
+          title: "Différence majeure",
+          body: "L'air-air souffre du fonctionnement été+hiver et de cycles fréquents (allumage/extinction). L'air-eau tourne plus régulièrement, durée de vie plus longue. La géothermie travaille dans des conditions stables = durée de vie maximale.",
+        },
+      },
+      {
+        heading: "Facteurs qui réduisent la durée de vie",
+        paragraphs: ["Une PAC peut tomber en panne au bout de 8-10 ans si :"],
+        list: [
+          "Pas d'entretien annuel (filtres sales, fluide en charge limite)",
+          "Sur-dimensionnement : courts cycles d'allumage/extinction qui usent le compresseur",
+          "Sous-dimensionnement : appoint électrique sollicité en permanence, surchauffe",
+          "Marque bas de gamme avec composants moins durables",
+          "Installation bâclée par installateur non certifié",
+          "Climat très froid (au-delà des spécifications du modèle)",
+          "Bord de mer (corrosion saline accélérée — pas concerné en Rhône-Alpes intérieur)",
+        ],
+      },
+      {
+        heading: "Facteurs qui prolongent la durée de vie",
+        paragraphs: ["Pour atteindre 20+ ans :"],
+        list: [
+          "Entretien annuel par pro RGE certifié (obligatoire de toute façon)",
+          "Dimensionnement précis basé sur calcul thermique (pas la règle empirique 100 W/m²)",
+          "Marque haut de gamme (Daikin Altherma, Mitsubishi Ecodan, Atlantic Alféa Excellia)",
+          "Installation soignée : tirage au vide, plots anti-vibrations, mise en service correcte",
+          "Fonctionnement modulant (technologie inverter) plutôt qu'on/off",
+          "Programmation horaire intelligente (pas de surcharge)",
+        ],
+      },
+      {
+        heading: "Garanties constructeur en 2026",
+        paragraphs: ["Comparaison des principales marques :"],
+        list: [
+          "Daikin Altherma 3 : 5 ans pièces (extension à 10 ans avec entretien partenaire)",
+          "Mitsubishi Ecodan : 5 ans pièces standard",
+          "Atlantic Alféa : 7 ans pièces avec entretien Atlantic Pro",
+          "AUX : 3 ans pièces et 5 ans compresseur",
+          "Garantie biennale légale : 2 ans toutes marques (UE)",
+          "Décennale installateur : 10 ans sur la pose elle-même (pas le matériel)",
+        ],
+      },
+      {
+        heading: "Quand remplacer ?",
+        paragraphs: ["Signes que votre PAC arrive en fin de vie :"],
+        list: [
+          "Consommation électrique qui monte de 20-30% sans changement d'usage",
+          "Pannes répétitives (3+ pannes en 12 mois)",
+          "COP réel mesuré < 2,5 même en demi-saison",
+          "Bruit anormal (sifflements, vibrations) qui ne passe pas après réparation",
+          "Coût des réparations cumulées > 50% du prix d'une PAC neuve",
+          "Fluide frigorigène en obsolescence (R410A interdit en neuf depuis 2025)",
+        ],
+        callout: {
+          title: "Notre conseil",
+          body: "Quand votre PAC dépasse 15 ans, surveillez les indicateurs. Une PAC neuve avec aides + meilleur COP s'amortit en 5-8 ans face aux pannes d'une vieille machine. Faites le calcul.",
+        },
+      },
+    ],
+    faq: [
+      {
+        q: "Ma PAC a 12 ans, dois-je commencer à la remplacer ?",
+        a: "Pas nécessairement. Si elle fonctionne bien et que l'entretien annuel ne révèle rien d'anormal, gardez-la. Mais commencez à anticiper le remplacement futur en provisionnant ~12-15 k€.",
+      },
+      {
+        q: "Le compresseur est la pièce qui tombe en panne en premier ?",
+        a: "Oui dans 60% des cas. C'est le 'cœur' de la PAC. Les capteurs/cartes électroniques sont la 2ᵉ cause (~25%). Évacuation/filtres/petites pièces : 15%.",
+      },
+      {
+        q: "Faut-il prévoir une enveloppe d'entretien ?",
+        a: "Oui : 200-300 €/an pour le contrat d'entretien + 200-500 € pour réparations imprévues sur 20 ans. Total amortissement : ~5 000-7 000 € sur la durée de vie.",
+      },
+      {
+        q: "Une PAC peut-elle durer 25 ans ?",
+        a: "Oui, on a vu des Daikin Altherma de 1ère génération encore fonctionnelles à 22-23 ans avec entretien rigoureux. Mais c'est l'exception, pas la règle.",
+      },
+    ],
+    relatedCities: ["bourgoin-jallieu", "lyon", "vienne"],
+    relatedServices: [
+      { href: "/maintenance", label: "Notre service entretien" },
+      { href: "/installation", label: "Remplacement de PAC" },
+    ],
+  },
 ];
 
 export const findArticle = (slug: string) => articles.find((a) => a.slug === slug);
