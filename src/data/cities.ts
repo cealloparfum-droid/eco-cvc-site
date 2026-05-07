@@ -1010,4 +1010,428 @@ export const cities: City[] = [
   },
 ];
 
+// ─── Petites communes Nord-Isère (zone d'intervention quotidienne) ────
+// Concurrence Google quasi nulle = ranking rapide en 4-8 semaines
+cities.push(
+  {
+    slug: "villefontaine",
+    name: "Villefontaine",
+    postalCode: "38090",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "18 500 habitants",
+    distanceKm: 5,
+    intro:
+      "Ville nouvelle limitrophe de L'Isle-d'Abeau, Villefontaine concentre une demande croissante en pompes à chaleur. Beaucoup de pavillons et copropriétés horizontales 80-2000 idéaux pour la rénovation énergétique. ECO CVC est à 5 km, intervention quotidienne.",
+    localContext:
+      "Le tissu pavillonnaire de Villefontaine est largement RT2005-RT2012, avec parfois encore du chauffage gaz à remplacer. La PAC air-eau y est l'option n°1, avec MaPrimeRénov' et CEE qui couvrent 50-70% du projet pour la majorité des ménages.",
+    habitatNotes:
+      "Les copropriétés horizontales (Servenoble, Les Roches) demandent l'accord du syndic — nous fournissons systématiquement le dossier complet pour le vote en AG.",
+    quartiers: ["Servenoble", "Les Roches", "Les Sayes", "Saint-Bonnet", "Roche", "Centre Simone-Veil"],
+    communesVoisines: ["L'Isle-d'Abeau", "Saint-Quentin-Fallavier", "Vaulx-Milieu", "Four", "La Verpillière"],
+    specificites: [
+      "Atelier ECO CVC à 5 km — interventions de dépannage souvent le jour même",
+      "Aides locales CAPI cumulables avec MaPrimeRénov'",
+      "Pavillonnaire récent : pose PAC air-eau directe sans gros œuvre dans 80% des cas",
+      "Bruit voisinage : modèles ≤ 38 dB systématiques en lotissement dense",
+    ],
+    faq: [
+      { q: "Combien coûte une PAC à Villefontaine pour 100 m² ?", a: "PAC air-eau 8-10 kW : 12 000 à 15 000 € posé. Reste à charge typique après aides : 5 000 à 9 500 € selon profil de revenus." },
+      { q: "Vous intervenez aussi à Saint-Quentin-Fallavier ?", a: "Oui, toute la zone CAPI est dans notre périmètre quotidien. Pas de surcoût de déplacement." },
+      { q: "Délai pour un devis à Villefontaine ?", a: "Visite technique sous 48h, devis détaillé sous 24h après. Soit 3-4 jours total." },
+      { q: "Aides locales CAPI en 2026 ?", a: "L'agglomération CAPI propose ponctuellement des subventions complémentaires sur la rénovation énergétique. Vérification incluse dans nos devis." },
+      { q: "Climatisation appartement copropriété : faisable à Villefontaine ?", a: "Oui dans 95% des cas avec accord syndic. Nous fournissons le dossier technique complet pour le vote." },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "saint-quentin-fallavier",
+    name: "Saint-Quentin-Fallavier",
+    postalCode: "38070",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "6 200 habitants",
+    distanceKm: 8,
+    intro:
+      "Pôle économique majeur du Nord-Isère grâce à la zone industrielle Chesnes, Saint-Quentin-Fallavier mêle pavillonnaire résidentiel et bâtiments tertiaires/logistiques. ECO CVC équipe particuliers et entreprises de la zone.",
+    localContext:
+      "Côté résidentiel : maisons des années 80-2000 idéales pour PAC air-eau. Côté tertiaire/industriel : climatisation des bureaux, ventilation entrepôts, froid commercial pour les sociétés de la zone Chesnes.",
+    habitatNotes:
+      "Lotissements pavillonnaires à proximité du château de Fallavier, construction 90-2010. Bonne base pour rénovation énergétique simple.",
+    quartiers: ["Centre", "Le Château", "Heyrieux (limitrophe)", "Chesnes", "Les Marais"],
+    communesVoisines: ["Villefontaine", "L'Isle-d'Abeau", "Heyrieux", "Grenay", "Satolas-et-Bonce"],
+    specificites: [
+      "Zone industrielle Chesnes : nous équipons aussi les pros (climatisation tertiaire, froid commercial)",
+      "Pavillonnaire 90-2010 : passage gaz → PAC air-eau sans changement radiateurs",
+      "Atelier ECO CVC à 8 km — interventions rapides",
+    ],
+    faq: [
+      { q: "Vous équipez les bureaux de la zone Chesnes ?", a: "Oui, climatisation tertiaire VRV multi-zone, froid commercial pour PME et entrepôts logistiques. Devis gratuit." },
+      { q: "Combien coûte une PAC particulier à Saint-Quentin-Fallavier ?", a: "PAC air-eau 110 m² : 12 500 à 15 500 € posé. Reste à charge moyen 5 000 à 9 000 €." },
+      { q: "Délai d'installation à Saint-Quentin ?", a: "Visite sous 48h, pose 2-4 semaines plus tard selon planning." },
+      { q: "Vous proposez aussi la maintenance entrepôts industriels ?", a: "Oui, contrats de maintenance avec visites trimestrielles ou semestrielles selon volume d'équipement." },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "heyrieux",
+    name: "Heyrieux",
+    postalCode: "38540",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "5 200 habitants",
+    distanceKm: 18,
+    intro:
+      "Sur l'axe Lyon-Bourgoin, Heyrieux est un bourg dynamique en pleine extension pavillonnaire. Beaucoup de jeunes propriétaires en accession 2015-2025 qui équipent leur première maison.",
+    localContext:
+      "Maisons RT2012-RE2020 dominantes en lotissements récents. La PAC air-eau ou multi-split réversible est demandée dès la construction, mais nombreux propriétaires viennent nous voir pour ajouter de la climatisation 2-3 ans après emménagement.",
+    habitatNotes:
+      "Lotissements pavillonnaires homogènes : effet vague — quand un voisin installe, le reste suit dans les 12-24 mois.",
+    quartiers: ["Centre", "Charantin", "La Combe", "Le Bord", "Bonnefamille (limitrophe)"],
+    communesVoisines: ["Saint-Quentin-Fallavier", "Bonnefamille", "Grenay", "Diémoz", "Villefontaine"],
+    specificites: [
+      "Pavillonnaire récent : climatisation réversible souvent ajoutée 2-3 ans après emménagement",
+      "Aides MaPrimeRénov' réservées aux logements > 15 ans : peu applicable au neuf, mais CEE OK",
+      "Atelier ECO CVC à 18 km",
+    ],
+    faq: [
+      { q: "Maison neuve : aides PAC possibles à Heyrieux ?", a: "MaPrimeRénov' s'applique uniquement aux logements > 15 ans. Pour un neuf, le CEE et la TVA 5,5% restent applicables." },
+      { q: "Climatisation réversible 4 pièces à Heyrieux : prix ?", a: "Quadri-split moderne : 6 500 à 8 500 € posé. Délai 1-2 jours." },
+      { q: "Vous intervenez à Bonnefamille ?", a: "Oui, toutes les communes voisines de Heyrieux sont dans notre zone quotidienne." },
+      { q: "Délai pour un devis ?", a: "Visite sous 48-72h, devis sous 24h après." },
+    ],
+    variant: "C",
+  },
+  {
+    slug: "tignieu-jameyzieu",
+    name: "Tignieu-Jameyzieu",
+    postalCode: "38230",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "8 500 habitants",
+    distanceKm: 22,
+    intro:
+      "Limitrophe de Pont-de-Chéruy, Tignieu-Jameyzieu présente un mix entre maisons anciennes du village et pavillons récents. Très active en rénovation énergétique depuis 2022.",
+    localContext:
+      "Mélange de cités ouvrières mal isolées (à rénover en priorité) et de lotissements 90-2010 pour PAC air-eau directe. Beaucoup de propriétaires Bleus/Jaunes éligibles aux aides maximales.",
+    habitatNotes:
+      "Centre village ancien : pose plus contraignante, parfois zone protégée. Hameaux et pavillons récents : pose simple en 1-2 jours.",
+    quartiers: ["Tignieu centre", "Jameyzieu centre", "Le Lavoir", "Le Marais", "Bourg"],
+    communesVoisines: ["Pont-de-Chéruy", "Charvieu-Chavagneux", "Anthon", "Chavanoz", "Janneyrias"],
+    specificites: [
+      "Beaucoup de ménages Bleus/Jaunes : reste à charge minimal après aides cumulées",
+      "Sortie de fioul fréquente : bonus MaPrimeRénov' + Coup de pouce",
+      "Maintenance trimestrielle proposée pour les contrats secteur",
+    ],
+    faq: [
+      { q: "Sortie de fioul à Tignieu : combien d'aides ?", a: "Pour profil Bleu : MaPrimeRénov' 5 000 € + bonus 1 000 € + Coup de pouce 5 000 € = 11 000 € + TVA réduite. Reste à charge typique : 3 000 à 5 000 €." },
+      { q: "Combien coûte une PAC pour 110 m² ?", a: "PAC air-eau : 12 500 à 15 500 € posé. Aides cumulées 6 000 à 11 000 € selon profil." },
+      { q: "Vous intervenez à Pont-de-Chéruy aussi ?", a: "Oui, tout le bassin Pont-de-Chéruy / Tignieu / Charvieu est dans notre zone." },
+      { q: "Délai dépannage hiver ?", a: "Sous 24-48h pour clients sous contrat, 72h hors contrat." },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "charvieu-chavagneux",
+    name: "Charvieu-Chavagneux",
+    postalCode: "38230",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "10 000 habitants",
+    distanceKm: 23,
+    intro:
+      "Bordant le Rhône au nord du département, Charvieu-Chavagneux mélange tissu pavillonnaire dense et bâti industriel/commercial. Demande croissante en climatisation réversible depuis les canicules.",
+    localContext:
+      "Maisons mitoyennes du centre, pavillons individuels en périphérie, plus quelques copropriétés récentes. Mélange technique : nous adaptons selon configuration.",
+    habitatNotes:
+      "Bord du Rhône : étés chauds (microclimat vallée), la clim réversible devient un argument de revente immobilière.",
+    quartiers: ["Centre Charvieu", "Centre Chavagneux", "Le Bourg", "Les Plates", "Le Carreau"],
+    communesVoisines: ["Tignieu-Jameyzieu", "Pont-de-Chéruy", "Anthon", "Janneyrias", "Saint-Romain-de-Jalionas"],
+    specificites: [
+      "Microclimat vallée du Rhône : étés très chauds, la clim devient prioritaire",
+      "Tissu pavillonnaire dense : modèles silencieux ≤ 38 dB",
+      "Quelques copropriétés : dossier syndic clés en main fourni",
+    ],
+    faq: [
+      { q: "Climatisation pavillon mitoyen à Charvieu : possible ?", a: "Oui, attention au positionnement de l'unité ext. (≥ 1,5 m du voisin), modèle silencieux, plots anti-vibrations. Faisabilité étudiée en visite." },
+      { q: "Combien coûte un multi-split 4 unités ?", a: "6 500 à 8 500 € posé selon marque. Tri-split (3 unités) : 5 200 à 6 800 €." },
+      { q: "Délai à Charvieu-Chavagneux ?", a: "Visite sous 72h, pose sous 2-4 semaines." },
+      { q: "Vous équipez aussi les commerces du Brotteau ?", a: "Oui, climatisation tertiaire et froid commercial. Pose en horaires décalés." },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "ruy-montceau",
+    name: "Ruy-Montceau",
+    postalCode: "38300",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "4 000 habitants",
+    distanceKm: 4,
+    intro:
+      "Commune limitrophe de Bourgoin-Jallieu, Ruy-Montceau est notre zone d'intervention la plus proche après Nivolas-Vermelle. Maisons pavillonnaires individuelles en grande majorité, idéales pour la rénovation énergétique.",
+    localContext:
+      "Tissu pavillonnaire 80-2010 dominant. Beaucoup de propriétaires en accession ayant fini de rembourser leur prêt — moment idéal pour investir dans la rénovation énergétique avec financement étalé.",
+    habitatNotes:
+      "Hameaux et zones agricoles autour du bourg : grandes maisons rurales parfois > 150 m², PAC haute puissance et plancher chauffant en rénovation.",
+    quartiers: ["Ruy centre", "Montceau", "Le Marais", "Les Grangettes", "Boulieu"],
+    communesVoisines: ["Bourgoin-Jallieu", "Nivolas-Vermelle", "Maubec", "Sérézin-de-la-Tour", "Saint-Savin"],
+    specificites: [
+      "Atelier ECO CVC à 4 km — intervention dépannage souvent le jour même",
+      "Maisons rurales : possibilité de PAC haute puissance + plancher chauffant en rénovation lourde",
+      "CAPI : aides locales cumulables avec MaPrimeRénov'",
+    ],
+    faq: [
+      { q: "Délai dépannage à Ruy-Montceau ?", a: "Souvent le jour même, jamais plus de 24h. Notre atelier est à 4 km." },
+      { q: "Combien coûte une PAC pour grande maison rurale 180 m² ?", a: "PAC air-eau 14-16 kW haute puissance : 17 000 à 22 000 € posé. Aides 7 000 à 12 000 € selon profil." },
+      { q: "Vous équipez aussi les exploitations agricoles ?", a: "Oui, climatisation tertiaire, ventilation locaux pro, froid pour activités annexes (vente directe, transformation)." },
+      { q: "Aides CAPI à Ruy-Montceau ?", a: "Cumulables avec MaPrimeRénov'. Vérification dans nos devis." },
+    ],
+    variant: "C",
+  },
+  {
+    slug: "domarin",
+    name: "Domarin",
+    postalCode: "38300",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "2 200 habitants",
+    distanceKm: 3,
+    intro:
+      "Petite commune jouxtant Bourgoin-Jallieu, Domarin est essentiellement résidentielle. Pavillonnaire 80-2010 dominant. Notre proximité (3 km) permet des interventions ultra-rapides.",
+    localContext:
+      "Lotissements pavillonnaires homogènes — quand un voisin installe une PAC, plusieurs autres suivent dans l'année. Peu de copropriétés.",
+    habitatNotes: "Maisons individuelles 100-130 m², chauffage gaz ou électrique direct dominant.",
+    quartiers: ["Domarin centre", "Le Bourg", "Les Crêts", "Pré-Pommier (limitrophe Bourgoin)"],
+    communesVoisines: ["Bourgoin-Jallieu", "Nivolas-Vermelle", "Maubec", "Ruy-Montceau"],
+    specificites: [
+      "Atelier ECO CVC à 3 km — intervention souvent dans l'heure pour urgences",
+      "Pavillonnaire récent : pose PAC air-eau directe sans gros œuvre",
+      "Effet vague communal : multiples chantiers groupés dans le même lotissement",
+    ],
+    faq: [
+      { q: "Combien coûte une PAC à Domarin ?", a: "Pour 110 m² : 12 500 à 15 500 € posé. Reste à charge 5 000 à 9 000 € après aides." },
+      { q: "Délai d'intervention à Domarin ?", a: "Souvent le jour même pour dépannage, sous 48h pour visite technique. 3 km depuis notre atelier." },
+      { q: "Mes voisins ont-ils déjà fait appel à vous ?", a: "Probablement — nous intervenons régulièrement à Domarin. N'hésitez pas à demander des références locales en visite." },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "maubec",
+    name: "Maubec",
+    postalCode: "38300",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "3 000 habitants",
+    distanceKm: 7,
+    intro:
+      "Commune résidentielle au sud de Bourgoin-Jallieu, Maubec mélange village ancien et pavillons récents. Activité économique avec quelques zones artisanales en bordure.",
+    localContext:
+      "Centre ancien : maisons en pierre nécessitant PAC haute température + isolation préalable. Périphérie : pavillonnaire 80-2010 standard pour PAC air-eau directe.",
+    habitatNotes: "Hameaux ruraux : grandes parcelles, possibilité géothermie pour les budgets confortables.",
+    quartiers: ["Maubec centre", "Le Bourg", "La Praille", "Champ Communal"],
+    communesVoisines: ["Bourgoin-Jallieu", "Domarin", "Ruy-Montceau", "Sérézin-de-la-Tour"],
+    specificites: [
+      "Centre ancien en pierre : PAC haute température (jusqu'à 65 °C) compatible avec radiateurs en fonte",
+      "Hameaux ruraux : possibilité géothermie capteurs horizontaux",
+      "Atelier ECO CVC à 7 km",
+    ],
+    faq: [
+      { q: "PAC pour maison ancienne en pierre à Maubec ?", a: "PAC air-eau haute température recommandée : conserve les radiateurs existants, fonctionne jusqu'à 65 °C de départ d'eau." },
+      { q: "Géothermie envisageable à Maubec ?", a: "Oui pour les grandes parcelles (≥ 1,5x surface chauffée). Investissement plus lourd (18-28k€) mais COP > 4 toute l'année." },
+      { q: "Combien d'aides pour sortie de fioul à Maubec ?", a: "Profil Bleu : jusqu'à 11 000 € cumulés. Profil Jaune : 9 500 €. Profil Violet : 6 000 €." },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "saint-alban-de-roche",
+    name: "Saint-Alban-de-Roche",
+    postalCode: "38300",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "1 200 habitants",
+    distanceKm: 4,
+    intro:
+      "Petite commune au sud immédiat de Bourgoin-Jallieu, Saint-Alban-de-Roche est principalement pavillonnaire. Notre proximité (4 km) permet des interventions ultra-rapides et des chantiers groupés.",
+    localContext:
+      "Pavillonnaire 90-2010 dominant, peu de logement collectif. Habitants jeunes propriétaires souvent en deuxième achat — bons candidats pour la rénovation énergétique.",
+    habitatNotes: "Maisons 100-130 m² avec terrains dégagés : pose unité extérieure facile.",
+    quartiers: ["Saint-Alban centre", "Le Bourg", "Le Verdoyant"],
+    communesVoisines: ["Bourgoin-Jallieu", "Domarin", "Nivolas-Vermelle", "Ruy-Montceau"],
+    specificites: [
+      "Atelier ECO CVC à 4 km",
+      "Pavillonnaire récent : PAC air-eau pose directe",
+      "Aides CAPI cumulables MaPrimeRénov'",
+    ],
+    faq: [
+      { q: "Délai d'intervention à Saint-Alban-de-Roche ?", a: "Souvent le jour même, jamais plus de 24h. 4 km depuis notre atelier." },
+      { q: "Combien coûte une PAC à Saint-Alban ?", a: "PAC air-eau 100 m² : 11 500 à 14 500 € posé." },
+      { q: "Aides cumulées en sortie de gaz à Saint-Alban ?", a: "Selon profil de revenus : 5 000 à 10 000 € d'aides. Vérification dans nos devis gratuits." },
+    ],
+    variant: "C",
+  },
+  {
+    slug: "saint-savin",
+    name: "Saint-Savin",
+    postalCode: "38300",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "3 200 habitants",
+    distanceKm: 8,
+    intro:
+      "Bourg rural au sud-est de Bourgoin-Jallieu, Saint-Savin présente un habitat pavillonnaire avec quelques maisons rurales anciennes. Zone d'intervention quotidienne pour ECO CVC.",
+    localContext:
+      "Mélange village ancien (PAC haute température conseillée) et lotissements récents (PAC air-eau standard). Beaucoup de sorties de fioul en cours.",
+    habitatNotes: "Hameaux ruraux : maisons grandes parcelles, intérêt potentiel pour la géothermie.",
+    quartiers: ["Saint-Savin centre", "Le Bourg", "Le Mottier", "La Plaine"],
+    communesVoisines: ["Bourgoin-Jallieu", "Demptézieu", "Sérézin-de-la-Tour", "Saint-Chef"],
+    specificites: [
+      "Sortie de fioul fréquente — Coup de pouce CEE majoré",
+      "Hameaux ruraux : géothermie intéressante sur grandes parcelles",
+      "Atelier ECO CVC à 8 km — intervention rapide",
+    ],
+    faq: [
+      { q: "Sortie de fioul à Saint-Savin ?", a: "Profil Bleu : jusqu'à 11 000 € cumulés (MaPrimeRénov' + bonus + Coup de pouce + TVA). Reste à charge typique 3 500 à 6 500 €." },
+      { q: "Maison ancienne en pierre à Saint-Savin : quelle PAC ?", a: "PAC air-eau haute température compatible radiateurs fonte d'origine. Calcul thermique en visite gratuite." },
+      { q: "Délai dépannage à Saint-Savin ?", a: "24-48h selon saison, 24h pour clients sous contrat." },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "serezin-de-la-tour",
+    name: "Sérézin-de-la-Tour",
+    postalCode: "38300",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "2 100 habitants",
+    distanceKm: 6,
+    intro:
+      "Petite commune à l'est de Bourgoin-Jallieu, Sérézin-de-la-Tour combine bourg ancien et lotissements pavillonnaires récents. ECO CVC y intervient régulièrement.",
+    localContext:
+      "Centre village avec quelques maisons en pierre, périphérie pavillonnaire 90-2010. Zones rurales en hameaux pour les amateurs de calme.",
+    habitatNotes: "Hameaux d'altitude modérée (300-400 m) : modèles PAC plage étendue préférables.",
+    quartiers: ["Sérézin centre", "Le Bourg", "La Combe", "Hameau du Plat"],
+    communesVoisines: ["Bourgoin-Jallieu", "Saint-Savin", "Saint-Chef", "Ruy-Montceau"],
+    specificites: [
+      "Atelier ECO CVC à 6 km",
+      "Hameaux d'altitude : modèles plage étendue (-15 °C garantis)",
+      "Aides CAPI cumulables MaPrimeRénov'",
+    ],
+    faq: [
+      { q: "Combien coûte une PAC à Sérézin ?", a: "PAC air-eau 100 m² : 12 000 à 14 500 € posé. Reste à charge moyen 5 000 à 8 500 €." },
+      { q: "PAC adaptée aux hivers de Sérézin ?", a: "Modèle plage étendue garanti -15 °C avec dégivrage automatique. Standard chez nous pour cette zone." },
+      { q: "Délai d'intervention à Sérézin ?", a: "Visite sous 48h, pose sous 2-3 semaines." },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "saint-chef",
+    name: "Saint-Chef",
+    postalCode: "38890",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "3 500 habitants",
+    distanceKm: 18,
+    intro:
+      "Bourg rural à mi-chemin entre Bourgoin et La Tour-du-Pin, Saint-Chef est dominé par son église romane classée. Habitat ancien important + extensions pavillonnaires récentes.",
+    localContext:
+      "Centre ancien classé partiellement ABF — pose unité ext. demande étude. Pavillons récents en périphérie pour pose PAC air-eau standard.",
+    habitatNotes: "Maisons en pierre du bourg : PAC haute température + isolation à valider avant pose.",
+    quartiers: ["Saint-Chef centre", "Le Bourg", "Le Vivier", "La Plaine"],
+    communesVoisines: ["La Tour-du-Pin", "Saint-Savin", "Sérézin-de-la-Tour", "Vénérieu", "Trept"],
+    specificites: [
+      "Centre classé : zone ABF partielle, dossier à monter",
+      "Maisons en pierre : PAC haute température conseillée",
+      "Hameaux ruraux : géothermie possible sur grandes parcelles",
+    ],
+    faq: [
+      { q: "Pose PAC en zone ABF à Saint-Chef ?", a: "Oui, avec déclaration préalable. Nous gérons le dossier et privilégions les emplacements non visibles depuis l'espace public." },
+      { q: "Maison rurale ancienne 200 m² : quelle PAC ?", a: "PAC haute température 14-16 kW avec étude isolation préalable. Devis 17 000 à 22 000 € posé, aides 7 000 à 12 000 €." },
+      { q: "Délai à Saint-Chef ?", a: "Visite sous 5 jours, pose sous 3-4 semaines." },
+    ],
+    variant: "C",
+  },
+  {
+    slug: "cessieu",
+    name: "Cessieu",
+    postalCode: "38110",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "3 200 habitants",
+    distanceKm: 14,
+    intro:
+      "Commune limitrophe de La Tour-du-Pin, Cessieu mélange tissu pavillonnaire et zones rurales. Habitat principalement individuel, quelques copropriétés horizontales récentes.",
+    localContext:
+      "Pavillons 80-2010 + hameaux. Beaucoup de sorties de fioul en cours, profils éligibles aux aides maximales.",
+    habitatNotes: "Hameaux à 350-450 m d'altitude : modèles PAC plage étendue préférables.",
+    quartiers: ["Cessieu centre", "Le Bourg", "Le Pré", "Hameau de Curtille"],
+    communesVoisines: ["La Tour-du-Pin", "Saint-Clair-de-la-Tour", "Saint-Didier-de-la-Tour", "Saint-Jean-de-Soudain"],
+    specificites: [
+      "Sorties de fioul fréquentes : Coup de pouce maximal applicable",
+      "Hameaux d'altitude : PAC plage étendue (-15 °C garantis)",
+      "Atelier ECO CVC à 14 km",
+    ],
+    faq: [
+      { q: "Coût PAC à Cessieu pour 130 m² ?", a: "PAC air-eau 11 kW plage étendue : 14 000 à 17 000 € posé. Reste à charge 5 500 à 10 000 € selon profil." },
+      { q: "Sortie de fioul aides cumulées ?", a: "Profil Bleu : 11 000 € + 2 600 € de TVA réduite ≈ 13 600 € total. Reste à charge typique 3 500 à 5 500 €." },
+      { q: "Délai à Cessieu ?", a: "Visite sous 4-5 jours, pose sous 3 semaines." },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "saint-didier-de-la-tour",
+    name: "Saint-Didier-de-la-Tour",
+    postalCode: "38110",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "1 800 habitants",
+    distanceKm: 16,
+    intro:
+      "Bourg en bordure du lac de Saint-Didier, Saint-Didier-de-la-Tour combine habitat rural et résidences en bord de lac. Demande croissante depuis les canicules pour climatisation réversible.",
+    localContext:
+      "Maisons rurales et pavillons. Quelques résidences secondaires bord de lac où le pilotage à distance est apprécié (mode hors-gel automatique).",
+    habitatNotes: "Hivers moyennement rigoureux, étés chauds : la PAC réversible est idéale.",
+    quartiers: ["Saint-Didier centre", "Bord de lac", "Le Bourg", "Hameau de Pré-Drouet"],
+    communesVoisines: ["La Tour-du-Pin", "Cessieu", "Saint-Clair-de-la-Tour", "Faverges-de-la-Tour"],
+    specificites: [
+      "Résidences secondaires : pilotage app à distance + mode hors-gel",
+      "PAC réversible : argument fort vu la chaleur estivale du bassin",
+      "Lac : règlementation environnementale standard, pas de contrainte spécifique",
+    ],
+    faq: [
+      { q: "Pilotage à distance pour résidence secondaire ?", a: "Oui, toutes nos PAC modernes ont une app de pilotage. Mode hors-gel automatique pour absences prolongées." },
+      { q: "Coût PAC à Saint-Didier-de-la-Tour ?", a: "PAC air-eau 100 m² : 12 500 à 15 000 € posé." },
+      { q: "Délai à Saint-Didier ?", a: "Visite sous 5 jours, pose sous 3-4 semaines." },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "trept",
+    name: "Trept",
+    postalCode: "38460",
+    department: "Isère (38)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "1 900 habitants",
+    distanceKm: 22,
+    intro:
+      "Bourg rural des Balcons du Dauphiné au nord-est de Bourgoin-Jallieu, Trept présente un habitat majoritairement ancien (maisons en pierre) avec extensions pavillonnaires récentes.",
+    localContext:
+      "Maisons en pierre du centre : PAC haute température obligatoire pour conserver les radiateurs en fonte. Périphérie pavillonnaire pour PAC air-eau standard.",
+    habitatNotes: "Hameaux et zones agricoles : grandes parcelles propices à la géothermie.",
+    quartiers: ["Trept centre", "Le Bourg", "La Plaine", "Hameau de Salagnon"],
+    communesVoisines: ["Crémieu", "Optevoz", "Soleymieu", "Salagnon"],
+    specificites: [
+      "Maisons en pierre : PAC haute température + radiateurs fonte conservés",
+      "Hameaux ruraux : géothermie intéressante",
+      "Distance 22 km — RDV groupés possibles avec autres clients du secteur",
+    ],
+    faq: [
+      { q: "PAC pour maison en pierre à Trept ?", a: "PAC air-eau haute température (jusqu'à 65 °C) compatible avec radiateurs fonte d'origine. Pas besoin de tout changer." },
+      { q: "Géothermie possible à Trept ?", a: "Oui sur grandes parcelles (≥ 1,5x surface). Investissement 18-28 k€ mais COP > 4 toute l'année — rentable sur > 15 ans." },
+      { q: "Délai à Trept ?", a: "Visite sous 1 semaine, pose sous 4-6 semaines selon planning." },
+    ],
+    variant: "C",
+  },
+);
+
 export const findCity = (slug: string) => cities.find((c) => c.slug === slug);

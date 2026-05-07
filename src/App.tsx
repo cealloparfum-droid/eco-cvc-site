@@ -1,43 +1,53 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import Index from "./pages/Index";
-import About from "./pages/About";
-import Installation from "./pages/Installation";
-import Maintenance from "./pages/Maintenance";
-import Depannage from "./pages/Depannage";
-import Produits from "./pages/Produits";
-import Certifications from "./pages/Certifications";
-import Calculateur from "./pages/Calculateur";
-import ChambreFroide from "./pages/ChambreFroide";
-import VitrinesRefrigerees from "./pages/VitrinesRefrigerees";
-import Boutique from "./pages/Boutique";
-import Ventilation from "./pages/Ventilation";
-import Contact from "./pages/Contact";
-import MentionsLegales from "./pages/MentionsLegales";
-import CGV from "./pages/CGV";
-import Confidentialite from "./pages/Confidentialite";
-import CityPage from "./pages/CityPage";
-import Blog from "./pages/Blog";
-import Article from "./pages/Article";
-import Avis from "./pages/Avis";
-import Faq from "./pages/Faq";
-import DevisLanding from "./pages/DevisLanding";
-import Glossaire from "./pages/Glossaire";
-import SimulateurAides from "./pages/SimulateurAides";
-import MetierProPage from "./pages/MetierProPage";
-import DepannageCasePage from "./pages/DepannageCasePage";
 import NotFound from "./pages/NotFound";
 import AdvisorBot from "./components/AdvisorBot";
 import MobileStickyCTA from "./components/MobileStickyCTA";
 import DevisFloatingBar from "./components/DevisFloatingBar";
 import ExitIntentPopup from "./components/ExitIntentPopup";
+import SeasonalUrgencyBanner from "./components/SeasonalUrgencyBanner";
+import SocialProofTicker from "./components/SocialProofTicker";
 import ErrorBoundary from "./components/ErrorBoundary";
-
-import { useParams, Navigate } from "react-router-dom";
 import { findDevis } from "./data/devis";
+
+// Code splitting : chaque route lourde est chargée à la demande pour
+// réduire le bundle initial (passage de 1,1 MB à ~350 KB côté JS).
+const About = lazy(() => import("./pages/About"));
+const Installation = lazy(() => import("./pages/Installation"));
+const Maintenance = lazy(() => import("./pages/Maintenance"));
+const Depannage = lazy(() => import("./pages/Depannage"));
+const Produits = lazy(() => import("./pages/Produits"));
+const Certifications = lazy(() => import("./pages/Certifications"));
+const Calculateur = lazy(() => import("./pages/Calculateur"));
+const ChambreFroide = lazy(() => import("./pages/ChambreFroide"));
+const VitrinesRefrigerees = lazy(() => import("./pages/VitrinesRefrigerees"));
+const Boutique = lazy(() => import("./pages/Boutique"));
+const Ventilation = lazy(() => import("./pages/Ventilation"));
+const Contact = lazy(() => import("./pages/Contact"));
+const MentionsLegales = lazy(() => import("./pages/MentionsLegales"));
+const CGV = lazy(() => import("./pages/CGV"));
+const Confidentialite = lazy(() => import("./pages/Confidentialite"));
+const CityPage = lazy(() => import("./pages/CityPage"));
+const Blog = lazy(() => import("./pages/Blog"));
+const Article = lazy(() => import("./pages/Article"));
+const Avis = lazy(() => import("./pages/Avis"));
+const Faq = lazy(() => import("./pages/Faq"));
+const DevisLanding = lazy(() => import("./pages/DevisLanding"));
+const Glossaire = lazy(() => import("./pages/Glossaire"));
+const SimulateurAides = lazy(() => import("./pages/SimulateurAides"));
+const MetierProPage = lazy(() => import("./pages/MetierProPage"));
+const DepannageCasePage = lazy(() => import("./pages/DepannageCasePage"));
+
+const PageFallback = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="w-10 h-10 border-2 border-brand-blue/30 border-t-brand-blue rounded-full animate-spin" />
+  </div>
+);
 
 const DevisLandingWrapper = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -54,39 +64,43 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ErrorBoundary>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/qui-sommes-nous" element={<About />} />
-            <Route path="/installation" element={<Installation />} />
-            <Route path="/maintenance" element={<Maintenance />} />
-            <Route path="/depannage" element={<Depannage />} />
-            <Route path="/produits" element={<Produits />} />
-            <Route path="/certifications" element={<Certifications />} />
-            <Route path="/calculateur" element={<Calculateur />} />
-            <Route path="/chambre-froide" element={<ChambreFroide />} />
-            <Route path="/vitrines-refrigerees" element={<VitrinesRefrigerees />} />
-            <Route path="/boutique" element={<Boutique />} />
-            <Route path="/ventilation" element={<Ventilation />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/mentions-legales" element={<MentionsLegales />} />
-            <Route path="/cgv" element={<CGV />} />
-            <Route path="/confidentialite" element={<Confidentialite />} />
-            <Route path="/pompe-a-chaleur/:ville" element={<CityPage />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<Article />} />
-            <Route path="/avis" element={<Avis />} />
-            <Route path="/faq" element={<Faq />} />
-            <Route path="/glossaire" element={<Glossaire />} />
-            <Route path="/simulateur-aides" element={<SimulateurAides />} />
-            <Route path="/froid-commercial/:slug" element={<MetierProPage />} />
-            <Route path="/depannage/:slug" element={<DepannageCasePage />} />
-            <Route path="/:slug" element={<DevisLandingWrapper />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={<PageFallback />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/qui-sommes-nous" element={<About />} />
+              <Route path="/installation" element={<Installation />} />
+              <Route path="/maintenance" element={<Maintenance />} />
+              <Route path="/depannage" element={<Depannage />} />
+              <Route path="/produits" element={<Produits />} />
+              <Route path="/certifications" element={<Certifications />} />
+              <Route path="/calculateur" element={<Calculateur />} />
+              <Route path="/chambre-froide" element={<ChambreFroide />} />
+              <Route path="/vitrines-refrigerees" element={<VitrinesRefrigerees />} />
+              <Route path="/boutique" element={<Boutique />} />
+              <Route path="/ventilation" element={<Ventilation />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/mentions-legales" element={<MentionsLegales />} />
+              <Route path="/cgv" element={<CGV />} />
+              <Route path="/confidentialite" element={<Confidentialite />} />
+              <Route path="/pompe-a-chaleur/:ville" element={<CityPage />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<Article />} />
+              <Route path="/avis" element={<Avis />} />
+              <Route path="/faq" element={<Faq />} />
+              <Route path="/glossaire" element={<Glossaire />} />
+              <Route path="/simulateur-aides" element={<SimulateurAides />} />
+              <Route path="/froid-commercial/:slug" element={<MetierProPage />} />
+              <Route path="/depannage/:slug" element={<DepannageCasePage />} />
+              <Route path="/:slug" element={<DevisLandingWrapper />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
           <AdvisorBot />
           <MobileStickyCTA />
           <DevisFloatingBar />
           <ExitIntentPopup />
+          <SeasonalUrgencyBanner />
+          <SocialProofTicker />
         </ErrorBoundary>
       </BrowserRouter>
     </TooltipProvider>
