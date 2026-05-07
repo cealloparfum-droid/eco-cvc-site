@@ -1743,6 +1743,502 @@ cities.push(
     ],
     variant: "C",
   },
+  {
+    slug: "lyon-1er",
+    name: "Lyon 1er",
+    postalCode: "69001",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "30 000 habitants",
+    distanceKm: 38,
+    intro:
+      "Au cœur de Lyon, le 1er arrondissement (Terreaux, Pentes de la Croix-Rousse, Hôtel-de-Ville) concentre des immeubles haussmanniens et bâtiments XVIIIᵉ inscrits ou classés. La pose de clim y demande une étude ABF systématique, mais reste très demandée pour combattre la chaleur urbaine estivale.",
+    localContext:
+      "Pentes de la Croix-Rousse en secteur sauvegardé UNESCO : architecte des Bâtiments de France obligatoire. Solutions privilégiées : multi-split avec unité ext. en cour intérieure (non visible), ou cassette encastrée sans unité ext. apparente.",
+    habitatNotes:
+      "Immeubles 1850-1900 à hauts plafonds, isolation thermique souvent médiocre : split réversible 3,5-5 kW recommandé pour bien refroidir/chauffer en été comme en hiver.",
+    quartiers: ["Terreaux", "Pentes Croix-Rousse", "Hôtel-de-Ville", "Place Sathonay", "Place des Capucins"],
+    communesVoisines: ["Lyon 4e", "Lyon 2e", "Lyon 6e", "Caluire-et-Cuire"],
+    specificites: [
+      "Secteur UNESCO + ABF : déclaration préalable obligatoire avec photo-montage, instruction 2 mois",
+      "Cours intérieures : emplacement privilégié pour unité ext. (non visible depuis rue)",
+      "Hauts plafonds 3,5-4 m : majorer puissance clim de 20-30 % vs surface au sol",
+      "Copropriétés anciennes : vote AG article 25, accompagnement ECO CVC du dossier au chantier",
+      "Pose mono-split appartement : 1 jour, 990 € TTC pour 3,5 kW",
+    ],
+    faq: [
+      { q: "ABF obligatoire en Lyon 1er ?", a: "Oui, secteur sauvegardé UNESCO : ABF systématique. Nous gérons la déclaration préalable et le photo-montage." },
+      { q: "Mon immeuble est inscrit MH, je peux mettre la clim ?", a: "Oui dans 90 % des cas si l'unité ext. est en cour intérieure. Étude au cas par cas, refus rare avec un dossier bien monté." },
+      { q: "Délai total Lyon 1er entre devis et pose ?", a: "Vote AG : 2-6 mois. ABF : 2 mois. Pose : 1 jour. Total moyen : 4-8 mois." },
+      { q: "Bruit dans cour intérieure (résonance) ?", a: "Modèles ≤ 35 dB en mode nuit + plots anti-vibrations. Mesure d'émergence en limite de propriété possible." },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "lyon-2e",
+    name: "Lyon 2e",
+    postalCode: "69002",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "32 000 habitants",
+    distanceKm: 38,
+    intro:
+      "Lyon 2e (Bellecour, Perrache, Confluence) mélange immeubles haussmanniens classés et programmes neufs RE2020 du quartier Confluence. La demande clim est massive en été et la pose haut de gamme y prime sur le prix.",
+    localContext:
+      "Confluence : programmes neufs avec pré-équipement clim, pose mono/multi-split rapide. Centre Bellecour-Perrache : ABF systématique, multi-split avec unité ext. en cour intérieure ou toit-terrasse.",
+    habitatNotes:
+      "Confluence (post-2010) : performances thermiques RE2020, clim réversible 3,5 kW suffisante pour 50 m². Bellecour-Ainay : appartements de standing 100-200 m², gainable invisible souvent demandé.",
+    quartiers: ["Bellecour", "Ainay", "Perrache", "Confluence", "Place des Jacobins", "Cordeliers"],
+    communesVoisines: ["Lyon 1er", "Lyon 7e", "Lyon 5e", "La Mulatière"],
+    specificites: [
+      "Confluence neuf : pré-équipement clim souvent inclus, pose 1 jour, 990 €",
+      "Bellecour-Ainay : ABF + photo-montage requis, pose multi-split discret",
+      "Appartements standing 150-200 m² : gainable invisible 6 900 €, aucune unité visible",
+      "Copropriétés bourgeoises : vote AG article 25, accompagnement complet syndic",
+      "Bureaux secteur Cordeliers / Bellecour : VRV tertiaire, contrat d'entretien",
+    ],
+    faq: [
+      { q: "Clim appartement neuf Confluence ?", a: "Mono-split 3,5 kW à 990 € posé. Si pré-équipement existant, pose en demi-journée." },
+      { q: "Gainable pour appartement Ainay 150 m² ?", a: "Oui si combles ou faux-plafonds accessibles. Devis 6 900-8 900 € selon configuration. Aucune unité visible." },
+      { q: "ABF en Lyon 2e ?", a: "Systématique en Bellecour-Ainay-Perrache. Confluence post-2010 : moins contraignant, parfois sans ABF." },
+      { q: "Bureaux Cordeliers : climatisation tertiaire ?", a: "Oui, VRV multi-zones, étude thermique gratuite, contrat d'entretien annuel." },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "lyon-3e",
+    name: "Lyon 3e",
+    postalCode: "69003",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "104 000 habitants",
+    distanceKm: 38,
+    intro:
+      "Plus grand arrondissement de Lyon, le 3e (Part-Dieu, Préfecture, Villette, Montchat) concentre tertiaire massif et habitat dense (immeubles 1900-1970). La clim réversible 990 € y est demandée massivement en été.",
+    localContext:
+      "Part-Dieu : tours tertiaires (climatisation centralisée). Préfecture-Villette : immeubles 1900-1930 souvent rénovés. Montchat : pavillonnaire 1900-1960 sur petits terrains, demande PAC croissante.",
+    habitatNotes:
+      "Immeubles haussmanniens Préfecture : ABF parfois requis. Pavillons Montchat : PAC air-eau possible si jardin, sinon clim réversible. Part-Dieu : copropriétés modernes, pose facilitée.",
+    quartiers: ["Part-Dieu", "Préfecture", "Villette-Paul-Bert", "Montchat", "Sans-Souci", "Dauphiné", "Bir-Hakeim"],
+    communesVoisines: ["Lyon 6e", "Lyon 7e", "Lyon 8e", "Villeurbanne", "Bron"],
+    specificites: [
+      "Pavillonnaire Montchat : PAC air-eau 7-9 kW, pose en 2 jours",
+      "Copropriétés Part-Dieu : pose clim multi-split 1 jour, devis 2 490-3 990 €",
+      "Tertiaire Part-Dieu : VRV, climatisation centralisée, contrat maintenance",
+      "Immeubles 1900-1930 Préfecture : ABF parfois requis, multi-split en cour",
+      "Hôpital Édouard-Herriot : nous équipons cabinets médicaux et professions libérales du quartier",
+    ],
+    faq: [
+      { q: "Clim réversible Lyon 3e Part-Dieu ?", a: "Mono-split 990 € posé en 1 jour pour appartement standard. Multi-split 2 490 € pour T3-T4." },
+      { q: "PAC pour pavillon Montchat ?", a: "PAC air-eau 7-9 kW + ballon thermodynamique. Devis 11-13 k€ posé, reste à charge 4-7 k€ après aides." },
+      { q: "Cabinet médical secteur Édouard-Herriot ?", a: "Climatisation tertiaire, contrat d'entretien, intervention prioritaire. Devis 48h." },
+      { q: "Délai pose Lyon 3e ?", a: "Visite 48h, devis 24h, pose 2-4 semaines. Plus court qu'en copro avec AG." },
+    ],
+    variant: "C",
+  },
+  {
+    slug: "lyon-4e",
+    name: "Lyon 4e",
+    postalCode: "69004",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "37 000 habitants",
+    distanceKm: 39,
+    intro:
+      "Lyon 4e (plateau de la Croix-Rousse) est un secteur résidentiel familial avec immeubles canuts et copropriétés bourgeoises. Demande clim forte en été (plateau exposé) et copropriétés en cours de rénovation énergétique.",
+    localContext:
+      "Plateau Croix-Rousse en secteur sauvegardé UNESCO : ABF obligatoire. Maisons de canuts à hauts plafonds (4 m) : split réversible plus puissant que la moyenne. Quartier familial avec demande pose discrète et silencieuse.",
+    habitatNotes:
+      "Hauts plafonds 3,5-4 m typiques : majorer la puissance de 25 %. Cours intérieures pour unité ext. Vis-à-vis fréquent : étude positionnement minutieuse.",
+    quartiers: ["Plateau", "Gros-Caillou", "Boulevard de la Croix-Rousse", "Place de la Croix-Rousse", "Henon"],
+    communesVoisines: ["Lyon 1er", "Lyon 9e", "Caluire-et-Cuire"],
+    specificites: [
+      "Secteur UNESCO + ABF : déclaration préalable systématique",
+      "Hauts plafonds canuts : 4-5 kW recommandé pour 30-40 m², 6-7 kW pour 50 m²",
+      "Cours intérieures profondes : emplacement unité ext. discret",
+      "Copropriétés familiales : pose en intersaison (octobre-mars) pour ne pas déranger résidents",
+      "Bruit voisinage : modèles ≤ 35 dB obligatoires, mode silence nuit",
+    ],
+    faq: [
+      { q: "Clim canut hauts plafonds Croix-Rousse ?", a: "Modèle 5 kW recommandé pour 35-50 m² (vs 3,5 kW en plafond standard). Devis 1 490 € posé." },
+      { q: "ABF plateau Croix-Rousse ?", a: "Oui systématique. Nous gérons la DP avec photo-montage. Délai 2 mois d'instruction." },
+      { q: "Vis-à-vis : où mettre l'unité ext. ?", a: "Cour intérieure dans 90 % des cas, parfois toit-terrasse. Étude visite gratuite avant devis." },
+      { q: "Pose en immeuble habité : nuisances ?", a: "Pose 1 jour, perceuse 30 min max. Information voisinage en amont. Pas de nuit blanche." },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "lyon-5e",
+    name: "Lyon 5e",
+    postalCode: "69005",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "47 000 habitants",
+    distanceKm: 39,
+    intro:
+      "Lyon 5e (Vieux Lyon, Fourvière, Saint-Just, Point-du-Jour) est un secteur de patrimoine UNESCO mêlant maisons Renaissance et programmes récents Point-du-Jour. ABF systématique en Vieux Lyon.",
+    localContext:
+      "Vieux Lyon : ABF strict, traverses étroites, cours intérieures exigües. Saint-Just / Point-du-Jour : pavillonnaire 1950-2000, pose plus souple. Fourvière : maisons bourgeoises sur grands terrains.",
+    habitatNotes:
+      "Vieux Lyon : épaisseur des murs en pierre (60-80 cm) et plafonds bas, défi pour passage gaines. Point-du-Jour : maisons modernes, intervention standard.",
+    quartiers: ["Vieux Lyon", "Saint-Just", "Saint-Irénée", "Point-du-Jour", "Fourvière", "Champvert", "Ménival"],
+    communesVoisines: ["Lyon 9e", "Tassin-la-Demi-Lune", "Sainte-Foy-lès-Lyon", "Oullins"],
+    specificites: [
+      "Vieux Lyon UNESCO : ABF strict, multi-split avec unité ext. en cour intérieure obligatoire",
+      "Maisons Renaissance : passage gaines délicat, gainage apparent parfois nécessaire",
+      "Saint-Just / Point-du-Jour : maisons RE2020 ou rénovées, pose facile",
+      "Fourvière : villas sur terrain, géothermie possible",
+      "Universités Lyon-2 / Lyon-3 : tertiaire et résidence étudiante équipés",
+    ],
+    faq: [
+      { q: "Clim Vieux Lyon : ABF refuse souvent ?", a: "Non, refus rare avec dossier bien monté (photo-montage, unité ext. en cour). Délai instruction 2 mois." },
+      { q: "Maison Renaissance : passage gaines ?", a: "Délicat mais faisable. Gainage apparent parfois nécessaire (peinture identique mur). Étude technique avant devis." },
+      { q: "PAC pour villa Fourvière 200 m² ?", a: "PAC air-eau 12-14 kW haute température + ballon. Devis 16-20 k€, reste à charge selon revenus." },
+      { q: "Délai pose Lyon 5e ?", a: "Vieux Lyon : 4-6 mois (ABF). Saint-Just / Point-du-Jour : 3-5 semaines après devis." },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "lyon-6e",
+    name: "Lyon 6e",
+    postalCode: "69006",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "51 000 habitants",
+    distanceKm: 39,
+    intro:
+      "Lyon 6e (Foch, Tête d'Or, Brotteaux, Masséna) est l'arrondissement le plus aisé de Lyon : haussmanniens classés, copropriétés cossues. Demande forte pour pose haut de gamme et discrète.",
+    localContext:
+      "Foch / Tête d'Or : haussmanniens 1880-1910, ABF parfois (proximité parc Tête d'Or classé). Brotteaux : immeubles 1900-1930. Masséna : moderne 1960-1990.",
+    habitatNotes:
+      "Hauts plafonds 3,5-4 m haussmanniens. Cours intérieures profondes : emplacement unité ext. idéal. Patrimoine architectural à préserver.",
+    quartiers: ["Foch", "Tête d'Or", "Brotteaux", "Masséna", "Saxe", "Vauban"],
+    communesVoisines: ["Lyon 3e", "Lyon 1er", "Lyon 4e", "Caluire-et-Cuire", "Villeurbanne"],
+    specificites: [
+      "Haussmanniens Foch : ABF parfois, multi-split en cour intérieure",
+      "Hauts plafonds 4 m : puissance majorée 25-30 %",
+      "Copropriétés bourgeoises : vote AG article 25, accompagnement syndic complet",
+      "Gainable invisible : appartements 150-250 m², 6 900-9 900 €",
+      "Tertiaire Brotteaux / Foch : cabinets, professions libérales, VRV",
+    ],
+    faq: [
+      { q: "Clim discrète appart haussmannien Foch ?", a: "Multi-split avec unité ext. cour intérieure + cassettes encastrées plafond. Devis 4 990-6 900 € selon nb pièces." },
+      { q: "Gainable invisible 200 m² Tête d'Or ?", a: "Oui, gaines en faux-plafond couloir. Devis 8 900-12 900 € selon configuration." },
+      { q: "ABF Lyon 6e ?", a: "Parfois, surtout proximité parc Tête d'Or classé. Étude au cas par cas." },
+      { q: "Cabinet médical Brotteaux ?", a: "Climatisation tertiaire VRV, contrat d'entretien annuel, dépannage 24h. Devis 48h." },
+    ],
+    variant: "C",
+  },
+  {
+    slug: "lyon-7e",
+    name: "Lyon 7e",
+    postalCode: "69007",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "85 000 habitants",
+    distanceKm: 38,
+    intro:
+      "Lyon 7e (Guillotière, Jean-Macé, Gerland, Université) est un arrondissement très varié : étudiant, familial, tertiaire. Demande clim massive en été et copropriétés en rénovation énergétique.",
+    localContext:
+      "Guillotière : immeubles 1900-1970 denses. Jean-Macé : familial, copropriétés 1950-1980. Gerland : zone tertiaire et résidentielle moderne (post-2000). Université Lyon-1 / ENS : résidences étudiantes.",
+    habitatNotes:
+      "Mix immeubles anciens / récents : pose adaptée selon époque. Gerland : copropriétés modernes RT2005-RE2020, pose facilitée.",
+    quartiers: ["Guillotière", "Jean-Macé", "Gerland", "Université", "Saxe-Gambetta", "Jean-Jaurès"],
+    communesVoisines: ["Lyon 2e", "Lyon 3e", "Lyon 8e", "La Mulatière", "Vénissieux"],
+    specificites: [
+      "Copropriétés Jean-Macé / Saxe : MaPrimeRénov' Copro éligible, accompagnement syndic",
+      "Gerland post-2000 : pose clim 1 jour, sans démarche urbanisme dans 80 % des cas",
+      "Résidences étudiantes Université : équipement collectif, contrat global",
+      "Pavillons rares mais existants Jean-Macé : PAC air-eau possible",
+      "Tertiaire Gerland (biotech, sciences) : VRV, contrat d'entretien",
+    ],
+    faq: [
+      { q: "Clim appartement Jean-Macé ?", a: "Mono-split 990 € si copropriété accepte unité ext. Sinon cassette encastrée 1 990 €." },
+      { q: "Gerland post-2000 : pose simple ?", a: "Oui, copropriétés récentes ont souvent un règlement plus souple. Pose 1 jour, devis 990-2 490 €." },
+      { q: "Tertiaire Gerland Biopôle ?", a: "Climatisation VRV multi-zones, ambiances laboratoires/bureaux, contrat d'entretien. Devis 48h." },
+      { q: "Aides MaPrimeRénov' Copro Lyon 7e ?", a: "Éligible si copro construite avant 2003. Accompagnement complet ECO CVC + syndic + ANAH." },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "lyon-8e",
+    name: "Lyon 8e",
+    postalCode: "69008",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "85 000 habitants",
+    distanceKm: 36,
+    intro:
+      "Lyon 8e (Monplaisir, Bachut, Mermoz, États-Unis) est un arrondissement résidentiel familial avec mix copropriétés 1960-80 et pavillonnaire ancien. Demande PAC croissante (remplacement gaz) et clim 990 € forte en appartement.",
+    localContext:
+      "Monplaisir : pavillonnaire 1900-1960 + copros récentes. Bachut / Mermoz : copropriétés 1960-1980 (MaPrimeRénov' Copro éligible). États-Unis : grand ensemble en rénovation ANRU.",
+    habitatNotes:
+      "Copropriétés Mermoz / Bachut : passage gaz collectif → PAC collective ou clim individuelle. Pavillons Monplaisir : PAC air-eau standard.",
+    quartiers: ["Monplaisir", "Bachut", "Mermoz", "États-Unis", "Grand Trou", "Sans-Souci"],
+    communesVoisines: ["Lyon 3e", "Lyon 7e", "Vénissieux", "Bron", "Saint-Priest"],
+    specificites: [
+      "Copropriétés Mermoz / Bachut : MaPrimeRénov' Copro éligible, dossier syndic complet",
+      "Pavillons Monplaisir : PAC air-eau 7-9 kW + ballon thermodynamique",
+      "ANRU États-Unis : opérations bailleurs, marchés publics ou prestations directes",
+      "Clim réversible 990 € très demandée copropriétés (étages élevés, été chaud)",
+      "Aides cumulées : MaPrimeRénov' + CEE + Éco-rénov' Métropole",
+    ],
+    faq: [
+      { q: "Pavillon Monplaisir : PAC adaptée ?", a: "PAC air-eau 7-9 kW. Devis 11-13 k€ posé, reste à charge 4-7 k€ après aides." },
+      { q: "Copropriété Mermoz : MaPrimeRénov' Copro ?", a: "Oui si construite avant 2003. Subvention jusqu'à 35 % pour la copro + aides individuelles cumulables." },
+      { q: "Clim appart Bachut ?", a: "Mono-split 990 € si AG validée. Cassette 1 990 € si refus unité ext. visible." },
+      { q: "Délai à Lyon 8e ?", a: "Pose appartement 1 jour, pavillon 2-3 jours. Vote AG copro 2-6 mois." },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "lyon-9e",
+    name: "Lyon 9e",
+    postalCode: "69009",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "51 000 habitants",
+    distanceKm: 40,
+    intro:
+      "Lyon 9e (Vaise, Gorge-de-Loup, La Duchère, Saint-Rambert) combine quartier d'affaires moderne (Vaise) et grand ensemble en rénovation (La Duchère). Demande mixte : copros ANRU + tertiaire récent.",
+    localContext:
+      "Vaise : tertiaire moderne (post-2000) et résidentiel récent. Gorge-de-Loup : copropriétés 1960-80. La Duchère : grand ensemble en rénovation ANRU. Saint-Rambert : pavillonnaire.",
+    habitatNotes:
+      "Vaise post-2000 : pose clim simplifiée. La Duchère : opérations bailleurs en cours, MaPrimeRénov' Copro et ANAH activées.",
+    quartiers: ["Vaise", "Gorge-de-Loup", "La Duchère", "Saint-Rambert", "L'Industrie"],
+    communesVoisines: ["Lyon 5e", "Lyon 4e", "Écully", "Champagne-au-Mont-d'Or", "Tassin-la-Demi-Lune"],
+    specificites: [
+      "Vaise post-2000 : copros récentes, pose clim simplifiée, devis 1 jour",
+      "La Duchère ANRU : marchés bailleurs, MaPrimeRénov' Copro maximisée",
+      "Tertiaire Vaise (biotech, médias) : VRV multi-zones",
+      "Pavillons Saint-Rambert : PAC air-eau standard",
+      "Aides Métropole de Lyon Éco-rénov' cumulables",
+    ],
+    faq: [
+      { q: "Clim copropriété récente Vaise ?", a: "Pose 1 jour, mono-split 990 € posé. Souvent règlement copro plus souple en post-2000." },
+      { q: "La Duchère : aides bailleur ?", a: "MaPrimeRénov' Copro + ANAH renforcée. ECO CVC référencé QualiPAC pour marchés publics et bailleurs." },
+      { q: "Tertiaire Vaise ?", a: "Climatisation VRV, étude thermique gratuite, contrat d'entretien. Devis 48h." },
+      { q: "PAC pavillon Saint-Rambert ?", a: "PAC air-eau 7-9 kW, ballon thermodynamique. Devis 11-13 k€, aides cumulées 4-9 k€ selon revenus." },
+    ],
+    variant: "C",
+  },
+  {
+    slug: "saint-genis-laval",
+    name: "Saint-Genis-Laval",
+    postalCode: "69230",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "21 000 habitants",
+    distanceKm: 38,
+    intro:
+      "Au sud-ouest de Lyon, Saint-Genis-Laval est un secteur résidentiel familial (CHU Lyon-Sud, Observatoire). Pavillonnaire dominant, copropriétés récentes et programmes neufs.",
+    localContext:
+      "Pavillonnaire 1970-2000 dominant, copropriétés récentes vers Beauversant, programmes neufs RT2012/RE2020. Demande PAC pour remplacement gaz et clim 990 € en appartement.",
+    habitatNotes:
+      "Maisons sur petits/moyens terrains : intégration unité ext. en façade arrière ou jardin. CHU Lyon-Sud : tertiaire santé important.",
+    quartiers: ["Centre", "Beauversant", "Le Beal", "La Mouche", "Les Collonges"],
+    communesVoisines: ["Oullins-Pierre-Bénite", "Brignais", "Irigny", "Vourles", "Charly"],
+    specificites: [
+      "Pavillons 1970-2000 : PAC air-eau 7-10 kW + ballon thermodynamique",
+      "Copropriétés Beauversant : pose clim 1 jour, 990-2 490 €",
+      "Tertiaire CHU Lyon-Sud : cabinets médicaux, professions libérales équipés",
+      "Aides Métropole de Lyon Éco-rénov' cumulables MaPrimeRénov' + CEE",
+      "Climat plus chaud (vallée du Rhône) : clim réversible très rentable été",
+    ],
+    faq: [
+      { q: "PAC pavillon Saint-Genis 130 m² ?", a: "PAC air-eau 9-11 kW. Devis 12-14 k€ posé, reste à charge 4-7 k€ après aides." },
+      { q: "Cabinet CHU Lyon-Sud ?", a: "Climatisation tertiaire, contrat d'entretien, dépannage 24h. Devis 48h." },
+      { q: "Délai à Saint-Genis ?", a: "Visite 48h, devis 24h, pose 3-5 semaines." },
+      { q: "Clim appartement Beauversant ?", a: "Mono-split 990 € posé. Bi-split 2 490 €. Pose 1 jour." },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "brignais",
+    name: "Brignais",
+    postalCode: "69530",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "12 500 habitants",
+    distanceKm: 40,
+    intro:
+      "Brignais, au sud-ouest de Lyon, est une commune dynamique (Techlid, technopôle, ZAC Sacuny). Pavillonnaire 1970-2010 et programmes neufs en cours.",
+    localContext:
+      "Pavillonnaire dominant 1970-2010, programmes neufs RE2020 ZAC Sacuny, zone d'activité Techlid (tertiaire). Beaucoup de remplacement chaudières fioul/gaz par PAC.",
+    habitatNotes:
+      "Maisons sur terrains 400-800 m² : intégration unité ext. facile. Programmes neufs : pré-équipement clim parfois inclus.",
+    quartiers: ["Centre", "ZAC Sacuny", "Le Garon", "La Giraudière", "Techlid"],
+    communesVoisines: ["Saint-Genis-Laval", "Mornant", "Soucieu-en-Jarrest", "Chaponost", "Vourles"],
+    specificites: [
+      "Pavillons 1970-2010 : PAC air-eau 8-10 kW, bonus sortie fioul jusqu'à 4 000 €",
+      "ZAC Sacuny RE2020 : pré-équipement clim fréquent, pose simplifiée",
+      "Techlid tertiaire : VRV multi-zones, contrats d'entretien PME",
+      "Aides Métropole + MaPrimeRénov' + CEE = jusqu'à 60-70 % du montant",
+      "Climat tempéré : PAC très efficace toute l'année (peu de jours < -7 °C)",
+    ],
+    faq: [
+      { q: "PAC pour pavillon Brignais ?", a: "PAC air-eau 8-10 kW. Devis 12-14 k€ posé, reste à charge 4-8 k€ après aides." },
+      { q: "Vous équipez les bureaux Techlid ?", a: "Oui, climatisation tertiaire VRV, contrat d'entretien annuel, dépannage 24h." },
+      { q: "Bonus sortie fioul à Brignais ?", a: "Oui, jusqu'à 4 000 € + MaPrimeRénov' Sérénité jusqu'à 11 000 € pour foyers modestes." },
+      { q: "Délai pose Brignais ?", a: "Visite 48h, pose 3-5 semaines selon planning." },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "mions",
+    name: "Mions",
+    postalCode: "69780",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "14 500 habitants",
+    distanceKm: 33,
+    intro:
+      "À l'est de Lyon, Mions est une commune résidentielle dynamique avec pavillonnaire 1970-2010 et programmes neufs récents. Voisine de Saint-Priest et Corbas.",
+    localContext:
+      "Pavillonnaire 1970-2010 dominant, programmes neufs RT2012/RE2020 vers le centre, zone d'activité au nord. Remplacement gaz/fioul par PAC en croissance.",
+    habitatNotes:
+      "Maisons sur terrains 500-800 m² : intégration unité ext. facile. Programmes neufs : pré-équipement clim souvent inclus.",
+    quartiers: ["Centre", "Charvas", "La Tournelle", "Le Bourg", "Le Cottage"],
+    communesVoisines: ["Saint-Priest", "Corbas", "Heyrieux", "Toussieu", "Marennes"],
+    specificites: [
+      "Pavillons 1970-2010 : PAC air-eau 8-10 kW + ballon thermodynamique",
+      "Programmes neufs RE2020 : pré-équipement clim, pose simplifiée",
+      "Climat continental : -8 °C possibles janvier, 35 °C été — PAC réversible justifiée",
+      "Aides Métropole de Lyon Éco-rénov' jusqu'à 4 000 € cumulables",
+      "Distance 33 km : intervention équipe est lyonnais quasi quotidienne",
+    ],
+    faq: [
+      { q: "PAC pavillon Mions ?", a: "PAC air-eau 8-10 kW. Devis 11-13 k€ posé, reste à charge 4-7 k€ selon revenus." },
+      { q: "Clim appart neuf Charvas ?", a: "Mono-split 990 € posé en 1 jour si pré-équipement. Bi-split 2 490 €." },
+      { q: "Délai dépannage Mions ?", a: "Sous 24-48h. Atelier à 33 km, équipe sur Lyon-Est presque chaque jour." },
+      { q: "Vous travaillez avec promoteurs neuf Mions ?", a: "Oui, pré-équipement clim ou pose après livraison. Devis lot ou unitaire." },
+    ],
+    variant: "C",
+  },
+  {
+    slug: "chassieu",
+    name: "Chassieu",
+    postalCode: "69680",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "11 000 habitants",
+    distanceKm: 30,
+    intro:
+      "Chassieu, à l'est de Lyon, combine pavillonnaire familial et grande zone d'activité Eurexpo (entreprises, salons). Demande mixte particuliers + tertiaire.",
+    localContext:
+      "Pavillonnaire 1970-2010 dominant, copropriétés récentes vers le centre, immense zone d'activité Eurexpo (B2B). Beaucoup de PAC pour remplacement gaz/fioul.",
+    habitatNotes:
+      "Maisons sur terrains moyens 500-700 m² : intégration unité ext. simple. Eurexpo : entrepôts, bureaux, restaurants — climatisation et froid commercial.",
+    quartiers: ["Centre", "Eurexpo", "La Plaine", "Le Pélossier", "Genas-est"],
+    communesVoisines: ["Décines-Charpieu", "Genas", "Saint-Priest", "Vaulx-en-Velin", "Bron"],
+    specificites: [
+      "Pavillons 1970-2010 : PAC air-eau 8-10 kW + ballon thermodynamique",
+      "Eurexpo : climatisation tertiaire (entrepôts, bureaux), froid commercial restaurants",
+      "Aides Métropole de Lyon Éco-rénov' jusqu'à 4 000 € + MaPrimeRénov' + CEE",
+      "Distance 30 km : passage régulier équipe ECO CVC",
+      "Clim réversible 990 € appart neuf : pose 1 jour",
+    ],
+    faq: [
+      { q: "PAC pavillon Chassieu ?", a: "PAC air-eau 8-10 kW. Devis 11-13 k€ posé, reste à charge 4-7 k€ après aides." },
+      { q: "Vous équipez les pros Eurexpo ?", a: "Oui : entrepôts (climatisation industrielle), bureaux (VRV), restaurants (froid commercial)." },
+      { q: "Délai à Chassieu ?", a: "Visite 48h, devis 24h, pose 3-5 semaines particulier / 4-6 semaines tertiaire." },
+      { q: "Bonus sortie fioul à Chassieu ?", a: "Oui jusqu'à 4 000 € + MaPrimeRénov' Sérénité. Reste à charge possible 3-5 k€ pour foyers modestes." },
+    ],
+    variant: "A",
+  },
+  {
+    slug: "feyzin",
+    name: "Feyzin",
+    postalCode: "69320",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "10 500 habitants",
+    distanceKm: 35,
+    intro:
+      "Feyzin, au sud de Lyon, est marquée par la raffinerie Total mais aussi un pavillonnaire familial actif. Plan de Prévention des Risques Technologiques (PPRT) à connaître pour certaines zones.",
+    localContext:
+      "Pavillonnaire 1960-2000 dominant, copropriétés vers le centre, zone industrielle (Total + sous-traitants). PPRT en zones proches site Seveso.",
+    habitatNotes:
+      "Pavillons standard : pose PAC simple. Zones PPRT : étude technique réglementaire avant travaux.",
+    quartiers: ["Centre", "Les Razes", "Plateau", "Le Béthier", "Vignettes"],
+    communesVoisines: ["Saint-Fons", "Solaize", "Vénissieux", "Corbas", "Sérézin-du-Rhône"],
+    specificites: [
+      "Pavillons 1960-2000 : PAC air-eau 7-10 kW + ballon thermodynamique",
+      "PPRT : vérification réglementaire avant pose en zone proche raffinerie",
+      "Aides Métropole de Lyon Éco-rénov' + MaPrimeRénov' + CEE cumulables",
+      "Climat plus chaud (vallée du Rhône) : clim réversible très efficace été",
+      "Distance 35 km : équipe Lyon-Sud quotidienne",
+    ],
+    faq: [
+      { q: "PAC en zone PPRT Feyzin ?", a: "Vérification réglementaire systématique. Pose autorisée dans la majorité des cas, parfois avec contraintes spécifiques." },
+      { q: "Clim appartement Feyzin ?", a: "Mono-split 990 € posé. Pose 1 jour, sans démarche urbanisme dans 90 % des cas." },
+      { q: "Délai pose Feyzin ?", a: "Visite 48h, devis 24h, pose 3-5 semaines." },
+      { q: "Aides à Feyzin ?", a: "MaPrimeRénov' + CEE + Éco-rénov' Métropole. Bonus sortie fioul jusqu'à 4 000 €." },
+    ],
+    variant: "C",
+  },
+  {
+    slug: "francheville",
+    name: "Francheville",
+    postalCode: "69340",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "14 500 habitants",
+    distanceKm: 41,
+    intro:
+      "Francheville, à l'ouest de Lyon, est une commune résidentielle haut de gamme avec villas et pavillons sur grands terrains arborés.",
+    localContext:
+      "Pavillonnaire 1950-2000 sur terrains 800-2000 m², copropriétés bourgeoises récentes, zones boisées à préserver. Demande PAC haute performance et clim discrète.",
+    habitatNotes:
+      "Grands terrains : intégration paysagère unité ext. discrète, géothermie possible sur certaines parcelles ≥ 1 500 m².",
+    quartiers: ["Centre", "Le Bourg", "Bel-Air", "Taffignon", "Le Châter"],
+    communesVoisines: ["Tassin-la-Demi-Lune", "Sainte-Foy-lès-Lyon", "Charbonnières-les-Bains", "Lyon 5e", "Chaponost"],
+    specificites: [
+      "Pavillons sur grands terrains : PAC air-eau 9-12 kW, intégration paysagère discrète",
+      "Géothermie possible : terrains ≥ 1 500 m², COP > 4, rentabilité longue durée",
+      "Pack PAC + photovoltaïque + batterie : autoconsommation 70-80 %",
+      "Aides Métropole de Lyon Éco-rénov' cumulables MaPrimeRénov'",
+      "Climat tempéré ouest lyonnais : PAC très efficace toute l'année",
+    ],
+    faq: [
+      { q: "PAC villa 200 m² Francheville ?", a: "PAC air-eau 12-14 kW haute température. Devis 16-22 k€ posé selon options." },
+      { q: "Géothermie Francheville ?", a: "Possible sur terrains ≥ 1 500 m². Sondes verticales 80-100 m. Investissement 24-32 k€, COP 4-4,5." },
+      { q: "Clim discrète maison de standing ?", a: "Gainable invisible 6 900-9 900 € ou multi-split unité ext. arrière. Étude technique gratuite." },
+      { q: "Délai à Francheville ?", a: "Visite 48h, pose 3-5 semaines. Mise en service immédiate." },
+    ],
+    variant: "B",
+  },
+  {
+    slug: "dardilly",
+    name: "Dardilly",
+    postalCode: "69570",
+    department: "Rhône (69)",
+    region: "Auvergne-Rhône-Alpes",
+    population: "8 800 habitants",
+    distanceKm: 44,
+    intro:
+      "Dardilly, au nord-ouest de Lyon, est une commune résidentielle prisée (proximité parc de Lacroix-Laval, technopôle Techlid). Villas et pavillons familiaux dominants.",
+    localContext:
+      "Pavillonnaire 1970-2010 sur grands terrains, villas récentes, technopôle de Lyon (entreprises). Demande PAC haute performance et tertiaire.",
+    habitatNotes:
+      "Grands terrains arborés : intégration unité ext. paysagère facile, géothermie sur les plus grandes parcelles.",
+    quartiers: ["Centre", "Bois-Dieu", "La Beffe", "Le Paillet", "Limonest-frontière"],
+    communesVoisines: ["Limonest", "Champagne-au-Mont-d'Or", "Écully", "Saint-Didier-au-Mont-d'Or", "La Tour-de-Salvagny"],
+    specificites: [
+      "Pavillons 1970-2010 : PAC air-eau 9-11 kW + ballon thermodynamique 200 L",
+      "Géothermie possible : terrains > 1 500 m², COP > 4",
+      "Tertiaire Techlid Dardilly : VRV, contrats d'entretien PME",
+      "Pack PAC + PV + borne VE : étude énergétique globale",
+      "Aides Métropole de Lyon Éco-rénov' jusqu'à 4 000 €",
+    ],
+    faq: [
+      { q: "PAC pour villa Dardilly 180 m² ?", a: "PAC air-eau 11-13 kW. Devis 15-20 k€ posé selon options et radiateurs." },
+      { q: "Vous travaillez sur Techlid ?", a: "Oui, climatisation tertiaire VRV, contrat d'entretien, dépannage 24h." },
+      { q: "Géothermie 2 000 m² Dardilly ?", a: "Oui, sondes verticales. Investissement 24-32 k€, COP 4-4,5, rentabilité 12-18 ans." },
+      { q: "Délai à Dardilly ?", a: "Visite 48h, devis 24h, pose 3-5 semaines." },
+    ],
+    variant: "C",
+  },
 );
 
 export const findCity = (slug: string) => cities.find((c) => c.slug === slug);
