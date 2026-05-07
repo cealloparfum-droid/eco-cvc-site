@@ -47,6 +47,9 @@ const AidesCollectivitePage = lazy(() => import("./pages/AidesCollectivitePage")
 const ComparateurChauffages = lazy(() => import("./pages/ComparateurChauffages"));
 const MarquePage = lazy(() => import("./pages/MarquePage"));
 const CodeErreurPage = lazy(() => import("./pages/CodeErreurPage"));
+const QuizEligibilite = lazy(() => import("./pages/QuizEligibilite"));
+const SolairePac = lazy(() => import("./pages/SolairePac"));
+const Recrutement = lazy(() => import("./pages/Recrutement"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -100,6 +103,9 @@ const App = () => (
               <Route path="/comparateur-chauffages" element={<ComparateurChauffages />} />
               <Route path="/marques/:slug" element={<MarquePage />} />
               <Route path="/codes-erreur/:slug" element={<CodeErreurPage />} />
+              <Route path="/eligibilite-maprimerenov" element={<QuizEligibilite />} />
+              <Route path="/solaire-pompe-a-chaleur" element={<SolairePac />} />
+              <Route path="/recrutement" element={<Recrutement />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

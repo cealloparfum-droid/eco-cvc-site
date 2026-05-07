@@ -623,6 +623,82 @@ for (const d of depannageCases) {
   generated.push(`/depannage/${d.slug}`);
 }
 
+// Quiz éligibilité MaPrimeRénov'
+{
+  const title = "Suis-je éligible MaPrimeRénov' 2026 ? Test gratuit en 30 sec | ECO CVC";
+  const description =
+    "Test rapide d'éligibilité MaPrimeRénov' 2026 en 5 questions. Réponse instantanée + estimation détaillée par email. Gratuit, sans inscription.";
+  const bodyHtml = `
+    <h1>Suis-je éligible MaPrimeRénov' 2026 ?</h1>
+    <p>${escape(description)}</p>
+    <h2>5 questions pour savoir</h2>
+    <ol>
+      <li>Êtes-vous propriétaire (occupant ou bailleur) du logement ?</li>
+      <li>Le logement a-t-il plus de 15 ans ?</li>
+      <li>Le logement est-il votre résidence principale (ou louée comme telle) ?</li>
+      <li>Êtes-vous OK pour passer par un artisan certifié RGE ?</li>
+      <li>Vos revenus sont-ils inférieurs ou proches du plafond Violet ?</li>
+    </ol>
+    <p>Si vous répondez oui aux 4 premières, vous êtes éligible. Le montant exact dépend de votre profil de revenus exact (Bleu, Jaune, Violet, Rose).</p>
+  `;
+  await writeRoute("/eligibilite-maprimerenov", { title, description, canonical: `${BASE}/eligibilite-maprimerenov`, bodyHtml });
+  generated.push("/eligibilite-maprimerenov");
+}
+
+// Solaire + PAC
+{
+  const title = "Solaire + pompe à chaleur : le combo qui divise la facture par 3 | ECO CVC";
+  const description =
+    "Combiner panneaux solaires + pompe à chaleur en 2026 : économies, rentabilité, prix posé, aides. Le combo gagnant pour autonomie énergétique.";
+  const bodyHtml = `
+    <h1>Solaire + pompe à chaleur : le combo qui divise la facture par 3</h1>
+    <p>${escape(description)}</p>
+    <h2>Pourquoi c'est le combo idéal en 2026</h2>
+    <ul>
+      <li>La PAC consomme 3 000 à 5 000 kWh/an d'électricité (ce qu'un kit 3-4 kWc produit)</li>
+      <li>Solaire seul rentable en 8-10 ans</li>
+      <li>Combo = 50-80% d'autoconsommation, factures hivernales divisées</li>
+      <li>Sur 25 ans : 30 000 à 60 000 € d'économies cumulées vs maintien fioul/gaz</li>
+    </ul>
+    <h2>Cas concret : maison 130 m² en Isère</h2>
+    <p>PAC air-eau Daikin 11 kW + kit solaire 4 kWc avec onduleur hybride. Investissement total 24 000 €, aides cumulées 10 480 €, reste à charge 13 520 €. Facture annuelle passe de 2 800 €/an (chaudière fioul) à 650 €/an. Économie cumulée 25 ans : 53 750 €.</p>
+    <p><a href="/contact">Étude personnalisée gratuite</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+  `;
+  await writeRoute("/solaire-pompe-a-chaleur", {
+    title,
+    description,
+    canonical: `${BASE}/solaire-pompe-a-chaleur`,
+    bodyHtml,
+  });
+  generated.push("/solaire-pompe-a-chaleur");
+}
+
+// Recrutement
+{
+  const title = "Recrutement ECO CVC — frigoriste, apprenti CVC en Isère | RGE QualiPAC";
+  const description =
+    "ECO CVC recrute en Isère et Rhône-Alpes : frigoriste, technicien CVC, apprenti BTS FED. CDI, alternance.";
+  const bodyHtml = `
+    <h1>Rejoignez l'équipe ECO CVC</h1>
+    <p>${escape(description)}</p>
+    <h2>Postes ouverts</h2>
+    <ul>
+      <li><strong>Frigoriste / Technicien CVC</strong> (CDI, 2 ans d'expérience min.) — Habilitation F-Gaz, permis B</li>
+      <li><strong>Apprenti BTS FED ou Bac Pro TFCA</strong> — Formation accompagnée par nos artisans</li>
+    </ul>
+    <h2>Ce qui vous attend chez ECO CVC</h2>
+    <ul>
+      <li>Esprit d'équipe et structure familiale</li>
+      <li>Formation continue (F-Gaz, RGE QualiPAC, formations constructeurs)</li>
+      <li>Outillage pro (Daikin DTA, Mitsubishi MELCloud, manomètres pro)</li>
+      <li>Stabilité, mutuelle, prime panier</li>
+    </ul>
+    <p>Candidature : <a href="mailto:ecocvc69@gmail.com">ecocvc69@gmail.com</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+  `;
+  await writeRoute("/recrutement", { title, description, canonical: `${BASE}/recrutement`, bodyHtml });
+  generated.push("/recrutement");
+}
+
 // Marques de PAC
 for (const m of marques) {
   const canonical = `${BASE}/marques/${m.slug}`;
