@@ -13,6 +13,7 @@ const links = [
   { href: "/vitrines-refrigerees", label: "Vitrines réfrigérées" },
   { href: "/ventilation", label: "Ventilation" },
   { href: "/calculateur", label: "Calculateur" },
+  { href: "/simulateur-aides", label: "Aides 2026" },
   { href: "/boutique", label: "Boutique" },
   { href: "/produits", label: "Produits AUX" },
   { href: "/certifications", label: "Certifications" },

@@ -527,6 +527,59 @@ for (const d of devisConfigs) {
   generated.push("/glossaire");
 }
 
+// Simulateur d'aides — page à fort potentiel SEO
+{
+  const title = "Simulateur d'aides MaPrimeRénov' & CEE — Calcul en 30 sec | ECO CVC";
+  const description =
+    "Simulateur d'aides 2026 pour pompe à chaleur : calculez en 30 secondes votre MaPrimeRénov', Coup de pouce CEE, TVA 5,5% et reste à charge. Gratuit, sans inscription.";
+  const bodyHtml = `
+    <h1>Simulez vos aides pompe à chaleur 2026 en 30 secondes</h1>
+    <p>${escape(description)}</p>
+    <h2>Comment fonctionne notre simulateur</h2>
+    <p>Indiquez la surface de votre logement, son niveau d'isolation, votre énergie de chauffage actuelle, le type de pompe à chaleur envisagée et votre profil de revenus. En quelques secondes, vous obtenez :</p>
+    <ul>
+      <li>La puissance de pompe à chaleur recommandée pour votre logement</li>
+      <li>Le prix moyen posé estimé en 2026</li>
+      <li>Le montant détaillé de MaPrimeRénov' selon votre profil</li>
+      <li>Le Coup de pouce chauffage CEE applicable</li>
+      <li>Le bonus sortie de fioul si vous quittez une chaudière fioul</li>
+      <li>L'économie liée à la TVA réduite à 5,5%</li>
+      <li>Votre reste à charge final</li>
+      <li>Vos économies annuelles sur la facture de chauffage</li>
+      <li>La durée d'amortissement de votre investissement</li>
+    </ul>
+    <h2>Aides cumulables 2026</h2>
+    <ul>
+      <li><strong>MaPrimeRénov'</strong> : jusqu'à 5 000 € pour PAC air-eau, jusqu'à 11 000 € pour géothermie selon profil de revenus</li>
+      <li><strong>Coup de pouce chauffage CEE</strong> : jusqu'à 5 000 € pour les ménages très modestes</li>
+      <li><strong>Bonus sortie de fioul</strong> : 1 000 € additionnels pour profils Bleu et Jaune</li>
+      <li><strong>TVA réduite à 5,5%</strong> : économie de ~14% sur le coût des travaux</li>
+      <li><strong>Éco-PTZ</strong> : prêt à taux zéro jusqu'à 50 000 € pour étaler le reste à charge</li>
+    </ul>
+    <h2>Pourquoi notre simulateur est fiable</h2>
+    <p>Calcul mis à jour avec les barèmes officiels MaPrimeRénov' 2026 et le Coup de pouce chauffage en vigueur. ECO CVC est artisan RGE QualiPAC, certification obligatoire pour bénéficier de toutes ces aides. Le montant exact est confirmé après visite technique gratuite à votre domicile en Isère et Rhône-Alpes.</p>
+    <p><a href="/contact">Demander un devis</a> · <a href="/blog/maprimerenov-2026-pompe-a-chaleur">En savoir plus sur MaPrimeRénov' 2026</a></p>
+  `;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Simulateur d'aides PAC ECO CVC",
+    url: `${BASE}/simulateur-aides`,
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Web",
+    description,
+    offers: { "@type": "Offer", price: 0, priceCurrency: "EUR" },
+  };
+  await writeRoute("/simulateur-aides", {
+    title,
+    description,
+    canonical: `${BASE}/simulateur-aides`,
+    jsonLd,
+    bodyHtml,
+  });
+  generated.push("/simulateur-aides");
+}
+
 // Avis
 {
   const title = "Avis clients ECO CVC — pompe à chaleur, climatisation, maintenance";
