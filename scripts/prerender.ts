@@ -625,6 +625,58 @@ for (const d of depannageCases) {
   generated.push(`/depannage/${d.slug}`);
 }
 
+// Mythes PAC
+{
+  const title = "10 mythes sur la pompe à chaleur démontés | ECO CVC";
+  const description = "10 idées reçues sur la pompe à chaleur 2026 : la PAC ne marche pas en hiver, consomme trop, est bruyante, à 1 €. La vérité par ECO CVC.";
+  const bodyHtml = `
+    <h1>10 mythes sur la pompe à chaleur démontés</h1>
+    <p>${escape(description)}</p>
+    <h2>Les 10 mythes les plus courants</h2>
+    <ol>
+      <li><strong>"La PAC ne marche pas en hiver"</strong> — Faux. Modèles plage étendue garantis -25 °C, SCOP 3,8-4,2 toute l'année.</li>
+      <li><strong>"Une PAC consomme trop d'électricité"</strong> — Faux. 2 500-4 500 kWh/an pour 100-130 m², 2-4× moins qu'électrique direct.</li>
+      <li><strong>"Toutes les PAC sont bruyantes"</strong> — Faux. Modèles haut de gamme à 19 dB en mode silence.</li>
+      <li><strong>"Il faut changer ses radiateurs"</strong> — Faux dans 80% des cas. PAC haute température compatible radiateurs fonte.</li>
+      <li><strong>"La PAC ne dure que 8-10 ans"</strong> — Faux. Daikin/Mitsubishi : 18-22 ans. Géothermie : 22-25 ans.</li>
+      <li><strong>"Les PAC chinoises sont à éviter"</strong> — Faux. AUX modernes utilisent compresseurs Mitsubishi sous-traités.</li>
+      <li><strong>"MaPrimeRénov' est trop compliqué"</strong> — Faux. Avec un installateur RGE, dossier monté pour vous.</li>
+      <li><strong>"La PAC à 1 € existe et c'est légal"</strong> — FAUX. Supprimé en juillet 2021. Démarchage actuel = arnaque.</li>
+      <li><strong>"Une PAC déprécie à la revente"</strong> — Faux. Plus-value 5-15% selon zone.</li>
+      <li><strong>"Toutes les PAC se valent"</strong> — Faux. Écart 3 000-8 000 € sur 18 ans selon marque.</li>
+    </ol>
+  `;
+  await writeRoute("/mythes-pompe-a-chaleur", { title, description, canonical: `${BASE}/mythes-pompe-a-chaleur`, bodyHtml });
+  generated.push("/mythes-pompe-a-chaleur");
+}
+
+// PAC + Solaire + Batterie
+{
+  const title = "PAC + solaire + batterie : autonomie énergétique totale | ECO CVC";
+  const description = "Combo PAC + panneaux solaires + batterie 2026 : autonomie 70-90%, factures divisées par 5, indépendance face aux hausses EDF.";
+  const bodyHtml = `
+    <h1>PAC + solaire + batterie : l'autonomie totale</h1>
+    <p>${escape(description)}</p>
+    <h2>Le trio gagnant 2026</h2>
+    <ol>
+      <li><strong>Solaire</strong> : 3-6 kWc panneaux, production 3 600-7 200 kWh/an en Isère</li>
+      <li><strong>Batterie</strong> : 5-15 kWh stockage, durée de vie 15-20 ans</li>
+      <li><strong>PAC</strong> : air-eau ou air-air pilotée par onduleur intelligent</li>
+    </ol>
+    <h2>Cas concret 130 m² Isère</h2>
+    <p>Investissement total : 35 000 € — Aides : 10 850 € — Reste à charge : 24 150 €. Économie 25 ans : 78 750 €. Bénéfice net : +54 600 €. Amortissement 7-8 ans.</p>
+    <h2>Avantages</h2>
+    <ul>
+      <li>Sécurité face aux coupures EDF (12-24h d'autonomie)</li>
+      <li>Indépendance face aux hausses tarifaires</li>
+      <li>Plus-value immobilière +10-20%</li>
+      <li>Bilan carbone -80 à -90%</li>
+    </ul>
+  `;
+  await writeRoute("/pac-solaire-batterie", { title, description, canonical: `${BASE}/pac-solaire-batterie`, bodyHtml });
+  generated.push("/pac-solaire-batterie");
+}
+
 // Pages dimensionnement par pièce
 for (const d of dimensionnements) {
   const canonical = `${BASE}/dimensionnement/${d.slug}`;

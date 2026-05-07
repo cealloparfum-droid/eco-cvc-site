@@ -2603,6 +2603,275 @@ export const articles: Article[] = [
       { href: "/contact", label: "Prendre RDV technique" },
     ],
   },
+  {
+    slug: "pac-en-montagne-altitude",
+    title: "Pompe à chaleur en montagne et en altitude : modèles et précautions",
+    metaTitle: "PAC en montagne : modèles plage étendue -25 °C | ECO CVC",
+    metaDescription:
+      "Pompe à chaleur en montagne et altitude : modèles plage étendue -25 °C, dimensionnement adapté, conseils pour Voiron, Chambéry, Annecy, hauteurs alpines.",
+    category: "Choisir sa PAC",
+    publishedAt: "2026-05-04",
+    updatedAt: "2026-05-07",
+    readingMinutes: 7,
+    excerpt:
+      "À 600 m d'altitude, une PAC standard ne suffit plus. Voici comment dimensionner pour le climat alpin et choisir le bon modèle.",
+    intro: [
+      "Les Alpes du Nord (Voironnais, Chartreuse, Bauges, Chablais) ont des hivers significativement plus rigoureux que la plaine. Une PAC mal choisie devient inefficace dès -10 °C extérieur. Voici comment bien faire.",
+    ],
+    sections: [
+      {
+        heading: "Pourquoi le climat alpin demande des PAC spécifiques",
+        paragraphs: [
+          "À 500 m d'altitude, vous avez 3-4 °C de moins qu'en plaine. À 1000 m, 6-8 °C. Une PAC standard est calibrée pour des températures extérieures -8 °C max. Au-delà, elle bascule sur l'appoint électrique (résistance) et consomme énormément.",
+          "Les modèles 'plage étendue' (Daikin Altherma 3 H, Mitsubishi Ecodan Plus, Atlantic Alféa Excellia) sont calibrés pour -25 °C garantis. Surcoût d'environ 1 500-2 500 € vs standard, indispensable au-dessus de 600 m.",
+        ],
+      },
+      {
+        heading: "Dimensionnement spécifique altitude",
+        paragraphs: ["Coefficient correcteur selon altitude :"],
+        list: [
+          "0-300 m : coefficient 1,0 (standard)",
+          "300-500 m : coefficient 1,1 (+10% de puissance)",
+          "500-800 m : coefficient 1,2 (+20%)",
+          "800-1200 m : coefficient 1,3 (+30%)",
+          "Au-delà : géothermie souvent préférable (T° du sol stable à 8-12 °C)",
+        ],
+        callout: {
+          title: "Notre approche",
+          body: "Pour un client à Coublevie (550 m), nous avons posé une PAC Mitsubishi Ecodan Plus 14 kW (vs 11 kW en plaine pour la même surface). COP saisonnier mesuré : 3,8 contre 4,2 en plaine. Performance honorable malgré l'altitude.",
+        },
+      },
+      {
+        heading: "Précautions techniques",
+        paragraphs: ["Au-delà du choix du modèle :"],
+        list: [
+          "Toiture protectrice ou bâche pour l'unité extérieure (neige abondante)",
+          "Évacuation des condensats avec tracé de chauffe (sinon gel)",
+          "Plage de programmation horaire prudente (pas de coupure nuit en grand froid)",
+          "Résistance d'appoint correctement dimensionnée (3-9 kW selon PAC)",
+          "Cumulus thermodynamique en plus pour l'ECS (la PAC peut être saturée par le chauffage en pic)",
+        ],
+      },
+      {
+        heading: "Couplage avec poêle à granulés (très recommandé)",
+        paragraphs: [
+          "Pour les habitats > 150 m² en altitude > 500 m, le combo PAC + poêle à granulés est souvent imbattable : la PAC gère la saison normale, le poêle prend le relais lors des pics de froid (-15 °C et en dessous).",
+          "Avantages : économies électriques sur les pointes (poêle granulés à 0,08 €/kWh vs élec à 0,25 €), confort radiant en pièce de vie, redondance énergétique en cas de panne PAC.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Géothermie ou aérothermie en altitude ?", a: "Au-dessus de 800 m, la géothermie devient souvent plus rentable : T° du sol stable à 8-12 °C, indépendante de l'air extérieur. Investissement plus lourd (+15-25%) mais performance constante." },
+      { q: "Quelle PAC pour Annecy-le-Vieux (450 m) ?", a: "PAC plage étendue 14 kW pour 130 m² typique. Modèles Daikin/Mitsubishi recommandés. Compter 14 500-17 500 € posée." },
+      { q: "Vous intervenez vraiment en altitude ?", a: "Oui jusqu'à 1200 m d'altitude (limite des modèles standards). Au-delà, étude au cas par cas. Délais d'intervention plus longs en hiver pour les hameaux isolés." },
+    ],
+    relatedCities: ["voiron", "chambery", "annecy"],
+    relatedServices: [{ href: "/installation", label: "Installation PAC plage étendue" }],
+  },
+  {
+    slug: "bruit-pompe-a-chaleur-jurisprudence",
+    title: "Bruit de pompe à chaleur : que dit la jurisprudence ?",
+    metaTitle: "PAC bruit voisinage : jurisprudence et droits | ECO CVC",
+    metaDescription:
+      "Jurisprudence française sur le bruit des pompes à chaleur : décisions de tribunaux, seuils légaux, recours possibles, prévention. Guide ECO CVC.",
+    category: "Pratique",
+    publishedAt: "2026-05-02",
+    updatedAt: "2026-05-07",
+    readingMinutes: 7,
+    excerpt:
+      "Plusieurs jugements récents condamnent les propriétaires de PAC bruyantes à les déplacer ou les remplacer. Voici l'état de la jurisprudence et comment se protéger.",
+    intro: [
+      "Le bruit des unités extérieures de PAC fait l'objet de plus en plus de litiges depuis 2022. Les tribunaux français se sont prononcés à plusieurs reprises, créant une jurisprudence claire que tout propriétaire doit connaître AVANT de poser.",
+    ],
+    sections: [
+      {
+        heading: "Le cadre légal en 2026",
+        paragraphs: [
+          "Deux textes principaux : l'arrêté du 5 décembre 2006 (émergence sonore) et le Code de la santé publique (article R.1334-30 et suivants). Les seuils :",
+        ],
+        list: [
+          "Période diurne (7h-22h) : émergence ≤ +5 dB par rapport au bruit ambiant",
+          "Période nocturne (22h-7h) : émergence ≤ +3 dB",
+          "Mesure prise en limite de propriété, fenêtre voisin la plus exposée",
+          "Au-delà : trouble anormal de voisinage caractérisé",
+        ],
+      },
+      {
+        heading: "Décisions jurisprudentielles récentes",
+        paragraphs: ["Plusieurs jugements emblématiques ces dernières années :"],
+        list: [
+          "TGI Caen 2022 : propriétaire condamné à déplacer sa PAC (10 000 € de travaux à sa charge) + 5 000 € de dommages-intérêts au voisin (émergence +6 dB nuit)",
+          "Cour d'appel Bordeaux 2023 : PAC à 1,2 m du voisin = trouble manifeste, dépose obligatoire et remboursement complet de l'installation au demandeur",
+          "TGI Lyon 2024 : 8 000 € de dommages pour un voisin ayant subi 18 mois de bruit, plus obligation de remplacement par un modèle silencieux",
+          "Cassation 2024 : confirmation que la conformité au permis de construire ne suffit pas si l'émergence sonore dépasse les seuils",
+        ],
+      },
+      {
+        heading: "Comment se protéger AVANT la pose",
+        paragraphs: ["Les bonnes pratiques techniques :"],
+        list: [
+          "Choisir un modèle ≤ 38 dB en limite de propriété (mesure constructeur à 1 m)",
+          "Distance minimum 3 m de la fenêtre voisin la plus proche (5 m si chambre)",
+          "Plots anti-vibrations sous l'unité extérieure (jamais directement au sol)",
+          "Mode silence nocturne automatique (22h-7h) configuré dès la mise en service",
+          "Étude acoustique signée par bureau spécialisé si distance < 3 m",
+          "Communication préventive avec les voisins (présentation du projet, modèle choisi)",
+        ],
+      },
+      {
+        heading: "Que faire si on subit le bruit d'un voisin",
+        paragraphs: ["Démarche progressive :"],
+        list: [
+          "Étape 1 : discussion amiable, demande écrite (LRAR) au voisin",
+          "Étape 2 : mesure acoustique pro (300-500 €) — preuve solide",
+          "Étape 3 : conciliation par le maire ou conciliateur de justice (gratuit)",
+          "Étape 4 : assignation au tribunal d'instance (avocat conseillé)",
+          "Délais : 6-18 mois selon tribunal",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Et si la PAC bruyante est conforme à mon permis de construire ?", a: "Cassation 2024 a tranché : la conformité administrative ne dispense pas du respect des seuils sonores. Vous restez responsable de l'émergence en limite de propriété." },
+      { q: "Mon assurance habitation couvre-t-elle ce risque ?", a: "La Responsabilité Civile incluse couvre les dommages causés. Mais pas les frais de remplacement de votre PAC. Vérifiez votre contrat avant signature du devis." },
+      { q: "Que prévoit ECO CVC contre ce risque ?", a: "Pour chaque pose en lotissement dense, nous proposons une étude acoustique signée et choisissons des modèles ≤ 35 dB. Garantie écrite de conformité aux seuils légaux dans nos devis." },
+    ],
+    relatedCities: ["lyon", "villeurbanne", "saint-priest"],
+    relatedServices: [{ href: "/blog/bruit-pompe-a-chaleur", label: "Bruit PAC : règles 2026" }],
+  },
+  {
+    slug: "remplacer-ou-garder-cumulus-electrique",
+    title: "Remplacer ou garder son cumulus électrique avec une PAC ?",
+    metaTitle: "Cumulus + PAC : remplacer ou garder en complément ? | ECO CVC",
+    metaDescription:
+      "Vous installez une PAC : faut-il remplacer le cumulus électrique par un ballon thermodynamique ou le garder en appoint ? Guide ECO CVC.",
+    category: "Pratique",
+    publishedAt: "2026-04-28",
+    updatedAt: "2026-05-07",
+    readingMinutes: 5,
+    excerpt:
+      "Décision fréquente lors d'une installation PAC : remplacer le cumulus de 8-15 ans ou le garder en complément ? Le calcul économique honnête.",
+    intro: [
+      "Lors de l'installation d'une PAC air-eau, la question du cumulus existant se pose toujours. Le remplacer par un ballon thermodynamique coûte 2 800-4 500 € posé. Le garder en appoint coûte zéro mais consomme. Voici le calcul honnête.",
+    ],
+    sections: [
+      {
+        heading: "Trois configurations possibles",
+        paragraphs: ["Lors de la pose d'une PAC air-eau, vous avez trois options pour l'eau chaude sanitaire (ECS) :"],
+        list: [
+          "Option A : PAC avec ballon ECS intégré (modèles air-eau + ECS combinés). 200 L = 11 500 €, 250 L = 12 500 €.",
+          "Option B : PAC seule + ballon thermodynamique séparé. ~13 500 € total. ECS découplée de la PAC = redondance.",
+          "Option C : PAC seule + cumulus électrique existant gardé. Économie 2 800-4 500 € mais ECS coûte plus cher à l'usage.",
+        ],
+      },
+      {
+        heading: "Calcul économique sur 10 ans",
+        paragraphs: ["Pour une famille de 4 personnes (consommation ECS ~3 200 kWh/an) :"],
+        list: [
+          "Option A (PAC + ECS combinée) : ECS coûte 200 €/an (COP 4). 10 ans = 2 000 €.",
+          "Option B (PAC + ballon thermo) : ECS coûte 230 €/an (COP 3,5). 10 ans = 2 300 €.",
+          "Option C (cumulus électrique) : ECS coûte 800 €/an (COP 1). 10 ans = 8 000 €.",
+          "<b>Différence option C vs A : +6 000 € sur 10 ans</b>. L'investissement initial supplémentaire (2 800 €) est largement amorti.",
+        ],
+      },
+      {
+        heading: "Quand garder le cumulus existant est défendable",
+        paragraphs: ["Trois cas où on peut justifier de garder un cumulus :"],
+        list: [
+          "Cumulus très récent (< 3 ans) : amortir avant remplacement",
+          "Budget initial très contraint et impossibilité de financer 2 800 € en plus",
+          "Cumulus utilisé en pure secours (PAC tombe en panne, eau chaude maintenue)",
+          "Hors ces cas : remplacement systématiquement recommandé en parallèle de la pose PAC.",
+        ],
+      },
+      {
+        heading: "Conseil ECO CVC sur le timing",
+        paragraphs: [
+          "Le bon moment pour remplacer : pendant la pose de la PAC. Pourquoi ?",
+        ],
+        list: [
+          "Mêmes équipiers présents, mêmes accès → main d'œuvre quasi-gratuite",
+          "Aides MaPrimeRénov' applicables au remplacement ECS thermo (1 200 € profil Bleu)",
+          "Pas de dégât collatéral (vidange de l'ancien cumulus + pose nouveau en 1 fois)",
+          "Si on attend 2 ans : pose facturée 600-800 € au lieu d'être groupée",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Mon cumulus a 5 ans, je dois vraiment le remplacer ?", a: "Économique : oui, le retour sur investissement est de 4-5 ans. Pratique : tant qu'il marche, vous pouvez attendre sa première grosse panne. Mais si vous installez une PAC, c'est le moment idéal." },
+      { q: "Peut-on coupler PAC chauffage et cumulus en série ?", a: "Pas directement. La PAC air-eau ne dépose pas l'ECS dans un cumulus électrique passif. Il faut un ballon thermodynamique (PAC dédiée à l'ECS) ou un modèle combiné." },
+      { q: "Le ballon thermodynamique fonctionne en hiver à -10 °C ?", a: "Oui, sa mini-PAC pioche dans l'air ambiant du local de pose (généralement garage, buanderie chauffée par effet thermique). Performance préservée si local > 5 °C." },
+    ],
+    relatedCities: ["bourgoin-jallieu", "lyon", "vienne"],
+    relatedServices: [{ href: "/blog/ballon-thermodynamique-prix-avis", label: "Ballon thermodynamique : guide complet" }],
+  },
+  {
+    slug: "pose-pompe-a-chaleur-en-hiver",
+    title: "Faire poser sa pompe à chaleur en hiver : possible ?",
+    metaTitle: "Pose PAC en hiver : froid, neige, urgence | ECO CVC",
+    metaDescription:
+      "Faut-il attendre le printemps pour faire poser une PAC ? Pose hiver : conditions, températures limites, prix, urgence panne chaudière.",
+    category: "Pratique",
+    publishedAt: "2026-04-20",
+    updatedAt: "2026-05-07",
+    readingMinutes: 5,
+    excerpt:
+      "Votre chaudière vient de tomber en panne en plein hiver et vous hésitez à attendre le printemps pour poser une PAC ? Voici les vraies réponses.",
+    intro: [
+      "Beaucoup pensent qu'il faut attendre les beaux jours pour faire poser une PAC. C'est faux : nos artisans posent toute l'année, y compris en plein hiver à -10 °C. Voici les contraintes réelles et les avantages parfois oubliés de l'hiver.",
+    ],
+    sections: [
+      {
+        heading: "Limites techniques hivernales",
+        paragraphs: ["Quelques contraintes existent réellement :"],
+        list: [
+          "Tirage au vide du circuit frigorifique : difficile en dessous de -5 °C extérieur (humidité résiduelle qui gèle)",
+          "Pose plancher chauffant en rénovation : impossible si chape humide (température ambiante > 12 °C requise)",
+          "Pose unité extérieure sur balcon : risque de glissade des techniciens si verglas",
+          "Mise en service : test optimal entre 5 °C et 25 °C extérieur",
+        ],
+      },
+      {
+        heading: "Pourquoi poser en hiver est souvent une bonne idée",
+        paragraphs: ["Avantages pour le client :"],
+        list: [
+          "Délais courts : moins de demande qu'en automne (pic de demande sept-nov)",
+          "Disponibilité artisans : RDV technique sous 48-72h vs 2-3 semaines à l'automne",
+          "Démonstration immédiate : la PAC tourne à pleine charge dès la pose, vous voyez le confort réel",
+          "Prix : quelques artisans accordent un geste commercial en basse saison (janvier-février)",
+          "Sortie d'urgence chaudière : pas le choix, on bascule en PAC tout de suite",
+        ],
+      },
+      {
+        heading: "Cas concret : panne fioul en janvier",
+        paragraphs: [
+          "Scénario fréquent : chaudière fioul tombe en panne le 10 janvier. Le client a 3 options :",
+        ],
+        list: [
+          "1. Réparation chaudière : 800-2 500 € + matériel obsolète qui retombera en panne",
+          "2. Remplacement fioul à fioul : interdit en neuf depuis 2022, coût élevé",
+          "3. <b>Bascule en PAC immédiate (notre recommandation) :</b> 14 jours entre signature et mise en service. ECO CVC met une solution de chauffage temporaire (radiateurs électriques) entre temps.",
+        ],
+      },
+      {
+        heading: "Notre process en cas de panne hivernale urgente",
+        paragraphs: ["Quand un client appelle paniqué en plein hiver :"],
+        list: [
+          "Visite technique sous 24-48h",
+          "Devis sous 24h après visite",
+          "Solution de chauffage temporaire (radiateurs élec mobiles, ~50 €/jour) pendant l'attente",
+          "Pose PAC sous 7-14 jours (vs 4-6 semaines en saison normale)",
+          "Mise en service immédiate, vérifications techniques renforcées",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Quelle est la température extérieure minimale pour poser ?", a: "On peut poser jusqu'à -10 °C avec quelques précautions techniques (chauffage du circuit avant tirage au vide). En dessous, on déconseille mais ce n'est jamais arrivé en plaine isère." },
+      { q: "Mon chantier va-t-il être plus cher en hiver ?", a: "Non. Tarif identique. Parfois même légèrement négocié vu la moindre charge du planning." },
+      { q: "Et si la PAC ne tient pas la 1ère vague de froid après pose ?", a: "Notre garantie : si la PAC ne tient pas les performances annoncées, intervention sous 24h sans frais. Engagement écrit dans nos devis." },
+    ],
+    relatedCities: ["bourgoin-jallieu", "voiron", "chambery"],
+    relatedServices: [{ href: "/depannage", label: "Service dépannage rapide" }],
+  },
 ];
 
 export const findArticle = (slug: string) => articles.find((a) => a.slug === slug);

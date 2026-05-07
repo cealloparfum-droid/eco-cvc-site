@@ -59,6 +59,8 @@ const DepannagePhoto = lazy(() => import("./pages/DepannagePhoto"));
 const DimensionnementPage = lazy(() => import("./pages/DimensionnementPage"));
 const GlossaireFluides = lazy(() => import("./pages/GlossaireFluides"));
 const ZfeLyon = lazy(() => import("./pages/ZfeLyon"));
+const MythesPac = lazy(() => import("./pages/MythesPac"));
+const PacSolaireBatterie = lazy(() => import("./pages/PacSolaireBatterie"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -124,6 +126,8 @@ const App = () => (
               <Route path="/dimensionnement/:slug" element={<DimensionnementPage />} />
               <Route path="/glossaire-fluides-frigorigenes" element={<GlossaireFluides />} />
               <Route path="/zfe-lyon-sortir-fioul-gaz" element={<ZfeLyon />} />
+              <Route path="/mythes-pompe-a-chaleur" element={<MythesPac />} />
+              <Route path="/pac-solaire-batterie" element={<PacSolaireBatterie />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
