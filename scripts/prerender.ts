@@ -27,6 +27,7 @@ import { faqGroups } from "../src/data/faq";
 import { glossary } from "../src/data/glossary";
 import { metiers } from "../src/data/metiers-pro";
 import { depannageCases } from "../src/data/depannage-cases";
+import { aidesCollectivites } from "../src/data/aides-collectivites";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "../dist");
@@ -618,6 +619,49 @@ for (const d of depannageCases) {
     bodyHtml,
   });
   generated.push(`/depannage/${d.slug}`);
+}
+
+// Aides par collectivité — pages locales à forte autorité
+for (const a of aidesCollectivites) {
+  const canonical = `${BASE}/aides-locales/${a.slug}`;
+  const bodyHtml = `
+    ${breadcrumbHtml([{ label: "Accueil", href: "/" }, { label: "Aides locales" }, { label: a.name }])}
+    <h1>${escape(a.h1)}</h1>
+    ${a.intro.map((p) => `<p>${escape(p)}</p>`).join("")}
+    <h2>Aides nationales</h2>
+    <ul>${a.aidesNationales.map((x) => `<li><strong>${escape(x.name)}</strong> — ${escape(x.montant)} : ${escape(x.description)}</li>`).join("")}</ul>
+    <h2>Aides locales — ${escape(a.name)}</h2>
+    <ul>${a.aidesLocales.map((x) => `<li><strong>${escape(x.name)}</strong> — ${escape(x.montant)} : ${escape(x.description)}</li>`).join("")}</ul>
+    <h2>Exemple de cumul</h2>
+    <p>${escape(a.cumul)}</p>
+    <h2>Communes desservies</h2>
+    <ul>${a.communes.map((c) => `<li>${escape(c)}</li>`).join("")}</ul>
+    ${faqHtml(a.faq)}
+    <p><a href="/simulateur-aides">Simuler mes aides personnalisées</a> · <a href="tel:+33758459900">Tél 07 58 45 99 00</a></p>
+  `;
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      serviceType: "Conseil et installation pompe à chaleur avec aides locales",
+      provider: { "@type": "HVACBusiness", name: "ECO CVC", url: BASE, telephone: "+33758459900" },
+      areaServed: { "@type": "AdministrativeArea", name: a.name },
+      url: canonical,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: a.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+    },
+  ];
+  await writeRoute(`/aides-locales/${a.slug}`, {
+    title: a.metaTitle,
+    description: a.metaDescription,
+    canonical,
+    jsonLd,
+    bodyHtml,
+  });
+  generated.push(`/aides-locales/${a.slug}`);
 }
 
 // Simulateur d'aides — page à fort potentiel SEO

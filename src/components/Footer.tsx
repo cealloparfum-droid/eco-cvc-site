@@ -140,6 +140,7 @@ const Footer = () => {
             © {new Date().getFullYear()} eco cvc. Tous droits réservés.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-500 justify-center md:justify-end">
+            <Link to="/plan-du-site" className="hover:text-white transition-colors">Plan du site</Link>
             <Link to="/mentions-legales" className="hover:text-white transition-colors">Mentions légales</Link>
             <Link to="/confidentialite" className="hover:text-white transition-colors">Politique de confidentialité</Link>
             <Link to="/cgv" className="hover:text-white transition-colors">CGV</Link>

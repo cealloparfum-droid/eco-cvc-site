@@ -16,6 +16,11 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { articles } from "../src/data/articles";
+import { cities } from "../src/data/cities";
+import { metiers } from "../src/data/metiers-pro";
+import { depannageCases } from "../src/data/depannage-cases";
+import { devisConfigs } from "../src/data/devis";
+import { aidesCollectivites } from "../src/data/aides-collectivites";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "../dist");
@@ -63,6 +68,69 @@ ${sortedArticles
 
 await fs.writeFile(path.join(DIST, "feed.xml"), rss, "utf-8");
 console.log(`✓ RSS feed: ${sortedArticles.length} articles → dist/feed.xml`);
+
+// 2bis. Sitemap HTML humain (utile aux visiteurs ET au crawl)
+const baseTpl = await fs.readFile(path.join(DIST, "index.html"), "utf-8");
+const linkList = (title: string, items: { href: string; label: string }[]) =>
+  `<section><h2>${title}</h2><ul>${items.map((i) => `<li><a href="${i.href}">${i.label}</a></li>`).join("")}</ul></section>`;
+const sitemapHtmlBody = `
+  <main style="max-width:1100px;margin:0 auto;padding:120px 24px 60px;font-family:system-ui,-apple-system,sans-serif">
+    <nav style="font-size:12px;color:#64748b;margin-bottom:24px"><a href="/">Accueil</a> › Plan du site</nav>
+    <h1 style="font-size:42px;font-weight:bold;margin-bottom:16px">Plan du site</h1>
+    <p style="color:#64748b;margin-bottom:40px">Toutes les pages d'ecocvc.pro classées par catégorie. Pour les robots : <a href="/sitemap.xml">sitemap.xml</a> · <a href="/feed.xml">flux RSS</a>.</p>
+    ${linkList("Pages principales", [
+      { href: "/", label: "Accueil" },
+      { href: "/qui-sommes-nous", label: "Qui sommes-nous" },
+      { href: "/installation", label: "Installation" },
+      { href: "/maintenance", label: "Maintenance" },
+      { href: "/depannage", label: "Dépannage" },
+      { href: "/ventilation", label: "Ventilation" },
+      { href: "/chambre-froide", label: "Chambre froide" },
+      { href: "/vitrines-refrigerees", label: "Vitrines réfrigérées" },
+      { href: "/produits", label: "Produits AUX" },
+      { href: "/boutique", label: "Boutique" },
+      { href: "/certifications", label: "Certifications" },
+      { href: "/contact", label: "Contact" },
+    ])}
+    ${linkList("Outils gratuits", [
+      { href: "/calculateur", label: "Calculateur de puissance PAC" },
+      { href: "/simulateur-aides", label: "Simulateur d'aides MaPrimeRénov' & CEE" },
+    ])}
+    ${linkList("Devis dédiés", devisConfigs.map((d) => ({ href: `/${d.slug}`, label: d.title })))}
+    ${linkList("Aides locales par métropole", aidesCollectivites.map((a) => ({ href: `/aides-locales/${a.slug}`, label: a.name })))}
+    ${linkList("Zones d'intervention (33 communes)", cities.map((c) => ({ href: `/pompe-a-chaleur/${c.slug}`, label: `Pompe à chaleur ${c.name}` })))}
+    ${linkList("Métiers professionnels", metiers.map((m) => ({ href: `/froid-commercial/${m.slug}`, label: `Frigoriste ${m.name}` })))}
+    ${linkList("Dépannage par panne", depannageCases.map((d) => ({ href: `/depannage/${d.slug}`, label: d.problem })))}
+    ${linkList("Blog & guides", articles.map((a) => ({ href: `/blog/${a.slug}`, label: a.title })))}
+    ${linkList("Ressources", [
+      { href: "/blog", label: "Blog ECO CVC" },
+      { href: "/faq", label: "FAQ" },
+      { href: "/glossaire", label: "Glossaire CVC" },
+      { href: "/avis", label: "Avis clients" },
+    ])}
+    ${linkList("Mentions légales", [
+      { href: "/mentions-legales", label: "Mentions légales" },
+      { href: "/cgv", label: "CGV" },
+      { href: "/confidentialite", label: "Politique de confidentialité" },
+    ])}
+  </main>
+  <style>
+    h2{font-size:22px;font-weight:bold;margin:36px 0 12px;color:#1976C4}
+    ul{margin:0;padding-left:20px}
+    li{margin:6px 0;font-size:14px}
+    a{color:#1e293b;text-decoration:none}
+    a:hover{color:#1976C4;text-decoration:underline}
+  </style>
+`;
+const sitemapHtml = baseTpl
+  .replace(/<title>[\s\S]*?<\/title>/, `<title>Plan du site — ECO CVC</title>`)
+  .replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="Plan du site ECO CVC : toutes les pages classées par catégorie (services, villes, articles, outils, dépannage, métiers pro)."`)
+  .replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${BASE}/plan-du-site"`)
+  .replace(/<div id="root"><\/div>/, `<div id="root">${sitemapHtmlBody}</div>`);
+const sitemapDir = path.join(DIST, "plan-du-site");
+await fs.mkdir(sitemapDir, { recursive: true });
+await fs.writeFile(path.join(sitemapDir, "index.html"), sitemapHtml, "utf-8");
+console.log(`✓ Sitemap HTML humain: dist/plan-du-site/index.html`);
 
 // 3. Ping IndexNow (Bing, Yandex, Naver, Seznam)
 let urls: string[] = [];

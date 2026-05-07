@@ -42,6 +42,7 @@ const Glossaire = lazy(() => import("./pages/Glossaire"));
 const SimulateurAides = lazy(() => import("./pages/SimulateurAides"));
 const MetierProPage = lazy(() => import("./pages/MetierProPage"));
 const DepannageCasePage = lazy(() => import("./pages/DepannageCasePage"));
+const AidesCollectivitePage = lazy(() => import("./pages/AidesCollectivitePage"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -91,6 +92,7 @@ const App = () => (
               <Route path="/simulateur-aides" element={<SimulateurAides />} />
               <Route path="/froid-commercial/:slug" element={<MetierProPage />} />
               <Route path="/depannage/:slug" element={<DepannageCasePage />} />
+              <Route path="/aides-locales/:slug" element={<AidesCollectivitePage />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
