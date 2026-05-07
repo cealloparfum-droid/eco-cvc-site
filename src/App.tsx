@@ -56,6 +56,9 @@ const Parrainage = lazy(() => import("./pages/Parrainage"));
 const CalendrierAides = lazy(() => import("./pages/CalendrierAides"));
 const EtudesDeCas = lazy(() => import("./pages/EtudesDeCas"));
 const DepannagePhoto = lazy(() => import("./pages/DepannagePhoto"));
+const DimensionnementPage = lazy(() => import("./pages/DimensionnementPage"));
+const GlossaireFluides = lazy(() => import("./pages/GlossaireFluides"));
+const ZfeLyon = lazy(() => import("./pages/ZfeLyon"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -118,6 +121,9 @@ const App = () => (
               <Route path="/calendrier-aides-2026" element={<CalendrierAides />} />
               <Route path="/etudes-de-cas" element={<EtudesDeCas />} />
               <Route path="/depannage-photo" element={<DepannagePhoto />} />
+              <Route path="/dimensionnement/:slug" element={<DimensionnementPage />} />
+              <Route path="/glossaire-fluides-frigorigenes" element={<GlossaireFluides />} />
+              <Route path="/zfe-lyon-sortir-fioul-gaz" element={<ZfeLyon />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

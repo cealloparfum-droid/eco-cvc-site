@@ -31,6 +31,7 @@ import { aidesCollectivites } from "../src/data/aides-collectivites";
 import { marques } from "../src/data/marques";
 import { codesErreur } from "../src/data/codes-erreur";
 import { comparatifsMarques } from "../src/data/comparatifs-marques";
+import { dimensionnements } from "../src/data/dimensionnement-pieces";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "../dist");
@@ -622,6 +623,80 @@ for (const d of depannageCases) {
     bodyHtml,
   });
   generated.push(`/depannage/${d.slug}`);
+}
+
+// Pages dimensionnement par pièce
+for (const d of dimensionnements) {
+  const canonical = `${BASE}/dimensionnement/${d.slug}`;
+  const bodyHtml = `
+    ${breadcrumbHtml([{ label: "Accueil", href: "/" }, { label: "Dimensionnement" }, { label: d.piece }])}
+    <h1>${escape(d.h1)}</h1>
+    ${d.intro.map((p) => `<p>${escape(p)}</p>`).join("")}
+    <h2>Recommandations selon la surface</h2>
+    <ul>${d.reco.map((r) => `<li><strong>${r.surfaceMin}-${r.surfaceMax} m² :</strong> ${escape(r.puissanceKw)} (${escape(r.type)}) - ${escape(r.prix)}</li>`).join("")}</ul>
+    <h2>Facteurs influençant la puissance</h2>
+    <ul>${d.facteurs.map((f) => `<li><strong>${escape(f.facteur)}</strong> : ${escape(f.impact)}</li>`).join("")}</ul>
+    <h2>Conseils ECO CVC</h2>
+    <ul>${d.conseils.map((c) => `<li>${escape(c)}</li>`).join("")}</ul>
+    ${faqHtml(d.faq)}
+  `;
+  await writeRoute(`/dimensionnement/${d.slug}`, {
+    title: d.metaTitle,
+    description: d.metaDescription,
+    canonical,
+    jsonLd: { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: d.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
+    bodyHtml,
+  });
+  generated.push(`/dimensionnement/${d.slug}`);
+}
+
+// Glossaire fluides frigorigènes
+{
+  const title = "Glossaire fluides frigorigènes : R32, R290, R410A, R744 | ECO CVC";
+  const description = "Tous les fluides frigorigènes 2026 : R32, R290 (propane), R410A interdit, R744 (CO2), R134a, R454B. PRG, inflammabilité, usages.";
+  const bodyHtml = `
+    <h1>Glossaire des fluides frigorigènes 2026</h1>
+    <p>${escape(description)}</p>
+    <h2>R32 (standard 2026)</h2>
+    <p>PRG 675, A2L (légèrement inflammable). Standard pour PAC et climatiseurs résidentiels depuis 2018-2020.</p>
+    <h2>R410A (interdit en neuf depuis 2025)</h2>
+    <p>PRG 2088, A1 (non inflammable). Standard 2005-2024, désormais interdit en nouvelle installation.</p>
+    <h2>R290 - Propane (futur)</h2>
+    <p>PRG 3, A3 (inflammable). Avenir des PAC, charge frigorifique limitée par la réglementation.</p>
+    <h2>R744 - CO2 (froid commercial)</h2>
+    <p>PRG 1, A1. Utilisé en supermarchés, chambres froides industrielles, ballons thermodynamiques.</p>
+    <h2>R134a (interdit en neuf)</h2>
+    <p>PRG 1430, A1. Encore présent en froid commercial ancien.</p>
+    <h2>R454B</h2>
+    <p>PRG 466, A2L. Remplaçant en cours du R410A pour systèmes commerciaux.</p>
+  `;
+  await writeRoute("/glossaire-fluides-frigorigenes", { title, description, canonical: `${BASE}/glossaire-fluides-frigorigenes`, bodyHtml });
+  generated.push("/glossaire-fluides-frigorigenes");
+}
+
+// ZFE Lyon
+{
+  const title = "ZFE Lyon : sortir du fioul/gaz pour passer en PAC | ECO CVC";
+  const description = "Zone à Faibles Émissions Lyon Métropole : pourquoi remplacer chaudière fioul/gaz par pompe à chaleur. Aides spécifiques, calendrier, démarches.";
+  const bodyHtml = `
+    <h1>ZFE Lyon Métropole : sortir du fioul/gaz avec une PAC</h1>
+    <p>${escape(description)}</p>
+    <h2>Communes concernées par la ZFE</h2>
+    <ul>
+      <li>Lyon (1er au 9e arrondissement)</li>
+      <li>Villeurbanne, Caluire-et-Cuire, Bron, Vénissieux</li>
+      <li>Saint-Fons, La Mulatière, Champagne-au-Mont-d'Or, Sainte-Foy-lès-Lyon</li>
+    </ul>
+    <h2>Pourquoi sortir du fioul/gaz</h2>
+    <ul>
+      <li>Pression réglementaire croissante (DPE F interdit à la location 2028)</li>
+      <li>Aides Eco-Rénov Lyon Métropole jusqu'à 3 500 € additionnels</li>
+      <li>Valorisation immobilière 5-15% à la revente</li>
+    </ul>
+    <p><a href="/aides-locales/lyon-metropole">Aides Lyon Métropole en détail</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+  `;
+  await writeRoute("/zfe-lyon-sortir-fioul-gaz", { title, description, canonical: `${BASE}/zfe-lyon-sortir-fioul-gaz`, bodyHtml });
+  generated.push("/zfe-lyon-sortir-fioul-gaz");
 }
 
 // Dépannage par photo — service unique
