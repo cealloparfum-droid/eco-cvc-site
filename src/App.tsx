@@ -45,6 +45,8 @@ const MetierProPage = lazy(() => import("./pages/MetierProPage"));
 const DepannageCasePage = lazy(() => import("./pages/DepannageCasePage"));
 const AidesCollectivitePage = lazy(() => import("./pages/AidesCollectivitePage"));
 const ComparateurChauffages = lazy(() => import("./pages/ComparateurChauffages"));
+const MarquePage = lazy(() => import("./pages/MarquePage"));
+const CodeErreurPage = lazy(() => import("./pages/CodeErreurPage"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -96,6 +98,8 @@ const App = () => (
               <Route path="/depannage/:slug" element={<DepannageCasePage />} />
               <Route path="/aides-locales/:slug" element={<AidesCollectivitePage />} />
               <Route path="/comparateur-chauffages" element={<ComparateurChauffages />} />
+              <Route path="/marques/:slug" element={<MarquePage />} />
+              <Route path="/codes-erreur/:slug" element={<CodeErreurPage />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

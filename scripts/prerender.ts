@@ -28,6 +28,8 @@ import { glossary } from "../src/data/glossary";
 import { metiers } from "../src/data/metiers-pro";
 import { depannageCases } from "../src/data/depannage-cases";
 import { aidesCollectivites } from "../src/data/aides-collectivites";
+import { marques } from "../src/data/marques";
+import { codesErreur } from "../src/data/codes-erreur";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "../dist");
@@ -619,6 +621,86 @@ for (const d of depannageCases) {
     bodyHtml,
   });
   generated.push(`/depannage/${d.slug}`);
+}
+
+// Marques de PAC
+for (const m of marques) {
+  const canonical = `${BASE}/marques/${m.slug}`;
+  const bodyHtml = `
+    ${breadcrumbHtml([{ label: "Accueil", href: "/" }, { label: "Marques" }, { label: m.name }])}
+    <h1>${escape(m.h1)}</h1>
+    <p><strong>${escape(m.tagline)}</strong> · Origine : ${escape(m.origine)} · Positionnement : ${escape(m.positionnement)}</p>
+    ${m.intro.map((p) => `<p>${escape(p)}</p>`).join("")}
+    <h2>Gammes proposées</h2>
+    <ul>${m.gammes.map((g) => `<li><strong>${escape(g.name)}</strong> — ${escape(g.description)} (${escape(g.prix)}). Pour : ${escape(g.usage)}.</li>`).join("")}</ul>
+    <h2>Forces</h2>
+    <ul>${m.forces.map((f) => `<li>${escape(f)}</li>`).join("")}</ul>
+    <h2>Limites</h2>
+    <ul>${m.limites.map((l) => `<li>${escape(l)}</li>`).join("")}</ul>
+    <h2>Garantie</h2>
+    <p>${escape(m.garantie)}</p>
+    <h2>Pour qui ?</h2>
+    <p>${escape(m.pourQui)}</p>
+    ${faqHtml(m.faq)}
+    <p><a href="tel:+33758459900">Appeler 07 58 45 99 00</a> · <a href="/contact">Demande de devis</a></p>
+  `;
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: `Pompe à chaleur ${m.name}`,
+      brand: { "@type": "Brand", name: m.name },
+      description: m.tagline,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: m.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+    },
+  ];
+  await writeRoute(`/marques/${m.slug}`, {
+    title: m.metaTitle,
+    description: m.metaDescription,
+    canonical,
+    jsonLd,
+    bodyHtml,
+  });
+  generated.push(`/marques/${m.slug}`);
+}
+
+// Codes erreur précis
+for (const c of codesErreur) {
+  const canonical = `${BASE}/codes-erreur/${c.slug}`;
+  const bodyHtml = `
+    ${breadcrumbHtml([{ label: "Accueil", href: "/" }, { label: "Dépannage", href: "/depannage" }, { label: `Code ${c.code} ${c.marqueLabel}` }])}
+    <h1>${escape(c.h1)}</h1>
+    <p>${escape(c.signification)}</p>
+    <p><strong>Sévérité :</strong> ${c.severite} · ${escape(c.delai)}</p>
+    <p><a href="tel:+33758459900"><strong>Appeler 07 58 45 99 00</strong></a></p>
+    <h2>Causes possibles</h2>
+    <ul>${c.causes.map((x) => `<li>${escape(x)}</li>`).join("")}</ul>
+    <h2>Diagnostic étape par étape</h2>
+    <ol>${c.diagnostic.map((x) => `<li>${escape(x)}</li>`).join("")}</ol>
+    <p><strong>${c.resoluble_diy ? "Souvent résolvable seul." : "Nécessite un technicien certifié."}</strong></p>
+  `;
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      headline: c.h1,
+      about: `Code erreur ${c.code} ${c.marqueLabel}`,
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+      author: { "@type": "Organization", name: "ECO CVC" },
+    },
+  ];
+  await writeRoute(`/codes-erreur/${c.slug}`, {
+    title: c.metaTitle,
+    description: c.metaDescription,
+    canonical,
+    jsonLd,
+    bodyHtml,
+  });
+  generated.push(`/codes-erreur/${c.slug}`);
 }
 
 // Comparateur de chauffages — outil viral

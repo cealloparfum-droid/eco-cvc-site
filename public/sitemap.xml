@@ -15,6 +15,27 @@
   <url><loc>https://ecocvc.pro/calculateur</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://ecocvc.pro/simulateur-aides</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
   <url><loc>https://ecocvc.pro/comparateur-chauffages</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
+
+  <url><loc>https://ecocvc.pro/marques/daikin-altherma</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/marques/mitsubishi-electric-ecodan</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/marques/atlantic-alfea</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/marques/aux</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <url><loc>https://ecocvc.pro/codes-erreur/daikin-u4</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/codes-erreur/daikin-e1</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/codes-erreur/daikin-h6</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ecocvc.pro/codes-erreur/daikin-f3</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/codes-erreur/daikin-l5</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/codes-erreur/mitsubishi-p5</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/codes-erreur/mitsubishi-u2</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ecocvc.pro/codes-erreur/mitsubishi-e0</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ecocvc.pro/codes-erreur/mitsubishi-p8</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/codes-erreur/mitsubishi-f1</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ecocvc.pro/codes-erreur/atlantic-e03</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/codes-erreur/atlantic-e04</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/codes-erreur/atlantic-e29</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/codes-erreur/atlantic-e32</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ecocvc.pro/codes-erreur/atlantic-e40</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://ecocvc.pro/certifications</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ecocvc.pro/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ecocvc.pro/mentions-legales</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
