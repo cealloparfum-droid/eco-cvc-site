@@ -61,6 +61,16 @@ const GlossaireFluides = lazy(() => import("./pages/GlossaireFluides"));
 const ZfeLyon = lazy(() => import("./pages/ZfeLyon"));
 const MythesPac = lazy(() => import("./pages/MythesPac"));
 const PacSolaireBatterie = lazy(() => import("./pages/PacSolaireBatterie"));
+const RemplacementChaudiereFioul = lazy(() =>
+  import("./pages/RemplacementChaudiere").then((m) => ({
+    default: m.RemplacementChaudiereFioul,
+  })),
+);
+const RemplacementChaudiereGaz = lazy(() =>
+  import("./pages/RemplacementChaudiere").then((m) => ({
+    default: m.RemplacementChaudiereGaz,
+  })),
+);
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -128,6 +138,8 @@ const App = () => (
               <Route path="/zfe-lyon-sortir-fioul-gaz" element={<ZfeLyon />} />
               <Route path="/mythes-pompe-a-chaleur" element={<MythesPac />} />
               <Route path="/pac-solaire-batterie" element={<PacSolaireBatterie />} />
+              <Route path="/remplacement-chaudiere-fioul" element={<RemplacementChaudiereFioul />} />
+              <Route path="/remplacement-chaudiere-gaz" element={<RemplacementChaudiereGaz />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

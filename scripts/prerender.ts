@@ -677,6 +677,88 @@ for (const d of depannageCases) {
   generated.push("/pac-solaire-batterie");
 }
 
+// Remplacement chaudière fioul / gaz — landings haute intention
+for (const ch of [
+  {
+    type: "fioul",
+    slug: "remplacement-chaudiere-fioul",
+    title:
+      "Remplacement chaudière fioul par pompe à chaleur 2026 | ECO CVC Isère",
+    description:
+      "Remplacer votre chaudière fioul par une PAC air-eau en Isère et Rhône-Alpes : aides 2026 jusqu'à 12 000 €, bonus sortie fioul +1 000 €, économies 60-75% sur la facture. Visite technique gratuite. ECO CVC, RGE QualiPAC.",
+    h1: "Remplacer votre chaudière fioul par une pompe à chaleur",
+    intro:
+      "Votre chaudière fioul a plus de 15 ans, consomme 2 500 à 4 000 litres par an et coûte de plus en plus cher à entretenir ? Le remplacement par une pompe à chaleur air-eau est aujourd'hui le projet le plus rentable que vous puissiez engager : 60 à 75 % d'économie sur la facture chauffage, jusqu'à 12 000 € d'aides cumulées, et une cuve fioul retirée de votre cave.",
+    contexte: [
+      "Interdiction d'installation neuf depuis le 1er juillet 2022 (décret 2022-8)",
+      "Hausse continue du prix du fioul : 0,75 €/L en 2019, 1,15-1,30 €/L en 2024-2025",
+      "Cuve fioul : démontage ou neutralisation obligatoire si abandon définitif",
+      "DPE : passage de F/G à C/D systématique, valorisation immobilière",
+    ],
+    aides: [
+      "MaPrimeRénov' jusqu'à 5 000 € selon profil",
+      "Bonus sortie de chaudière fioul +1 000 € (Bleu et Jaune)",
+      "Coup de pouce CEE 2 500 à 5 000 €",
+      "TVA réduite à 5,5 %",
+      "Éco-PTZ jusqu'à 50 000 € à 0 %",
+    ],
+  },
+  {
+    type: "gaz",
+    slug: "remplacement-chaudiere-gaz",
+    title:
+      "Remplacement chaudière gaz par pompe à chaleur 2026 | ECO CVC Isère",
+    description:
+      "Remplacer votre chaudière gaz par une PAC air-eau en Isère et Rhône-Alpes : aides 2026 jusqu'à 11 000 €, économies 40-55%, visite technique gratuite. RGE QualiPAC. ECO CVC.",
+    h1: "Remplacer votre chaudière gaz par une pompe à chaleur",
+    intro:
+      "Votre chaudière gaz a plus de 12 ans ou vous voulez anticiper la fin programmée du gaz dans le neuf ? Le remplacement par une PAC air-eau divise votre consommation par 2,5 à 3 et vous décorrèle des hausses futures du prix du gaz.",
+    contexte: [
+      "Interdiction du gaz dans les maisons neuves depuis 2022 (RE2020)",
+      "Fin des aides MaPrimeRénov' pour chaudières gaz à condensation depuis 2023",
+      "Volatilité du prix du gaz : doublé entre 2021 et 2023",
+      "PAC hybride : compromis pour zones d'altitude (Chartreuse, Vercors, Belledonne)",
+    ],
+    aides: [
+      "MaPrimeRénov' jusqu'à 5 000 € selon profil",
+      "Coup de pouce CEE 2 500 à 5 000 €",
+      "TVA réduite à 5,5 %",
+      "Éco-PTZ jusqu'à 50 000 € à 0 %",
+    ],
+  },
+]) {
+  const canonical = `${BASE}/${ch.slug}`;
+  const bodyHtml = `
+    ${breadcrumbHtml([
+      { label: "Accueil", href: "/" },
+      { label: "Installation", href: "/installation" },
+      { label: `Remplacement chaudière ${ch.type}` },
+    ])}
+    <h1>${escape(ch.h1)}</h1>
+    <p>${escape(ch.intro)}</p>
+    <h2>Pourquoi remplacer maintenant</h2>
+    <ul>${ch.contexte.map((c) => `<li>${escape(c)}</li>`).join("")}</ul>
+    <h2>Aides cumulables 2026</h2>
+    <ul>${ch.aides.map((a) => `<li>${escape(a)}</li>`).join("")}</ul>
+    <h2>Notre process en 5 étapes</h2>
+    <ol>
+      <li>Visite technique gratuite (45 min à 1 h)</li>
+      <li>Devis détaillé sous 48 h + montage du dossier d'aides</li>
+      <li>Commande matériel et planification (livraison 2-4 semaines)</li>
+      <li>Pose en 2 jours, démontage de l'ancienne chaudière inclus</li>
+      <li>Mise en service, formation 15 min, visite de suivi à 12 mois</li>
+    </ol>
+    <p><a href="/devis-pompe-a-chaleur">Demander un devis gratuit</a> · <a href="/simulateur-aides">Simuler mes aides</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+  `;
+  await writeRoute(`/${ch.slug}`, {
+    title: ch.title,
+    description: ch.description,
+    canonical,
+    bodyHtml,
+  });
+  generated.push(`/${ch.slug}`);
+}
+
 // Pages dimensionnement par pièce
 for (const d of dimensionnements) {
   const canonical = `${BASE}/dimensionnement/${d.slug}`;
