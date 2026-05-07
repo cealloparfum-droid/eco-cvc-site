@@ -44,7 +44,7 @@ const Navbar = () => {
     <>
       {/* Promo banner */}
       <div className="fixed top-0 left-0 right-0 z-[51] bg-gradient-to-r from-brand-red via-brand-bluedark to-brand-blue text-white text-[11px] md:text-xs font-semibold">
-        <Link to="/contact" className="container mx-auto h-8 flex items-center justify-center gap-2 md:gap-3 px-4 group">
+        <Link to="/climatisation-reversible-990-euros" className="container mx-auto h-8 flex items-center justify-center gap-2 md:gap-3 px-4 group">
           <motion.span
             animate={{ rotate: [0, 14, -14, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}

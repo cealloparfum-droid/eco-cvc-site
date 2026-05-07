@@ -515,7 +515,7 @@ const PromoOffer = () => (
               pose incluse pour une pièce jusqu'à 35 m². Matériel + main-d'œuvre + mise en service.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-6">
+            <div className="flex flex-col sm:flex-row gap-3 mb-4">
               <Link
                 to="/contact"
                 className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white text-brand-bluedark font-extrabold hover:bg-slate-100 transition-all shadow-lifted hover:-translate-y-0.5"
@@ -531,6 +531,14 @@ const PromoOffer = () => (
                 07 58 45 99 00
               </a>
             </div>
+
+            <Link
+              to="/climatisation-reversible-990-euros"
+              className="inline-flex items-center gap-1.5 text-sm text-white/85 hover:text-white underline underline-offset-4 mb-4"
+            >
+              Voir le détail de l'offre 990 € (inclus, garanties, FAQ)
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
 
             <div className="text-[11px] text-white/60 max-w-lg">
               * Offre valable pour une installation standard (monosplit, pièce jusqu'à 35 m²) en Rhône-Alpes. Hors travaux annexes (électricité, gaine technique, échafaudage).

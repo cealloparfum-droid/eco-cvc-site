@@ -74,6 +74,7 @@ const RemplacementChaudiereGaz = lazy(() =>
 const ChoisirInstallateur = lazy(() => import("./pages/ChoisirInstallateur"));
 const PacVsGranules = lazy(() => import("./pages/PacVsGranules"));
 const PacVsClimReversible = lazy(() => import("./pages/PacVsClimReversible"));
+const ClimReversible990 = lazy(() => import("./pages/ClimatisationReversible990"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -146,6 +147,7 @@ const App = () => (
               <Route path="/choisir-installateur-pompe-a-chaleur" element={<ChoisirInstallateur />} />
               <Route path="/pac-vs-granules" element={<PacVsGranules />} />
               <Route path="/pac-vs-clim-reversible" element={<PacVsClimReversible />} />
+              <Route path="/climatisation-reversible-990-euros" element={<ClimReversible990 />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

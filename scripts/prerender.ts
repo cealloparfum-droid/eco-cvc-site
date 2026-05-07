@@ -917,6 +917,102 @@ for (const ch of [
   generated.push(`/${slug}`);
 }
 
+// Landing page offre phare : Climatisation réversible 990 € posée
+{
+  const title =
+    "Climatisation réversible posée à 990 € TTC | AUX 3,5 kW | ECO CVC";
+  const description =
+    "Climatisation réversible AUX J-Smart 3,5 kW (12 000 BTU) posée à 990 € TTC. Offre tout compris : matériel, pose, mise en service, garantie 3 ans. Isère, Rhône, Lyon. Visite technique gratuite sous 48h.";
+  const slug = "climatisation-reversible-990-euros";
+  const inclus = [
+    "Unité intérieure AUX J-Smart 3,5 kW (12 000 BTU)",
+    "Unité extérieure DC Inverter R32",
+    "Pose complète par technicien certifié F-Gaz catégorie 1",
+    "3 mètres de liaisons frigorifiques cuivrées",
+    "Goulottes blanches PVC pour finition propre",
+    "Mise en service + tirage au vide + test d'étanchéité",
+    "Attestation de conformité fluides frigorigènes",
+    "Garantie constructeur 3 ans + garantie pose 2 ans",
+  ];
+  const specs = [
+    "Puissance frigorifique : 3,5 kW (12 000 BTU/h)",
+    "Puissance calorifique : 3,8 kW",
+    "Surface idéale : pièce jusqu'à 35 m²",
+    "Classe énergétique : A++ / A+",
+    "SEER 6,1 / SCOP 4,0",
+    "Niveau sonore intérieur : 21 dB(A)",
+    "Fluide frigorigène : R32 (faible PRG)",
+  ];
+  const faq = [
+    { q: "Pourquoi 990 € seulement, c'est pas une arnaque ?", a: "Non. ECO CVC est une petite structure familiale avec faibles frais fixes. On achète AUX en direct gros volume. C'est notre offre d'appel pour vous faire connaître. Aucune surprise, aucun frais caché." },
+    { q: "Qu'est-ce qui peut faire dépasser 990 € ?", a: "3 cas : ligne électrique dédiée à créer (+150 à 300 €), liaisons frigorifiques > 3 m (+45 €/m), échafaudage si pose en hauteur (+200 à 400 €). Tout est dit en visite technique avant signature." },
+    { q: "L'offre est-elle éligible à des aides ?", a: "Non. La climatisation réversible n'est pas éligible à MaPrimeRénov' ni aux CEE. C'est pour ça qu'on propose un prix tout compris ultra-compétitif." },
+    { q: "Délai entre commande et pose ?", a: "Basse saison (octobre à mars) : 2 à 3 semaines. Haute saison (avril à septembre) : 4 à 8 semaines. Conseil : commandez en hiver pour avoir la clim avant l'été." },
+    { q: "Garantie en cas de panne ?", a: "Garantie constructeur AUX 3 ans pièces. Garantie pose ECO CVC 2 ans. SAV sous 48h ouvrées." },
+    { q: "Vous intervenez où ?", a: "Tout le département Isère (38), Rhône (69), Ain (01), Savoie (73), Haute-Savoie (74). Rayon 60 km autour de Nivolas-Vermelle, sans frais de déplacement." },
+  ];
+  const bodyHtml = `
+    ${breadcrumbHtml([
+      { label: "Accueil", href: "/" },
+      { label: "Climatisation 990 €" },
+    ])}
+    <h1>Climatisation réversible posée à 990 € TTC — AUX 3,5 kW</h1>
+    <p>L'offre phare ECO CVC : un <strong>split mural réversible AUX J-Smart 3,5 kW</strong> (12 000 BTU) posé pour <strong>990 € TTC tout compris</strong>. Idéal pour une pièce jusqu'à 35 m². Matériel + main d'œuvre + mise en service + attestation fluides frigorigènes + garantie 3 ans.</p>
+    <h2>Ce qui est inclus dans les 990 €</h2>
+    <ul>${inclus.map((x) => `<li>${escape(x)}</li>`).join("")}</ul>
+    <h2>Caractéristiques techniques</h2>
+    <ul>${specs.map((x) => `<li>${escape(x)}</li>`).join("")}</ul>
+    <h2>De l'appel à la fraîcheur en 3 semaines</h2>
+    <ol>
+      <li><strong>Vous nous appelez</strong> au 07 58 45 99 00 — créneau visite technique sous 48h ouvrées.</li>
+      <li><strong>Visite technique gratuite</strong> (30 min) : on valide l'emplacement, l'électricité, on remet le devis ferme à 990 €.</li>
+      <li><strong>Pose en 1 journée</strong> : équipe sur place 8h-17h, raccordement, mise en service, démo télécommande.</li>
+      <li><strong>Vous profitez</strong> : chauffage + clim dès le soir même, suivi ECO CVC.</li>
+    </ol>
+    <h2>Zone d'intervention</h2>
+    <p>Isère (38), Rhône (69), Ain (01), Savoie (73), Haute-Savoie (74). Rayon 60 km autour de Nivolas-Vermelle.</p>
+    ${faqHtml(faq)}
+    <p><a href="/calculateur">Calculateur de puissance</a> · <a href="/produits">Toute la gamme AUX</a> · <a href="/contact">Réserver visite technique</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+  `;
+  await writeRoute(`/${slug}`, {
+    title,
+    description,
+    canonical: `${BASE}/${slug}`,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Product",
+          name: "Climatisation réversible AUX J-Smart 3,5 kW posée",
+          description: "Split mural réversible AUX DC Inverter 3,5 kW (12 000 BTU) posé. Matériel + main-d'œuvre + mise en service.",
+          brand: { "@type": "Brand", name: "AUX" },
+          offers: {
+            "@type": "Offer",
+            url: `${BASE}/${slug}`,
+            priceCurrency: "EUR",
+            price: "990",
+            priceValidUntil: "2026-12-31",
+            availability: "https://schema.org/InStock",
+            itemCondition: "https://schema.org/NewCondition",
+            seller: { "@type": "Organization", name: "ECO CVC" },
+          },
+          aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "127" },
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: faq.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        },
+      ],
+    },
+    bodyHtml,
+  });
+  generated.push(`/${slug}`);
+}
+
 // PAC air-eau vs climatisation réversible : clarifier la confusion
 {
   const title =
