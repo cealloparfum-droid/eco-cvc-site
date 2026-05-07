@@ -2021,6 +2021,266 @@ export const articles: Article[] = [
       { href: "/installation", label: "Remplacement de PAC" },
     ],
   },
+  {
+    slug: "pac-a-1-euro-arnaque-ou-vraie-offre",
+    title: "PAC à 1 € : grosse arnaque ou vraie offre ?",
+    metaTitle: "PAC à 1 € — arnaque ou réalité ? La vérité 2026 | ECO CVC",
+    metaDescription:
+      "Pompe à chaleur à 1 € : on vous explique honnêtement si c'est une arnaque, ce qui se cache derrière, et ce qui existe vraiment en 2026 (Coup de pouce, MaPrimeRénov').",
+    category: "Aides",
+    publishedAt: "2026-04-22",
+    updatedAt: "2026-05-07",
+    readingMinutes: 7,
+    excerpt:
+      "Démarchage téléphonique, publicités Facebook, flyers : la PAC à 1 € est partout. Spoiler : ça n'existe plus depuis 2021. Voici ce que ces 'offres' cachent vraiment, et la vraie aide en 2026.",
+    intro: [
+      "Si vous recevez encore des appels ou pubs proposant une 'pompe à chaleur à 1 €', il y a 95% de chances que ce soit une arnaque ou un démarchage abusif. Ce dispositif n'existe officiellement plus depuis juillet 2021. Voici la vraie histoire et ce qui existe à la place en 2026.",
+    ],
+    sections: [
+      {
+        heading: "L'origine du 'PAC à 1 €'",
+        paragraphs: [
+          "Entre 2018 et 2021, le Coup de pouce chauffage CEE permettait pour les ménages très modestes de financer une installation PAC quasi-intégralement (reste à charge symbolique de 1 €). Cette offre attirait beaucoup de fraudeurs.",
+          "En juillet 2021, suite à des centaines de plaintes pour démarchage agressif, malfaçons et installations bâclées, le gouvernement a supprimé l'offre. Le démarchage téléphonique pour la rénovation énergétique a aussi été interdit (loi du 24 juillet 2020).",
+        ],
+      },
+      {
+        heading: "Pourquoi ces offres reviennent encore en 2026",
+        paragraphs: [
+          "Malgré l'interdiction, des sociétés peu scrupuleuses continuent à utiliser ce slogan trompeur. Voici les pièges classiques :",
+        ],
+        list: [
+          "Démarchage téléphonique illégal : interdit depuis 2020, mais toujours pratiqué par des call-centers à l'étranger",
+          "Pub Facebook avec 'PAC à 1 €' suivie d'un formulaire : récupération de données personnelles puis revente",
+          "Flyer dans la boîte aux lettres : prétexte pour entrer chez vous et faire signer un devis sur un coin de table",
+          "'Audit gratuit' qui se transforme en bon de commande non rétractable",
+        ],
+        callout: {
+          title: "Que faire si on vous contacte",
+          body: "Raccrocher tout démarchage téléphonique pour la rénovation énergétique. C'est INTERDIT depuis 2020. Tout artisan qui démarche n'est pas crédible. Les vrais pros (RGE QualiPAC) ne démarchent JAMAIS.",
+        },
+      },
+      {
+        heading: "Ce qui existe RÉELLEMENT en 2026",
+        paragraphs: [
+          "Voici les vraies aides cumulables en 2026, qui peuvent réduire votre reste à charge à un minimum :",
+        ],
+        list: [
+          "MaPrimeRénov' : jusqu'à 5 000 € pour PAC air-eau, 11 000 € géothermie (selon profil revenus)",
+          "Coup de pouce chauffage CEE : 2 500 à 5 000 € selon profil",
+          "Bonus sortie fioul : +1 000 € pour Bleu/Jaune",
+          "TVA réduite à 5,5% : ~14% d'économie sur le projet",
+          "Éco-PTZ : prêt à 0% jusqu'à 50 000 € pour étaler le reste à charge",
+          "Aides locales (métropoles, communautés d'agglo) : variables",
+        ],
+        callout: {
+          title: "Cas concret",
+          body: "Pour un ménage très modeste sortant d'une chaudière fioul vers une PAC air-eau (devis 14 000 €) : MaPrimeRénov' 5 000 € + Coup de pouce 5 000 € + bonus fioul 1 000 € + TVA réduite ~2 030 € = 13 030 € d'aides. Reste à charge réel : ~970 €. PROCHE DE 1 €, mais légal et certifié.",
+        },
+      },
+      {
+        heading: "Comment éviter les arnaques en 2026",
+        paragraphs: ["5 règles d'or :"],
+        list: [
+          "Vérifier le numéro RGE QualiPAC sur france-renov.gouv.fr AVANT signature",
+          "Refuser tout démarchage à domicile non sollicité (interdit pour la rénovation énergétique)",
+          "Ne jamais signer un devis sans visite technique sérieuse (étude thermique)",
+          "Comparer 2-3 devis d'artisans locaux différents",
+          "Demander des références locales (clients à proximité)",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Est-ce que la PAC à 1 € existe encore légalement ?",
+        a: "Non, depuis juillet 2021. Tout argument commercial 'PAC à 1 €' en 2026 est trompeur. Mais les aides cumulées peuvent rendre le reste à charge presque nul pour les ménages très modestes.",
+      },
+      {
+        q: "Comment vérifier si une entreprise est sérieuse ?",
+        a: "1) Vérifier le numéro RGE sur france-renov.gouv.fr. 2) Vérifier le SIRET sur societe.com. 3) Lire les avis Google. 4) Demander 2-3 références clients locaux. 5) Refuser de signer hors visite technique sérieuse.",
+      },
+      {
+        q: "Que faire si j'ai signé sous pression ?",
+        a: "Vous avez 14 jours de rétractation pour tout démarchage à domicile. Envoyer LRAR au siège de la société. En cas de difficulté, contacter la DGCCRF (signal.conso.gouv.fr).",
+      },
+    ],
+    relatedCities: ["bourgoin-jallieu", "lyon", "vienne"],
+    relatedServices: [
+      { href: "/simulateur-aides", label: "Calculer mes vraies aides 2026" },
+      { href: "/blog/coup-de-pouce-chauffage-2026", label: "Tout sur le Coup de pouce 2026" },
+    ],
+  },
+  {
+    slug: "5-erreurs-a-eviter-pompe-a-chaleur",
+    title: "5 erreurs à éviter avec une pompe à chaleur",
+    metaTitle: "5 erreurs à éviter avec une PAC : conseils ECO CVC | RGE QualiPAC",
+    metaDescription:
+      "Les 5 erreurs les plus fréquentes lors de l'installation d'une pompe à chaleur : sous-dimensionnement, mauvaise marque, négligence isolation, etc. Conseils RGE QualiPAC ECO CVC.",
+    category: "Pratique",
+    publishedAt: "2026-04-15",
+    updatedAt: "2026-05-07",
+    readingMinutes: 6,
+    excerpt:
+      "Sur 10 PAC mal installées que nous reprenons, 9 ont fait au moins une de ces 5 erreurs. Voici comment les éviter avant de signer un devis.",
+    intro: [
+      "On nous appelle régulièrement pour reprendre des installations PAC qui marchent mal : factures qui explosent, maison toujours froide, pannes répétitives. Dans 90% des cas, l'origine du problème est une de ces 5 erreurs commises au moment de l'installation. Voici lesquelles, et comment les éviter chez vous.",
+    ],
+    sections: [
+      {
+        heading: "Erreur n°1 : Mauvais dimensionnement",
+        paragraphs: [
+          "L'erreur la plus fréquente. Soit la PAC est trop petite (l'appoint électrique tourne en permanence, factures 2x plus élevées que prévu), soit trop grande (cycles courts, usure prématurée du compresseur).",
+          "Bon réflexe : exiger un calcul thermique précis lors de la visite technique (logiciel de simulation, pas la règle empirique '100 W/m²'). Demander à voir le rapport.",
+        ],
+        callout: {
+          title: "Cas vécu",
+          body: "Pavillon 130 m² à L'Isle-d'Abeau : PAC 8 kW posée par un autre artisan. Factures EDF 2 800 €/an au lieu des 1 200 € promis. Diagnostic : sous-dimensionnement (il fallait 11 kW). Remplacement = 5 000 € de plus, en plus de l'investissement initial.",
+        },
+      },
+      {
+        heading: "Erreur n°2 : Négliger l'isolation",
+        paragraphs: [
+          "Une PAC posée sur une maison passoire ne fera jamais d'économies. La PAC tournera en permanence à plein régime ou basculera sur l'appoint électrique : effet inverse de l'objectif.",
+          "Bon réflexe : si votre maison date d'avant 1990 sans rénovation isolation, isoler les combles AVANT ou EN MÊME TEMPS que la PAC. C'est non négociable.",
+        ],
+      },
+      {
+        heading: "Erreur n°3 : Choisir uniquement sur le prix",
+        paragraphs: [
+          "Un devis 30% moins cher que les autres cache souvent : matériel d'entrée de gamme (durée de vie 10 ans au lieu de 18), pose bâclée (pas de tirage au vide complet, mauvais raccordements frigorifiques), absence de garantie pièces.",
+          "Bon réflexe : comparer 2-3 devis d'artisans RGE locaux. Les écarts s'expliquent par la marque, le calibre du compresseur, la qualité de pose, le SAV. Le moins cher = souvent le plus cher sur 15 ans.",
+        ],
+      },
+      {
+        heading: "Erreur n°4 : Mauvais emplacement de l'unité extérieure",
+        paragraphs: [
+          "Trop près du mur des voisins (bruit), exposé plein nord (givrage excessif), enfouie dans un creux (recyclage de l'air froid déjà refroidi), trop loin de la maison (longues liaisons frigo qui dégradent le COP).",
+          "Bon réflexe : l'emplacement doit être étudié avec l'artisan en visite technique. Distance minimum aux voisins (3 m), exposition sud-est ou sud, dégagement avant et au-dessus.",
+        ],
+      },
+      {
+        heading: "Erreur n°5 : Pas de programmation horaire",
+        paragraphs: [
+          "Une PAC qui chauffe toute la maison à 21 °C en permanence consomme 25-40% de plus qu'une PAC bien programmée (réduction nuit, mode absence). Beaucoup d'utilisateurs ne configurent JAMAIS les programmes après la pose.",
+          "Bon réflexe : demander à l'installateur de configurer la programmation pendant la mise en service, et de vous expliquer en détail. Refusez la mise en service 'en 5 minutes' où on vous donne juste les codes.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Mon installateur précédent a fait l'une de ces erreurs : que faire ?",
+        a: "Contacter d'abord l'installateur (garantie biennale légale 2 ans, décennale sur la pose 10 ans). Si pas de réponse satisfaisante : médiation Direction Générale de la Concurrence. En parallèle, on peut faire un audit pour confirmer le problème.",
+      },
+      {
+        q: "Comment vérifier le bon dimensionnement avant signature ?",
+        a: "Demander le rapport de calcul thermique (logiciel pro). Surface m² + isolation + zone climatique → puissance nominale en kW. Si l'artisan ne sait pas vous le montrer = signal d'alerte.",
+      },
+      {
+        q: "Combien coûte une étude thermique pro ?",
+        a: "Gratuit chez ECO CVC lors de la visite technique. Chez certains, 200-400 €. Méfiance des 'études express' qui se font au téléphone : impossible techniquement.",
+      },
+    ],
+    relatedCities: ["bourgoin-jallieu", "vienne", "voiron"],
+    relatedServices: [
+      { href: "/installation", label: "Installation par RGE QualiPAC" },
+      { href: "/depannage", label: "Reprendre une installation défectueuse" },
+    ],
+  },
+  {
+    slug: "ce-que-les-installateurs-ne-vous-disent-pas",
+    title: "Pompe à chaleur : ce que les installateurs ne vous disent pas toujours",
+    metaTitle: "PAC : 7 vérités que les installateurs ne disent pas | ECO CVC",
+    metaDescription:
+      "7 vérités peu dites sur la pompe à chaleur en 2026 : marges réelles, durée de vie, performance hivernale, marques à privilégier. Article transparence ECO CVC, RGE QualiPAC.",
+    category: "Pratique",
+    publishedAt: "2026-04-08",
+    updatedAt: "2026-05-07",
+    readingMinutes: 8,
+    excerpt:
+      "Les pubs PAC vendent du rêve. Voici 7 vérités que peu d'artisans osent dire à leurs clients — mais qui font la différence entre une bonne et une mauvaise expérience.",
+    intro: [
+      "Vendre une PAC, c'est facile. La poser correctement, beaucoup moins. Voici 7 vérités importantes que les installateurs ne mettent pas en avant pendant les visites commerciales — par habitude, négligence, ou parfois pour vendre plus facilement. Article écrit en transparence par ECO CVC, RGE QualiPAC.",
+    ],
+    sections: [
+      {
+        heading: "Vérité n°1 : Le COP marketing n'est pas le COP réel",
+        paragraphs: [
+          "Le COP nominal affiché sur les fiches produits est mesuré en laboratoire à +7 °C extérieur. Dans la vraie vie en hiver français, le COP descend à 2,5-3 quand il fait 0 °C, et 1,8-2,2 à -10 °C.",
+          "Ce qui compte vraiment : le SCOP (saisonnier), qui prend en compte les variations annuelles. Demandez TOUJOURS le SCOP, pas le COP nominal.",
+        ],
+      },
+      {
+        heading: "Vérité n°2 : L'appoint électrique, on n'en parle pas",
+        paragraphs: [
+          "Toutes les PAC ont une résistance électrique d'appoint qui se déclenche en grand froid. C'est NORMAL et nécessaire. Mais quand on vous vend des économies '70%', on suppose que l'appoint ne tourne JAMAIS — ce qui est faux.",
+          "Sur une saison normale en Isère, l'appoint pèse 5-15% de la conso totale. Sur une vague de froid, ça monte à 25-30% temporairement.",
+        ],
+      },
+      {
+        heading: "Vérité n°3 : Toutes les marques ne se valent pas",
+        paragraphs: [
+          "Différence en durée de vie réelle observée :",
+        ],
+        list: [
+          "Daikin Altherma 3, Mitsubishi Ecodan : 18-22 ans avec entretien",
+          "Atlantic Alféa Excellia : 15-18 ans",
+          "Marques milieu de gamme (AUX, Hisense) : 12-15 ans",
+          "Marques bas de gamme '2x moins cher' : souvent 8-12 ans",
+        ],
+        callout: {
+          title: "Notre conseil",
+          body: "Sur 20 ans, une PAC haut de gamme à 14 000 € qui tient 20 ans = 700 €/an. Une PAC bas de gamme à 9 000 € qui tient 10 ans = 900 €/an, plus le coût de remplacement. Le 'pas cher' est souvent une fausse économie.",
+        },
+      },
+      {
+        heading: "Vérité n°4 : La marge est élevée sur le matériel",
+        paragraphs: [
+          "Marge artisan moyenne sur le matériel : 30-50%. C'est NORMAL (transport, stockage, garantie, services). Mais ça explique pourquoi 2 devis similaires peuvent varier de 2 000-4 000 €.",
+          "Demandez le coût matériel séparé du coût main d'œuvre. Un artisan transparent ne devrait pas refuser.",
+        ],
+      },
+      {
+        heading: "Vérité n°5 : Le SAV en panne hivernale, c'est compliqué",
+        paragraphs: [
+          "Quand votre PAC tombe en panne le 15 décembre, tous les artisans sont saturés. Délai d'intervention typique : 5-10 jours hors contrat de maintenance. Vous chauffez à l'électrique direct entretemps = facture qui explose.",
+          "Conseil : prendre un contrat d'entretien annuel (180-280 €/an) qui inclut la priorité dépannage sous 24-48h. Ce qu'on vend rarement parce que ça réduit notre marge sur les nouvelles installations.",
+        ],
+      },
+      {
+        heading: "Vérité n°6 : Les aides ne couvrent pas tout, jamais 100%",
+        paragraphs: [
+          "Même pour un ménage Bleu sortant du fioul, les aides cumulées plafonnent à environ 70-90% du devis matériel + pose. Reste 1 500-3 000 € minimum à régler.",
+          "Méfiance des artisans qui promettent 'reste à charge zéro' : c'est rarement vrai, et c'est un signal d'alerte pour la qualité.",
+        ],
+      },
+      {
+        heading: "Vérité n°7 : L'isolation passe AVANT la PAC",
+        paragraphs: [
+          "Une PAC sur une maison mal isolée = factures qui ne baissent jamais comme prévu. Mais un artisan PAC qui vous conseille d'isoler d'abord 'perd' la vente immédiate.",
+          "Chez ECO CVC, on refuse régulièrement de poser une PAC quand l'isolation est trop faible. Mieux vaut perdre un chantier qu'un client mécontent dans 2 ans.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Vous êtes installateur, pourquoi écrire ça ?",
+        a: "Parce que les clients informés sont des meilleurs clients. Ils choisissent mieux, ils sont satisfaits plus longtemps, et ils nous recommandent. La transparence est notre stratégie commerciale.",
+      },
+      {
+        q: "Comment savoir si je peux faire confiance à un artisan ?",
+        a: "5 critères : 1) RGE QualiPAC vérifiable, 2) entreprise > 5 ans d'ancienneté, 3) avis Google publics, 4) répond à TOUTES vos questions sans esquiver, 5) ne fait pas de pression à signer.",
+      },
+      {
+        q: "Faut-il toujours préférer un artisan local à une grande enseigne ?",
+        a: "Pas forcément. L'artisan local connaît mieux le climat et les contraintes locales. Une grande enseigne a parfois plus de moyens pour le SAV. À évaluer au cas par cas selon les avis et la confiance.",
+      },
+    ],
+    relatedCities: ["bourgoin-jallieu", "lyon", "vienne"],
+    relatedServices: [
+      { href: "/blog/5-erreurs-a-eviter-pompe-a-chaleur", label: "5 erreurs à éviter avec une PAC" },
+      { href: "/avis", label: "Nos avis clients" },
+    ],
+  },
 ];
 
 export const findArticle = (slug: string) => articles.find((a) => a.slug === slug);

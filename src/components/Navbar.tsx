@@ -14,6 +14,7 @@ const links = [
   { href: "/ventilation", label: "Ventilation" },
   { href: "/calculateur", label: "Calculateur" },
   { href: "/simulateur-aides", label: "Aides 2026" },
+  { href: "/comparateur-chauffages", label: "Comparer" },
   { href: "/boutique", label: "Boutique" },
   { href: "/produits", label: "Produits AUX" },
   { href: "/certifications", label: "Certifications" },

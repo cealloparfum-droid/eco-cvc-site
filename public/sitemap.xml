@@ -14,6 +14,7 @@
   <url><loc>https://ecocvc.pro/boutique</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ecocvc.pro/calculateur</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://ecocvc.pro/simulateur-aides</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://ecocvc.pro/comparateur-chauffages</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
   <url><loc>https://ecocvc.pro/certifications</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ecocvc.pro/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ecocvc.pro/mentions-legales</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
@@ -42,6 +43,9 @@
   <url><loc>https://ecocvc.pro/blog/consommation-electrique-pompe-a-chaleur</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://ecocvc.pro/blog/pompe-a-chaleur-geothermique-prix-installation</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://ecocvc.pro/blog/duree-de-vie-pompe-a-chaleur</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ecocvc.pro/blog/pac-a-1-euro-arnaque-ou-vraie-offre</loc><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://ecocvc.pro/blog/5-erreurs-a-eviter-pompe-a-chaleur</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ecocvc.pro/blog/ce-que-les-installateurs-ne-vous-disent-pas</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://ecocvc.pro/avis</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
   <url><loc>https://ecocvc.pro/faq</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://ecocvc.pro/glossaire</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>

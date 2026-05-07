@@ -621,6 +621,50 @@ for (const d of depannageCases) {
   generated.push(`/depannage/${d.slug}`);
 }
 
+// Comparateur de chauffages — outil viral
+{
+  const title = "Comparateur de chauffages 2026 — PAC vs gaz vs fioul vs granulés | ECO CVC";
+  const description =
+    "Comparateur de chauffages 2026 : pompe à chaleur, gaz, fioul, électrique, granulés, géothermie. Calcul instantané du coût sur 15 ans, émissions CO2, aides MaPrimeRénov'.";
+  const bodyHtml = `
+    <h1>Comparateur de chauffages 2026 — PAC vs gaz vs fioul vs granulés</h1>
+    <p>${escape(description)}</p>
+    <h2>Comparatif des 7 énergies de chauffage</h2>
+    <p>Notre comparateur interactif analyse en temps réel : pompe à chaleur air-eau, pompe à chaleur géothermique, chaudière gaz à condensation, chaudière fioul, chauffage électrique direct, chaudière à granulés (pellets) et système hybride PAC + gaz.</p>
+    <h2>Critères pris en compte</h2>
+    <ul>
+      <li>Investissement initial (matériel + pose) en euros</li>
+      <li>Aides 2026 maximales (MaPrimeRénov', Coup de pouce CEE, TVA 5,5%)</li>
+      <li>Reste à charge après aides</li>
+      <li>Coût annuel énergie (selon prix 2026 du gaz, fioul, électricité, granulés)</li>
+      <li>Émissions de CO₂ par an</li>
+      <li>Coût total sur 15 ans (TCO complet)</li>
+      <li>Score économique et écologique normalisé</li>
+    </ul>
+    <h2>Pourquoi comparer avant de choisir</h2>
+    <p>Sur 15 ans, l'écart entre l'option la plus chère et la moins chère atteint souvent 20 000 à 35 000 € pour une maison standard. Les aides 2026 ont aussi profondément évolué : la chaudière gaz n'est plus éligible à MaPrimeRénov', le fioul est interdit en neuf depuis 2022, et les pompes à chaleur sont massivement subventionnées.</p>
+    <p><a href="/simulateur-aides">Simulateur d'aides détaillé</a> · <a href="/contact">Demander un devis</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+  `;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Comparateur de chauffages ECO CVC",
+    url: `${BASE}/comparateur-chauffages`,
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Web",
+    description,
+    offers: { "@type": "Offer", price: 0, priceCurrency: "EUR" },
+  };
+  await writeRoute("/comparateur-chauffages", {
+    title,
+    description,
+    canonical: `${BASE}/comparateur-chauffages`,
+    jsonLd,
+    bodyHtml,
+  });
+  generated.push("/comparateur-chauffages");
+}
+
 // Aides par collectivité — pages locales à forte autorité
 for (const a of aidesCollectivites) {
   const canonical = `${BASE}/aides-locales/${a.slug}`;

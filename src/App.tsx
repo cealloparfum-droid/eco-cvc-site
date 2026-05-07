@@ -12,6 +12,7 @@ import DevisFloatingBar from "./components/DevisFloatingBar";
 import ExitIntentPopup from "./components/ExitIntentPopup";
 import SeasonalUrgencyBanner from "./components/SeasonalUrgencyBanner";
 import SocialProofTicker from "./components/SocialProofTicker";
+import WhatsAppFloat from "./components/WhatsAppFloat";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { findDevis } from "./data/devis";
 
@@ -43,6 +44,7 @@ const SimulateurAides = lazy(() => import("./pages/SimulateurAides"));
 const MetierProPage = lazy(() => import("./pages/MetierProPage"));
 const DepannageCasePage = lazy(() => import("./pages/DepannageCasePage"));
 const AidesCollectivitePage = lazy(() => import("./pages/AidesCollectivitePage"));
+const ComparateurChauffages = lazy(() => import("./pages/ComparateurChauffages"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -93,6 +95,7 @@ const App = () => (
               <Route path="/froid-commercial/:slug" element={<MetierProPage />} />
               <Route path="/depannage/:slug" element={<DepannageCasePage />} />
               <Route path="/aides-locales/:slug" element={<AidesCollectivitePage />} />
+              <Route path="/comparateur-chauffages" element={<ComparateurChauffages />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
@@ -103,6 +106,7 @@ const App = () => (
           <ExitIntentPopup />
           <SeasonalUrgencyBanner />
           <SocialProofTicker />
+          <WhatsAppFloat />
         </ErrorBoundary>
       </BrowserRouter>
     </TooltipProvider>
