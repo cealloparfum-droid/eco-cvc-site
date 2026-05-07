@@ -53,6 +53,8 @@ const Recrutement = lazy(() => import("./pages/Recrutement"));
 const AuditDevis = lazy(() => import("./pages/AuditDevis"));
 const ComparatifMarquesPage = lazy(() => import("./pages/ComparatifMarquesPage"));
 const Parrainage = lazy(() => import("./pages/Parrainage"));
+const CalendrierAides = lazy(() => import("./pages/CalendrierAides"));
+const EtudesDeCas = lazy(() => import("./pages/EtudesDeCas"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -112,6 +114,8 @@ const App = () => (
               <Route path="/audit-devis-pac" element={<AuditDevis />} />
               <Route path="/comparatif/:slug" element={<ComparatifMarquesPage />} />
               <Route path="/parrainage" element={<Parrainage />} />
+              <Route path="/calendrier-aides-2026" element={<CalendrierAides />} />
+              <Route path="/etudes-de-cas" element={<EtudesDeCas />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

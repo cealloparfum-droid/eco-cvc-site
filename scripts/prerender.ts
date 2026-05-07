@@ -624,6 +624,50 @@ for (const d of depannageCases) {
   generated.push(`/depannage/${d.slug}`);
 }
 
+// Calendrier des aides
+{
+  const title = "Calendrier des aides PAC 2026 : quand vont-elles baisser ? | ECO CVC";
+  const description =
+    "Calendrier 2026-2030 des aides pompe à chaleur : MaPrimeRénov', Coup de pouce CEE, TVA. Pourquoi attendre coûte cher.";
+  const bodyHtml = `
+    <h1>Calendrier des aides PAC 2026-2030 : pourquoi attendre coûte cher</h1>
+    <p>${escape(description)}</p>
+    <h2>Anticipations baisse aides</h2>
+    <ul>
+      <li><strong>2026</strong> : barèmes maximum (jusqu'à 11 000 € géo + 5 000 € Coup de pouce + bonus fioul)</li>
+      <li><strong>2027</strong> : -10 à -15% probables sur les forfaits MaPrimeRénov'</li>
+      <li><strong>2028</strong> : sortie progressive du gaz dans le neuf, durcissement réglementaire</li>
+      <li><strong>2030+</strong> : possible fin progressive des aides PAC après transition énergétique</li>
+    </ul>
+    <h2>Coût d'attendre 1 à 3 ans</h2>
+    <p>Pour un ménage Jaune : aides 2026 = 8 500 €. Aides estimées 2029 = 5 800 €. <strong>Différence : 2 700 €</strong> à cumulés à la perte d'économies de chauffage immédiates.</p>
+    <p><a href="/simulateur-aides">Simuler mes aides 2026</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+  `;
+  await writeRoute("/calendrier-aides-2026", { title, description, canonical: `${BASE}/calendrier-aides-2026`, bodyHtml });
+  generated.push("/calendrier-aides-2026");
+}
+
+// Études de cas
+{
+  const title = "Études de cas ECO CVC : projets PAC chiffrés réels | RGE QualiPAC";
+  const description =
+    "8 études de cas anonymisées et chiffrées : PAC, climatisation, froid commercial. Investissement, aides, économies réelles.";
+  const bodyHtml = `
+    <h1>Études de cas chiffrées et anonymisées</h1>
+    <p>${escape(description)}</p>
+    <h2>Quelques exemples</h2>
+    <ul>
+      <li><strong>Pavillon Bourgoin 130 m², sortie fioul → PAC air-eau Daikin 11 kW :</strong> 14 800 € investis, 9 500 € d'aides, 1 850 €/an d'économie, amortissement 3 ans.</li>
+      <li><strong>Ferme Voiron 180 m², profil Bleu, sortie fioul :</strong> 18 500 € investis, 11 200 € d'aides, économie 2 200 €/an.</li>
+      <li><strong>Boulangerie Bourgoin, chambre froide + 2 vitrines :</strong> 22 000 € investis, économies 2 500 €/an, amortissement 7 ans.</li>
+      <li><strong>Pharmacie Lyon 6e, monitoring vaccins + clim :</strong> 15 500 € investis, conformité ARS assurée.</li>
+    </ul>
+    <p>Anonymat client préservé selon RGPD. Chiffres réels.</p>
+  `;
+  await writeRoute("/etudes-de-cas", { title, description, canonical: `${BASE}/etudes-de-cas`, bodyHtml });
+  generated.push("/etudes-de-cas");
+}
+
 // Comparatifs marque vs marque
 for (const c of comparatifsMarques) {
   const canonical = `${BASE}/comparatif/${c.slug}`;
