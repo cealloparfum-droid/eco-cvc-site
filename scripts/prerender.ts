@@ -623,6 +623,30 @@ for (const d of depannageCases) {
   generated.push(`/depannage/${d.slug}`);
 }
 
+// Audit de devis PAC
+{
+  const title = "Mon devis PAC est-il correct ? Audit gratuit en 30 sec | ECO CVC";
+  const description =
+    "Vérifiez si votre devis pompe à chaleur est correct ou louche en 30 secondes. Comparaison prix marché 2026, RGE, démarche commerciale, aides.";
+  const bodyHtml = `
+    <h1>Mon devis PAC est-il correct ?</h1>
+    <p>${escape(description)}</p>
+    <h2>Critères analysés</h2>
+    <ul>
+      <li>Cohérence puissance / surface (sous-dimensionnement, sur-dimensionnement)</li>
+      <li>Prix par rapport au marché 2026 selon marque et type de PAC</li>
+      <li>Certification RGE QualiPAC vérifiée</li>
+      <li>Démarche commerciale (visite technique, démarchage tél = illégal, démarchage porte)</li>
+      <li>Détail des aides (MaPrimeRénov', Coup de pouce CEE, TVA 5,5%)</li>
+    </ul>
+    <h2>Verdict en 3 niveaux</h2>
+    <p>Score 80-100 : devis correct. 55-79 : devis acceptable mais à vérifier. <55 : devis suspect.</p>
+    <p><a href="/contact">Demander un 2nd avis</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+  `;
+  await writeRoute("/audit-devis-pac", { title, description, canonical: `${BASE}/audit-devis-pac`, bodyHtml });
+  generated.push("/audit-devis-pac");
+}
+
 // Quiz éligibilité MaPrimeRénov'
 {
   const title = "Suis-je éligible MaPrimeRénov' 2026 ? Test gratuit en 30 sec | ECO CVC";

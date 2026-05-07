@@ -2281,6 +2281,328 @@ export const articles: Article[] = [
       { href: "/avis", label: "Nos avis clients" },
     ],
   },
+  {
+    slug: "pompe-a-chaleur-en-location-qui-paye",
+    title: "Pompe à chaleur en location : qui paye, propriétaire ou locataire ?",
+    metaTitle: "PAC en location : qui paye ? Propriétaire ou locataire | ECO CVC",
+    metaDescription:
+      "Pompe à chaleur en logement loué : qui paye l'achat, l'entretien, les réparations ? Loi Pinel, décence, MaPrimeRénov' bailleur. Guide ECO CVC 2026.",
+    category: "Pratique",
+    publishedAt: "2026-04-30",
+    updatedAt: "2026-05-07",
+    readingMinutes: 6,
+    excerpt:
+      "Locataire qui veut une PAC, propriétaire qui hésite à investir : qui paye quoi ? Le cadre légal 2026 et nos conseils pratiques.",
+    intro: [
+      "C'est une question récurrente : dans un logement loué, qui paye l'installation de la PAC, et qui paye l'entretien ? Le Code civil et la loi du 6 juillet 1989 cadrent les rôles, mais beaucoup d'arrangements pratiques existent. Voici les règles claires en 2026.",
+    ],
+    sections: [
+      {
+        heading: "Installation : c'est le propriétaire",
+        paragraphs: [
+          "Le remplacement d'un système de chauffage est une amélioration du logement, donc à la charge du propriétaire bailleur. Le locataire n'a aucune obligation de financer une PAC, même si elle bénéficie aussi à lui en réduisant ses factures.",
+          "Le propriétaire peut bénéficier de MaPrimeRénov' bailleur, sous condition de louer le logement en résidence principale pendant 6 ans après les travaux. Plafonds de revenus : ceux du propriétaire (pas du locataire).",
+        ],
+      },
+      {
+        heading: "Entretien annuel : c'est le locataire",
+        paragraphs: [
+          "L'entretien courant (visite annuelle obligatoire pour PAC > 4 kW, décret 2020-912) est à la charge du locataire selon le décret du 26 août 1987. Coût : 180-280 €/an pour un contrat d'entretien classique.",
+          "Le locataire est tenu de fournir l'attestation d'entretien annuel sur demande du propriétaire (souvent à la sortie du bail).",
+        ],
+      },
+      {
+        heading: "Réparations : règle des 'menues réparations'",
+        paragraphs: [
+          "Les petites réparations (filtres, télécommande, joints standards) sont à la charge du locataire. Les pannes structurelles (compresseur, carte électronique, fluide frigorigène) sont à la charge du propriétaire.",
+          "En pratique : vétusté = bailleur, négligence locataire = locataire, panne accidentelle = bailleur. Tout litige relève du tribunal d'instance.",
+        ],
+      },
+      {
+        heading: "Cas où le locataire veut faire poser une PAC",
+        paragraphs: [
+          "Si le locataire souhaite une PAC alors que le propriétaire n'en veut pas : autorisation écrite préalable indispensable. Le propriétaire peut refuser. S'il accepte, le locataire paye et garde le matériel à la sortie du bail (ou négocie un rachat).",
+          "Solution alternative : split mural mobile (clim mobile à roulettes) qui n'engage pas le bâti — pas besoin d'accord bailleur.",
+        ],
+      },
+      {
+        heading: "Décence du logement et obligation 2025-2034",
+        paragraphs: [
+          "Depuis 2023, les logements classés G en DPE ne peuvent plus être loués à de nouveaux locataires. F en 2028, E en 2034. Pour de nombreux propriétaires, installer une PAC fait passer un logement de F à C ou D, et permet de continuer à louer.",
+          "Argument de poids pour les bailleurs : MaPrimeRénov' couvre une bonne partie de l'investissement, et le bien gagne 5-15% en valeur immobilière à la revente.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Mon propriétaire refuse de poser une PAC alors que la chaudière est HS, je fais quoi ?",
+        a: "Le propriétaire est tenu de fournir un système de chauffage en bon état (logement décent, art. 6 loi 1989). Mise en demeure par LRAR. À défaut, saisie de la commission départementale de conciliation puis tribunal.",
+      },
+      {
+        q: "Si je suis bailleur, MaPrimeRénov' = quel montant ?",
+        a: "Mêmes barèmes que pour propriétaire occupant (selon revenus du propriétaire). Mais engagement de location pendant 6 ans en résidence principale au tarif normal.",
+      },
+      {
+        q: "Le locataire peut-il refuser l'entretien annuel obligatoire ?",
+        a: "Non. Sans entretien : garantie constructeur annulée, propriétaire peut demander dédommagement à la sortie du bail. Le locataire signe son bail en connaissant cette obligation.",
+      },
+    ],
+    relatedCities: ["lyon", "bourgoin-jallieu", "vienne"],
+    relatedServices: [
+      { href: "/devis-pompe-a-chaleur", label: "Devis PAC bailleur" },
+      { href: "/blog/maprimerenov-2026-pompe-a-chaleur", label: "MaPrimeRénov' 2026 complet" },
+    ],
+  },
+  {
+    slug: "ballon-thermodynamique-prix-avis",
+    title: "Ballon thermodynamique : prix, fonctionnement, choix 2026",
+    metaTitle: "Ballon thermodynamique 2026 : prix, COP, modèles | ECO CVC Isère",
+    metaDescription:
+      "Ballon d'eau chaude thermodynamique 2026 : principe, prix posé, COP, marques (Atlantic, Thermor, Ariston). Aides MaPrimeRénov'. Installation par ECO CVC.",
+    category: "Choisir sa PAC",
+    publishedAt: "2026-04-12",
+    updatedAt: "2026-05-07",
+    readingMinutes: 6,
+    excerpt:
+      "Un ballon thermodynamique consomme 70% de moins qu'un cumulus électrique. C'est l'investissement le plus rentable d'une rénovation énergétique. Voici tout ce qu'il faut savoir.",
+    intro: [
+      "Le ballon thermodynamique (ECS — eau chaude sanitaire — par PAC dédiée) est l'un des dispositifs les plus rentables d'une rénovation. Investissement modéré, économies massives, aides MaPrimeRénov' applicables. Voici le guide complet 2026.",
+    ],
+    sections: [
+      {
+        heading: "Comment ça marche",
+        paragraphs: [
+          "Un ballon thermodynamique combine un ballon d'eau chaude classique (200, 250 ou 300 L) et une mini-PAC air/eau intégrée qui pioche les calories de l'air ambiant (souvent dans un local non chauffé : garage, buanderie, sous-sol).",
+          "COP moyen 3 à 3,5 : 1 kWh d'électricité produit 3 à 3,5 kWh de chaleur dans l'eau. Vs un cumulus électrique classique COP 1 = 70% d'économies sur le poste ECS.",
+        ],
+      },
+      {
+        heading: "Prix posée 2026",
+        paragraphs: ["Selon volume et marque :"],
+        list: [
+          "Ballon 200 L (1-2 personnes) : 2 800 à 4 000 € posé",
+          "Ballon 250 L (3-4 personnes) : 3 200 à 4 800 € posé",
+          "Ballon 300 L (5+ personnes) : 3 800 à 5 500 € posé",
+          "Modèles haut de gamme connectés (Atlantic Egeo, Thermor) : +500-1 000 €",
+        ],
+      },
+      {
+        heading: "Aides 2026",
+        paragraphs: ["Le ballon thermodynamique est éligible :"],
+        list: [
+          "MaPrimeRénov' : 1 200 € (Bleu), 800 € (Jaune), 400 € (Violet)",
+          "Coup de pouce CEE : 200 à 500 € selon profil",
+          "TVA 5,5% : ~500 € d'économie",
+          "Total aides typiques : 1 200 à 2 200 €. Reste à charge moyen 1 800-3 500 €",
+        ],
+        callout: {
+          title: "Très bon ROI",
+          body: "Économies typiques : 250-400 €/an sur la facture EDF. Amortissement 5-10 ans. Sur 15 ans (durée de vie) : économie nette 2 000-4 500 €.",
+        },
+      },
+      {
+        heading: "Marques principales",
+        paragraphs: ["Notre comparatif terrain :"],
+        list: [
+          "Atlantic Egeo / Calypso : marque française, app mobile, fiabilité 15+ ans observée",
+          "Thermor Aeromax / Airlis : aussi groupe Atlantic, gammes proches",
+          "Ariston Nuos / Velis : alternative italienne, légèrement moins cher",
+          "Daikin Altherma EKHWS : haut de gamme, intégrable avec PAC chauffage",
+        ],
+      },
+      {
+        heading: "Conditions d'installation",
+        paragraphs: ["Pour bien fonctionner :"],
+        list: [
+          "Local de pose ≥ 10-15 m³ d'air disponible (garage, buanderie, cellier)",
+          "Local non chauffé (l'air capté refroidit la pièce — pas dans le séjour)",
+          "Évacuation des condensats vers le tout-à-l'égout ou un puits perdu",
+          "Alimentation 230V monophasé 16A",
+          "Espace suffisant pour la maintenance (50 cm devant)",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Ballon thermodynamique vs solaire thermique : quel est le meilleur ?",
+        a: "Solaire = encore plus rentable mais demande toiture orientée sud + investissement initial 5 000-9 000 €. Combinable : solaire en été, thermo en hiver. Le ballon thermo seul reste plus simple à poser.",
+      },
+      {
+        q: "Combien de temps pour la pose ?",
+        a: "1 journée en remplacement d'un ancien cumulus. 1-2 jours en installation neuve avec création des évacuations.",
+      },
+      {
+        q: "Mon ancien cumulus électrique a 8 ans, je le change ?",
+        a: "Si la résistance ne saute pas et qu'il fonctionne bien, attendez 2-3 ans. Mais à la première panne sérieuse, basculez sur thermodynamique : amortissement plus rapide.",
+      },
+    ],
+    relatedCities: ["bourgoin-jallieu", "lyon", "vienne"],
+    relatedServices: [
+      { href: "/installation", label: "Installation PAC + ECS" },
+      { href: "/simulateur-aides", label: "Calculer mes aides" },
+    ],
+  },
+  {
+    slug: "pompe-a-chaleur-pour-appartement",
+    title: "Pompe à chaleur en appartement : faisabilité, prix, démarches",
+    metaTitle: "PAC en appartement 2026 : air-eau, air-air, syndic | ECO CVC",
+    metaDescription:
+      "Pompe à chaleur en appartement : faisabilité technique, accord syndic, prix posé, aides MaPrimeRénov' copropriété. Guide ECO CVC pour Lyon, Grenoble.",
+    category: "Pratique",
+    publishedAt: "2026-04-05",
+    updatedAt: "2026-05-07",
+    readingMinutes: 6,
+    excerpt:
+      "Beaucoup pensent que la PAC est réservée aux maisons. Faux : elle est faisable en appartement dans 80% des cas, à condition de respecter quelques règles techniques et juridiques.",
+    intro: [
+      "Avec les canicules récurrentes et la hausse du gaz, la PAC en appartement explose dans les centres-villes. Lyon, Grenoble, Annecy, Chambéry : nous équipons régulièrement des copropriétés. Voici comment ça se passe en pratique.",
+    ],
+    sections: [
+      {
+        heading: "PAC air-air vs air-eau en appartement",
+        paragraphs: ["Les 2 options sont possibles, avec des contraintes différentes :"],
+        list: [
+          "PAC air-air (climatisation réversible) : 95% des cas en appartement. Splits muraux + 1 unité extérieure sur balcon ou en façade.",
+          "PAC air-eau : possible si la copropriété a chauffage individuel et un emplacement pour l'unité extérieure. Plus rare car nécessite circuit hydraulique.",
+          "Pas envisageable : géothermie (besoin de terrain), gainable (besoin de combles).",
+        ],
+      },
+      {
+        heading: "Démarches en copropriété",
+        paragraphs: ["L'unité extérieure modifie l'aspect du bâtiment = accord syndic obligatoire :"],
+        list: [
+          "Demande inscrite à l'ordre du jour de l'AG (au moins 2 mois avant)",
+          "Dossier technique : plan d'implantation, fiche acoustique, photo simulée",
+          "Vote en AG : majorité simple (art. 25 loi 1965) si simple aspect, majorité absolue (art. 26) si gros œuvre",
+          "Délai global : 4 à 8 mois entre demande et installation",
+        ],
+        callout: {
+          title: "Notre service inclus",
+          body: "ECO CVC fournit à tous ses prospects en copropriété un dossier 'prêt pour AG' : plans 2D, fiche technique, mesure acoustique signée, exemple de résolution. Taux d'acceptation typique : 80%+.",
+        },
+      },
+      {
+        heading: "Prix posée 2026 en appartement",
+        paragraphs: ["Configurations courantes :"],
+        list: [
+          "Mono-split T2 (séjour 25 m²) : 1 800 à 2 800 € posé",
+          "Bi-split T3 (séjour + chambre) : 3 500 à 4 800 € posé",
+          "Tri-split T4 (séjour + 2 chambres) : 5 200 à 6 800 € posé",
+          "Quadri-split T5 (4 pièces) : 6 500 à 8 500 € posé",
+        ],
+      },
+      {
+        heading: "Aides applicables en appartement",
+        paragraphs: ["MaPrimeRénov' fonctionne aussi en copropriété :"],
+        list: [
+          "MaPrimeRénov' Copropriété : pour rénovations d'ampleur de l'immeuble",
+          "MaPrimeRénov' individuelle : applicable au lot privatif",
+          "Coup de pouce CEE : 250 à 1 100 € selon revenus pour clim air-air",
+          "TVA 5,5%, éco-PTZ disponibles",
+          "Aides locales (Lyon Métropole Eco-Rénov, Grenoble MurMur 2)",
+        ],
+      },
+      {
+        heading: "Pièges à éviter",
+        paragraphs: ["Les 3 erreurs classiques en appartement :"],
+        list: [
+          "Signer un devis avant accord syndic — risque de refus en AG = perte de l'acompte",
+          "Choisir un modèle bruyant — voisinage difficile, plaintes possibles",
+          "Sous-estimer l'emplacement de l'unité ext. — distances aux voisins, accessibilité maintenance",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Mon syndic refuse en AG, je peux faire quoi ?",
+        a: "Vous pouvez ré-essayer l'AG suivante avec un dossier amélioré. Vous pouvez aussi opter pour une climatisation mobile (sans modification extérieure) qui ne nécessite pas d'accord.",
+      },
+      {
+        q: "Combien de temps pour avoir un accord syndic ?",
+        a: "AG annuelle obligatoire (printemps en général). Demande à inscrire 2 mois avant. Si refusé : nouvelle AG l'année suivante (12 mois). Si validé : pose dans les 2-4 mois.",
+      },
+      {
+        q: "Lyon Vieux Lyon ou centre Annecy : faisable malgré ABF ?",
+        a: "Souvent oui. Solutions : unité ext. sur balcon arrière (non visible rue), masquage par claustra, parfois passage en clim monobloc fenêtre (sans unité ext. visible).",
+      },
+    ],
+    relatedCities: ["lyon", "villeurbanne", "grenoble", "vienne"],
+    relatedServices: [
+      { href: "/devis-climatisation", label: "Devis climatisation appartement" },
+      { href: "/blog/climatisation-appartement-copropriete", label: "Démarches copropriété en détail" },
+    ],
+  },
+  {
+    slug: "pose-pompe-a-chaleur-en-juillet-aout",
+    title: "Faire poser une pompe à chaleur en juillet-août : bonne idée ?",
+    metaTitle: "Pose PAC en juillet-août : avantages et délais | ECO CVC",
+    metaDescription:
+      "Pose pompe à chaleur en juillet-août : meilleurs délais, tarifs, avantages. Profitez de la basse saison artisans pour préparer l'hiver. ECO CVC en Isère.",
+    category: "Pratique",
+    publishedAt: "2026-05-01",
+    updatedAt: "2026-05-07",
+    readingMinutes: 4,
+    excerpt:
+      "Beaucoup attendent l'automne pour faire poser leur PAC… et se retrouvent saturés. Le meilleur moment pour poser, c'est juillet-août. Voici pourquoi.",
+    intro: [
+      "Septembre-novembre, c'est le pic de demande PAC : tout le monde panique avant l'hiver. Délais qui s'allongent, plannings qui débordent, prix parfois plus tendus. Juillet-août est, paradoxalement, le moment idéal pour faire poser. Voici les 5 raisons.",
+    ],
+    sections: [
+      {
+        heading: "1. Délais ultra-courts",
+        paragraphs: [
+          "En juillet-août, les délais d'intervention chutent. Une visite technique sous 48-72h (vs 2-3 semaines en automne), pose programmée 2-3 semaines plus tard (vs 6-10 semaines).",
+          "Si tu commences en juillet, ton chantier peut être bouclé fin août. En partant en septembre, tu vises plus probablement octobre-novembre, parfois décembre.",
+        ],
+      },
+      {
+        heading: "2. Aides 2026 toujours valables",
+        paragraphs: [
+          "MaPrimeRénov', Coup de pouce CEE, TVA 5,5% : toutes les aides s'appliquent à la date de signature du devis. En signant en juillet, vous bénéficiez des barèmes 2026 actuels.",
+          "Attention : les barèmes peuvent évoluer en cours d'année (généralement à la baisse). Sécuriser le dossier en juillet protège du risque de baisse en septembre/octobre.",
+        ],
+      },
+      {
+        heading: "3. Préparation hiver sereine",
+        paragraphs: [
+          "PAC posée et mise en service en août : vous avez 2-3 mois pour la prendre en main, ajuster la programmation horaire, repérer la consommation à températures douces. Quand le froid arrive, l'installation est rodée.",
+          "Vs pose en novembre : urgence, pas le temps d'optimiser, premier hiver chaotique.",
+        ],
+      },
+      {
+        heading: "4. Confort climatisation immédiat (PAC réversible)",
+        paragraphs: [
+          "Pour les PAC réversibles (air-air, ou air-eau avec plancher rafraîchissant), la pose en juillet vous permet de profiter du rafraîchissement dès la fin du chantier. Bonus appréciable en pleine canicule.",
+        ],
+      },
+      {
+        heading: "5. Tarifs souvent négociables",
+        paragraphs: [
+          "Les artisans CVC ont moins de demande en été : plus enclins à négocier, à proposer des extras (extension de garantie, contrat d'entretien à tarif réduit).",
+          "Sans tomber dans le marchandage agressif, demander un geste commercial est fréquemment accepté en juillet-août.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Pas de risque de surchauffe pendant la pose en plein été ?",
+        a: "Non. Nos techniciens travaillent en tenue technique adaptée. Les unités extérieures et intérieures se posent à température ambiante. Aucun impact qualité.",
+      },
+      {
+        q: "ECO CVC est en congés en août ?",
+        a: "Pas tout l'été. Nous gardons une équipe minimum en astreinte pour les dépannages urgents et plannifions les nouvelles installations en juillet et fin août. Demande de devis acceptée toute l'année.",
+      },
+      {
+        q: "Faut-il être présent pendant la pose ?",
+        a: "Oui pour le 1er jour (étude technique sur site, validation positionnement) et le dernier (mise en service, formation à l'utilisation). Entre-temps, présence non obligatoire si l'artisan a accès au logement.",
+      },
+    ],
+    relatedCities: ["bourgoin-jallieu", "lyon", "vienne", "voiron"],
+    relatedServices: [
+      { href: "/devis-pompe-a-chaleur", label: "Devis PAC sous 24h" },
+      { href: "/contact", label: "Prendre RDV technique" },
+    ],
+  },
 ];
 
 export const findArticle = (slug: string) => articles.find((a) => a.slug === slug);

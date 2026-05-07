@@ -50,6 +50,7 @@ const CodeErreurPage = lazy(() => import("./pages/CodeErreurPage"));
 const QuizEligibilite = lazy(() => import("./pages/QuizEligibilite"));
 const SolairePac = lazy(() => import("./pages/SolairePac"));
 const Recrutement = lazy(() => import("./pages/Recrutement"));
+const AuditDevis = lazy(() => import("./pages/AuditDevis"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -106,6 +107,7 @@ const App = () => (
               <Route path="/eligibilite-maprimerenov" element={<QuizEligibilite />} />
               <Route path="/solaire-pompe-a-chaleur" element={<SolairePac />} />
               <Route path="/recrutement" element={<Recrutement />} />
+              <Route path="/audit-devis-pac" element={<AuditDevis />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
