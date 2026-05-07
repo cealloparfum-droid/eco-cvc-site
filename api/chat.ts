@@ -1,31 +1,29 @@
 /**
- * API serverless Vercel pour le chatbot Léo (Claude).
+ * API serverless Vercel pour le chatbot Léo.
  *
- * Reçoit un historique de messages, ajoute le system prompt ECO CVC
- * (avec prompt caching pour réduire les coûts ~90% sur les requêtes
- * suivantes) et appelle Claude pour générer la réponse.
+ * Backend : **Google Gemini 2.0 Flash** (tier gratuit, 1 500 req/jour,
+ * 1 M tokens/jour, sans carte bleue).
  *
  * Variable d'environnement requise (à ajouter dans Vercel) :
- *   ANTHROPIC_API_KEY = sk-ant-...
+ *   GEMINI_API_KEY = AIza...   (depuis https://aistudio.google.com/apikey)
  *
- * Cost optimization :
- *  - Modèle : claude-opus-4-7 (le plus capable, modifiable côté Vercel via
- *    la variable d'environnement CLAUDE_MODEL si besoin de réduire les coûts)
- *  - Prompt caching activé sur le system prompt (~90% d'économie au-delà
- *    du 1er message)
- *  - max_tokens limité à 800 pour des réponses concises et économiques
+ * Choix techniques :
+ *  - Appel REST direct via fetch : pas de SDK supplémentaire,
+ *    fonction serverless ultra-légère.
+ *  - System prompt riche (~5 K tokens) avec toutes les infos ECO CVC.
+ *  - Modèle configurable via env var GEMINI_MODEL (par défaut
+ *    "gemini-2.0-flash"), pour basculer sur "gemini-1.5-pro" plus tard
+ *    si besoin de meilleure qualité (toujours sur tier gratuit).
+ *
+ * Pour repasser sur Claude (payant) plus tard : voir api/chat.claude.ts
+ * (sauvegarde de l'ancienne version).
  */
-
-import Anthropic from "@anthropic-ai/sdk";
 
 export const config = {
   runtime: "nodejs",
   maxDuration: 30,
 };
 
-// System prompt riche : Léo connaît ECO CVC, ses services, sa zone, ses tarifs,
-// et oriente les visiteurs vers la conversion (devis / appel téléphonique).
-// Volontairement long (>4K tokens) pour maximiser l'efficacité du prompt cache.
 const SYSTEM_PROMPT = `Tu es **Léo**, le conseiller virtuel de l'entreprise ECO CVC. Tu réponds en français, sur le site ecocvc.pro, aux questions des visiteurs particuliers et professionnels concernant la pompe à chaleur (PAC), la climatisation, la ventilation et le froid commercial.
 
 # Personnalité
@@ -163,6 +161,8 @@ Si pertinent, oriente le visiteur vers ces outils :
 3. **/calculateur** : dimensionnement de puissance par pièce
 4. **/eligibilite-maprimerenov** : test rapide en 5 questions
 5. **/audit-devis-pac** : vérifie si un devis reçu d'un autre installateur est cohérent
+6. **/remplacement-chaudiere-fioul** : landing dédiée sortie fioul
+7. **/remplacement-chaudiere-gaz** : landing dédiée sortie gaz
 
 # Pages utiles à connaître pour orienter
 
@@ -229,6 +229,27 @@ interface ChatMessage {
   content: string;
 }
 
+/** Format Gemini pour un message dans `contents`. */
+interface GeminiContent {
+  role: "user" | "model";
+  parts: { text: string }[];
+}
+
+interface GeminiResponse {
+  candidates?: {
+    content?: {
+      parts?: { text?: string }[];
+    };
+    finishReason?: string;
+  }[];
+  usageMetadata?: {
+    promptTokenCount?: number;
+    candidatesTokenCount?: number;
+    totalTokenCount?: number;
+  };
+  error?: { code: number; message: string; status?: string };
+}
+
 export default async function handler(req: Request): Promise<Response> {
   if (req.method !== "POST") {
     return new Response(JSON.stringify({ error: "Method not allowed" }), {
@@ -237,7 +258,8 @@ export default async function handler(req: Request): Promise<Response> {
     });
   }
 
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  // Accepte GEMINI_API_KEY (recommandé) ou GOOGLE_API_KEY (alternative)
+  const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
   if (!apiKey) {
     return new Response(
       JSON.stringify({
@@ -267,11 +289,8 @@ export default async function handler(req: Request): Promise<Response> {
     });
   }
 
-  // Limiter l'historique pour éviter une explosion de coûts en cas
-  // d'utilisateur abusif (max 30 messages = ~15 tours).
+  // Limites anti-abus
   const trimmedMessages = messages.slice(-30);
-
-  // Validation basique des messages
   const validMessages: ChatMessage[] = [];
   for (const m of trimmedMessages) {
     if (
@@ -280,7 +299,7 @@ export default async function handler(req: Request): Promise<Response> {
       (m.role === "user" || m.role === "assistant") &&
       typeof m.content === "string" &&
       m.content.length > 0 &&
-      m.content.length < 4000 // limite anti-abus
+      m.content.length < 4000
     ) {
       validMessages.push({ role: m.role, content: m.content });
     }
@@ -293,51 +312,98 @@ export default async function handler(req: Request): Promise<Response> {
     });
   }
 
-  const client = new Anthropic({ apiKey });
+  // Mapping vers le format Gemini : "assistant" -> "model"
+  const contents: GeminiContent[] = validMessages.map((m) => ({
+    role: m.role === "assistant" ? "model" : "user",
+    parts: [{ text: m.content }],
+  }));
 
-  // Modèle configurable via env var. Par défaut Opus 4.7 (le plus capable).
-  // Le partenaire pourra basculer sur claude-sonnet-4-6 ou claude-haiku-4-5
-  // dans Vercel pour réduire les coûts si besoin.
-  const model = process.env.CLAUDE_MODEL || "claude-opus-4-7";
+  // Modèle configurable. Par défaut gemini-2.0-flash : excellent rapport
+  // qualité/quota gratuit (1 500 req/jour, 1 M tokens/jour).
+  // Alternatives possibles via env :
+  //  - "gemini-2.0-flash-lite" (encore plus rapide, légèrement moins bon)
+  //  - "gemini-1.5-pro" (meilleure qualité, mais quota plus serré)
+  const model = process.env.GEMINI_MODEL || "gemini-2.0-flash";
+
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(
+    model,
+  )}:generateContent?key=${encodeURIComponent(apiKey)}`;
 
   try {
-    const response = await client.messages.create({
-      model,
-      max_tokens: 800,
-      // Prompt caching sur le system prompt : ~90% d'économie sur les
-      // requêtes suivantes (le prompt fait ~5K tokens, c'est rentable).
-      system: [
-        {
-          type: "text",
-          text: SYSTEM_PROMPT,
-          cache_control: { type: "ephemeral" },
+    const apiRes = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        system_instruction: {
+          parts: [{ text: SYSTEM_PROMPT }],
         },
-      ],
-      messages: validMessages,
+        contents,
+        generationConfig: {
+          maxOutputTokens: 800,
+          temperature: 0.7,
+          topP: 0.95,
+        },
+        // Filtres de sécurité Google par défaut. On les laisse actifs.
+      }),
     });
 
-    // Extraire le texte de la réponse (typage strict avec narrowing)
-    let replyText = "";
-    for (const block of response.content) {
-      if (block.type === "text") {
-        replyText += block.text;
+    const data = (await apiRes.json().catch(() => null)) as GeminiResponse | null;
+
+    if (!apiRes.ok || !data) {
+      // Mapping des erreurs Gemini vers des messages utilisateur clairs
+      let userMessage = "Service IA temporairement perturbé. Appelez-nous au 07 58 45 99 00.";
+      let status = 502;
+
+      if (apiRes.status === 429) {
+        userMessage =
+          "Trop de demandes en cours. Réessayez dans une minute, ou appelez-nous au 07 58 45 99 00.";
+        status = 429;
+      } else if (apiRes.status === 401 || apiRes.status === 403) {
+        userMessage = "Service IA mal configuré. Contactez-nous au 07 58 45 99 00.";
+        status = 503;
       }
+
+      return new Response(
+        JSON.stringify({
+          error: userMessage,
+          details: data?.error?.message || `HTTP ${apiRes.status}`,
+        }),
+        { status, headers: { "Content-Type": "application/json" } },
+      );
     }
 
+    // Extraction du texte de la première candidate
+    const candidate = data.candidates?.[0];
+    const replyText =
+      candidate?.content?.parts
+        ?.map((p) => p.text || "")
+        .join("")
+        .trim() || "";
+
     if (!replyText) {
-      throw new Error("Empty response from Claude");
+      // Cas safety filter qui bloque la réponse
+      const blocked =
+        candidate?.finishReason && candidate.finishReason !== "STOP";
+      return new Response(
+        JSON.stringify({
+          error: blocked
+            ? "Désolé, je ne peux pas répondre à cette question. Pour un conseil personnalisé, appelez-nous au 07 58 45 99 00."
+            : "Réponse vide du serveur. Réessayez ou appelez-nous au 07 58 45 99 00.",
+          details: candidate?.finishReason || "empty",
+        }),
+        { status: 502, headers: { "Content-Type": "application/json" } },
+      );
     }
 
     return new Response(
       JSON.stringify({
         reply: replyText,
         usage: {
-          input_tokens: response.usage.input_tokens,
-          output_tokens: response.usage.output_tokens,
-          cache_creation_input_tokens:
-            response.usage.cache_creation_input_tokens || 0,
-          cache_read_input_tokens: response.usage.cache_read_input_tokens || 0,
+          input_tokens: data.usageMetadata?.promptTokenCount || 0,
+          output_tokens: data.usageMetadata?.candidatesTokenCount || 0,
+          total_tokens: data.usageMetadata?.totalTokenCount || 0,
         },
+        model,
       }),
       {
         status: 200,
@@ -348,30 +414,13 @@ export default async function handler(req: Request): Promise<Response> {
       },
     );
   } catch (err) {
-    // Erreurs typées du SDK
-    let userMessage = "Le chat est temporairement indisponible.";
-    let status = 500;
-
-    if (err instanceof Anthropic.RateLimitError) {
-      userMessage =
-        "Trop de demandes en cours. Réessayez dans une minute, ou appelez-nous au 07 58 45 99 00.";
-      status = 429;
-    } else if (err instanceof Anthropic.AuthenticationError) {
-      userMessage =
-        "Service IA mal configuré. Contactez-nous au 07 58 45 99 00.";
-      status = 503;
-    } else if (err instanceof Anthropic.APIError) {
-      userMessage =
-        "Service IA temporairement perturbé. Appelez-nous au 07 58 45 99 00 ou utilisez le formulaire.";
-      status = 502;
-    }
-
     return new Response(
       JSON.stringify({
-        error: userMessage,
+        error:
+          "Service IA injoignable. Appelez-nous au 07 58 45 99 00 ou utilisez le formulaire.",
         details: err instanceof Error ? err.message : String(err),
       }),
-      { status, headers: { "Content-Type": "application/json" } },
+      { status: 502, headers: { "Content-Type": "application/json" } },
     );
   }
 }
