@@ -17,6 +17,8 @@ import {
   ShoppingBag,
   Refrigerator,
   Mic,
+  MessageSquare,
+  Loader2,
 } from "lucide-react";
 import { submitForm } from "@/lib/submit-form";
 import { MicButton } from "@/components/MicButton";
@@ -42,11 +44,21 @@ type ServiceKey =
 type Step =
   | "welcome"
   | "voice"
+  | "ai-chat"
   | "questions"
   | "coordinates"
   | "summary";
 
 type Answer = { question: string; value: string };
+
+type AiMessage = { role: "user" | "assistant"; content: string };
+
+/** Texte d'accueil envoyé par Léo lorsqu'on ouvre la conversation IA. */
+const AI_WELCOME: AiMessage = {
+  role: "assistant",
+  content:
+    "Bonjour ! Je suis Léo, le conseiller virtuel d'ECO CVC. Posez-moi toutes vos questions sur la pompe à chaleur, la climatisation, la ventilation, le froid commercial, les aides 2026 ou un dépannage. Je suis là pour vous aider !",
+};
 
 interface QuestionDef {
   id: string;
@@ -367,7 +379,14 @@ const AdvisorBot = () => {
   const [sent, setSent] = useState(false);
   const [sendError, setSendError] = useState<string | null>(null);
 
+  // --- Mode IA libre (conversation avec Claude via /api/chat)
+  const [aiMessages, setAiMessages] = useState<AiMessage[]>([AI_WELCOME]);
+  const [aiInput, setAiInput] = useState("");
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiError, setAiError] = useState<string | null>(null);
+
   const panelRef = useRef<HTMLDivElement>(null);
+  const aiScrollRef = useRef<HTMLDivElement>(null);
 
   // Lock body scroll when open on mobile
   useEffect(() => {
@@ -402,7 +421,64 @@ const AdvisorBot = () => {
     setSending(false);
     setSent(false);
     setSendError(null);
+    setAiMessages([AI_WELCOME]);
+    setAiInput("");
+    setAiLoading(false);
+    setAiError(null);
   };
+
+  /** Envoie un message à /api/chat (Claude) et met à jour l'historique. */
+  const sendAiMessage = async () => {
+    const text = aiInput.trim();
+    if (!text || aiLoading) return;
+    setAiError(null);
+    const newHistory: AiMessage[] = [
+      ...aiMessages,
+      { role: "user", content: text },
+    ];
+    setAiMessages(newHistory);
+    setAiInput("");
+    setAiLoading(true);
+    try {
+      // On n'envoie pas le message d'accueil "système" assistant initial
+      // au backend (il vient du front). On envoie tout le reste.
+      const apiHistory = newHistory.filter(
+        (m, i) => !(i === 0 && m === AI_WELCOME),
+      );
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: apiHistory }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(
+          data.error ||
+            "Le chat IA est temporairement indisponible. Vous pouvez nous appeler au 07 58 45 99 00.",
+        );
+      }
+      const reply = (data.reply || "").toString();
+      if (!reply) {
+        throw new Error("Réponse vide du serveur.");
+      }
+      setAiMessages([...newHistory, { role: "assistant", content: reply }]);
+    } catch (err) {
+      const msg =
+        err instanceof Error
+          ? err.message
+          : "Erreur réseau. Réessayez ou appelez-nous au 07 58 45 99 00.";
+      setAiError(msg);
+    } finally {
+      setAiLoading(false);
+    }
+  };
+
+  // Auto-scroll vers le dernier message dès qu'on est en mode chat IA
+  useEffect(() => {
+    if (step !== "ai-chat") return;
+    const el = aiScrollRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
+  }, [step, aiMessages, aiLoading]);
 
   const close = () => {
     setOpen(false);
@@ -439,6 +515,10 @@ const AdvisorBot = () => {
   };
 
   const goBack = () => {
+    if (step === "ai-chat") {
+      setStep("welcome");
+      return;
+    }
     if (step === "questions") {
       if (qIndex === 0) {
         setStep("welcome");
@@ -577,18 +657,41 @@ const AdvisorBot = () => {
         </div>
       </div>
 
+      {/* Discussion libre IA : conversation ouverte avec Léo (Claude) */}
+      <button
+        type="button"
+        onClick={() => setStep("ai-chat")}
+        className="w-full flex items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-bluedark text-white shadow-lifted hover:shadow-xl transition-shadow"
+      >
+        <div className="shrink-0 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+          <MessageSquare className="w-5 h-5" />
+        </div>
+        <div className="flex-1 text-left">
+          <div className="text-sm font-bold leading-tight inline-flex items-center gap-1.5">
+            Discuter avec Léo
+            <span className="text-[9px] font-extrabold tracking-wider px-1.5 py-0.5 rounded-full bg-white/25">
+              IA
+            </span>
+          </div>
+          <div className="text-[11px] text-white/85 mt-0.5">
+            Posez n'importe quelle question — réponse instantanée
+          </div>
+        </div>
+        <ChevronRight className="w-4 h-4 shrink-0" />
+      </button>
+
       {/* Voix : décrire son projet à voix haute en un clic */}
       <button
         type="button"
         onClick={() => setStep("voice")}
-        className="w-full flex items-center gap-3 p-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-bluedark text-white shadow-lifted hover:shadow-xl transition-shadow"
+        className="w-full flex items-center gap-3 p-3.5 rounded-xl border-2 border-brand-blue/30 bg-white text-brand-bluedark hover:bg-brand-blue/5 transition-colors"
       >
-        <div className="shrink-0 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-          <Mic className="w-5 h-5" />
+        <div className="shrink-0 w-10 h-10 rounded-full bg-brand-blue/10 flex items-center justify-center">
+          <Mic className="w-5 h-5 text-brand-blue" />
         </div>
         <div className="flex-1 text-left">
           <div className="text-sm font-bold leading-tight">Décrire mon projet à voix haute</div>
-          <div className="text-[11px] text-white/85 mt-0.5">Parlez librement, on s'occupe du reste</div>
+          <div className="text-[11px] text-slate-500 mt-0.5">Parlez librement, on s'occupe du reste</div>
         </div>
         <ChevronRight className="w-4 h-4 shrink-0" />
       </button>
@@ -810,6 +913,152 @@ const AdvisorBot = () => {
       <p className="text-[11px] text-slate-500 text-center">
         Compatible Chrome, Safari et Edge. Sur Firefox, écrivez directement.
       </p>
+    </motion.div>
+  );
+
+  const renderAiChat = () => (
+    <motion.div
+      key="ai-chat"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      className="flex flex-col h-full min-h-0"
+    >
+      <div className="flex items-center justify-between gap-2 mb-3">
+        <button
+          type="button"
+          onClick={() => setStep("welcome")}
+          className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-brand-blue"
+        >
+          <ArrowLeft className="w-3.5 h-3.5" /> Retour
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            setAiMessages([AI_WELCOME]);
+            setAiError(null);
+            setAiInput("");
+          }}
+          className="text-[11px] text-slate-400 hover:text-brand-blue"
+        >
+          Recommencer
+        </button>
+      </div>
+
+      {/* Historique des messages */}
+      <div
+        ref={aiScrollRef}
+        className="flex-1 overflow-y-auto space-y-3 pr-1 -mr-1"
+      >
+        {aiMessages.map((m, i) => (
+          <div
+            key={i}
+            className={`flex gap-2 ${
+              m.role === "user" ? "justify-end" : "justify-start"
+            }`}
+          >
+            {m.role === "assistant" && (
+              <div className="w-7 h-7 shrink-0 rounded-full bg-brand-blue text-white flex items-center justify-center mt-0.5">
+                <Bot className="w-3.5 h-3.5" />
+              </div>
+            )}
+            <div
+              className={`max-w-[80%] rounded-2xl px-3.5 py-2.5 text-sm whitespace-pre-wrap leading-relaxed ${
+                m.role === "user"
+                  ? "bg-brand-blue text-white rounded-tr-sm"
+                  : "bg-slate-100 text-slate-800 rounded-tl-sm"
+              }`}
+            >
+              {m.content}
+            </div>
+          </div>
+        ))}
+
+        {aiLoading && (
+          <div className="flex gap-2 justify-start">
+            <div className="w-7 h-7 shrink-0 rounded-full bg-brand-blue text-white flex items-center justify-center mt-0.5">
+              <Bot className="w-3.5 h-3.5" />
+            </div>
+            <div className="bg-slate-100 rounded-2xl rounded-tl-sm px-3.5 py-3 inline-flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+              <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+              <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+            </div>
+          </div>
+        )}
+
+        {aiError && (
+          <div className="rounded-xl border border-brand-red/30 bg-brand-red/5 p-3 text-xs text-brand-red">
+            <p className="font-semibold mb-1.5">{aiError}</p>
+            <div className="flex gap-2">
+              <a
+                href={PHONE_1_HREF}
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-brand-red text-white font-bold"
+              >
+                <Phone className="w-3 h-3" />
+                {PHONE_1}
+              </a>
+              <button
+                type="button"
+                onClick={() => {
+                  setAiError(null);
+                  setStep("welcome");
+                }}
+                className="inline-flex items-center px-2.5 py-1 rounded-full border border-brand-red/40 font-semibold"
+              >
+                Devis guidé
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Saisie */}
+      <div className="shrink-0 pt-3 mt-3 border-t border-border">
+        <div className="flex gap-2 items-end">
+          <div className="relative flex-1">
+            <textarea
+              value={aiInput}
+              onChange={(e) => setAiInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  sendAiMessage();
+                }
+              }}
+              placeholder="Posez votre question…"
+              rows={1}
+              disabled={aiLoading}
+              className="w-full resize-none px-4 py-3 pr-12 rounded-2xl border-2 border-border bg-white text-sm focus:outline-none focus:border-brand-blue transition-colors disabled:bg-slate-50 max-h-32"
+            />
+            <div className="absolute right-2 top-1/2 -translate-y-1/2">
+              <MicButton
+                value={aiInput}
+                onChange={setAiInput}
+                size={32}
+                title="Dicter la question"
+              />
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={sendAiMessage}
+            disabled={!aiInput.trim() || aiLoading}
+            className="shrink-0 w-12 h-12 rounded-2xl bg-brand-blue text-white hover:bg-brand-bluedark disabled:bg-slate-200 disabled:text-slate-400 transition-colors flex items-center justify-center"
+            aria-label="Envoyer"
+          >
+            {aiLoading ? (
+              <Loader2 className="w-4 h-4 animate-spin" />
+            ) : (
+              <Send className="w-4 h-4" />
+            )}
+          </button>
+        </div>
+        <p className="text-[10px] text-slate-400 text-center mt-2">
+          Conversation IA — pour un devis chiffré, demandez le formulaire ou
+          appelez le {PHONE_1}.
+        </p>
+      </div>
     </motion.div>
   );
 
@@ -1139,10 +1388,17 @@ const AdvisorBot = () => {
               </div>
 
               {/* Body */}
-              <div className="flex-1 overflow-y-auto px-5 py-5">
+              <div
+                className={
+                  step === "ai-chat"
+                    ? "flex-1 min-h-0 px-5 py-5 flex flex-col"
+                    : "flex-1 overflow-y-auto px-5 py-5"
+                }
+              >
                 <AnimatePresence mode="wait">
                   {step === "welcome" && renderWelcome()}
                   {step === "voice" && renderVoice()}
+                  {step === "ai-chat" && renderAiChat()}
                   {step === "questions" && renderQuestions()}
                   {step === "coordinates" && renderCoordinates()}
                   {step === "summary" && renderSummary()}
