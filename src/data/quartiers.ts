@@ -1300,4 +1300,839 @@ export const quartiers: Quartier[] = [
       },
     ],
   },
+  // ─── GRENOBLE — 7 quartiers ──────────────────────────────────────
+  {
+    slug: "grenoble-hyper-centre",
+    name: "Hyper-Centre",
+    citySlug: "grenoble",
+    cityName: "Grenoble",
+    postalCodes: ["38000"],
+    intro:
+      "Cœur historique de Grenoble (place Grenette, Notre-Dame, Halles Sainte-Claire) avec immeubles haussmanniens et bâtisses XVIIᵉ-XIXᵉ. Secteur ABF actif, copropriétés anciennes exigeantes.",
+    habitat:
+      "Immeubles 1830-1900 majoritaires, hauts plafonds 3,2-3,8 m, parquets, cheminées. Copropriétés familiales avec règlement souvent contraignant sur les façades visibles.",
+    contraintes: [
+      "ABF probable en zone Notre-Dame / Halles Sainte-Claire",
+      "Hauts plafonds : majorer la puissance clim de +20-25 %",
+      "Copro 1900 : passage de gaines délicat (parquet, moulures)",
+      "Cours étroites : peu d'emplacements pour unité ext.",
+    ],
+    solutions: [
+      "Multi-split avec unité ext. en cour intérieure (non visible rue)",
+      "Cassette plafond si refus copro de pose façade",
+      "Console basse haute puissance pour pièces 30-50 m² hauts plafonds",
+    ],
+    prixIndicatif: "1 490 € à 4 990 € selon nb de pièces",
+    faq: [
+      {
+        q: "ABF nécessaire en hyper-centre Grenoble ?",
+        a: "Probable autour de Notre-Dame, Halles, place Grenette. Déclaration préalable + photo-montage. Délai 2 mois.",
+      },
+      {
+        q: "Pose en immeuble 1900 hauts plafonds ?",
+        a: "Faisable. On adapte les puissances et le passage des gaines (souvent en gaines techniques existantes ou plinthes décoratives).",
+      },
+      {
+        q: "Copro hyper-centre : démarches ?",
+        a: "Vote AG obligatoire. Dossier complet fourni : plan, esthétique, niveau sonore, attestation F-Gaz.",
+      },
+    ],
+  },
+  {
+    slug: "ile-verte",
+    name: "Île Verte",
+    citySlug: "grenoble",
+    cityName: "Grenoble",
+    postalCodes: ["38000"],
+    intro:
+      "Quartier résidentiel 1960-1970 entre l'Isère et le Drac, l'Île Verte est connue pour ses tours emblématiques (Roland-Garros, Mont-Blanc, Belledonne). Demande PAC + clim collective forte.",
+    habitat:
+      "Tours 1960-1970 jusqu'à 30 étages, copropriétés familiales, petites maisons en bord d'Isère. Performance thermique faible d'origine, programmes de rénovation énergétique en cours.",
+    contraintes: [
+      "Tours grande hauteur : nacelle obligatoire pour pose façade > 4ᵉ étage",
+      "Copro 1960-70 : étude collective rentable (mutualisation)",
+      "Bruit : modèle ≤ 35 dB obligatoire (proximité voisins)",
+    ],
+    solutions: [
+      "PAC collective sur toiture pour copropriétés (étude prévisionnelle)",
+      "Mono/multi-split mural avec unité ext. balcon (vote AG)",
+      "Cassette gainable plafond si refus façade",
+    ],
+    prixIndicatif: "Mono 990 € · Multi 2 490 € · Étude collective sur devis",
+    faq: [
+      {
+        q: "Pose tour Île Verte > 10ᵉ étage ?",
+        a: "Nacelle ou corde obligatoire. Surcoût 300-700 €. Étude visite gratuite avant devis.",
+      },
+      {
+        q: "PAC collective tour Île Verte rentable ?",
+        a: "Souvent oui à partir de 30+ logements. ROI 8-12 ans avec MaPrimeRénov' Copro + CEE. Étude technique 1 500 €.",
+      },
+      {
+        q: "Bruit pour les voisins ?",
+        a: "Modèles silence nuit ≤ 35 dB + plots anti-vibration. Mesure d'émergence en limite balcon possible.",
+      },
+    ],
+  },
+  {
+    slug: "berriat-saint-bruno",
+    name: "Berriat-Saint-Bruno",
+    citySlug: "grenoble",
+    cityName: "Grenoble",
+    postalCodes: ["38000"],
+    intro:
+      "Ancien quartier industriel reconverti, Berriat-Saint-Bruno mêle lofts d'usine, immeubles 1900 et programmes neufs. Quartier en pleine gentrification, demande clim/PAC en hausse.",
+    habitat:
+      "Anciennes usines reconverties en lofts, immeubles 1900-1930, programmes neufs RT2012-RE2020. Mixité forte, copropriétés mixtes (jeunes actifs + familles).",
+    contraintes: [
+      "Lofts d'usine : très hauts plafonds (4-6 m), volumes complexes",
+      "Programmes neufs : pré-équipement clim parfois inclus",
+      "ABF possible secteur Saint-Bruno (église classée)",
+    ],
+    solutions: [
+      "Loft : gainable invisible ou cassette plafond grand débit",
+      "Neuf : raccordement pré-équipement (demi-journée, 690-790 €)",
+      "Multi-split : 1 ext + 2 à 4 splits intérieurs",
+    ],
+    prixIndicatif: "990 € (neuf pré-équipé) à 6 900 € (loft gainable)",
+    faq: [
+      {
+        q: "Clim pour loft d'usine Berriat ?",
+        a: "Gainable invisible (faux-plafond) ou cassette grand débit. Puissance majorée pour volumes 4-6 m. Devis sur étude.",
+      },
+      {
+        q: "Mon programme neuf est-il pré-équipé ?",
+        a: "Souvent oui post-2018. Vérification visite : si oui, raccordement 690-790 € en demi-journée.",
+      },
+      {
+        q: "ABF Saint-Bruno ?",
+        a: "Possible autour de l'église classée. Déclaration préalable photomontage. Délai 2 mois.",
+      },
+    ],
+  },
+  {
+    slug: "villeneuve-grenoble",
+    name: "Villeneuve",
+    citySlug: "grenoble",
+    cityName: "Grenoble",
+    postalCodes: ["38100"],
+    intro:
+      "Quartier emblématique des années 1970 (utopie urbaine), Villeneuve est en rénovation ANRU profonde. Copropriétés dégradées en réhabilitation : terrain idéal pour PAC collective et MaPrimeRénov' Copro.",
+    habitat:
+      "Mégastructures Arlequin et 90 (1972-1980), copropriétés dégradées en plan ANRU. Performance thermique catastrophique d'origine, isolation extérieure en cours.",
+    contraintes: [
+      "Plan ANRU en cours : interventions coordonnées avec aménageur",
+      "Copropriétés en grande difficulté financière",
+      "ANAH renforcée + MaPrimeRénov' Copro indispensables",
+    ],
+    solutions: [
+      "PAC collective hybride en remplacement chauffage urbain défaillant",
+      "Étude technique éligible ANAH renforcée (cofinancement 100 %)",
+      "Mono-split individuel possible après vote AG",
+    ],
+    prixIndicatif: "Étude collective 1 500 € · Pose individuelle 990 €",
+    faq: [
+      {
+        q: "ANAH renforcée Villeneuve : éligible ?",
+        a: "Oui, quartier QPV. Étude éligible 100 % ANAH renforcée. Travaux : MaPrimeRénov' Copro jusqu'à 80 % du montant.",
+      },
+      {
+        q: "PAC collective Arlequin / 90 envisageable ?",
+        a: "Oui en hybride avec chauffage urbain existant. Étude technique préalable (1 500 €). ROI 10-15 ans avec aides.",
+      },
+      {
+        q: "Délai action Villeneuve ?",
+        a: "Étude 2-4 semaines. Pose collective : aligné sur planning ANRU (souvent 12-24 mois).",
+      },
+    ],
+  },
+  {
+    slug: "vigny-musset",
+    name: "Vigny-Musset",
+    citySlug: "grenoble",
+    cityName: "Grenoble",
+    postalCodes: ["38100"],
+    intro:
+      "Éco-quartier de Grenoble livré 2009-2018, Vigny-Musset est exemplaire en performance énergétique. Programmes RT2012/RE2020 souvent pré-équipés clim, demande raccordement rapide.",
+    habitat:
+      "Immeubles RE2020 et BBC 2009-2018, jardins partagés, mixité fonctionnelle. Performance thermique élevée, parfois pré-équipement PAC ou clim.",
+    contraintes: [
+      "Cahier des charges éco-quartier : modèles haute performance imposés",
+      "Esthétique : finition gainage soignée",
+      "Pré-équipement parfois inclus : raccordement rapide",
+    ],
+    solutions: [
+      "Mono-split A+++ silencieux (≤ 30 dB) : 990 €",
+      "Multi-split haute performance : 2 490 € à 3 990 €",
+      "Pré-équipement : raccordement 690-790 €",
+    ],
+    prixIndicatif: "690 € (raccordement) à 3 990 €",
+    faq: [
+      {
+        q: "Quels modèles compatibles éco-quartier ?",
+        a: "A+++ obligatoire, R32 (faible PRG), niveau sonore ≤ 30 dB. Marques : Daikin Stylish, AUX J-Smart, Mitsubishi MSZ-AP.",
+      },
+      {
+        q: "Mon T3 Vigny-Musset est-il pré-équipé ?",
+        a: "Souvent oui : visite vérifie présence gaines et tableau électrique dédié. Si oui, raccordement 690-790 € demi-journée.",
+      },
+      {
+        q: "Bruit accepté en éco-quartier ?",
+        a: "≤ 30 dB en mode nuit recommandé. Mesure d'émergence possible. Plots anti-vibration systématiques.",
+      },
+    ],
+  },
+  {
+    slug: "europole",
+    name: "Europole",
+    citySlug: "grenoble",
+    cityName: "Grenoble",
+    postalCodes: ["38000"],
+    intro:
+      "Quartier d'affaires de Grenoble (Centre des Congrès, World Trade Center, Palais de Justice), Europole concentre tertiaire haute densité. Demande clim VRV professionnelle dominante.",
+    habitat:
+      "Tours et immeubles tertiaires 1990-2020, quelques résidences récentes. Performance thermique élevée, demande clim centralisée.",
+    contraintes: [
+      "Tertiaire : interventions hors heures bureau",
+      "Hauteurs élevées : nacelle pour façade",
+      "Cahier des charges des bailleurs (Bouygues, Icade) parfois strict",
+    ],
+    solutions: [
+      "VRV multi-zones (10-200 kW) avec récupération d'énergie",
+      "Contrat d'entretien annuel + intervention prioritaire 24h",
+      "Résidentiel : split réversible standard 990 € à 2 490 €",
+    ],
+    prixIndicatif: "Tertiaire : devis selon surface · Résidentiel : 990 € à 2 490 €",
+    faq: [
+      {
+        q: "Vous équipez les bureaux Europole ?",
+        a: "Oui, VRV 10-200 kW, récupération d'énergie, contrat entretien + intervention 24h. Devis 48h.",
+      },
+      {
+        q: "Pose hors heures bureau possible ?",
+        a: "Oui, soir et week-end pour tertiaire stratégique. Surcoût 15-25 %.",
+      },
+      {
+        q: "PAC pour résidence Europole ?",
+        a: "Pré-équipement souvent inclus : raccordement 690-790 €. Sinon multi-split standard 2 490 €.",
+      },
+    ],
+  },
+  {
+    slug: "notre-dame-grenoble",
+    name: "Notre-Dame",
+    citySlug: "grenoble",
+    cityName: "Grenoble",
+    postalCodes: ["38000"],
+    intro:
+      "Cœur historique et secteur sauvegardé de Grenoble (cathédrale, place Saint-André), Notre-Dame est ABF strict. Bâtisses XVIIᵉ-XIXᵉ, démarches lourdes mais faisables.",
+    habitat:
+      "Bâtisses XVIIᵉ-XIXᵉ classées ou inscrites, hauts plafonds 3,5-4 m, cours intérieures, murs en pierre 50-70 cm.",
+    contraintes: [
+      "ABF systématique + dossier illustré exigé",
+      "Murs pierre épais : carottage spécial",
+      "Cours intérieures : seul emplacement autorisé",
+      "Esthétique : peinture identique mur après gainage",
+    ],
+    solutions: [
+      "Multi-split avec unité ext. en cour intérieure (invisible rue)",
+      "Cassette encastrée plafond si pas d'accès cour",
+      "Gainable invisible si combles accessibles",
+    ],
+    prixIndicatif: "2 490 € à 6 900 € selon configuration ABF",
+    faq: [
+      {
+        q: "Délai ABF Notre-Dame Grenoble ?",
+        a: "2 mois minimum. Photo-montage + plan + niveau sonore + matériaux. On gère le dossier complet.",
+      },
+      {
+        q: "Carottage mur pierre épais ?",
+        a: "Outil diamant + carotteuse spéciale. Surcoût 200-400 € selon nombre de carottages.",
+      },
+      {
+        q: "Cassette plafond bâtisse classée ?",
+        a: "Oui si plafond > 3 m et copro d'accord. Esthétique : grille ton mat blanc cassé. Compatible ABF.",
+      },
+    ],
+  },
+  // ─── CHAMBÉRY — 5 quartiers ──────────────────────────────────────
+  {
+    slug: "chambery-centre",
+    name: "Chambéry Centre",
+    citySlug: "chambery",
+    cityName: "Chambéry",
+    postalCodes: ["73000"],
+    intro:
+      "Cœur historique de Chambéry (Château des Ducs de Savoie, rues Croix-d'Or et Saint-Antoine), zone ABF active. Bâtisses XVIIᵉ-XIXᵉ, copropriétés familiales.",
+    habitat:
+      "Immeubles 1850-1900, bâtisses anciennes, hauts plafonds 3-3,5 m. Cours intérieures typiques, murs épais.",
+    contraintes: [
+      "ABF systématique secteur sauvegardé Château",
+      "Hauts plafonds : majoration puissance clim +20 %",
+      "Cours étroites : optimisation emplacement unité ext.",
+    ],
+    solutions: [
+      "Multi-split avec unité ext. en cour intérieure",
+      "Cassette plafond si refus copro façade",
+      "Gainable invisible si combles disponibles",
+    ],
+    prixIndicatif: "1 490 € à 4 990 €",
+    faq: [
+      {
+        q: "ABF Chambéry centre obligatoire ?",
+        a: "Oui en secteur sauvegardé Château. Déclaration préalable + photomontage. Délai 2 mois.",
+      },
+      {
+        q: "Climat froid Chambéry : modèle adapté ?",
+        a: "Modèle -25 °C minimum (Daikin Altherma, Atlantic Alfea). SCOP > 4 pour rendement hiver.",
+      },
+      {
+        q: "Pose copro centre Chambéry ?",
+        a: "Vote AG obligatoire. Dossier complet fourni : esthétique, bruit, planning. Acceptation 80 % des cas.",
+      },
+    ],
+  },
+  {
+    slug: "biollay",
+    name: "Biollay",
+    citySlug: "chambery",
+    cityName: "Chambéry",
+    postalCodes: ["73000"],
+    intro:
+      "Quartier résidentiel années 1960-1970 au nord de Chambéry, Biollay concentre copropriétés familiales en rénovation énergétique. Plan ANRU partiel.",
+    habitat:
+      "Tours et barres 1960-1970, copropriétés familiales, performance thermique faible d'origine. Programmes ANRU en cours.",
+    contraintes: [
+      "Copro 1960-70 : règlement strict sur façade",
+      "Hauteurs élevées : nacelle parfois nécessaire",
+      "MaPrimeRénov' Copro indispensable pour collectif",
+    ],
+    solutions: [
+      "Étude PAC collective avec MaPrimeRénov' Copro",
+      "Mono-split individuel après vote AG (cassette plafond souvent imposée)",
+      "PAC air-eau collective hybride pour grandes copros",
+    ],
+    prixIndicatif: "Mono 990 € · Étude collective sur devis",
+    faq: [
+      {
+        q: "PAC collective Biollay rentable ?",
+        a: "Souvent oui pour copros 30+ logements. ROI 10-15 ans avec MaPrimeRénov' Copro + CEE.",
+      },
+      {
+        q: "Aides Chambéry Métropole ?",
+        a: "Cumulables MaPrimeRénov' + CEE. Voir notre page aides locales Grand Chambéry.",
+      },
+      {
+        q: "Climat froid hiver Biollay ?",
+        a: "PAC -25 °C minimum, SCOP > 4. Modèles adaptés Daikin Altherma, Atlantic Alfea Excellia A.I.",
+      },
+    ],
+  },
+  {
+    slug: "chambery-le-haut",
+    name: "Chambéry-le-Haut",
+    citySlug: "chambery",
+    cityName: "Chambéry",
+    postalCodes: ["73000"],
+    intro:
+      "Grand ensemble 1970 sur le plateau au nord de Chambéry, Chambéry-le-Haut est en plan ANRU profond. Copropriétés à réhabiliter, demande PAC collective forte.",
+    habitat:
+      "Barres et tours 1970, copropriétés dégradées, performance thermique faible. Plan ANRU en cours, isolation extérieure planifiée.",
+    contraintes: [
+      "Plan ANRU : coordination avec aménageur",
+      "Copropriétés en difficulté financière",
+      "ANAH renforcée + MaPrimeRénov' Copro indispensables",
+    ],
+    solutions: [
+      "PAC collective hybride en remplacement chauffage urbain",
+      "Étude technique financée ANAH renforcée",
+      "Mono-split individuel après vote AG",
+    ],
+    prixIndicatif: "Étude 1 500 € · Pose individuelle 990 €",
+    faq: [
+      {
+        q: "ANAH renforcée Chambéry-le-Haut ?",
+        a: "Oui QPV. Étude éligible 100 % ANAH. Travaux : MaPrimeRénov' Copro jusqu'à 80 % du montant.",
+      },
+      {
+        q: "Climat plateau Chambéry-le-Haut ?",
+        a: "Plus froid que centre (350 m altitude). Modèle -25 °C, SCOP > 4 obligatoire.",
+      },
+      {
+        q: "Délai opération Chambéry-le-Haut ?",
+        a: "Étude 2-4 semaines, pose collective alignée sur ANRU (12-24 mois souvent).",
+      },
+    ],
+  },
+  {
+    slug: "mache",
+    name: "Mâché",
+    citySlug: "chambery",
+    cityName: "Chambéry",
+    postalCodes: ["73000"],
+    intro:
+      "Quartier résidentiel pavillonnaire à l'ouest de Chambéry, Mâché concentre maisons individuelles 1980-2010 — terrain idéal pour PAC air-eau standard.",
+    habitat:
+      "Pavillons 1980-2010 majoritaires, jardins, propriétaires installés. Quelques copros petites.",
+    contraintes: [
+      "Climat froid hiver : PAC -25 °C obligatoire",
+      "Pas d'ABF (hors secteur sauvegardé)",
+      "Pose pavillonnaire standard sans gros œuvre",
+    ],
+    solutions: [
+      "PAC air-eau 9-12 kW pour pavillon 110-140 m²",
+      "Sortie fioul : aides cumulées jusqu'à 11 000 €",
+      "Mono/multi-split clim pour rafraîchir 1-2 pièces",
+    ],
+    prixIndicatif: "PAC : 13 000 à 18 000 € · Clim : 990 € à 2 490 €",
+    faq: [
+      {
+        q: "PAC pour pavillon Mâché 120 m² ?",
+        a: "PAC air-eau 9-11 kW, modèle -25 °C. 13-16 k€ posé. Reste à charge 5-9 k€ après aides.",
+      },
+      {
+        q: "Aides Grand Chambéry Mâché ?",
+        a: "Cumul MaPrimeRénov' + CEE Coup de Pouce + aides locales : jusqu'à 12 000 € pour Profil Bleu.",
+      },
+      {
+        q: "Clim 990 € Mâché ?",
+        a: "Oui, offre disponible mono-split 3,5 kW pour pièce de 35 m². Pose 1 jour.",
+      },
+    ],
+  },
+  {
+    slug: "bissy",
+    name: "Bissy",
+    citySlug: "chambery",
+    cityName: "Chambéry",
+    postalCodes: ["73000"],
+    intro:
+      "Bissy, quartier nord-ouest de Chambéry, est résidentiel et tertiaire mixte. Pavillonnaire 80-2010 + zones d'activité (Savoie Technolac proche).",
+    habitat:
+      "Pavillonnaire dominant, copropriétés modernes, zones d'activité tertiaire. Performance thermique correcte (RT2005-RT2012).",
+    contraintes: [
+      "Climat froid : modèle -25 °C",
+      "Tertiaire : interventions hors heures bureau possibles",
+      "Pas d'ABF",
+    ],
+    solutions: [
+      "Pavillon : PAC air-eau 9-11 kW",
+      "Tertiaire : VRV multi-zones",
+      "Clim 990 € pour résidentiel",
+    ],
+    prixIndicatif: "Résidentiel : 990 € à 4 990 € · Tertiaire : devis",
+    faq: [
+      {
+        q: "Vous équipez Savoie Technolac ?",
+        a: "Oui, climatisation tertiaire VRV (10-200 kW), contrat d'entretien, dépannage 24h.",
+      },
+      {
+        q: "PAC pour pavillon Bissy 130 m² ?",
+        a: "PAC air-eau 10-12 kW, modèle -25 °C. 13-17 k€ posé après aides.",
+      },
+      {
+        q: "Délai Bissy ?",
+        a: "Visite sous 48h, devis 24h, pose 3-5 semaines selon saison.",
+      },
+    ],
+  },
+  // ─── ANNECY — 7 quartiers ────────────────────────────────────────
+  {
+    slug: "vieille-ville-annecy",
+    name: "Vieille Ville",
+    citySlug: "annecy",
+    cityName: "Annecy",
+    postalCodes: ["74000"],
+    intro:
+      "Cœur médiéval d'Annecy (Palais de l'Isle, canaux du Thiou, rue Sainte-Claire), la Vieille Ville est ABF strict. Bâtisses XIIIᵉ-XVIIIᵉ, attractivité touristique forte.",
+    habitat:
+      "Bâtisses médiévales et XVIIᵉ-XVIIIᵉ classées, hauts plafonds, murs en pierre de 50-80 cm, canaux à proximité (humidité gérée).",
+    contraintes: [
+      "ABF systématique + Architecte des Bâtiments de France strict",
+      "Murs pierre 60-80 cm : carottage spécial",
+      "Activité touristique : poses hors saison estivale recommandées",
+      "Esthétique : aucune unité visible depuis canaux",
+    ],
+    solutions: [
+      "Multi-split avec unité ext. en cour intérieure (invisible des canaux)",
+      "Cassette plafond si pas d'accès cour",
+      "Gainable invisible si combles accessibles",
+    ],
+    prixIndicatif: "2 490 € à 6 900 € selon dossier ABF",
+    faq: [
+      {
+        q: "ABF Vieille Ville Annecy : délai ?",
+        a: "2-3 mois. Dossier illustré complet (photo-montage, plan, matériaux, niveau sonore). On gère.",
+      },
+      {
+        q: "Pose hors saison touristique conseillée ?",
+        a: "Oui, octobre à mars : moins d'impact sur l'activité commerciale, accès facilité.",
+      },
+      {
+        q: "Mes voisins seront-ils dérangés ?",
+        a: "Modèles ≤ 35 dB silence nuit + plots anti-vibration + emplacement cour. Mesure d'émergence possible.",
+      },
+    ],
+  },
+  {
+    slug: "bonlieu-centre",
+    name: "Bonlieu (Centre)",
+    citySlug: "annecy",
+    cityName: "Annecy",
+    postalCodes: ["74000"],
+    intro:
+      "Cœur moderne d'Annecy (centre Bonlieu, place de la Libération, gare), Bonlieu mêle immeubles 1950-1990 et programmes neufs. Demande clim explosive (été touristique).",
+    habitat:
+      "Immeubles 1950-1990 majoritaires, copropriétés familiales, programmes neufs RE2020 récents. Performance thermique correcte, demande rénovation forte.",
+    contraintes: [
+      "Copropriétés 1950-90 : règlement parfois strict façade",
+      "Pas d'ABF (hors Vieille Ville)",
+      "Climat froid hiver : modèle -25 °C",
+    ],
+    solutions: [
+      "Mono-split 990 € pour T2-T3 jusqu'à 50 m²",
+      "Multi-split 2 490 € pour T3-T4",
+      "Programme neuf : raccordement pré-équipement 690-790 €",
+    ],
+    prixIndicatif: "690 € à 3 990 €",
+    faq: [
+      {
+        q: "Mon programme neuf Bonlieu est-il pré-équipé clim ?",
+        a: "Souvent oui post-2018. Visite vérifie présence gaines et tableau dédié. Raccordement 690-790 €.",
+      },
+      {
+        q: "Climat froid Annecy : modèle ?",
+        a: "PAC -25 °C minimum (Daikin Stylish, Mitsubishi MSZ-LN, Atlantic Alfea Excellia). SCOP > 4.",
+      },
+      {
+        q: "Délai été à Annecy ?",
+        a: "Haute saison : 4-8 semaines. Conseil : commande en hiver pour avoir clim avant été.",
+      },
+    ],
+  },
+  {
+    slug: "les-romains",
+    name: "Les Romains",
+    citySlug: "annecy",
+    cityName: "Annecy",
+    postalCodes: ["74000"],
+    intro:
+      "Quartier résidentiel d'Annecy au pied du Semnoz, Les Romains mêle pavillons et copropriétés. Population de cadres et familles, sensibles aux économies d'énergie.",
+    habitat:
+      "Pavillons 1970-2010 et copropriétés modernes 1980-2020. Performance thermique correcte. Quelques anciennes maisons en pierre dans le bas du quartier.",
+    contraintes: [
+      "Climat froid hiver (proximité Semnoz) : -25 °C obligatoire",
+      "Pavillons sur pente : étude positionnement unité ext.",
+      "Pas d'ABF",
+    ],
+    solutions: [
+      "PAC air-eau 9-11 kW pour pavillon 110-140 m²",
+      "Multi-split clim pour rafraîchir 2-3 pièces",
+      "Sortie fioul/gaz : aides cumulées jusqu'à 12 000 €",
+    ],
+    prixIndicatif: "PAC : 13-18 k€ · Clim : 990 € à 4 990 €",
+    faq: [
+      {
+        q: "PAC pour pavillon Les Romains 130 m² ?",
+        a: "PAC air-eau 10-12 kW, modèle -25 °C. 14-18 k€ posé. Reste à charge 6-10 k€ après aides.",
+      },
+      {
+        q: "Aides Grand Annecy Les Romains ?",
+        a: "Cumulables MaPrimeRénov' + CEE + aides locales jusqu'à 12 000 €. Voir notre page aides Grand Annecy.",
+      },
+      {
+        q: "Pavillon en pente : pose unité ext. ?",
+        a: "Faisable, on adapte l'emplacement (terrasse, mur soutien). Plots anti-vibration systématiques.",
+      },
+    ],
+  },
+  {
+    slug: "novel",
+    name: "Novel",
+    citySlug: "annecy",
+    cityName: "Annecy",
+    postalCodes: ["74000"],
+    intro:
+      "Novel, quartier résidentiel à l'est d'Annecy, est dynamique avec mixité forte (familles, étudiants). Copros 1970-2000, pavillons + immeubles modernes.",
+    habitat:
+      "Copropriétés 1970-2000, pavillonnaire en périphérie, programmes neufs récents. Performance thermique variable.",
+    contraintes: [
+      "Copro 1970-2000 : règlement parfois strict",
+      "Climat froid hiver : -25 °C",
+      "Pas d'ABF",
+    ],
+    solutions: [
+      "Mono-split 990 € pour T2-T3",
+      "PAC air-eau pour pavillon 13-17 k€",
+      "Étude collective copro pour grandes résidences",
+    ],
+    prixIndicatif: "990 € à 4 990 €",
+    faq: [
+      {
+        q: "Pose copro Novel Annecy ?",
+        a: "Vote AG obligatoire. Dossier fourni : esthétique, bruit, planning. Acceptation ~80 % des cas.",
+      },
+      {
+        q: "Climat froid Novel : modèle ?",
+        a: "PAC -25 °C, SCOP > 4 (Daikin Altherma 3 H HT, Atlantic Alfea Extensa Duo).",
+      },
+      {
+        q: "Délai Novel ?",
+        a: "Visite 48h, devis 24h, pose 3-6 semaines selon saison.",
+      },
+    ],
+  },
+  {
+    slug: "annecy-le-vieux",
+    name: "Annecy-le-Vieux",
+    citySlug: "annecy",
+    cityName: "Annecy",
+    postalCodes: ["74940"],
+    intro:
+      "Annecy-le-Vieux, ancienne commune fusionnée à Annecy en 2017, est le quartier résidentiel haut de gamme. Villas avec vue lac, copropriétés modernes.",
+    habitat:
+      "Villas individuelles haut standing avec vue lac/montagne, copropriétés 1980-2020. Performance thermique élevée, capacité d'investissement forte.",
+    contraintes: [
+      "Esthétique villa : intégration paysagère unité ext. soignée",
+      "Climat froid : -25 °C obligatoire",
+      "Cahier des charges copropriétés haut de gamme strict",
+    ],
+    solutions: [
+      "PAC air-eau haute performance + ballon thermo 200-300 L",
+      "Géothermie sondes verticales : terrains > 1 500 m²",
+      "Multi-split haut de gamme silencieux ≤ 30 dB",
+    ],
+    prixIndicatif: "PAC : 15-22 k€ · Géothermie : 22-32 k€ · Clim : 1 490 € à 6 900 €",
+    faq: [
+      {
+        q: "Géothermie villa Annecy-le-Vieux ?",
+        a: "Oui pour terrains ≥ 1 500 m². Sondes verticales 22-32 k€ posé, COP > 4 toute l'année. Rentabilité 12-18 ans.",
+      },
+      {
+        q: "PAC haute performance vue lac ?",
+        a: "Daikin Altherma 3 H HT, Atlantic Alfea Excellia A.I., Stiebel Eltron WPL. Modèles -25 °C, SCOP > 4,5.",
+      },
+      {
+        q: "Pack PAC + PV + borne VE villa ?",
+        a: "Oui, étude énergétique globale. Investissement 30-50 k€, autonomie partielle, ROI 12-15 ans avec aides.",
+      },
+    ],
+  },
+  {
+    slug: "cran-gevrier",
+    name: "Cran-Gevrier",
+    citySlug: "annecy",
+    cityName: "Annecy",
+    postalCodes: ["74960"],
+    intro:
+      "Cran-Gevrier, ancienne commune fusionnée à Annecy en 2017, est résidentiel et industriel mixte (zone Vovray). Copros familiales 1970-2000 et pavillons.",
+    habitat:
+      "Copropriétés 1970-2000, pavillonnaire en périphérie, zones d'activité. Performance thermique variable, programmes de rénovation en cours.",
+    contraintes: [
+      "Copro 1970-2000 : règlement strict",
+      "Climat froid hiver : -25 °C",
+      "Tertiaire Vovray : interventions hors heures bureau",
+    ],
+    solutions: [
+      "Mono-split 990 € pour copro après vote AG",
+      "PAC air-eau pour pavillon 13-17 k€",
+      "Tertiaire Vovray : VRV multi-zones",
+    ],
+    prixIndicatif: "990 € à 4 990 € · Tertiaire : devis",
+    faq: [
+      {
+        q: "Vous équipez la zone Vovray ?",
+        a: "Oui, tertiaire VRV (10-200 kW), contrat entretien, dépannage 24h.",
+      },
+      {
+        q: "Aides Grand Annecy Cran-Gevrier ?",
+        a: "Cumul MaPrimeRénov' + CEE + aides locales : jusqu'à 12 000 € pour Profil Bleu.",
+      },
+      {
+        q: "Délai Cran-Gevrier ?",
+        a: "Visite 48h, pose 3-6 semaines selon saison.",
+      },
+    ],
+  },
+  {
+    slug: "seynod",
+    name: "Seynod",
+    citySlug: "annecy",
+    cityName: "Annecy",
+    postalCodes: ["74600"],
+    intro:
+      "Seynod, ancienne commune fusionnée à Annecy en 2017, est résidentiel calme. Pavillonnaire dominant, faible concurrence locale = SEO rapide.",
+    habitat:
+      "Pavillons 1970-2010, copropriétés modernes en centre, quelques anciennes fermes en hameaux. Performance thermique variable.",
+    contraintes: [
+      "Climat froid (550 m altitude) : -25 °C obligatoire",
+      "Hameaux ruraux : géothermie possible",
+      "Pas d'ABF (hors centre historique)",
+    ],
+    solutions: [
+      "PAC air-eau 9-11 kW pour pavillon",
+      "Géothermie pour grandes parcelles ≥ 1 500 m²",
+      "Sortie fioul prioritaire (zone rurale) : aides 11 000 €",
+    ],
+    prixIndicatif: "PAC : 13-18 k€ · Géothermie : 22-32 k€ · Clim : 990 € à 4 990 €",
+    faq: [
+      {
+        q: "PAC sortie fioul Seynod ?",
+        a: "PAC air-eau 11-14 kW haute température. 16-22 k€ posé. Aides Profil Bleu jusqu'à 11 000 €.",
+      },
+      {
+        q: "Climat froid Seynod ?",
+        a: "550 m altitude : -25 °C obligatoire, SCOP > 4. Modèles Daikin Altherma 3 H HT, Atlantic Alfea Excellia A.I.",
+      },
+      {
+        q: "Géothermie ferme rénovée Seynod ?",
+        a: "Oui pour terrains ≥ 1 500 m². Capteurs horizontaux 22-32 k€, COP > 4 toute l'année.",
+      },
+    ],
+  },
+  // ─── VIENNE — 4 quartiers ────────────────────────────────────────
+  {
+    slug: "vieille-ville-vienne",
+    name: "Vieille Ville",
+    citySlug: "vienne",
+    cityName: "Vienne",
+    postalCodes: ["38200"],
+    intro:
+      "Cœur historique de Vienne (Temple d'Auguste, Cathédrale Saint-Maurice, théâtre antique), zone ABF stricte. Vestiges gallo-romains, bâtisses XVᵉ-XIXᵉ.",
+    habitat:
+      "Bâtisses XVᵉ-XIXᵉ classées ou inscrites, hauts plafonds, murs en pierre. Vestiges archéologiques sous certaines caves (vigilance).",
+    contraintes: [
+      "ABF systématique + service archéologie pour tout creusement profond",
+      "Murs pierre 60-80 cm : carottage spécial",
+      "Cours intérieures : seul emplacement autorisé",
+    ],
+    solutions: [
+      "Multi-split avec unité ext. en cour intérieure",
+      "Cassette plafond si pas d'accès cour",
+      "Pas de carottage extérieur sans accord ABF",
+    ],
+    prixIndicatif: "2 490 € à 6 900 €",
+    faq: [
+      {
+        q: "ABF Vieille Ville Vienne : délai ?",
+        a: "2-3 mois. Dossier illustré complet. Vigilance archéologique pour caves.",
+      },
+      {
+        q: "Aides Vienne Condrieu Agglomération ?",
+        a: "Cumulables MaPrimeRénov' + CEE jusqu'à 12 500 € pour Profil Bleu.",
+      },
+      {
+        q: "Climat estival sévère vallée Rhône ?",
+        a: "Oui, jusqu'à 38-40 °C en juillet 2024. Clim réversible quasi indispensable.",
+      },
+    ],
+  },
+  {
+    slug: "estressin",
+    name: "Estressin",
+    citySlug: "vienne",
+    cityName: "Vienne",
+    postalCodes: ["38200"],
+    intro:
+      "Quartier résidentiel au nord de Vienne, Estressin mêle copropriétés 1960-1990 et pavillonnaire récent. Demande PAC + clim forte (vallée du Rhône).",
+    habitat:
+      "Copropriétés 1960-90, pavillonnaire 1980-2010, quelques programmes neufs. Performance thermique variable.",
+    contraintes: [
+      "Vallée Rhône : climat estival sévère, demande clim massive",
+      "Copro 1960-90 : règlement strict façade",
+      "Pas d'ABF (hors Vieille Ville)",
+    ],
+    solutions: [
+      "Mono-split 990 € pour T2-T3 (copro après vote AG)",
+      "PAC air-eau pour pavillon 13-17 k€",
+      "Multi-split pour grands logements",
+    ],
+    prixIndicatif: "990 € à 4 990 €",
+    faq: [
+      {
+        q: "Combien de jours > 35 °C Estressin ?",
+        a: "En 2024 : 22 jours > 35 °C, 78 jours > 30 °C. Clim quasi-indispensable.",
+      },
+      {
+        q: "Aides Vienne Condrieu Estressin ?",
+        a: "Cumul jusqu'à 12 500 € pour Profil Bleu (MaPrimeRénov' + CEE + aides locales).",
+      },
+      {
+        q: "Délai à Estressin ?",
+        a: "Visite 48h, pose 2-4 semaines en saison creuse, 4-8 en haute saison.",
+      },
+    ],
+  },
+  {
+    slug: "saint-romain-en-gal",
+    name: "Saint-Romain-en-Gal",
+    citySlug: "vienne",
+    cityName: "Vienne (Saint-Romain-en-Gal)",
+    postalCodes: ["69560"],
+    intro:
+      "Saint-Romain-en-Gal, rive droite du Rhône face à Vienne, est résidentiel et touristique (musée gallo-romain). Pavillonnaire + maisons anciennes en centre.",
+    habitat:
+      "Maisons anciennes en pierre dans le centre, pavillonnaire 1980-2010 en périphérie. Quelques programmes neufs.",
+    contraintes: [
+      "Musée gallo-romain : ABF possible autour du site classé",
+      "Climat estival vallée Rhône",
+      "Maisons en pierre : haute température recommandée",
+    ],
+    solutions: [
+      "Maison pierre : PAC haute température + isolation préalable",
+      "Pavillon : PAC air-eau standard 13-17 k€",
+      "Clim 990 € pour rafraîchir pièce de vie",
+    ],
+    prixIndicatif: "990 € à 6 900 € selon configuration",
+    faq: [
+      {
+        q: "ABF près musée gallo-romain ?",
+        a: "Possible. Déclaration préalable photomontage. Délai 2 mois.",
+      },
+      {
+        q: "PAC maison ancienne en pierre Saint-Romain ?",
+        a: "PAC haute température 11-14 kW, compatible radiateurs fonte. 16-22 k€ posé après aides.",
+      },
+      {
+        q: "Vallée Rhône clim conseillée ?",
+        a: "Oui, jusqu'à 40 °C en été. Mono-split 990 € pour pièce de vie principale recommandé.",
+      },
+    ],
+  },
+  {
+    slug: "malissol",
+    name: "Malissol",
+    citySlug: "vienne",
+    cityName: "Vienne",
+    postalCodes: ["38200"],
+    intro:
+      "Quartier résidentiel au sud de Vienne, Malissol concentre pavillons 1980-2010 et copropriétés modernes. Demande PAC en sortie de chaudière gaz forte.",
+    habitat:
+      "Pavillonnaire 1980-2010 dominant, copropriétés modernes, quelques anciennes maisons en pierre. Performance thermique correcte.",
+    contraintes: [
+      "Climat estival vallée Rhône sévère",
+      "Pas d'ABF",
+      "Pavillonnaire : pose standard sans gros œuvre",
+    ],
+    solutions: [
+      "PAC air-eau 9-11 kW pour pavillon",
+      "Mono/multi-split clim pour rafraîchissement",
+      "Aides Vienne Condrieu Agglo cumulables",
+    ],
+    prixIndicatif: "PAC : 13-17 k€ · Clim : 990 € à 4 990 €",
+    faq: [
+      {
+        q: "PAC pour pavillon Malissol 120 m² ?",
+        a: "PAC air-eau 10-11 kW : 13-16 k€ posé. Reste à charge 5-9 k€ après aides Vienne Condrieu Agglo.",
+      },
+      {
+        q: "Sortie chaudière gaz Malissol ?",
+        a: "Aides cumulées jusqu'à 12 500 € pour Profil Bleu (MaPrimeRénov' + CEE + aides locales).",
+      },
+      {
+        q: "Délai Malissol ?",
+        a: "Visite 48h, pose 3-5 semaines selon saison.",
+      },
+    ],
+  },
 ];
