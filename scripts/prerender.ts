@@ -624,6 +624,34 @@ for (const d of depannageCases) {
   generated.push(`/depannage/${d.slug}`);
 }
 
+// Dépannage par photo — service unique
+{
+  const title = "Dépannage par photo : envoyez vos photos, on diagnostique | ECO CVC";
+  const description =
+    "Service dépannage avec envoi de photos : 1 à 4 photos de votre PAC en panne, rappel avec pré-diagnostic en 30-60 min. Isère et Rhône-Alpes par ECO CVC.";
+  const bodyHtml = `
+    <h1>Pré-diagnostic par photo : intervention plus rapide</h1>
+    <p>${escape(description)}</p>
+    <h2>Comment ça marche</h2>
+    <ol>
+      <li>Vous prenez 1 à 4 photos (écran avec code erreur, unité extérieure, fuite, etc.)</li>
+      <li>Un technicien F-Gaz analyse à distance en 5-10 min</li>
+      <li>Rappel + intervention ciblée avec la bonne pièce</li>
+    </ol>
+    <h2>Photos utiles</h2>
+    <ul>
+      <li>Écran avec code erreur (Exx, Fxx, Pxx)</li>
+      <li>Unité extérieure (état général, ailettes, givre)</li>
+      <li>Fuite d'eau autour de l'unité</li>
+      <li>Tableau électrique (disjoncteur, voyants)</li>
+    </ul>
+    <p>Service gratuit, sans engagement. Réactivité accrue (30 min en urgence, 4h en rapide, 24-48h en non urgent).</p>
+    <p><a href="tel:+33758459900">Appeler 07 58 45 99 00</a></p>
+  `;
+  await writeRoute("/depannage-photo", { title, description, canonical: `${BASE}/depannage-photo`, bodyHtml });
+  generated.push("/depannage-photo");
+}
+
 // Calendrier des aides
 {
   const title = "Calendrier des aides PAC 2026 : quand vont-elles baisser ? | ECO CVC";

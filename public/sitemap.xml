@@ -49,6 +49,7 @@
 
   <url><loc>https://ecocvc.pro/calendrier-aides-2026</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://ecocvc.pro/etudes-de-cas</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://ecocvc.pro/depannage-photo</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
 
   <url><loc>https://ecocvc.pro/codes-erreur/saunier-duval-f29</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ecocvc.pro/codes-erreur/bosch-e9</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>

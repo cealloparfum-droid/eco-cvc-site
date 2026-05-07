@@ -82,6 +82,79 @@ export async function submitForm({ subject, fields }: SubmitPayload): Promise<Su
   }
 }
 
+/**
+ * Variante avec pièces jointes (photos).
+ * Utilise Formsubmit en multipart/form-data.
+ * Limite Formsubmit : 10 fichiers max, ~25 MB total.
+ *
+ * Pour la photo de dépannage, on compresse côté client avant envoi
+ * (voir compressImage ci-dessous) pour éviter de saturer la limite.
+ */
+export async function submitFormWithFiles({
+  subject,
+  fields,
+  files,
+}: SubmitPayload & { files: File[] }): Promise<SubmitResult> {
+  const formData = new FormData();
+  formData.append("_subject", subject);
+  formData.append("_captcha", "false");
+  formData.append("_template", "table");
+  for (const [k, v] of Object.entries(fields)) {
+    if (v !== undefined && v !== null && v !== "") {
+      formData.append(k, String(v));
+    }
+  }
+  files.forEach((f, i) => formData.append(`photo_${i + 1}`, f, f.name));
+
+  try {
+    const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(TARGET_EMAIL)}`, {
+      method: "POST",
+      body: formData,
+    });
+    const data = await res.json();
+    if (data.success === "true" || data.success === true) {
+      return { ok: true, via: "formsubmit" };
+    }
+    return { ok: false, via: "formsubmit", message: data.message || "Échec envoi" };
+  } catch (err) {
+    return { ok: false, via: "formsubmit", message: err instanceof Error ? err.message : "Erreur réseau" };
+  }
+}
+
+/**
+ * Compresse une image côté client (canvas) pour réduire la taille
+ * avant envoi. Préserve la qualité visuelle pour un diagnostic à distance.
+ */
+export async function compressImage(file: File, maxWidth = 1600, quality = 0.82): Promise<File> {
+  return new Promise((resolve) => {
+    const img = new Image();
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      img.src = e.target?.result as string;
+    };
+    img.onload = () => {
+      const ratio = Math.min(1, maxWidth / img.width);
+      const w = Math.round(img.width * ratio);
+      const h = Math.round(img.height * ratio);
+      const canvas = document.createElement("canvas");
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) { resolve(file); return; }
+      ctx.drawImage(img, 0, 0, w, h);
+      canvas.toBlob(
+        (blob) => {
+          if (!blob) { resolve(file); return; }
+          resolve(new File([blob], file.name.replace(/\.[^.]+$/, ".jpg"), { type: "image/jpeg" }));
+        },
+        "image/jpeg",
+        quality,
+      );
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
 function mailtoFallback(subject: string, fields: Record<string, unknown>): SubmitResult {
   const body = Object.entries(fields)
     .filter(([, v]) => v !== undefined && v !== "")

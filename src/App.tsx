@@ -55,6 +55,7 @@ const ComparatifMarquesPage = lazy(() => import("./pages/ComparatifMarquesPage")
 const Parrainage = lazy(() => import("./pages/Parrainage"));
 const CalendrierAides = lazy(() => import("./pages/CalendrierAides"));
 const EtudesDeCas = lazy(() => import("./pages/EtudesDeCas"));
+const DepannagePhoto = lazy(() => import("./pages/DepannagePhoto"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -116,6 +117,7 @@ const App = () => (
               <Route path="/parrainage" element={<Parrainage />} />
               <Route path="/calendrier-aides-2026" element={<CalendrierAides />} />
               <Route path="/etudes-de-cas" element={<EtudesDeCas />} />
+              <Route path="/depannage-photo" element={<DepannagePhoto />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

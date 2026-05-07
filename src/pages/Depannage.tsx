@@ -12,6 +12,7 @@ import {
   Wind,
 } from "lucide-react";
 import CallbackForm from "@/components/CallbackForm";
+import PhotoDepannageForm from "@/components/PhotoDepannageForm";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -117,6 +118,26 @@ const Depannage = () => {
         <section className="py-12 md:py-14 -mt-6 relative z-10">
           <div className="container mx-auto max-w-3xl">
             <CallbackForm />
+          </div>
+        </section>
+
+        {/* Formulaire photo : envoi photos + description pour pré-diagnostic */}
+        <section className="py-14 md:py-20 bg-slate-50/60">
+          <div className="container mx-auto">
+            <div className="max-w-3xl mx-auto mb-8 text-center">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold uppercase tracking-wider mb-4">
+                📸 Nouveau · Pré-diagnostic photo
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
+                Une panne ? Envoyez-nous des photos pour intervention plus rapide
+              </h2>
+              <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                Prenez 1 à 4 photos (écran avec code erreur, unité extérieure, fuite d'eau…) et décrivez le problème en quelques mots. Un technicien examine et vous rappelle avec un pré-diagnostic — souvent 30-60 minutes de gagnées sur l'intervention.
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <PhotoDepannageForm />
+            </div>
           </div>
         </section>
 
