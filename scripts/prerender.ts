@@ -917,6 +917,86 @@ for (const ch of [
   generated.push(`/${slug}`);
 }
 
+// PAC air-eau vs climatisation réversible : clarifier la confusion
+{
+  const title =
+    "PAC air-eau vs climatisation réversible : que choisir en 2026 ? | ECO CVC";
+  const description =
+    "Pompe à chaleur air-eau ou clim réversible ? Comparatif détaillé en 12 critères : prix, aides MaPrimeRénov', confort, ECS, climatisation. Verdict honnête par ECO CVC.";
+  const slug = "pac-vs-clim-reversible";
+  const criteres = [
+    { c: "Prix posé (100 m²)", pac: "11 000 à 17 000 €", x: "3 500 à 8 000 € (multi-split)" },
+    { c: "Aides MaPrimeRénov' 2026", pac: "Jusqu'à 11 000 €", x: "0 € (NON éligible)" },
+    { c: "Système de chauffage", pac: "Chauffage central via radiateurs", x: "Air soufflé local (1 split = 1 pièce)" },
+    { c: "Eau chaude sanitaire", pac: "Oui (intégrée)", x: "Non (cumulus séparé requis)" },
+    { c: "Confort en hiver très froid", pac: "Bon jusqu'à -15 °C", x: "Dégradé sous -7 °C" },
+    { c: "Climatisation l'été", pac: "Oui si modèle réversible", x: "Excellente (fonction principale)" },
+    { c: "Esthétique intérieure", pac: "Invisible", x: "Splits muraux visibles" },
+    { c: "Bruit", pac: "35-45 dB ext.", x: "45-55 dB ext. + ventilateurs int." },
+    { c: "Coût d'usage chauffage", pac: "550-850 €/an", x: "750-1 200 €/an" },
+    { c: "Durée de vie", pac: "15-20 ans", x: "10-15 ans" },
+    { c: "Entretien obligatoire", pac: "1 visite / 2 ans (~150 €)", x: "1/an (~200-300 €)" },
+    { c: "Travaux de pose", pac: "1-3 jours", x: "1-2 jours" },
+  ];
+  const faq = [
+    { q: "Une clim réversible peut-elle remplacer une chaudière ?", a: "Techniquement oui mais pas optimalement : elle chauffe pièce par pièce, perd en rendement sous -7 °C, et ne produit pas d'eau chaude. Pour remplacer une chaudière, la PAC air-eau gagne dans 95 % des cas." },
+    { q: "La clim réversible donne-t-elle droit à MaPrimeRénov' ?", a: "Non. Seule la pompe à chaleur air-eau (chauffage central) ouvre droit à MaPrimeRénov' et aux CEE. La clim réversible n'est pas éligible aux aides État." },
+    { q: "Quelle est la différence technique exacte ?", a: "Une clim réversible (PAC air-air) chauffe ou refroidit l'air. Une PAC air-eau chauffe l'EAU qui circule dans vos radiateurs ou plancher chauffant." },
+    { q: "Combien coûte un multi-split clim ?", a: "Pour 3-4 splits intérieurs + 1 unité extérieure : 4 500 à 8 000 € posé selon la marque (Daikin, Mitsubishi, LG, Atlantic)." },
+    { q: "Peut-on combiner PAC air-eau et clim réversible ?", a: "Oui, c'est même fréquent en région chaude. La PAC air-eau chauffe via radiateurs en hiver, et 2-3 splits ajoutent du confort l'été. Budget 16 000 à 22 000 €." },
+    { q: "ECO CVC pose les deux systèmes ?", a: "Oui. Nous sommes RGE QualiPAC pour les PAC air-eau (avec aides) et nous installons aussi des climatisations réversibles multi-split. Visite technique gratuite." },
+  ];
+  const bodyHtml = `
+    ${breadcrumbHtml([
+      { label: "Accueil", href: "/" },
+      { label: "PAC vs Clim réversible" },
+    ])}
+    <h1>Pompe à chaleur air-eau ou climatisation réversible : le bon choix en 2026</h1>
+    <p>Vous hésitez entre une <strong>PAC air-eau</strong> (chauffage central via radiateurs) et une <strong>climatisation réversible</strong> (splits muraux par pièce) ? Les deux utilisent le même principe thermodynamique, mais le résultat — et le coût — sont très différents. Voici le comparatif honnête.</p>
+    <h2>Comparatif détaillé en 12 critères</h2>
+    <ul>${criteres.map((x) => `<li><strong>${escape(x.c)}</strong> — PAC air-eau : ${escape(x.pac)} / Clim : ${escape(x.x)}</li>`).join("")}</ul>
+    <h2>Choisissez la PAC air-eau si...</h2>
+    <ul>
+      <li>Vous remplacez une chaudière (fioul, gaz, électrique)</li>
+      <li>Vous voulez bénéficier de MaPrimeRénov' (jusqu'à 11 000 €)</li>
+      <li>Vous avez des radiateurs ou un plancher chauffant</li>
+      <li>Vous voulez chauffer toute la maison de façon homogène</li>
+      <li>Vous habitez en zone froide ou en montagne (jusqu'à -15 °C)</li>
+      <li>Vous voulez aussi produire votre eau chaude sanitaire</li>
+      <li>Vous tenez à garder une esthétique intérieure sobre</li>
+    </ul>
+    <h2>Choisissez la clim réversible si...</h2>
+    <ul>
+      <li>Vous avez déjà un chauffage qui marche bien (poêle, électrique)</li>
+      <li>Vous cherchez surtout à climatiser l'été</li>
+      <li>Vous voulez chauffer 1 ou 2 pièces seulement (appoint)</li>
+      <li>Votre budget est serré (&lt; 8 000 €) et vous renoncez aux aides</li>
+      <li>Vous habitez en zone tempérée (climat doux)</li>
+      <li>Vous êtes en appartement sans circuit chauffage central</li>
+    </ul>
+    <h2>Verdict honnête</h2>
+    <p>Dans 80 % des cas (remplacement d'une chaudière + recherche d'aides), la <strong>PAC air-eau</strong> gagne. Dans 20 % des cas (appartement, climat doux, priorité clim été), la <strong>clim réversible</strong> reste pertinente — et coûte 3 fois moins cher. ECO CVC pose les deux et vous oriente honnêtement après visite technique.</p>
+    ${faqHtml(faq)}
+    <p><a href="/pac-vs-granules">PAC vs granulés</a> · <a href="/comparateur-chauffages">Comparateur chauffages</a> · <a href="/simulateur-aides">Simulateur aides 2026</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+  `;
+  await writeRoute(`/${slug}`, {
+    title,
+    description,
+    canonical: `${BASE}/${slug}`,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faq.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+    bodyHtml,
+  });
+  generated.push(`/${slug}`);
+}
+
 // Pages dimensionnement par pièce
 for (const d of dimensionnements) {
   const canonical = `${BASE}/dimensionnement/${d.slug}`;
