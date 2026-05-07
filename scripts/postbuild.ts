@@ -21,6 +21,7 @@ import { metiers } from "../src/data/metiers-pro";
 import { depannageCases } from "../src/data/depannage-cases";
 import { devisConfigs } from "../src/data/devis";
 import { aidesCollectivites } from "../src/data/aides-collectivites";
+import { quartiers } from "../src/data/quartiers";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "../dist");
@@ -98,7 +99,8 @@ const sitemapHtmlBody = `
     ])}
     ${linkList("Devis dédiés", devisConfigs.map((d) => ({ href: `/${d.slug}`, label: d.title })))}
     ${linkList("Aides locales par métropole", aidesCollectivites.map((a) => ({ href: `/aides-locales/${a.slug}`, label: a.name })))}
-    ${linkList("Zones d'intervention (33 communes)", cities.map((c) => ({ href: `/pompe-a-chaleur/${c.slug}`, label: `Pompe à chaleur ${c.name}` })))}
+    ${linkList(`Zones d'intervention (${cities.length} communes)`, cities.map((c) => ({ href: `/pompe-a-chaleur/${c.slug}`, label: `Pompe à chaleur ${c.name}` })))}
+    ${linkList(`Clim par quartier (${quartiers.length} sous-zones)`, quartiers.map((q) => ({ href: `/quartier/${q.slug}`, label: `${q.name} (${q.cityName})` })))}
     ${linkList("Métiers professionnels", metiers.map((m) => ({ href: `/froid-commercial/${m.slug}`, label: `Frigoriste ${m.name}` })))}
     ${linkList("Dépannage par panne", depannageCases.map((d) => ({ href: `/depannage/${d.slug}`, label: d.problem })))}
     ${linkList("Blog & guides", articles.map((a) => ({ href: `/blog/${a.slug}`, label: a.title })))}

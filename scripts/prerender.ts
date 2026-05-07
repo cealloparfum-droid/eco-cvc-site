@@ -32,6 +32,7 @@ import { marques } from "../src/data/marques";
 import { codesErreur } from "../src/data/codes-erreur";
 import { comparatifsMarques } from "../src/data/comparatifs-marques";
 import { dimensionnements } from "../src/data/dimensionnement-pieces";
+import { quartiers } from "../src/data/quartiers";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.resolve(__dirname, "../dist");
@@ -1063,6 +1064,85 @@ for (const city of cities) {
         {
           "@type": "FAQPage",
           mainEntity: city.faq.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        },
+      ],
+    },
+    bodyHtml,
+  });
+  generated.push(`/${slug}`);
+}
+
+// Landing pages quartier : 35 sous-zones de Lyon et de la métropole lyonnaise
+// (recherches longue traîne : "clim Croix-Rousse", "PAC Confluence", etc.)
+for (const q of quartiers) {
+  const city = cities.find((c) => c.slug === q.citySlug);
+  const slug = `quartier/${q.slug}`;
+  const title = `Climatisation réversible ${q.name} (${q.cityName}) | ECO CVC`;
+  const description = `Pose de climatisation réversible et pompe à chaleur dans le quartier ${q.name} (${q.cityName}). ${q.intro.slice(0, 90)} Devis gratuit, RGE QualiPAC.`;
+  const canonical = `${BASE}/${slug}`;
+  const breadcrumbItems = [
+    { label: "Accueil", href: "/" },
+    { label: "Climatisation réversible", href: "/climatisation-reversible-990-euros" },
+    ...(city ? [{ label: q.cityName, href: `/climatisation-reversible/${city.slug}` }] : []),
+    { label: q.name },
+  ];
+  const bodyHtml = `
+    ${breadcrumbHtml(breadcrumbItems)}
+    <h1>Climatisation réversible ${escape(q.name)} (${escape(q.cityName)})</h1>
+    <p><strong>Quartier ${escape(q.name)}</strong> · ${escape(q.postalCodes.join(" / "))} · Pose à partir de 990 € TTC, RGE QualiPAC, F-Gaz cat. 1, garantie 3 ans.</p>
+    <p>${escape(q.intro)}</p>
+    <h2>L'habitat à ${escape(q.name)}</h2>
+    <p>${escape(q.habitat)}</p>
+    <h2>Contraintes spécifiques au quartier</h2>
+    <ul>${q.contraintes.map((c) => `<li>${escape(c)}</li>`).join("")}</ul>
+    <h2>Nos solutions adaptées à ${escape(q.name)}</h2>
+    <ul>${q.solutions.map((s) => `<li>${escape(s)}</li>`).join("")}</ul>
+    <h2>Prix indicatif</h2>
+    <p>${escape(q.prixIndicatif)} (devis ferme après visite technique gratuite).</p>
+    ${faqHtml(q.faq)}
+    <p>${city ? `<a href="/climatisation-reversible/${city.slug}">Toute la page ${escape(q.cityName)}</a> · ` : ""}<a href="/climatisation-reversible-990-euros">Offre 990 € détaillée</a> · <a href="/contact">Demander un devis</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+  `;
+  await writeRoute(`/${slug}`, {
+    title,
+    description,
+    canonical,
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          name: `ECO CVC — Climatisation ${q.name}`,
+          telephone: "+33758459900",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: q.cityName,
+            postalCode: q.postalCodes[0],
+            addressRegion: city?.department ?? "Rhône",
+            addressCountry: "FR",
+          },
+          areaServed: { "@type": "Place", name: `${q.name}, ${q.cityName}` },
+          serviceType: "Installation climatisation réversible et pompe à chaleur",
+          priceRange: "€€",
+        },
+        {
+          "@type": "Service",
+          name: `Climatisation réversible ${q.name}`,
+          provider: { "@type": "Organization", name: "ECO CVC" },
+          areaServed: `${q.name} (${q.cityName})`,
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "EUR",
+            price: "990",
+            availability: "https://schema.org/InStock",
+          },
+        },
+        {
+          "@type": "FAQPage",
+          mainEntity: q.faq.map((f) => ({
             "@type": "Question",
             name: f.q,
             acceptedAnswer: { "@type": "Answer", text: f.a },

@@ -80,6 +80,7 @@ const ClimVille = lazy(() => import("./pages/ClimVille"));
 const ClimCopro = lazy(() => import("./pages/ClimCopropriete"));
 const ClimGite = lazy(() => import("./pages/ClimGiteAirbnb"));
 const PlanDuSite = lazy(() => import("./pages/PlanDuSite"));
+const QuartierPage = lazy(() => import("./pages/QuartierPage"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -158,6 +159,7 @@ const App = () => (
               <Route path="/climatisation-copropriete" element={<ClimCopro />} />
               <Route path="/climatisation-gite-airbnb" element={<ClimGite />} />
               <Route path="/plan-du-site" element={<PlanDuSite />} />
+              <Route path="/quartier/:slug" element={<QuartierPage />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

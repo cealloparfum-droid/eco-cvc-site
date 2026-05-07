@@ -8,6 +8,7 @@ import { metiers } from "@/data/metiers-pro";
 import { depannageCases } from "@/data/depannage-cases";
 import { devisConfigs } from "@/data/devis";
 import { aidesCollectivites } from "@/data/aides-collectivites";
+import { quartiers } from "@/data/quartiers";
 
 type Item = { href: string; label: string };
 
@@ -127,10 +128,17 @@ const PlanDuSite = () => {
           }))}
         />
         <Section
-          title="Zones d'intervention (33 communes)"
+          title={`Zones d'intervention (${cities.length} communes)`}
           items={cities.map((c) => ({
             href: `/pompe-a-chaleur/${c.slug}`,
             label: `Pompe à chaleur ${c.name}`,
+          }))}
+        />
+        <Section
+          title={`Clim par quartier (${quartiers.length} sous-zones)`}
+          items={quartiers.map((q) => ({
+            href: `/quartier/${q.slug}`,
+            label: `${q.name} (${q.cityName})`,
           }))}
         />
         <Section
