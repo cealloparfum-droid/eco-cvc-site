@@ -1,0 +1,50 @@
+{
+  "name": "ECO CVC — Pompe à chaleur, climatisation, maintenance",
+  "short_name": "ECO CVC",
+  "description": "Artisan RGE QualiPAC en Isère et Rhône-Alpes. Installation et maintenance de pompes à chaleur, climatisation réversible, VMC, froid commercial. Devis gratuit sous 24h.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#1976C4",
+  "lang": "fr-FR",
+  "dir": "ltr",
+  "categories": ["business", "lifestyle", "utilities"],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Demander un devis",
+      "short_name": "Devis",
+      "description": "Devis gratuit sous 24h",
+      "url": "/devis",
+      "icons": [{ "src": "/favicon.ico", "sizes": "48x48" }]
+    },
+    {
+      "name": "Nous appeler",
+      "short_name": "Appeler",
+      "description": "Appeler ECO CVC",
+      "url": "/contact",
+      "icons": [{ "src": "/favicon.ico", "sizes": "48x48" }]
+    },
+    {
+      "name": "WhatsApp",
+      "short_name": "WhatsApp",
+      "description": "Discuter sur WhatsApp",
+      "url": "/contact?canal=whatsapp",
+      "icons": [{ "src": "/favicon.ico", "sizes": "48x48" }]
+    }
+  ]
+}
