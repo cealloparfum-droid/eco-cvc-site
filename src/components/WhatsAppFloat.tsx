@@ -33,7 +33,7 @@ const WhatsAppFloat = () => {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0, opacity: 0 }}
           transition={{ type: "spring", stiffness: 200, damping: 20 }}
-          className="fixed bottom-6 left-6 z-[55] hidden md:block"
+          className="fixed bottom-6 left-6 z-[55]"
         >
           {expanded && (
             <motion.div
