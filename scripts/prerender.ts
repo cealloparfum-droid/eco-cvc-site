@@ -403,6 +403,65 @@ for (const c of cities) {
     bodyHtml,
   });
   generated.push(`/pompe-a-chaleur/${c.slug}`);
+
+  // === Pages service + ville (longue traîne SEO) ===
+  // 3 services par ville : VMC, Dépannage urgent, Entretien PAC
+  // → 73 villes × 3 services = 219 pages additionnelles indexées par Google
+  const serviceLandings = [
+    {
+      path: `/vmc/${c.slug}`,
+      title: `VMC ${c.name} — Pose simple ou double flux, ECO CVC`,
+      description: `Pose et installation VMC simple flux hygroréglable ou double flux à ${c.name} (${c.postalCode}). Devis gratuit, intervention rapide. ECO CVC, RGE QualiPAC.`,
+      h1: `Pose VMC simple ou double flux à ${c.name}`,
+      lead: `À ${c.name}, ECO CVC installe les VMC simple flux hygroréglables et double flux à récupération de chaleur. Devis gratuit sous 24h.`,
+    },
+    {
+      path: `/depannage-rapide/${c.slug}`,
+      title: `Dépannage PAC climatisation ${c.name} 24h — ECO CVC`,
+      description: `Dépannage urgent pompe à chaleur et climatisation à ${c.name} (${c.postalCode}). Intervention sous 24h en semaine, technicien F-Gaz. ECO CVC, RGE QualiPAC.`,
+      h1: `Dépannage PAC et climatisation à ${c.name} — 24h`,
+      lead: `PAC ou clim en panne à ${c.name} ? ECO CVC intervient sous 24h en semaine, technicien F-Gaz qualifié. Diagnostic gratuit.`,
+    },
+    {
+      path: `/entretien-pac/${c.slug}`,
+      title: `Entretien PAC ${c.name} — Contrat annuel ECO CVC`,
+      description: `Contrat d'entretien annuel pompe à chaleur et climatisation à ${c.name} dès 165 €/an. Visite par technicien F-Gaz, certificat fourni. ECO CVC, RGE QualiPAC.`,
+      h1: `Contrat d'entretien PAC à ${c.name}`,
+      lead: `L'entretien annuel de votre PAC est obligatoire (décret 2020-912). ECO CVC propose des contrats à partir de 165 € HT/an à ${c.name}.`,
+    },
+  ];
+
+  for (const s of serviceLandings) {
+    const sBody = `
+      ${breadcrumbHtml([
+        { label: "Accueil", href: "/" },
+        { label: s.h1.split(" à ")[0], href: s.path.split("/").slice(0, 2).join("/") || "/" },
+        { label: c.name },
+      ])}
+      <h1>${escape(s.h1)}</h1>
+      <p>${escape(s.lead)}</p>
+      <p><strong>Zone d'intervention :</strong> ${escape(c.name)} (${c.postalCode}), ${c.communesVoisines.slice(0, 6).join(", ")}.</p>
+      <p>Téléphone : <a href="tel:+33629634045">06 29 63 40 45</a> · <a href="/contact">Devis gratuit</a> · <a href="/pompe-a-chaleur/${c.slug}">Pompe à chaleur ${escape(c.name)}</a></p>
+    `;
+    const sJsonLd = [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: s.h1,
+        provider: { "@type": "HVACBusiness", name: "ECO CVC", url: BASE, telephone: "+33629634045", areaServed: c.name },
+        areaServed: { "@type": "City", name: c.name },
+        description: s.description,
+      },
+    ];
+    await writeRoute(s.path, {
+      title: s.title,
+      description: s.description,
+      canonical: `${BASE}${s.path}`,
+      jsonLd: sJsonLd,
+      bodyHtml: sBody,
+    });
+    generated.push(s.path);
+  }
 }
 
 // Articles
