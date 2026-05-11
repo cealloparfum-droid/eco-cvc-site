@@ -12,6 +12,7 @@ import DevisFloatingBar from "./components/DevisFloatingBar";
 import ExitIntentPopup from "./components/ExitIntentPopup";
 import SeasonalUrgencyBanner from "./components/SeasonalUrgencyBanner";
 import MaPrimeRenovCountdown from "./components/MaPrimeRenovCountdown";
+import CookieBanner from "./components/CookieBanner";
 import SocialProofTicker from "./components/SocialProofTicker";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -84,6 +85,8 @@ const PlanDuSite = lazy(() => import("./pages/PlanDuSite"));
 const QuartierPage = lazy(() => import("./pages/QuartierPage"));
 const ServiceVillePage = lazy(() => import("./pages/ServiceVillePage"));
 const ComparatifConcurrentPage = lazy(() => import("./pages/ComparatifConcurrentPage"));
+const RappelExpress = lazy(() => import("./pages/RappelExpress"));
+const Professionnels = lazy(() => import("./pages/Professionnels"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -168,6 +171,8 @@ const App = () => (
               <Route path="/entretien-pac/:ville" element={<ServiceVillePage serviceType="entretien" />} />
               <Route path="/aides-pac/:ville" element={<ServiceVillePage serviceType="aides" />} />
               <Route path="/vs/:slug" element={<ComparatifConcurrentPage />} />
+              <Route path="/rappel-express" element={<RappelExpress />} />
+              <Route path="/professionnels" element={<Professionnels />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
@@ -178,6 +183,7 @@ const App = () => (
           <ExitIntentPopup />
           <SeasonalUrgencyBanner />
           <MaPrimeRenovCountdown />
+          <CookieBanner />
           <SocialProofTicker />
           <WhatsAppFloat />
         </ErrorBoundary>
