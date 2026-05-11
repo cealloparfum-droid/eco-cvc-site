@@ -38,7 +38,28 @@ const Article = () => {
               description: article.metaDescription,
               datePublished: article.publishedAt,
               dateModified: article.updatedAt,
-              author: { "@type": "Organization", name: "ECO CVC", url: baseUrl },
+              // E-E-A-T : author = expert identifié avec credentials
+              author: {
+                "@type": "Organization",
+                name: "ECO CVC",
+                url: baseUrl,
+                description:
+                  "Artisan RGE QualiPAC en Isère et Rhône-Alpes spécialisé dans la pompe à chaleur, la climatisation, la ventilation et le froid commercial.",
+                foundingDate: "2022",
+                knowsAbout: [
+                  "Pompe à chaleur",
+                  "Climatisation réversible",
+                  "MaPrimeRénov'",
+                  "Certificats d'économies d'énergie",
+                  "Ventilation VMC",
+                  "Froid commercial HACCP",
+                ],
+                hasCredential: [
+                  { "@type": "EducationalOccupationalCredential", credentialCategory: "certification", name: "RGE QualiPAC" },
+                  { "@type": "EducationalOccupationalCredential", credentialCategory: "certification", name: "Attestation F-Gaz" },
+                ],
+                memberOf: { "@type": "Organization", name: "France Rénov" },
+              },
               publisher: {
                 "@type": "Organization",
                 name: "ECO CVC",
@@ -47,6 +68,8 @@ const Article = () => {
               mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
               image: `${baseUrl}/og-image.jpg`,
               articleSection: article.category,
+              keywords: article.faq.map((f) => f.q).slice(0, 5).join(", "),
+              wordCount: article.intro.join(" ").split(/\s+/).length + article.sections.reduce((acc, s) => acc + s.paragraphs.join(" ").split(/\s+/).length, 0),
             },
             {
               "@type": "BreadcrumbList",
@@ -137,6 +160,34 @@ const Article = () => {
                 </p>
               ))}
 
+              {/* TABLE DES MATIÈRES — uniquement si 4+ sections (sinon inutile) */}
+              {article.sections.length >= 4 && (
+                <nav
+                  aria-label="Table des matières"
+                  className="my-8 rounded-2xl bg-slate-50 border border-border p-5"
+                >
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-3">
+                    Dans cet article
+                  </p>
+                  <ol className="space-y-1.5 text-sm">
+                    {article.sections.map((s, i) => {
+                      const anchor = `section-${i + 1}`;
+                      return (
+                        <li key={i}>
+                          <a
+                            href={`#${anchor}`}
+                            className="inline-flex items-start gap-2 text-foreground/80 hover:text-brand-blue transition-colors leading-snug"
+                          >
+                            <span className="font-bold text-brand-blue tabular-nums shrink-0">{i + 1}.</span>
+                            <span>{s.heading}</span>
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </nav>
+              )}
+
               {/* CTA outils early : capture le lecteur dès l'intro */}
               <ArticleToolsCTA category={article.category} variant="inline" />
             </motion.div>
@@ -146,10 +197,11 @@ const Article = () => {
         <div className="container mx-auto max-w-3xl pb-14 md:pb-20">
           {article.sections.map((section, i) => {
             const midPoint = Math.floor(article.sections.length / 2);
+            const anchor = `section-${i + 1}`;
             return (
               <div key={i}>
-                <section className="mb-12">
-                  <h2 className="font-display text-2xl md:text-3xl font-bold mb-5 mt-10">{section.heading}</h2>
+                <section className="mb-12" id={anchor}>
+                  <h2 className="font-display text-2xl md:text-3xl font-bold mb-5 mt-10 scroll-mt-24">{section.heading}</h2>
                   {section.paragraphs.map((p, j) => (
                     <p key={j} className="text-foreground/80 leading-relaxed mb-4">
                       {p}

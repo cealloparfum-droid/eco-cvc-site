@@ -3,6 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Resource hints : booste les Core Web Vitals (LCP / FID) -->
+    <!-- DNS prefetch + preconnect pour les domaines tiers utilisés -->
+    <link rel="dns-prefetch" href="https://formsubmit.co" />
+    <link rel="dns-prefetch" href="https://www.clarity.ms" />
+    <link rel="dns-prefetch" href="https://www.google.com" />
+    <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+    <link rel="dns-prefetch" href="https://wa.me" />
+    <link rel="dns-prefetch" href="https://api.callmebot.com" />
+    <link rel="preconnect" href="https://formsubmit.co" crossorigin />
+    <link rel="preconnect" href="https://hook.eu1.make.com" crossorigin />
+    <!-- Preload du logo + police critique pour LCP rapide -->
+    <link rel="modulepreload" href="/src/main.tsx" />
+    <link rel="preload" as="image" href="/og-image.jpg" fetchpriority="high" />
     <title>ECO CVC — Pompe à chaleur, climatisation & froid en Isère et Rhône-Alpes | RGE QualiPAC</title>
     <meta name="description" content="ECO CVC, artisan RGE QualiPAC en Isère (Nivolas-Vermelle, Bourgoin-Jallieu, Lyon, Vienne). Installation, entretien et dépannage de pompes à chaleur, climatisations réversibles, ventilation et froid commercial. Devis gratuit sous 24h, aides MaPrimeRénov & CEE incluses." />
     <meta name="author" content="ECO CVC" />

@@ -24,6 +24,7 @@ import { cities } from "../src/data/cities";
 import { articles } from "../src/data/articles";
 import { devisConfigs } from "../src/data/devis";
 import { comparatifsConcurrents } from "../src/data/comparatifs-concurrents";
+import { topics } from "../src/data/topics";
 import { faqGroups } from "../src/data/faq";
 import { glossary } from "../src/data/glossary";
 import { metiers } from "../src/data/metiers-pro";
@@ -2117,6 +2118,50 @@ for (const a of aidesCollectivites) {
     bodyHtml,
   });
   generated.push("/simulateur-aides");
+}
+
+// === Topics / Tags : 10+ pages transversales pour le maillage SEO
+for (const t of topics) {
+  const matched = articles.filter((a) => {
+    const inPinned = t.pinnedArticles?.includes(a.slug);
+    const titleMatch = t.keywords.some((kw) => a.title.toLowerCase().includes(kw.toLowerCase()));
+    return inPinned || titleMatch;
+  });
+  const articleLinks = matched
+    .slice(0, 15)
+    .map((a) => `<li><a href="/blog/${a.slug}">${escape(a.title)}</a></li>`)
+    .join("");
+  const cityLinks = (t.pinnedCities ?? [])
+    .map((s) => cities.find((c) => c.slug === s))
+    .filter(Boolean)
+    .map((c) => `<li><a href="/pompe-a-chaleur/${c!.slug}">${escape(c!.name)}</a></li>`)
+    .join("");
+  const toolLinks = (t.tools ?? []).map((tl) => `<li><a href="${tl.href}">${escape(tl.label)}</a></li>`).join("");
+
+  const tBody = `
+    ${breadcrumbHtml([{ label: "Accueil", href: "/" }, { label: "Topics" }, { label: t.title }])}
+    <h1>${escape(t.h1)}</h1>
+    <p>${escape(t.intro)}</p>
+    ${toolLinks ? `<h2>Outils gratuits associés</h2><ul>${toolLinks}</ul>` : ""}
+    ${articleLinks ? `<h2>Articles sur ${escape(t.title)} (${matched.length})</h2><ul>${articleLinks}</ul>` : ""}
+    ${cityLinks ? `<h2>Villes couvertes</h2><ul>${cityLinks}</ul>` : ""}
+    <p><a href="/contact">Demander un devis gratuit</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
+  `;
+  const tJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: t.h1,
+    description: t.metaDescription,
+    url: `${BASE}/topic/${t.slug}`,
+  };
+  await writeRoute(`/topic/${t.slug}`, {
+    title: t.metaTitle,
+    description: t.metaDescription,
+    canonical: `${BASE}/topic/${t.slug}`,
+    jsonLd: tJsonLd,
+    bodyHtml: tBody,
+  });
+  generated.push(`/topic/${t.slug}`);
 }
 
 // === PAGE PILLAR "Pompe à chaleur" — la page maître qui concentre l'autorité SEO

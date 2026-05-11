@@ -87,6 +87,7 @@ const ServiceVillePage = lazy(() => import("./pages/ServiceVillePage"));
 const ComparatifConcurrentPage = lazy(() => import("./pages/ComparatifConcurrentPage"));
 const RappelExpress = lazy(() => import("./pages/RappelExpress"));
 const Professionnels = lazy(() => import("./pages/Professionnels"));
+const TopicPage = lazy(() => import("./pages/TopicPage"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -173,6 +174,7 @@ const App = () => (
               <Route path="/vs/:slug" element={<ComparatifConcurrentPage />} />
               <Route path="/rappel-express" element={<RappelExpress />} />
               <Route path="/professionnels" element={<Professionnels />} />
+              <Route path="/topic/:slug" element={<TopicPage />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
