@@ -2872,6 +2872,1058 @@ export const articles: Article[] = [
     relatedCities: ["bourgoin-jallieu", "voiron", "chambery"],
     relatedServices: [{ href: "/depannage", label: "Service dépannage rapide" }],
   },
+  {
+    slug: "prix-pompe-a-chaleur-isere-2026",
+    title: "Prix d'une pompe à chaleur en Isère 2026 : fourchettes honnêtes par modèle",
+    metaTitle: "Prix pompe à chaleur Isère 2026 — fourchettes honnêtes ECO CVC",
+    metaDescription: "Prix réel d'une pompe à chaleur en Isère 2026 : air-eau, air-air, géothermique. Fourchettes par taille de maison et aides à déduire. Devis gratuit ECO CVC.",
+    category: "Tarifs",
+    publishedAt: "2026-05-05",
+    updatedAt: "2026-05-11",
+    readingMinutes: 7,
+    excerpt: "Combien coûte vraiment une pompe à chaleur en Isère en 2026 ? On vous donne les fourchettes réelles, sans embellissement marketing, par type de PAC et taille de maison.",
+    intro: [
+      "En Isère, les prix de pompe à chaleur posée ont relativement peu bougé entre 2024 et 2026, mais les aides ont évolué — il faut donc tout recalculer.",
+      "Voici les fourchettes que nous pratiquons chez ECO CVC, basées sur nos 200+ chantiers locaux. Pas de prix d'appel, pas de surfacturation cachée.",
+    ],
+    sections: [
+      {
+        heading: "Prix moyen PAC air-eau posée en Isère",
+        paragraphs: [
+          "Le grand classique en remplacement de chaudière fioul ou gaz. Fourchette 2026 :",
+        ],
+        list: [
+          "Maison 80-100 m² (5-7 kW) : 9 500 à 13 500 € HT posée",
+          "Maison 100-150 m² (7-11 kW) : 12 500 à 17 000 € HT posée",
+          "Maison 150-200 m² (11-14 kW) : 15 500 à 20 000 € HT posée",
+          "Grande maison 200 m²+ : 18 000 à 26 000 € HT (parfois bi-PAC)",
+        ],
+        callout: {
+          title: "Inclus dans nos prix",
+          body: "PAC + raccordement hydraulique + raccordement électrique + module hydraulique + dépose ancienne chaudière + désembouage du circuit + mise en service + paramétrage.",
+        },
+      },
+      {
+        heading: "Prix moyen PAC air-air (climatisation réversible)",
+        paragraphs: [
+          "La solution la plus économique. Idéale pour appartement, T3/T4, et maisons avec circuit eau absent.",
+        ],
+        list: [
+          "Mono-split (1 pièce) : 1 600 à 2 600 € HT posé",
+          "Bi-split (2 pièces) : 3 200 à 4 500 € HT posé",
+          "Tri-split (3 pièces) : 4 800 à 6 200 € HT posé",
+          "Quadri-split (4 pièces) : 6 200 à 8 200 € HT posé",
+          "Gainable invisible (maison 100 m²) : 9 500 à 14 500 € HT posé",
+        ],
+      },
+      {
+        heading: "Aides 2026 à déduire sur la PAC air-eau",
+        paragraphs: [
+          "Pour un foyer Jaune (modeste) en Isère :",
+        ],
+        list: [
+          "MaPrimeRénov' Jaune : 4 000 € (PAC air-eau)",
+          "CEE Coup de pouce : 4 000 € (Jaune)",
+          "Bonus sortie chaudière fioul : 1 000 €",
+          "TVA réduite à 5,5 % au lieu de 20 %",
+          "Aides locales Isère (CAPI, Bièvre Isère, etc.) : 500 à 1 500 € selon collectivité",
+        ],
+        callout: {
+          title: "Cas type",
+          body: "Pour une maison 130 m² à Bourgoin-Jallieu, profil Jaune, remplacement fioul : devis brut 14 800 € HT → aides cumulées ~9 800 € → reste à charge réel ~5 500 €.",
+        },
+      },
+      {
+        heading: "Variations par ville (transport + spécificités)",
+        paragraphs: [
+          "Le prix de pose peut varier de 5-10 % selon la distance à Nivolas-Vermelle. Pour les chantiers les plus éloignés, on prévient à l'avance.",
+        ],
+        list: [
+          "Bourgoin / La Tour / Vienne : pas de surcoût",
+          "Lyon métropole : +200-400 € en frais de déplacement / jour",
+          "Grenoble : +400-600 €",
+          "Chambéry / Annecy : +500-800 €",
+          "Montagne (Vercors, Chartreuse) : +600-1 200 € selon accès",
+        ],
+      },
+      {
+        heading: "Pièges à éviter sur les devis bas prix",
+        paragraphs: [
+        ],
+        list: [
+          "Devis sous 8 000 € pour une PAC air-eau : suspect, vérifier ce qui est exclu",
+          "Pas de désembouage du circuit : 90 % de chance de panne dans les 12 mois",
+          "Marque inconnue / asiatique non distribuée : SAV catastrophique",
+          "Pas de carte SCOP indiquée : performance non garantie",
+          "Absence du n° RGE QualiPAC : aides non versées",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Pourquoi un écart de prix de 5 000 € entre 2 devis ?", a: "Souvent : marque différente, niveau d'équipement (SCOP, silence, garantie), inclusion ou non du désembouage et de l'ECS, ou simplement un devis très optimiste sur la difficulté du chantier." },
+      { q: "Le prix d'une PAC va baisser dans 1-2 ans ?", a: "Peu probable. Les matériaux ont arrêté de baisser, et les normes (R290, étiquetage énergie) tendent à renchérir les modèles 2026." },
+    ],
+    relatedCities: ["bourgoin-jallieu", "vienne", "lyon", "la-tour-du-pin"],
+    relatedServices: [
+      { href: "/simulateur-aides", label: "Simulateur d'aides 2026" },
+    ],
+  },
+  {
+    slug: "installateur-pac-rge-comment-choisir",
+    title: "Comment choisir un installateur PAC RGE QualiPAC fiable en 2026",
+    metaTitle: "Choisir installateur PAC RGE QualiPAC 2026 — checklist 10 points",
+    metaDescription: "Comment choisir un installateur RGE QualiPAC fiable en Isère ou Rhône-Alpes. Checklist 10 points + signaux d'alarme + questions à poser absolument.",
+    category: "Pratique",
+    publishedAt: "2026-04-28",
+    updatedAt: "2026-05-08",
+    readingMinutes: 8,
+    excerpt: "Le choix de l'installateur compte plus que la marque de la PAC. Voici la checklist 10 points pour ne pas se faire avoir et garantir 15 ans de tranquillité.",
+    intro: [
+      "« J'ai acheté une Daikin top gamme et elle tombe en panne tous les 6 mois. » C'est l'histoire de Mme L. à Vienne. Le problème n'était pas la PAC — c'était la pose.",
+      "Voici les 10 vérifications à faire AVANT de signer.",
+    ],
+    sections: [
+      {
+        heading: "1. Certification RGE QualiPAC active",
+        paragraphs: [
+          "À vérifier sur france-renov.gouv.fr — le n° RGE doit être en cours de validité. Beaucoup d'arnaqueurs utilisent un n° périmé ou inventé.",
+        ],
+      },
+      {
+        heading: "2. Assurance décennale CVC à jour",
+        paragraphs: [
+          "Demandez-leur l'attestation, pas juste un numéro. Vérifiez la mention « pompes à chaleur / climatisation ». Beaucoup de plombiers ont une décennale plomberie, pas CVC.",
+        ],
+      },
+      {
+        heading: "3. Visite technique GRATUITE avant devis",
+        paragraphs: [
+          "Un installateur sérieux vient mesurer. Si le devis est fait au téléphone ou par photo, c'est suspect.",
+        ],
+        callout: {
+          title: "Test simple",
+          body: "Demandez : « Vous pouvez me donner la déperdition thermique calculée de ma maison ? » S'il bafouille, fuyez.",
+        },
+      },
+      {
+        heading: "4. Le devis détaille TOUTES les lignes",
+        paragraphs: [
+        ],
+        list: [
+          "Marque + modèle exact (avec référence)",
+          "ETAS et SCOP",
+          "Puissance kW nominal",
+          "Régime de température (basse, moyenne, haute)",
+          "Inclus / non inclus (désembouage, ECS, raccordement élec)",
+          "Durée garantie pièces / main d'œuvre",
+          "Délai d'intervention en cas de panne",
+        ],
+      },
+      {
+        heading: "5. Avis Google authentiques",
+        paragraphs: [
+          "Pas juste la note. Lisez les avis 3-4 étoiles : c'est là qu'on voit la vérité. Si l'entreprise répond aux avis négatifs, c'est bon signe.",
+        ],
+      },
+      {
+        heading: "6. Garantie commerciale écrite",
+        paragraphs: [
+          "Minimum : 2 ans pose. Sérieux : 5 ans tous éléments si contrat d'entretien. Pas de garantie écrite = pas de garantie.",
+        ],
+      },
+      {
+        heading: "7. Contrat d'entretien proposé",
+        paragraphs: [
+          "Un installateur qui ne propose pas d'entretien annuel n'a pas d'intérêt à ce que sa pose dure. Le contrat doit être <300 €/an pour une PAC standard.",
+        ],
+      },
+      {
+        heading: "8. Délai d'intervention SAV",
+        paragraphs: [
+          "Demandez : « Je tombe en panne en plein hiver, vous venez quand ? » Réponse acceptable : 24-72h. Plus = mauvais signe.",
+        ],
+      },
+      {
+        heading: "9. Locale, pas itinérante",
+        paragraphs: [
+          "Une entreprise qui a son siège dans votre département reste joignable. Une entreprise nationale qui sous-traite = SAV catastrophique en moyenne.",
+        ],
+      },
+      {
+        heading: "10. Pas d'acompte démentiel",
+        paragraphs: [
+          "Acompte maximum légal : 30 % à la commande. Méfiance si on vous demande 50 %+ d'avance.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Comment vérifier le RGE en 1 minute ?", a: "Allez sur france-renov.gouv.fr, onglet « trouver un professionnel », tapez le numéro SIRET de l'entreprise. Le statut RGE actif s'affiche." },
+      { q: "Une grosse enseigne nationale, c'est plus sûr ?", a: "Non, statistiquement les artisans locaux RGE ont 30 % de meilleures notes de SAV. Les grosses enseignes sous-traitent souvent à des indépendants." },
+    ],
+    relatedServices: [
+      { href: "/audit-devis-pac", label: "Auditer un devis reçu" },
+    ],
+  },
+  {
+    slug: "devis-pompe-a-chaleur-gratuit-24h",
+    title: "Devis pompe à chaleur gratuit sous 24h : comment ça marche chez ECO CVC",
+    metaTitle: "Devis pompe à chaleur gratuit sous 24h — ECO CVC Isère",
+    metaDescription: "Demande de devis PAC gratuit sous 24h en Isère et Rhône-Alpes. Étapes, pièces à fournir, ce que contient un vrai devis honnête.",
+    category: "Pratique",
+    publishedAt: "2026-04-25",
+    updatedAt: "2026-05-10",
+    readingMinutes: 5,
+    excerpt: "Un devis sous 24h, gratuit, sans engagement — voici ce qu'on inclut chez ECO CVC, et ce qu'il faut vérifier dans le vôtre.",
+    intro: [
+      "Demander un devis PAC, c'est gratuit, sans engagement, et ça doit prendre maximum 24-48h chez un installateur sérieux. Voici notre process complet.",
+    ],
+    sections: [
+      {
+        heading: "Comment demander un devis chez ECO CVC",
+        paragraphs: [
+          "3 canaux possibles, tous gratuits :",
+        ],
+        list: [
+          "Formulaire en ligne sur ecocvc.pro/devis (réponse en 24h)",
+          "Appel direct au 06 29 63 40 45 (rendez-vous calé dans la journée)",
+          "WhatsApp avec photos de l'installation actuelle (pré-diagnostic possible)",
+        ],
+      },
+      {
+        heading: "Ce qu'on fait avant de chiffrer",
+        paragraphs: [
+        ],
+        list: [
+          "Visite technique gratuite à domicile (30-60 min)",
+          "Relevé des dimensions et du circuit existant",
+          "Calcul de déperdition thermique (méthode H1 / G)",
+          "Étude de positionnement unité extérieure (acoustique + visuel)",
+          "Étude des aides 2026 personnalisées selon votre profil",
+        ],
+      },
+      {
+        heading: "Ce que contient un VRAI devis ECO CVC",
+        paragraphs: [
+        ],
+        list: [
+          "Marque + modèle exact avec référence fabricant",
+          "Performances mesurées (SCOP, COP, ETAS, niveau sonore)",
+          "Détail matériel ligne par ligne",
+          "Détail main d'œuvre",
+          "Aides à déduire avec montants estimés",
+          "Reste à charge final",
+          "Garanties et SAV",
+          "Durée de validité (90 jours minimum)",
+        ],
+      },
+      {
+        heading: "Comparer 3 devis : la bonne pratique",
+        paragraphs: [
+          "On vous recommande toujours de demander 2-3 devis. C'est sain. Pour comparer correctement, vérifiez que les 3 propositions sont sur des prestations équivalentes (puissance, marque, garantie).",
+        ],
+        callout: {
+          title: "Service ECO CVC",
+          body: "On audite gratuitement un devis reçu d'un concurrent — sur /audit-devis-pac. Retour sous 24h.",
+        },
+      },
+    ],
+    faq: [
+      { q: "Le devis engage à quoi ?", a: "À rien. C'est gratuit et sans engagement. Durée de validité 90 jours." },
+      { q: "Vous donnez le prix sans visite ?", a: "Non. Un prix au téléphone sans visite = forcément erroné de 15-30%. On préfère venir, c'est gratuit." },
+    ],
+    relatedServices: [
+      { href: "/audit-devis-pac", label: "Auditer un devis" },
+      { href: "/contact", label: "Demander un devis" },
+    ],
+  },
+  {
+    slug: "pompe-a-chaleur-temps-installation",
+    title: "Combien de temps prend l'installation d'une pompe à chaleur ?",
+    metaTitle: "Durée installation pompe à chaleur — délais réels 2026",
+    metaDescription: "Combien de temps faut-il pour installer une pompe à chaleur ? Durée totale du chantier, étape par étape, et délai entre signature et mise en service.",
+    category: "Pratique",
+    publishedAt: "2026-04-20",
+    updatedAt: "2026-05-08",
+    readingMinutes: 5,
+    excerpt: "« On reste sans chauffage combien de temps ? » C'est la question #1 quand vous remplacez votre chaudière. Réponse honnête.",
+    intro: [
+      "L'installation d'une PAC air-eau prend en réalité 2-4 jours sur place, mais le délai total (signature → mise en service) est de 4-8 semaines en moyenne. Décomposons.",
+    ],
+    sections: [
+      {
+        heading: "Étape 1 : Délai entre signature et début chantier",
+        paragraphs: [
+          "Une fois le devis signé, on commande le matériel. Délai 2026 chez ECO CVC : 2-4 semaines selon la marque.",
+        ],
+        list: [
+          "Daikin : 7-15 jours",
+          "Atlantic / Saunier Duval : 15-25 jours",
+          "Mitsubishi : 10-20 jours",
+          "Marques moins courantes : 4-8 semaines",
+        ],
+      },
+      {
+        heading: "Étape 2 : Durée de pose sur place",
+        paragraphs: [
+          "Pour une PAC air-eau classique en remplacement chaudière :",
+        ],
+        list: [
+          "Jour 1 : Dépose chaudière + désembouage du circuit (1 journée complète)",
+          "Jour 2 : Pose unité extérieure + traversée mur + raccordement frigorifique",
+          "Jour 3 : Pose module intérieur + raccordement hydraulique + élec",
+          "Jour 4 (optionnel) : Finitions + paramétrage + mise en service + formation",
+        ],
+      },
+      {
+        heading: "Confort pendant le chantier",
+        paragraphs: [
+          "La maison reste habitable. On remet le chauffage chaque soir (chaudière ou appoint électrique). En hiver, on prête gratuitement des radiateurs d'appoint.",
+        ],
+      },
+      {
+        heading: "Délai pour les aides MaPrimeRénov'",
+        paragraphs: [
+          "Si tu pars de zéro (sans dossier déposé) : compter 6-10 semaines entre devis signé et fin de chantier.",
+        ],
+        list: [
+          "Semaine 1-2 : Dépôt dossier MaPrimeRénov' + CEE",
+          "Semaine 3-4 : Attente notification aides",
+          "Semaine 5 : Signature devis (après notification)",
+          "Semaine 6-8 : Commande matériel + pose",
+          "Semaine 9-10 : Envoi facture sur portail + paiement aides (10-15 jours)",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Et si je suis pressé (chaudière en panne) ?", a: "Process accéléré : visite sous 48h, devis sous 24h, pose sous 7-14 jours. On prête des radiateurs élec en attendant." },
+      { q: "Le chantier peut-il se faire en hiver ?", a: "Oui, jusqu'à -10 °C extérieur sans souci technique. Souvent même tarif négocié vu la moindre charge planning." },
+    ],
+  },
+  {
+    slug: "pac-air-eau-meilleure-marque-2026",
+    title: "Pompe à chaleur air-eau : quelle est la meilleure marque en 2026 ?",
+    metaTitle: "Meilleure marque PAC air-eau 2026 — comparatif honnête ECO CVC",
+    metaDescription: "Comparatif honnête 2026 des meilleures marques de PAC air-eau : Daikin, Atlantic, Mitsubishi, Saunier Duval, Bosch, Hitachi. Avis terrain ECO CVC.",
+    category: "Choisir sa PAC",
+    publishedAt: "2026-04-15",
+    updatedAt: "2026-05-06",
+    readingMinutes: 9,
+    excerpt: "Daikin, Atlantic, Mitsubishi, Bosch... La meilleure marque dépend de votre besoin. Voici notre classement honnête après 200+ poses en Isère.",
+    intro: [
+      "On nous demande chaque semaine quelle marque on recommande. La vraie réponse : ça dépend de votre maison, de votre budget et de votre tolérance à l'attente SAV.",
+    ],
+    sections: [
+      {
+        heading: "🥇 Daikin Altherma 3 — Le standard du marché",
+        paragraphs: [
+          "La marque la plus posée en France. SCOP 4,5-5,0, fiabilité excellente, SAV réactif. Légèrement plus cher (+10-15%) mais c'est notre recommandation par défaut.",
+        ],
+        list: [
+          "Forces : silence (35 dB), garantie 5 ans, large gamme",
+          "Faiblesses : ECS intégrée parfois sous-dimensionnée, prix",
+          "Idéal pour : maisons 80-200 m² standard",
+        ],
+      },
+      {
+        heading: "🥈 Atlantic Alféa — Le français qui tient la route",
+        paragraphs: [
+          "Fabricant français (Nantes), SAV pièces détachées rapide, prix corrects. La Alféa Excellia HE est notre choix pour les maisons avec radiateurs anciens.",
+        ],
+        list: [
+          "Forces : haute température dispo, made in France, prix",
+          "Faiblesses : un peu plus bruyante (40 dB), interface dépassée",
+          "Idéal pour : rénovation avec radiateurs fonte existants",
+        ],
+      },
+      {
+        heading: "🥉 Mitsubishi Ecodan — Le silencieux premium",
+        paragraphs: [
+          "Pour les chantiers où le bruit est critique (mitoyen, copropriété). 32 dB c'est imbattable. Mais 15-25 % plus cher que Daikin pour des performances équivalentes.",
+        ],
+      },
+      {
+        heading: "Bosch / Saunier Duval — Bonnes alternatives",
+        paragraphs: [
+          "Bosch Compress 7000i AW et Saunier Duval GeniaAir Split : excellent rapport qualité/prix, particulièrement intéressant si déjà chaudière de la même marque (compatibilité contrat entretien).",
+        ],
+      },
+      {
+        heading: "À éviter",
+        paragraphs: [
+          "Marques chinoises non distribuées en France (genre certaines marques de grande surface) : SAV inexistant, pièces détachées introuvables après 3 ans. Vu plusieurs PAC à la benne après 2-3 ans.",
+        ],
+      },
+      {
+        heading: "Notre recommandation par profil",
+        paragraphs: [
+        ],
+        list: [
+          "Budget serré + maison standard : Atlantic Alféa Extensa",
+          "Maison standard meilleur rapport perf/prix : Daikin Altherma 3 R",
+          "Voisins proches / copropriété : Mitsubishi Ecodan",
+          "Rénovation avec radiateurs anciens : Atlantic Alféa Excellia HE haute température",
+          "Grandes maisons isolées : Daikin Altherma 3 H HT",
+        ],
+      },
+    ],
+    faq: [
+      { q: "ECO CVC pose toutes les marques ?", a: "Oui, nous sommes installateurs agréés Daikin, Atlantic, Mitsubishi, Bosch, Saunier Duval. On vous recommande la marque la plus adaptée à votre situation, pas celle qui nous arrange." },
+      { q: "Pourquoi pas Hitachi ?", a: "Bonne marque mais notre réseau SAV régional est plus solide sur Daikin/Atlantic. Pour la garantie au quotidien, on préfère ces 2-là." },
+    ],
+    relatedServices: [
+      { href: "/comparateur-chauffages", label: "Comparateur tous chauffages" },
+    ],
+  },
+  {
+    slug: "aides-pompe-a-chaleur-2026-resume-rapide",
+    title: "Aides pompe à chaleur 2026 : le résumé rapide (montants exacts)",
+    metaTitle: "Aides pompe à chaleur 2026 — résumé montants exacts",
+    metaDescription: "Toutes les aides 2026 pour une pompe à chaleur : MaPrimeRénov', CEE, TVA, éco-PTZ, aides locales. Montants exacts par profil de revenus.",
+    category: "Aides",
+    publishedAt: "2026-04-10",
+    updatedAt: "2026-05-05",
+    readingMinutes: 6,
+    excerpt: "Toutes les aides PAC 2026 résumées sur une page : MaPrimeRénov', CEE, TVA, éco-PTZ, aides locales. Avec montants exacts par profil.",
+    intro: [
+      "Les aides PAC 2026 cumulables peuvent couvrir 60 à 90 % du coût d'installation selon votre profil. Voici le tableau exhaustif.",
+    ],
+    sections: [
+      {
+        heading: "MaPrimeRénov' 2026 (PAC air-eau)",
+        paragraphs: [
+          "L'aide principale, distribuée par l'Anah. Montants 2026 :",
+        ],
+        list: [
+          "Bleu (revenus très modestes) : 5 000 €",
+          "Jaune (modestes) : 4 000 €",
+          "Violet (intermédiaires) : 3 000 €",
+          "Rose (aisés) : 0 € (sauf parcours rénovation globale)",
+        ],
+      },
+      {
+        heading: "Bonus Sortie de Chaudière Fioul",
+        paragraphs: [
+          "+1 000 € pour les profils Bleu et Jaune si vous remplacez une chaudière fioul.",
+        ],
+      },
+      {
+        heading: "Coup de Pouce CEE Chauffage",
+        paragraphs: [
+        ],
+        list: [
+          "Bleu : 5 000 € (cumulable avec MaPrimeRénov')",
+          "Jaune : 4 000 €",
+          "Violet : 3 500 €",
+          "Rose : 2 500 €",
+        ],
+      },
+      {
+        heading: "TVA réduite à 5,5 %",
+        paragraphs: [
+          "Au lieu de 20 % standard, soit ~14 % d'économie supplémentaire automatique sur la facture.",
+        ],
+      },
+      {
+        heading: "Éco-PTZ",
+        paragraphs: [
+          "Prêt à taux zéro jusqu'à 50 000 € sur 20 ans pour étaler le reste à charge. Pas une « aide » au sens strict, mais évite de mobiliser de l'épargne.",
+        ],
+      },
+      {
+        heading: "Aides locales Isère (cumulables)",
+        paragraphs: [
+        ],
+        list: [
+          "CAPI (Bourgoin) : jusqu'à 1 500 € selon revenus",
+          "Bièvre Isère : 1 000 € pour la sortie fioul",
+          "Lyon Métropole (Eco-Rénov) : 500 à 2 000 €",
+          "Grenoble (MurMur 2) : 1 200 à 3 000 € si rénovation globale",
+        ],
+      },
+      {
+        heading: "Cas concret cumul max",
+        paragraphs: [
+          "Foyer Bleu à Bourgoin, remplacement chaudière fioul, PAC air-eau 11 kW à 15 000 € HT :",
+        ],
+        list: [
+          "MaPrimeRénov' Bleu : 5 000 €",
+          "Bonus fioul : 1 000 €",
+          "CEE Coup de pouce Bleu : 5 000 €",
+          "Aide CAPI : 1 500 €",
+          "TVA 5,5 % au lieu de 20 % : ~2 100 €",
+          "TOTAL AIDES : 14 600 €",
+          "RESTE À CHARGE : 400 € (sur 15 000 €)",
+        ],
+        callout: {
+          title: "Vérifiez votre cas",
+          body: "Utilisez le simulateur d'aides sur ecocvc.pro/simulateur-aides pour votre profil exact.",
+        },
+      },
+    ],
+    faq: [
+      { q: "Quel revenu pour être Bleu / Jaune / Violet ?", a: "Bleu : <23 768 € en Île-de-France ou <17 173 € province (1 personne). Jaune : <28 933 / <22 015. Violet : <40 404 / <30 549. Rose : au-delà." },
+      { q: "Les aides sont cumulables avec un crédit ?", a: "Oui. MaPrimeRénov' + CEE + aides locales + éco-PTZ = tout cumulable." },
+    ],
+    relatedServices: [
+      { href: "/simulateur-aides", label: "Simuler vos aides 2026" },
+      { href: "/eligibilite-maprimerenov", label: "Test éligibilité 5 questions" },
+    ],
+  },
+  {
+    slug: "pac-air-eau-fonctionnement-explique",
+    title: "Pompe à chaleur air-eau : fonctionnement expliqué simplement",
+    metaTitle: "Comment fonctionne une pompe à chaleur air-eau — explication simple",
+    metaDescription: "Le fonctionnement d'une pompe à chaleur air-eau expliqué simplement : principe physique, composants, cycle frigorifique, performances réelles.",
+    category: "Choisir sa PAC",
+    publishedAt: "2026-04-05",
+    updatedAt: "2026-05-01",
+    readingMinutes: 6,
+    excerpt: "Une PAC capte les calories de l'air extérieur (même quand il fait froid !) et les transfère à votre eau de chauffage. Explication claire, sans jargon.",
+    intro: [
+      "Une PAC ce n'est pas magique, c'est juste un transformateur de chaleur basé sur le principe du frigo... à l'envers. Décomposons étape par étape.",
+    ],
+    sections: [
+      {
+        heading: "Le principe en 30 secondes",
+        paragraphs: [
+          "Imaginez votre frigo. Il prend la chaleur à l'intérieur (vos aliments) et la rejette derrière (l'arrière du frigo est chaud). Une PAC fait pareil mais à l'envers : elle prend la chaleur dehors (l'air extérieur) et la rejette dedans (votre eau de chauffage).",
+        ],
+      },
+      {
+        heading: "Les 4 composants clés",
+        paragraphs: [
+        ],
+        list: [
+          "Évaporateur (côté extérieur) : capte la chaleur de l'air",
+          "Compresseur : augmente la pression et donc la température du fluide",
+          "Condenseur (côté intérieur) : transfère la chaleur à l'eau de chauffage",
+          "Détendeur : baisse la pression pour relancer le cycle",
+        ],
+      },
+      {
+        heading: "Pourquoi ça marche même par -10 °C",
+        paragraphs: [
+          "Tant qu'il y a de la chaleur dans l'air, on peut la capter. Et même à -10 °C, il y a 263 K (kelvin) de chaleur — c'est tout sauf vide. La PAC concentre cette chaleur via le compresseur.",
+        ],
+      },
+      {
+        heading: "Le COP : 1 kWh consommé = 3-5 kWh restitués",
+        paragraphs: [
+          "C'est ce qui rend la PAC plus efficace que tout autre système. Le COP (coefficient de performance) varie de 3 à 5 selon les conditions. Une PAC à COP 4 : pour 1 kWh d'électricité consommé, elle fournit 4 kWh de chaleur.",
+        ],
+      },
+      {
+        heading: "Comment ça chauffe vos radiateurs ?",
+        paragraphs: [
+          "La PAC chauffe l'eau du circuit hydraulique de votre maison, à 35-55 °C selon les besoins. Cette eau circule dans vos radiateurs ou votre plancher chauffant. C'est exactement le même circuit qu'une chaudière, sauf qu'au lieu de brûler du gaz ou du fioul, on déplace de la chaleur de l'air.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Une PAC fait beaucoup de bruit ?", a: "Modèles 2026 : 35-45 dB à 1 mètre. Comparable à un chuchotement. La nuit, mode silence à 28-32 dB sur les modèles premium." },
+      { q: "Ça consomme combien d'électricité ?", a: "Pour une maison 130 m² bien isolée : ~3 500-4 500 kWh/an de PAC = 550-700 €/an au tarif Bleu HC." },
+    ],
+  },
+  {
+    slug: "pompe-a-chaleur-economies-reelles",
+    title: "Pompe à chaleur : économies réelles vs marketing — chiffres vérifiés",
+    metaTitle: "Pompe à chaleur économies réelles — chiffres vérifiés 2026",
+    metaDescription: "Combien on économise vraiment avec une pompe à chaleur en 2026 ? Chiffres mesurés sur nos chantiers vs marketing fabricant. Bilan honnête ECO CVC.",
+    category: "Tarifs",
+    publishedAt: "2026-03-30",
+    updatedAt: "2026-04-25",
+    readingMinutes: 7,
+    excerpt: "Daikin annonce -70%. La réalité terrain ? Plus proche de -40 à -55%. Voici nos mesures réelles sur 50 chantiers en Isère.",
+    intro: [
+      "Quand un fabricant annonce « jusqu'à -70 % sur votre facture », il parle des conditions de laboratoire. La réalité quotidienne est plus nuancée. Mesures terrain.",
+    ],
+    sections: [
+      {
+        heading: "Vs Chaudière fioul (le gros gagnant)",
+        paragraphs: [
+          "Échantillon : 18 chantiers fioul → PAC air-eau, foyers 4 personnes en Isère, 2024-2025.",
+        ],
+        list: [
+          "Conso fioul avant : 2 200 L/an en moyenne = 2 860 € (à 1,30 €/L)",
+          "Conso élec PAC après : 3 800 kWh/an = 615 € (Bleu HC)",
+          "Économie moyenne : 2 245 €/an (-78 %)",
+          "Économie médiane (50%) : 2 050 €/an (-72 %)",
+        ],
+      },
+      {
+        heading: "Vs Chaudière gaz (économie correcte)",
+        paragraphs: [
+          "Échantillon : 14 chantiers gaz → PAC, 2024-2025.",
+        ],
+        list: [
+          "Conso gaz avant : 16 500 kWh/an = 1 815 €",
+          "Conso élec PAC après : 3 800 kWh/an = 615 €",
+          "Économie moyenne : 1 200 €/an (-66 %)",
+        ],
+      },
+      {
+        heading: "Vs Chauffage électrique (rentabilité modérée)",
+        paragraphs: [
+          "Échantillon : 12 chantiers convecteurs → clim réversible.",
+        ],
+        list: [
+          "Conso élec convecteurs : 12 000 kWh/an = 1 950 €",
+          "Conso élec clim réversible : 3 800 kWh/an = 615 €",
+          "Économie : 1 335 €/an (-68 %)",
+        ],
+      },
+      {
+        heading: "Le facteur qui change TOUT",
+        paragraphs: [
+          "L'isolation. Une maison mal isolée verra ses gains réduits de moitié. Sur 6 chantiers de maisons en pierre non isolées, on a mesuré seulement -40 % (vs -70 % en bien isolé).",
+        ],
+        callout: {
+          title: "Notre conseil",
+          body: "Avant la PAC : isolez les combles (action prioritaire, 30 cm minimum). Coût ~1 500 € pour une maison 100 m², ça booste les économies PAC de 20-30 %.",
+        },
+      },
+    ],
+    faq: [
+      { q: "Vos chiffres sont-ils vérifiables ?", a: "Oui, nous publions chaque année un rapport de retour terrain anonymisé. Sur demande chez ECO CVC." },
+      { q: "Et avec l'augmentation du tarif élec ?", a: "L'élec a augmenté de 25 % sur 2 ans, mais le gaz et le fioul aussi. L'écart relatif reste similaire. La PAC reste plus économique dans tous les scénarios." },
+    ],
+    relatedServices: [
+      { href: "/calculateur", label: "Calculer mes économies" },
+    ],
+  },
+  {
+    slug: "pompe-a-chaleur-impact-facture-electrique",
+    title: "Pompe à chaleur : quel impact sur ma facture d'électricité ?",
+    metaTitle: "Impact PAC sur facture électricité 2026 — chiffres réels",
+    metaDescription: "Combien va augmenter votre facture d'électricité avec une pompe à chaleur ? Chiffres réels mesurés sur nos chantiers Isère 2024-2025.",
+    category: "Tarifs",
+    publishedAt: "2026-03-22",
+    updatedAt: "2026-04-18",
+    readingMinutes: 5,
+    excerpt: "« Si je passe à la PAC, ma facture d'électricité va exploser ? » Réponse honnête avec chiffres mesurés.",
+    intro: [
+      "Oui, votre conso électrique va augmenter — c'est mathématique vu que la PAC tourne à l'élec. Mais l'économie totale (fini fioul/gaz) reste largement positive.",
+    ],
+    sections: [
+      {
+        heading: "Conso élec PAC pour une maison 130 m² standard",
+        paragraphs: [
+          "Avec PAC air-eau Daikin 11 kW, ECS séparée :",
+        ],
+        list: [
+          "Conso chauffage PAC : 3 200 kWh/an",
+          "Conso ECS ballon thermo : 750 kWh/an",
+          "Total chauffage + ECS : 3 950 kWh/an",
+          "Coût au tarif Bleu HC/HP : ~640 €/an",
+        ],
+      },
+      {
+        heading: "Impact sur votre facture totale",
+        paragraphs: [
+          "Si votre facture élec actuelle (hors chauffage) est ~1 000 €/an pour les autres usages (cuisine, lave-linge, éclairage, etc.), elle passera à ~1 640 €/an.",
+          "Mais vous économisez 2 500-3 000 €/an de fioul/gaz que vous ne payez plus. Bilan net : -1 500 à -2 000 €/an.",
+        ],
+      },
+      {
+        heading: "Faut-il changer d'abonnement ?",
+        paragraphs: [
+        ],
+        list: [
+          "PAC ≤ 8 kW : 9 kVA suffit (votre abonnement actuel probablement OK)",
+          "PAC 8-11 kW : passer à 12 kVA (+ ~50 €/an abonnement)",
+          "PAC ≥ 11 kW : 12 kVA mini, parfois triphasé pour grandes maisons",
+        ],
+      },
+      {
+        heading: "Optimiser sa facture avec HC/HP",
+        paragraphs: [
+          "Avec PAC + ballon ECS, le tarif HC/HP (22 % moins cher 8h/nuit) devient pertinent. Économie supplémentaire ~80-120 €/an si l'ECS chauffe la nuit.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Compteur Linky obligatoire ?", a: "Pas obligatoire mais conseillé pour suivre conso PAC en temps réel via app. Pose gratuite par Enedis." },
+      { q: "Coupure élec : la PAC s'arrête ?", a: "Oui, comme tout chauffage électrique. C'est rare en France (<2h/an en moyenne). Inertie maison absorbe quelques heures sans problème." },
+    ],
+  },
+  {
+    slug: "pac-vs-radiateurs-electriques",
+    title: "PAC vs radiateurs électriques : qui gagne en 2026 ?",
+    metaTitle: "Pompe à chaleur vs convecteurs électriques — comparatif 2026",
+    metaDescription: "Pompe à chaleur vs convecteurs électriques : économies, confort, coût installation. Comparatif honnête 2026 ECO CVC.",
+    category: "Choisir sa PAC",
+    publishedAt: "2026-03-15",
+    updatedAt: "2026-04-12",
+    readingMinutes: 5,
+    excerpt: "Vos convecteurs des années 90 consomment 3-4× plus qu'une PAC moderne. Mais le passage est-il rentable ? Réponse chiffrée.",
+    intro: [
+      "Les convecteurs électriques (vieux modèles type Atlantic Calissia ou Noirot Galbé) consomment 1 kWh pour 1 kWh de chaleur. Une PAC moderne : 1 kWh pour 3-4 kWh. Le rapport est sans appel.",
+    ],
+    sections: [
+      {
+        heading: "Différence de consommation",
+        paragraphs: [
+          "Pour la même maison 100 m² en Isère :",
+        ],
+        list: [
+          "Convecteurs élec : 10 000-13 000 kWh/an = 1 600-2 100 €",
+          "PAC air-air (clim réversible) : 3 200-4 200 kWh/an = 520-680 €",
+          "Économie : 1 100-1 400 €/an (-70 %)",
+        ],
+      },
+      {
+        heading: "Coût installation",
+        paragraphs: [
+        ],
+        list: [
+          "Conserver convecteurs : 0 € (mais 1 800 €/an de facture)",
+          "Remplacer 5 convecteurs neufs inertie : 1 500-2 500 € (gain ~20%)",
+          "Installer clim réversible 4 splits : 5 800-7 500 € (gain ~70%)",
+          "Installer PAC air-eau + radiateurs eau : 13 000-16 000 € (gain ~75%)",
+        ],
+      },
+      {
+        heading: "Le meilleur compromis : clim réversible",
+        paragraphs: [
+          "Pour passer des convecteurs en mode confort, la clim réversible est le meilleur ratio investissement / gain. ROI 3-4 ans seulement.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Mes convecteurs neufs inertie sont-ils si mauvais ?", a: "Mieux que vieux convecteurs (gain ~15-20%) mais toujours bien moins efficaces qu'une PAC. Si vous venez de les acheter, gardez-les ; sinon vraie PAC." },
+    ],
+  },
+  {
+    slug: "renovation-energetique-par-ou-commencer",
+    title: "Rénovation énergétique : par où commencer en 2026 ?",
+    metaTitle: "Rénovation énergétique par où commencer 2026 — ordre prioritaire",
+    metaDescription: "Rénovation énergétique : l'ordre logique des travaux pour maximiser les économies. Isolation, chauffage, ventilation — par quoi commencer ?",
+    category: "Pratique",
+    publishedAt: "2026-03-08",
+    updatedAt: "2026-04-05",
+    readingMinutes: 7,
+    excerpt: "Avant d'investir 15 000 € dans une PAC, commencez par 1 500 € d'isolation combles. L'ordre logique des travaux qui économise vraiment.",
+    intro: [
+      "L'erreur classique : poser une PAC en premier dans une maison passoire. La PAC tourne à fond, ne tient pas les performances, et tout le monde est déçu.",
+      "L'ordre logique d'une rénovation énergétique réussie.",
+    ],
+    sections: [
+      {
+        heading: "1. Isolation combles perdus — priorité absolue",
+        paragraphs: [
+          "30 % des déperditions d'une maison passent par le toit. Pour 1 500-2 500 € de laine soufflée, on coupe immédiatement cette perte. ROI : 2-3 ans.",
+        ],
+      },
+      {
+        heading: "2. Isolation plancher bas",
+        paragraphs: [
+          "Si vous avez un vide sanitaire ou une cave : 10 cm de polyuréthane sous le plancher = 8-12 % de déperditions en moins. Coût ~50 €/m².",
+        ],
+      },
+      {
+        heading: "3. Fenêtres double vitrage récent",
+        paragraphs: [
+          "Si vos fenêtres datent d'avant 2000 (simple vitrage ou double vitrage ancien) : remplacement par double vitrage 4/16/4 à argon. Coût ~600 €/fenêtre.",
+        ],
+      },
+      {
+        heading: "4. VMC simple ou double flux",
+        paragraphs: [
+          "Maison ancienne sans VMC = humidité + déperditions par fuites. Pose VMC hygro : 1 100-1 800 €. Double flux si rénovation lourde : 4 500-7 000 €.",
+        ],
+      },
+      {
+        heading: "5. Chauffage : changement de système",
+        paragraphs: [
+          "ENFIN : après isolation, remplacement chaudière fioul/gaz par PAC. La PAC tourne maintenant en régime optimal, COP 4+. Économies maximisées.",
+        ],
+      },
+      {
+        heading: "Approche financière",
+        paragraphs: [
+          "Si budget limité, faites en 2 phases sur 2 ans : Année 1 = isolation combles + VMC (~3 500 €). Année 2 = PAC après aides MaPrimeRénov'.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Aides cumulables sur tous ces travaux ?", a: "Oui. MaPrimeRénov' couvre isolation + VMC + PAC. Cumul possible si rénovation globale (parcours accompagné) avec bonus." },
+      { q: "Faut-il un audit énergétique avant ?", a: "Obligatoire en 2026 si la maison est classée F ou G au DPE et que vous voulez vendre. Sinon recommandé. Coût ~600-1 000 €." },
+    ],
+  },
+  {
+    slug: "depannage-pac-urgence-24h",
+    title: "Dépannage pompe à chaleur urgent 24h en Isère et Rhône-Alpes",
+    metaTitle: "Dépannage PAC urgent 24h Isère — ECO CVC intervention rapide",
+    metaDescription: "Dépannage pompe à chaleur urgent sous 24h en Isère, Rhône, Lyon. Diagnostic gratuit, intervention 7j/7. ECO CVC — 06 29 63 40 45.",
+    category: "Pratique",
+    publishedAt: "2026-03-01",
+    updatedAt: "2026-04-01",
+    readingMinutes: 4,
+    excerpt: "Votre PAC est en panne en plein hiver ? On intervient sous 24h en semaine. Diagnostic gratuit + devis transparent.",
+    intro: [
+      "Une PAC en panne en hiver, c'est l'urgence. Voici comment ça se passe chez ECO CVC.",
+    ],
+    sections: [
+      {
+        heading: "Notre process en cas de panne",
+        paragraphs: [
+        ],
+        list: [
+          "Appel au 06 29 63 40 45 — disponible 7j/7",
+          "Pré-diagnostic téléphonique (5-10 min)",
+          "Visite technique sous 24h (semaine) / 48h (week-end)",
+          "Diagnostic GRATUIT à domicile",
+          "Devis transparent + intervention dans la foulée si pièce disponible",
+        ],
+      },
+      {
+        heading: "Pannes les plus fréquentes",
+        paragraphs: [
+        ],
+        list: [
+          "Manque de fluide frigorigène (fuite, recharge nécessaire)",
+          "Carte électronique défaillante",
+          "Compresseur HS (le plus grave et le plus coûteux)",
+          "Sonde extérieure défectueuse",
+          "Vase d'expansion ou circulateur HS",
+          "Erreur paramétrage régulation",
+        ],
+      },
+      {
+        heading: "Tarifs SAV ECO CVC",
+        paragraphs: [
+        ],
+        list: [
+          "Déplacement diagnostic : 89 € HT (offert si réparation chez nous)",
+          "Main d'œuvre : 75 €/h HT",
+          "Pièces : tarif catalogue fabricant",
+          "Forfait recharge fluide frigorigène : 180 € HT",
+        ],
+      },
+      {
+        heading: "Solution pendant la panne",
+        paragraphs: [
+          "Si l'intervention prend plus de 24h, on prête gratuitement des radiateurs électriques d'appoint à nos clients sous contrat d'entretien.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Vous dépannez les marques que vous n'avez pas posées ?", a: "Oui. Daikin, Atlantic, Mitsubishi, Bosch, Saunier Duval — toutes les marques courantes." },
+      { q: "Délai en zone éloignée (Vercors, Annecy) ?", a: "Sous 48h en semaine. Frais déplacement majorés selon distance (~50-150 € supplémentaires)." },
+    ],
+    relatedServices: [
+      { href: "/depannage", label: "Service dépannage 24h" },
+    ],
+  },
+  {
+    slug: "maintenance-pac-obligatoire-decret",
+    title: "Maintenance pompe à chaleur : c'est obligatoire (décret 2020-912)",
+    metaTitle: "Maintenance PAC obligatoire — décret 2020-912 expliqué",
+    metaDescription: "L'entretien annuel d'une PAC est obligatoire depuis 2020 (décret 2020-912). Conditions, tarifs, ce que ça couvre. Contrat ECO CVC à partir de 165 €/an.",
+    category: "Pratique",
+    publishedAt: "2026-02-22",
+    updatedAt: "2026-03-28",
+    readingMinutes: 5,
+    excerpt: "Depuis le décret 2020-912, l'entretien annuel d'une PAC > 4 kW est OBLIGATOIRE. Voici ce que ça change pour vous et les conséquences si vous l'oubliez.",
+    intro: [
+      "Le décret n° 2020-912 du 28 juillet 2020 a rendu obligatoire l'entretien annuel des PAC d'une puissance thermique nominale supérieure à 4 kW. C'est la quasi-totalité des PAC résidentielles.",
+    ],
+    sections: [
+      {
+        heading: "Ce que dit la loi",
+        paragraphs: [
+          "Tout propriétaire (occupant ou bailleur) doit faire entretenir sa PAC chaque année par un professionnel qualifié (RGE QualiPAC ou détenteur Attestation F-Gaz).",
+          "Le pro doit délivrer un certificat d'entretien à conserver pendant minimum 2 ans.",
+        ],
+      },
+      {
+        heading: "Ce que couvre une vraie maintenance",
+        paragraphs: [
+        ],
+        list: [
+          "Vérification pression circuit hydraulique",
+          "Contrôle étanchéité circuit frigorigène (test fuite)",
+          "Nettoyage filtres et échangeurs",
+          "Test des sécurités (pressostats, sondes)",
+          "Vérification fixations + supports anti-vibratoires",
+          "Mesure performance (COP en conditions réelles)",
+          "Mise à jour paramètres régulation si besoin",
+          "Certificat d'entretien remis",
+        ],
+      },
+      {
+        heading: "Tarifs du marché 2026",
+        paragraphs: [
+        ],
+        list: [
+          "Entretien ponctuel (1 fois) : 180-280 €",
+          "Contrat annuel (avec garantie SAV prioritaire) : 165-280 €/an",
+          "Contrat premium (pièces incluses) : 350-500 €/an",
+        ],
+      },
+      {
+        heading: "Conséquences si vous ne le faites pas",
+        paragraphs: [
+        ],
+        list: [
+          "Garantie fabricant peut être annulée (preuve d'entretien exigée)",
+          "Performance baisse de 5-10 % par an sans entretien",
+          "Risque de panne lourde (compresseur) multiplié par 3",
+          "Pas de sanction pénale directe mais responsabilité civile engagée si dommages",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Contrat ECO CVC inclut quoi ?", a: "Entretien annuel complet + certificat + intervention SAV sous 48h pendant 12 mois + main d'œuvre offerte sur SAV courants. À partir de 165 € HT/an." },
+      { q: "Une visite chaque année, c'est trop ?", a: "Si bon entretien : pas de souci. Sans entretien : statistiquement 1 panne tous les 3-4 ans (vs 1 tous les 8-12 ans avec contrat)." },
+    ],
+    relatedServices: [
+      { href: "/maintenance", label: "Contrat de maintenance" },
+    ],
+  },
+  {
+    slug: "chambre-froide-prix-installation-pro",
+    title: "Chambre froide professionnelle : prix d'installation 2026",
+    metaTitle: "Prix chambre froide pro 2026 — fourchettes par taille et usage",
+    metaDescription: "Prix d'installation d'une chambre froide professionnelle en 2026 : positive, négative, fourchettes par volume. ECO CVC Isère et Rhône-Alpes.",
+    category: "Tarifs",
+    publishedAt: "2026-02-15",
+    updatedAt: "2026-03-20",
+    readingMinutes: 6,
+    excerpt: "Chambre froide pour restaurant, boucherie, pharmacie ? Voici les fourchettes de prix 2026 par volume et type (positif / négatif).",
+    intro: [
+      "Le marché du froid commercial a beaucoup bougé en 2025 (fin du R404A, passage au R290 / CO2). Nouveaux prix 2026 mis à jour.",
+    ],
+    sections: [
+      {
+        heading: "Chambre froide positive (+2 à +8 °C)",
+        paragraphs: [
+          "Pour stockage frais : restau, boulangerie, fleuriste, pharmacie.",
+        ],
+        list: [
+          "5-8 m³ : 4 200-6 500 € HT posée",
+          "8-12 m³ : 5 800-8 500 € HT",
+          "12-20 m³ : 8 000-13 000 € HT",
+          "20-50 m³ : 13 000-25 000 € HT",
+          "50 m³+ : devis personnalisé",
+        ],
+      },
+      {
+        heading: "Chambre froide négative (-18 à -22 °C)",
+        paragraphs: [
+          "Pour surgelés. ~50 % plus chère qu'une positive de même volume.",
+        ],
+        list: [
+          "5-8 m³ : 6 500-9 500 € HT",
+          "8-12 m³ : 9 000-13 500 € HT",
+          "12-20 m³ : 13 000-19 500 € HT",
+          "20 m³+ : devis",
+        ],
+      },
+      {
+        heading: "Inclus dans nos installations",
+        paragraphs: [
+        ],
+        list: [
+          "Panneaux sandwich isothermes (PIR 80-150 mm)",
+          "Porte étanche + automatismes",
+          "Groupe froid extérieur ou mural",
+          "Évaporateur intérieur + dégivrage",
+          "Régulation électronique",
+          "Éclairage LED résistant au froid",
+          "Mise en service + formation utilisateur",
+        ],
+      },
+      {
+        heading: "Aides pour les pros",
+        paragraphs: [
+          "Les pros peuvent mobiliser : Coup de pouce CEE Pro, amortissement comptable accéléré (40 %), parfois aides régionales (Bpifrance Diag Décarbon'Action).",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Délai pose chambre froide ?", a: "Standard 8-12 m³ : 3-5 jours de pose. Délai global signature-mise en service : 4-6 semaines." },
+      { q: "Maintenance obligatoire ?", a: "Oui dès 4 kg de fluide frigorigène (décret 2014-1480). Contrôle annuel étanchéité, tenue d'un registre." },
+    ],
+    relatedServices: [
+      { href: "/chambre-froide", label: "Chambre froide professionnelle" },
+    ],
+  },
+  {
+    slug: "vitrine-refrigeree-choisir-boutique",
+    title: "Vitrine réfrigérée pour boutique : comment choisir en 2026",
+    metaTitle: "Choisir vitrine réfrigérée boutique 2026 — guide pro ECO CVC",
+    metaDescription: "Comment choisir sa vitrine réfrigérée selon son métier : boucherie, charcuterie, traiteur, fromager, boulangerie. Modèles, prix, conseils ECO CVC.",
+    category: "Pratique",
+    publishedAt: "2026-02-08",
+    updatedAt: "2026-03-15",
+    readingMinutes: 6,
+    excerpt: "Vitrine droite ou angle, ventilée ou statique, panoramique ou self-service ? Décryptage des choix selon votre métier.",
+    intro: [
+      "Une vitrine réfrigérée mal choisie, c'est : perte commerciale (vue produit médiocre), perte énergétique (mauvaise étanchéité), perte produits (mauvaise hygrométrie). Voici comment bien choisir.",
+    ],
+    sections: [
+      {
+        heading: "Pour boucherie / charcuterie",
+        paragraphs: [
+          "Vitrine ventilée à +2/+4 °C, humidité contrôlée 70-80 %. Profondeur 60-80 cm. Vitres droites courbe ou cintrées.",
+        ],
+        list: [
+          "Linéaire 2-3 m : 4 500-7 500 € HT",
+          "Linéaire 4-5 m : 7 500-12 000 € HT",
+          "Sur-mesure avec angle : +30 %",
+        ],
+      },
+      {
+        heading: "Pour boulangerie / pâtisserie",
+        paragraphs: [
+          "Vitrine ventilée +4/+8 °C pour pâtisseries. Présentation à plusieurs niveaux. Souvent design moderne (LED, finition bois).",
+        ],
+        list: [
+          "Linéaire 1,5-2 m : 3 800-6 200 € HT",
+          "Linéaire 3 m + 3 niveaux : 6 500-10 000 € HT",
+        ],
+      },
+      {
+        heading: "Pour fromager / crémerie",
+        paragraphs: [
+          "Vitrine à hygrométrie réglable (75-90 % selon affinage). Critique pour la conservation des pâtes molles.",
+        ],
+        list: [
+          "Linéaire 2-3 m : 6 000-9 500 € HT",
+        ],
+      },
+      {
+        heading: "Pour traiteur",
+        paragraphs: [
+          "Mixte chaud-froid souvent demandé. Vitrine ventilée +4 °C pour le froid + bain-marie pour le chaud.",
+        ],
+        list: [
+          "Mixte 3 m : 9 500-14 000 € HT",
+        ],
+      },
+      {
+        heading: "Critères à vérifier",
+        paragraphs: [
+        ],
+        list: [
+          "Classe climatique (3 mini pour France, 4 si zone chaude)",
+          "Fluide frigorigène (R290 propane préféré en 2026)",
+          "Auto-fermeture porte",
+          "Vitrage anti-buée double / triple",
+          "Niveau sonore < 55 dB",
+          "Garantie minimum 2 ans groupe froid",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Délai de livraison ?", a: "Standard : 4-8 semaines selon fabricant (Costan, Polair, Coreco, IFI). Sur-mesure : 8-14 semaines." },
+      { q: "Vous installez aussi le réseau froid centralisé ?", a: "Oui, sur projets complets multi-vitrines (boucherie + traiteur + fromagerie par exemple). Étude personnalisée." },
+    ],
+    relatedServices: [
+      { href: "/vitrines-refrigerees", label: "Vitrines réfrigérées pro" },
+    ],
+  },
 ];
 
 export const findArticle = (slug: string) => articles.find((a) => a.slug === slug);
