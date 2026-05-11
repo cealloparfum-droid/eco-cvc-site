@@ -449,53 +449,7 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="py-20 md:py-28">
-          <div className="container mx-auto">
-            <SectionHeading
-              eyebrow="Ils nous ont fait confiance"
-              title={<>Plus de <span className="text-gradient-brand">1 200 installations</span> réalisées.</>}
-            />
-            <div className="grid md:grid-cols-3 gap-6 mt-14">
-              {[
-                {
-                  name: "Marie D.",
-                  role: "Maison à Lyon (69)",
-                  text: "Installation d'un multi-split AUX sur 3 pièces en une journée. Équipe ponctuelle, travail soigné, et vrai conseil sur les aides MaPrimeRénov'.",
-                },
-                {
-                  name: "Philippe L.",
-                  role: "Copropriété Saint-Étienne (42)",
-                  text: "Contrat d'entretien depuis 4 ans sur 12 appartements. Toujours disponibles, devis clairs, aucune mauvaise surprise.",
-                },
-                {
-                  name: "Sophie R.",
-                  role: "Appartement Annecy (74)",
-                  text: "Dépannage le dimanche en plein mois d'août. Diagnostic en 30 min, pièce remplacée sous garantie. Sauvés !",
-                },
-              ].map((t, i) => (
-                <motion.div
-                  key={t.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="bg-white rounded-2xl border border-border p-7 hover:shadow-lifted transition-shadow"
-                >
-                  <div className="flex gap-0.5 mb-4 text-amber-400">
-                    {"★★★★★".split("").map((s, j) => <span key={j}>{s}</span>)}
-                  </div>
-                  <p className="text-foreground/85 leading-relaxed mb-5">« {t.text} »</p>
-                  <div className="pt-5 border-t border-border">
-                    <div className="font-semibold text-slate-900">{t.name}</div>
-                    <div className="text-sm text-muted-foreground">{t.role}</div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
+        {/* Section avis — unique source : avis Google authentiques */}
         <GoogleReviewsBlock />
 
         <CTABand variant="default" />
