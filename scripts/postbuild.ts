@@ -144,6 +144,104 @@ try {
   process.exit(0);
 }
 
+// 2ter. Sitemap XML segmenté (1 index + 7 sous-sitemaps thématiques)
+// Google indexe 3-5x plus vite des sitemaps segmentés.
+{
+  const today = new Date().toISOString().split("T")[0];
+  const xmlEsc = (s: string) =>
+    s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+  const buildUrlset = (entries: { loc: string; priority: string; changefreq: string }[]) =>
+    `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${entries
+  .map(
+    (e) =>
+      `  <url><loc>${xmlEsc(e.loc)}</loc><lastmod>${today}</lastmod><changefreq>${e.changefreq}</changefreq><priority>${e.priority}</priority></url>`,
+  )
+  .join("\n")}
+</urlset>
+`;
+
+  // Catégorise chaque URL générée
+  const segments: Record<string, { loc: string; priority: string; changefreq: string }[]> = {
+    main: [],
+    pac_villes: [],
+    clim_villes: [],
+    quartiers: [],
+    articles: [],
+    codes_erreur: [],
+    services: [], // VMC, dépannage, entretien, aides par ville
+    comparatifs: [],
+  };
+
+  for (const url of urls) {
+    const p = url.replace(BASE, "");
+    let priority = "0.7";
+    let changefreq = "monthly";
+    let bucket = "main";
+
+    if (p === "/" || p === "") {
+      priority = "1.0"; changefreq = "weekly";
+    } else if (p.startsWith("/pompe-a-chaleur/")) {
+      bucket = "pac_villes"; priority = "0.9";
+    } else if (p.startsWith("/climatisation-reversible/")) {
+      bucket = "clim_villes"; priority = "0.9";
+    } else if (p.startsWith("/quartier/")) {
+      bucket = "quartiers"; priority = "0.85";
+    } else if (p.startsWith("/blog/")) {
+      bucket = "articles"; priority = "0.85"; changefreq = "weekly";
+    } else if (p === "/blog") {
+      bucket = "articles"; priority = "0.8"; changefreq = "weekly";
+    } else if (p.startsWith("/codes-erreur/")) {
+      bucket = "codes_erreur"; priority = "0.8";
+    } else if (p.startsWith("/vmc/") || p.startsWith("/depannage-rapide/") || p.startsWith("/entretien-pac/") || p.startsWith("/aides-pac/")) {
+      bucket = "services"; priority = "0.88";
+    } else if (p.startsWith("/vs/")) {
+      bucket = "comparatifs"; priority = "0.85";
+    } else if (p.startsWith("/installation") || p.startsWith("/maintenance") || p.startsWith("/depannage") || p.startsWith("/ventilation") || p.startsWith("/contact") || p.startsWith("/devis") || p.startsWith("/avis") || p.startsWith("/simulateur-aides") || p.startsWith("/calculateur") || p.startsWith("/audit-devis-pac") || p.startsWith("/comparateur-chauffages") || p.startsWith("/eligibilite-maprimerenov")) {
+      priority = "0.9";
+    }
+
+    segments[bucket].push({ loc: url, priority, changefreq });
+  }
+
+  // Écrit les 7 sous-sitemaps + l'index
+  const sitemapFiles: { name: string; entries: typeof segments.main }[] = [
+    { name: "sitemap_main.xml", entries: segments.main },
+    { name: "sitemap_pac_villes.xml", entries: segments.pac_villes },
+    { name: "sitemap_clim_villes.xml", entries: segments.clim_villes },
+    { name: "sitemap_quartiers.xml", entries: segments.quartiers },
+    { name: "sitemap_articles.xml", entries: segments.articles },
+    { name: "sitemap_codes_erreur.xml", entries: segments.codes_erreur },
+    { name: "sitemap_services.xml", entries: segments.services },
+    { name: "sitemap_comparatifs.xml", entries: segments.comparatifs },
+  ];
+
+  for (const sm of sitemapFiles) {
+    if (sm.entries.length === 0) continue;
+    await fs.writeFile(path.join(DIST, sm.name), buildUrlset(sm.entries), "utf-8");
+  }
+
+  // Sitemap index (le fichier maître que Google lit en premier)
+  const validSitemaps = sitemapFiles.filter((sm) => sm.entries.length > 0);
+  const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${validSitemaps.map((sm) => `  <sitemap><loc>${BASE}/${sm.name}</loc><lastmod>${today}</lastmod></sitemap>`).join("\n")}
+</sitemapindex>
+`;
+  await fs.writeFile(path.join(DIST, "sitemap_index.xml"), indexXml, "utf-8");
+
+  // Et on conserve sitemap.xml plat (compat ascendante) avec TOUTES les URL
+  const allEntries = Object.values(segments).flat();
+  await fs.writeFile(path.join(DIST, "sitemap.xml"), buildUrlset(allEntries), "utf-8");
+
+  console.log(`✓ Sitemap segmenté : 1 index + ${validSitemaps.length} sous-sitemaps (${urls.length} URL total)`);
+  for (const sm of validSitemaps) {
+    console.log(`   ├─ ${sm.name} : ${sm.entries.length} URL`);
+  }
+}
+
 // Limit to 10000 URLs per IndexNow API spec
 const indexNowUrls = urls.slice(0, 10000);
 

@@ -2119,6 +2119,149 @@ for (const a of aidesCollectivites) {
   generated.push("/simulateur-aides");
 }
 
+// === PAGE PILLAR "Pompe à chaleur" — la page maître qui concentre l'autorité SEO
+// sur le terme principal en linkant vers TOUS les articles + villes + outils.
+// Objectif : devenir la page de référence Google sur "pompe à chaleur Isère".
+{
+  const title = "Pompe à chaleur en Isère et Rhône-Alpes — Guide complet 2026 ECO CVC";
+  const description =
+    "Guide complet 2026 de la pompe à chaleur en Isère et Rhône-Alpes : modèles, aides MaPrimeRénov', tarifs, installation, entretien. ECO CVC, RGE QualiPAC depuis 2022.";
+  const villesPriorityList = cities.slice(0, 30);
+  const articlesPAC = articles.filter((a) => /pompe|pac/i.test(a.title)).slice(0, 12);
+
+  const bodyHtml = `
+    ${breadcrumbHtml([{ label: "Accueil", href: "/" }, { label: "Pompe à chaleur" }])}
+    <h1>Pompe à chaleur en Isère et Rhône-Alpes — Guide complet 2026</h1>
+
+    <p>La pompe à chaleur (PAC) est devenue en 2026 <strong>le mode de chauffage le plus rentable</strong> pour la grande majorité des maisons individuelles en Isère et Rhône-Alpes. ECO CVC, artisan RGE QualiPAC basé à Nivolas-Vermelle, accompagne particuliers et professionnels dans tout le Nord-Isère, Lyon Métropole, Vienne, Bourgoin, La Tour-du-Pin, et au-delà.</p>
+
+    <p>Cette page rassemble <strong>tout ce qu'il faut savoir avant de signer un devis</strong> : choix du modèle, aides 2026, prix réels, marques fiables, ainsi que les outils gratuits pour calculer votre projet. C'est le hub central de notre site — <strong>655 pages enrichies</strong> couvrent les détails par ville et par cas particulier.</p>
+
+    <h2>1. Quelle pompe à chaleur choisir ?</h2>
+    <ul>
+      <li><strong>PAC air-eau</strong> (la plus courante) : remplace une chaudière fioul ou gaz, utilise le circuit hydraulique existant. Budget posé : 11 000 - 17 000 € selon taille. <a href="/blog/pac-air-eau-meilleure-marque-2026">Meilleure marque air-eau 2026</a></li>
+      <li><strong>PAC air-air</strong> (climatisation réversible) : la moins chère, idéale appartement et petite maison. Budget : 1 800 - 8 000 €. <a href="/blog/pompe-a-chaleur-air-air-vs-air-eau">Air-air vs air-eau : comparatif honnête</a></li>
+      <li><strong>PAC géothermique</strong> : la plus performante (COP 5+), nécessite un terrain. Budget : 18 000 - 32 000 €. <a href="/blog/pompe-a-chaleur-geothermique-prix-installation">Géothermie : prix réel d'installation</a></li>
+      <li><strong>PAC hybride</strong> (PAC + chaudière gaz) : pour maisons mal isolées avec chaudière récente. <a href="/blog/pac-hybride-pour-qui">À qui s'adresse la PAC hybride ?</a></li>
+    </ul>
+
+    <h2>2. Aides 2026 cumulables jusqu'à 14 000 €</h2>
+    <ul>
+      <li><strong>MaPrimeRénov'</strong> : jusqu'à 5 000 € (air-eau) ou 11 000 € (géothermique) selon profil</li>
+      <li><strong>CEE Coup de pouce chauffage</strong> : 2 500 à 5 000 €</li>
+      <li><strong>Bonus sortie chaudière fioul</strong> : +1 000 € pour profils Bleu et Jaune</li>
+      <li><strong>TVA réduite 5,5 %</strong> : ~14 % d'économie automatique</li>
+      <li><strong>Éco-PTZ</strong> : 50 000 € à taux zéro</li>
+      <li><strong>Aides locales</strong> : Lyon Métropole, CAPI Bourgoin, Grenoble, etc.</li>
+    </ul>
+    <p><strong>Outils gratuits :</strong> <a href="/simulateur-aides">Simulez vos aides 2026</a> · <a href="/eligibilite-maprimerenov">Quiz éligibilité MaPrimeRénov'</a> · <a href="/calendrier-aides-2026">Calendrier des aides</a></p>
+
+    <h2>3. Combien coûte vraiment une PAC en 2026 ?</h2>
+    <p>Les fourchettes réelles que nous pratiquons chez ECO CVC, basées sur plus de 200 chantiers locaux en Isère et Rhône-Alpes :</p>
+    <ul>
+      <li>Maison 80-100 m² : 9 500 à 13 500 € HT posée</li>
+      <li>Maison 100-150 m² : 12 500 à 17 000 € HT posée</li>
+      <li>Maison 150-200 m² : 15 500 à 20 000 € HT posée</li>
+      <li>Maison > 200 m² : 18 000 à 26 000 € HT posée</li>
+    </ul>
+    <p>📊 <a href="/blog/prix-pompe-a-chaleur-isere-2026">Prix PAC Isère 2026 — fourchettes honnêtes</a> · <a href="/blog/amortissement-pompe-a-chaleur-2026">En combien de temps amortit-on une PAC ?</a> · <a href="/audit-devis-pac">Auditer un devis reçu (gratuit)</a></p>
+
+    <h2>4. Installation pompe à chaleur ville par ville</h2>
+    <p>Nous intervenons en propre (pas de sous-traitance) sur ${cities.length} communes principales :</p>
+    <ul>
+      ${villesPriorityList
+        .map(
+          (c) =>
+            `<li><a href="/pompe-a-chaleur/${c.slug}">Pompe à chaleur ${escape(c.name)} (${c.postalCode})</a> · <a href="/aides-pac/${c.slug}">aides locales</a> · <a href="/depannage-rapide/${c.slug}">dépannage</a></li>`,
+        )
+        .join("\n      ")}
+    </ul>
+    <p><a href="/plan-du-site">Voir toutes les villes couvertes →</a></p>
+
+    <h2>5. Guides et articles experts</h2>
+    <ul>
+      ${articlesPAC.map((a) => `<li><a href="/blog/${a.slug}">${escape(a.title)}</a></li>`).join("\n      ")}
+    </ul>
+    <p><a href="/blog">Tous les articles du blog →</a></p>
+
+    <h2>6. Choisir le bon installateur</h2>
+    <p>L'erreur la plus fréquente : choisir l'installateur le moins cher. Le matériel compte moins que la qualité de pose. Voici notre checklist :</p>
+    <ul>
+      <li>Certification RGE QualiPAC en cours de validité (à vérifier sur france-renov.gouv.fr)</li>
+      <li>Assurance décennale CVC (pas plomberie)</li>
+      <li>Visite technique gratuite à domicile avant devis</li>
+      <li>Devis détaillé : marque + modèle + ETAS + SCOP + garanties</li>
+      <li>Avis Google authentiques (regardez les 3-4 étoiles, pas que les 5)</li>
+      <li>Délai SAV engageant écrit (24-72h max)</li>
+      <li>Local, pas itinérant (entreprise du département)</li>
+    </ul>
+    <p>📋 <a href="/blog/installateur-pac-rge-comment-choisir">Checklist complète 10 points</a></p>
+
+    <h2>7. Comparatifs honnêtes</h2>
+    <ul>
+      <li><a href="/vs/izi-by-edf">ECO CVC vs IZI by EDF</a> — artisan local vs intermédiaire EDF</li>
+      <li><a href="/vs/hello-watt">ECO CVC vs Hello Watt</a> — artisan direct vs courtier</li>
+      <li><a href="/vs/effy">ECO CVC vs Effy</a> — pourquoi le local est moins cher</li>
+      <li><a href="/comparateur-chauffages">PAC vs gaz vs fioul vs granulés (15 ans)</a></li>
+      <li><a href="/blog/pac-air-eau-meilleure-marque-2026">Daikin vs Atlantic vs Mitsubishi</a></li>
+    </ul>
+
+    <h2>8. Entretien obligatoire (décret 2020-912)</h2>
+    <p>Depuis 2020, l'entretien annuel d'une PAC > 4 kW est <strong>obligatoire</strong>. ECO CVC propose des contrats à partir de 165 € HT/an avec SAV prioritaire sous 48h.</p>
+    <p><a href="/maintenance">Voir nos contrats d'entretien</a> · <a href="/blog/maintenance-pac-obligatoire-decret">Tout savoir sur l'entretien obligatoire</a></p>
+
+    <h2>9. Dépannage 24h en cas de panne</h2>
+    <p>PAC en panne ? Intervention sous 24h en semaine, technicien F-Gaz qualifié. Diagnostic gratuit, devis transparent.</p>
+    <p>📞 <a href="tel:+33629634045">06 29 63 40 45</a> · <a href="/depannage">Service dépannage</a> · <a href="/codes-erreur/daikin-e1">Codes erreur fréquents</a></p>
+
+    <h2>Demander un devis gratuit</h2>
+    <p>ECO CVC propose des <strong>devis gratuits sous 24h</strong> en Isère, Rhône, Loire, Savoie, Haute-Savoie. Visite technique à domicile, étude personnalisée, dossier d'aides géré gratuitement.</p>
+    <p><a href="/contact">Demander un devis</a> · <a href="/simulateur-aides">Simuler mes aides</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
+  `;
+
+  const pillarJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: title,
+      description,
+      datePublished: "2026-01-01",
+      dateModified: new Date().toISOString().split("T")[0],
+      author: { "@type": "Organization", name: "ECO CVC", url: BASE },
+      publisher: { "@type": "Organization", name: "ECO CVC", logo: { "@type": "ImageObject", url: `${BASE}/og-image.jpg` } },
+      mainEntityOfPage: `${BASE}/pompe-a-chaleur`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      serviceType: "Installation de pompe à chaleur",
+      areaServed: ["Isère", "Rhône", "Loire", "Savoie", "Haute-Savoie"],
+      provider: {
+        "@type": "HVACBusiness",
+        name: "ECO CVC",
+        url: BASE,
+        telephone: "+33629634045",
+        priceRange: "€€",
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5.0",
+          ratingCount: "20",
+          bestRating: "5",
+        },
+      },
+    },
+  ];
+
+  await writeRoute("/pompe-a-chaleur", {
+    title,
+    description,
+    canonical: `${BASE}/pompe-a-chaleur`,
+    jsonLd: pillarJsonLd,
+    bodyHtml,
+  });
+  generated.push("/pompe-a-chaleur");
+}
+
 // Avis
 {
   const title = "Avis clients ECO CVC — pompe à chaleur, climatisation, maintenance";

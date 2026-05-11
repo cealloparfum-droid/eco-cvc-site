@@ -13,4 +13,5 @@ Allow: /
 User-agent: *
 Allow: /
 
+Sitemap: https://ecocvc.pro/sitemap_index.xml
 Sitemap: https://ecocvc.pro/sitemap.xml
