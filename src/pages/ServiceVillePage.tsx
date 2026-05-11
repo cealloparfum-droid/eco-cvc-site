@@ -11,7 +11,7 @@
 
 import { useParams, Navigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ChevronRight, Phone, Check, MapPin, Wind, Wrench, Clock, ArrowRight, Sparkles } from "lucide-react";
+import { ChevronRight, Phone, Check, MapPin, Wind, Wrench, Clock, ArrowRight, Sparkles, Wallet } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -21,7 +21,7 @@ import LeadMagnetCard from "@/components/LeadMagnetCard";
 import { findCity } from "@/data/cities";
 import { useSeo } from "@/lib/useSeo";
 
-export type ServiceType = "vmc" | "depannage" | "entretien";
+export type ServiceType = "vmc" | "depannage" | "entretien" | "aides";
 
 const SERVICE_CONFIG: Record<ServiceType, {
   path: string;
@@ -165,6 +165,67 @@ const SERVICE_CONFIG: Record<ServiceType, {
       },
     ],
     toolsPreset: "depannage",
+  },
+  aides: {
+    path: "aides-pac",
+    label: "Aides PAC et MaPrimeRénov'",
+    shortLabel: "Aides",
+    h1Suffix: "Aides PAC & MaPrimeRénov' 2026",
+    metaTitlePrefix: "Aides PAC MaPrimeRénov'",
+    metaDescPrefix: "Toutes les aides 2026 pour une pompe à chaleur",
+    icon: Wallet,
+    accent: "green",
+    intro: (n) =>
+      `À ${n}, les aides 2026 pour installer une pompe à chaleur peuvent couvrir 60 à 90 % du coût total selon votre profil de revenus. MaPrimeRénov', CEE Coup de pouce, TVA réduite, éco-PTZ, aides locales : voici le détail exhaustif pour les habitants de ${n} et environs.`,
+    contextTitle: `Pourquoi les aides sont si élevées à ${n.split(" ")[0]} en 2026`,
+    contextLines: (n) => [
+      `La France pousse fortement à la sortie du fioul et du gaz d'ici 2030. Résultat : les aides pour basculer en PAC n'ont jamais été aussi élevées qu'en 2026.`,
+      `À ${n}, le cumul MaPrimeRénov' + CEE Coup de pouce + bonus sortie fioul + TVA réduite + aide locale peut atteindre 14 000 € sur un projet de 16 000 €.`,
+      `Ces aides sont garanties jusqu'au 31 décembre 2026. Au-delà, le barème sera probablement revu à la baisse (comme chaque année depuis 2023).`,
+    ],
+    servicesTitle: "Les 5 aides cumulables en 2026",
+    services: [
+      "MaPrimeRénov' (jusqu'à 5 000 € pour PAC air-eau, 11 000 € pour géothermique)",
+      "CEE Coup de pouce Chauffage (2 500 à 5 000 € selon revenus)",
+      "Bonus sortie chaudière fioul (+1 000 € pour profils Bleu et Jaune)",
+      "TVA réduite à 5,5 % (au lieu de 20 %, soit ~14 % d'économie automatique)",
+      "Éco-PTZ jusqu'à 50 000 € à taux zéro sur 20 ans (pour étaler le reste à charge)",
+      "Aides locales : Lyon Métropole, Grenoble Alpes Métro, CAPI Bourgoin, Bièvre Isère, Grand Chambéry, Grand Annecy selon votre commune",
+    ],
+    pricesTitle: "Cas concrets pour 3 profils types",
+    prices: [
+      "Foyer BLEU (très modeste, 1-2 personnes) — PAC 11 kW à 14 800 € HT : MaPrimeRénov' 5 000 € + CEE 5 000 € + sortie fioul 1 000 € + TVA 5,5 % (2 060 €) + aide locale 1 200 € = 14 260 €. Reste à charge : 540 €",
+      "Foyer JAUNE (modeste, 3-4 personnes) — PAC 11 kW à 14 800 € HT : MaPrimeRénov' 4 000 € + CEE 4 000 € + sortie fioul 1 000 € + TVA 5,5 % (2 060 €) + aide locale 800 € = 11 860 €. Reste à charge : 2 940 €",
+      "Foyer VIOLET (intermédiaire) — PAC 11 kW à 14 800 € HT : MaPrimeRénov' 3 000 € + CEE 3 500 € + TVA 5,5 % (2 060 €) = 8 560 €. Reste à charge : 6 240 €",
+    ],
+    whyUsTitle: "Pourquoi confier votre dossier à ECO CVC",
+    whyUs: [
+      "Artisan RGE QualiPAC certifié (obligatoire pour toucher les aides)",
+      "Dossier MaPrimeRénov' déposé GRATUITEMENT pour vous",
+      "Dossier CEE pris en charge intégralement",
+      "Pas d'avance de trésorerie : on vous propose des plans de paiement adaptés",
+      "Devis signé après notification d'aides (on attend la confirmation pour démarrer)",
+      "Aucun versement avant attribution officielle des aides",
+    ],
+    faqGenerator: (n) => [
+      {
+        q: `Quel est mon profil MaPrimeRénov' à ${n} ?`,
+        a: `Cela dépend du revenu fiscal de référence (RFR) et de la composition du foyer. Bleu : <17 173 € (1 pers.) / <25 115 € (2 pers.) / <30 195 € (3 pers.) hors Île-de-France. Jaune : <22 015 € / <32 197 € / <38 719 €. Violet : <30 549 € / <44 907 € / <54 071 €. Rose : au-dessus. Notre simulateur sur le site donne la réponse exacte en 2 minutes.`,
+      },
+      {
+        q: `Les aides sont-elles bloquées si je ne fais que la PAC (pas rénovation globale) ?`,
+        a: `Non. À ${n} comme partout en France, MaPrimeRénov' Geste-par-geste reste accessible pour la PAC seule en 2026 (sauf profil Rose, qui doit passer en parcours accompagné).`,
+      },
+      {
+        q: `Combien de temps entre la demande et le versement des aides ?`,
+        a: `Demande MaPrimeRénov' : 2-3 semaines avant notification. CEE : versé directement par notre partenaire CEE dans les 2 mois après pose. Aides locales (CAPI, etc.) : 1-3 mois.`,
+      },
+      {
+        q: `Si je suis bailleur (proprio non occupant) ?`,
+        a: `MaPrimeRénov' est ouverte aux bailleurs depuis 2022 : 2 logements maxi, location nue minimum 5 ans. Mêmes barèmes par profil que pour propriétaires occupants.`,
+      },
+    ],
+    toolsPreset: "aides-locales",
   },
   entretien: {
     path: "entretien-pac",

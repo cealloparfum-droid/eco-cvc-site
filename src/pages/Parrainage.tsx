@@ -19,16 +19,16 @@ const Parrainage = () => {
   const [loading, setLoading] = useState(false);
 
   useSeo({
-    title: "Programme de parrainage ECO CVC : 100 € à chaque recommandation",
+    title: "Programme de parrainage ECO CVC : 200 € à chaque recommandation",
     description:
-      "Programme de parrainage ECO CVC : 100 € pour vous + 100 € pour votre filleul à chaque pose de pompe à chaleur. Recommandez un voisin, gagnez. ECO CVC, RGE QualiPAC.",
+      "Programme de parrainage ECO CVC : 200 € pour vous + 200 € pour votre filleul à chaque pose de pompe à chaleur. Recommandez un voisin, gagnez. ECO CVC, RGE QualiPAC.",
     canonical,
     ogImage: `${baseUrl}/og-image.jpg`,
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "Service",
       name: "Programme de parrainage ECO CVC",
-      description: "Recommandez ECO CVC à un proche : 100 € pour vous, 100 € de remise pour lui à la pose.",
+      description: "Recommandez ECO CVC à un proche : 200 € pour vous, 200 € de remise pour lui à la pose.",
       provider: { "@type": "Organization", name: "ECO CVC", url: baseUrl },
     },
   });
@@ -80,10 +80,10 @@ const Parrainage = () => {
                 <Gift className="w-3.5 h-3.5" /> Programme parrainage
               </span>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5">
-                Recommandez ECO CVC, <span className="text-gradient-brand">100 € pour vous, 100 € pour eux</span>
+                Recommandez ECO CVC, <span className="text-gradient-brand">200 € pour vous, 200 € pour eux</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Vos voisins, amis, famille cherchent une PAC ou une climatisation ? Recommandez-nous. À chaque pose réussie, **vous touchez 100 €** et **votre filleul a 100 € de remise**.
+                Vos voisins, amis, famille cherchent une PAC ou une climatisation ? Recommandez-nous. À chaque pose réussie, **vous touchez 200 €** et **votre filleul a 200 € de remise**.
               </p>
             </motion.div>
           </div>
@@ -95,7 +95,7 @@ const Parrainage = () => {
             <div className="grid md:grid-cols-3 gap-5">
               <Step n="1" icon={Users} title="Vous nous recommandez" body="Donnez-nous le nom et numéro d'un proche intéressé via le formulaire ci-dessous, ou faites-leur citer votre nom au 06 29 63 40 45." />
               <Step n="2" icon={Phone} title="On les contacte sous 48h" body="Visite technique gratuite, devis personnalisé. Pas de pression, ils décident librement." />
-              <Step n="3" icon={Wallet} title="Si pose réalisée : tout le monde gagne" body="100 € en chèque ou virement pour vous (parrain). 100 € de remise sur le devis pour votre filleul. Pas de plafond — vous pouvez parrainer plusieurs proches." />
+              <Step n="3" icon={Wallet} title="Si pose réalisée : tout le monde gagne" body="200 € en chèque ou virement pour vous (parrain). 200 € de remise sur le devis pour votre filleul. Pas de plafond — vous pouvez parrainer plusieurs proches." />
             </div>
           </div>
         </section>
@@ -107,8 +107,8 @@ const Parrainage = () => {
               {[
                 "Le filleul doit être un nouveau client (pas déjà connu d'ECO CVC).",
                 "La pose doit être réalisée et facturée pour déclencher la prime.",
-                "Prime parrain de 100 € versée par chèque ou virement dans les 30 jours suivant la facturation du chantier filleul.",
-                "Remise filleul de 100 € automatiquement déduite du devis final.",
+                "Prime parrain de 200 € versée par chèque ou virement dans les 30 jours suivant la facturation du chantier filleul.",
+                "Remise filleul de 200 € automatiquement déduite du devis final.",
                 "Pas de plafond : vous pouvez parrainer autant de proches que vous voulez.",
                 "Programme cumulable avec MaPrimeRénov', Coup de pouce CEE et toutes autres aides.",
                 "Programme sans engagement : si la pose ne se fait pas, aucune obligation pour le parrain ou le filleul.",
@@ -129,7 +129,7 @@ const Parrainage = () => {
               <div className="bg-brand-green/10 rounded-2xl border border-brand-green/20 p-8 text-center">
                 <CheckCircle2 className="w-12 h-12 text-brand-green mx-auto mb-3" />
                 <h3 className="font-display text-xl font-bold mb-2">Recommandation enregistrée 🙏</h3>
-                <p className="text-muted-foreground">Nous contactons votre filleul sous 48h ouvrées. Si la pose se fait, vous recevrez votre prime de 100 € sous 30 jours après facturation.</p>
+                <p className="text-muted-foreground">Nous contactons votre filleul sous 48h ouvrées. Si la pose se fait, vous recevrez votre prime de 200 € sous 30 jours après facturation.</p>
               </div>
             ) : (
               <form onSubmit={submit} className="bg-white rounded-2xl border border-border p-7 space-y-4">

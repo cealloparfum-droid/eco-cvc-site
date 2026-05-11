@@ -166,6 +166,7 @@ const App = () => (
               <Route path="/vmc/:ville" element={<ServiceVillePage serviceType="vmc" />} />
               <Route path="/depannage-rapide/:ville" element={<ServiceVillePage serviceType="depannage" />} />
               <Route path="/entretien-pac/:ville" element={<ServiceVillePage serviceType="entretien" />} />
+              <Route path="/aides-pac/:ville" element={<ServiceVillePage serviceType="aides" />} />
               <Route path="/vs/:slug" element={<ComparatifConcurrentPage />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />

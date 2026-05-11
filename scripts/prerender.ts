@@ -430,6 +430,13 @@ for (const c of cities) {
       h1: `Contrat d'entretien PAC à ${c.name}`,
       lead: `L'entretien annuel de votre PAC est obligatoire (décret 2020-912). ECO CVC propose des contrats à partir de 165 € HT/an à ${c.name}.`,
     },
+    {
+      path: `/aides-pac/${c.slug}`,
+      title: `Aides PAC MaPrimeRénov' ${c.name} 2026 — ECO CVC`,
+      description: `Toutes les aides 2026 pour installer une pompe à chaleur à ${c.name} (${c.postalCode}) : MaPrimeRénov', CEE, TVA réduite, éco-PTZ, aides locales. Jusqu'à 14 000 € cumulés. ECO CVC, RGE QualiPAC.`,
+      h1: `Aides PAC & MaPrimeRénov' 2026 à ${c.name}`,
+      lead: `À ${c.name}, les aides 2026 pour installer une pompe à chaleur peuvent couvrir 60 à 90 % du coût total selon votre profil. MaPrimeRénov' + CEE + sortie fioul + TVA 5,5 % + aides locales cumulables.`,
+    },
   ];
 
   for (const s of serviceLandings) {
