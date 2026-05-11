@@ -23,6 +23,7 @@ import { fileURLToPath } from "node:url";
 import { cities } from "../src/data/cities";
 import { articles } from "../src/data/articles";
 import { devisConfigs } from "../src/data/devis";
+import { comparatifsConcurrents } from "../src/data/comparatifs-concurrents";
 import { faqGroups } from "../src/data/faq";
 import { glossary } from "../src/data/glossary";
 import { metiers } from "../src/data/metiers-pro";
@@ -462,6 +463,59 @@ for (const c of cities) {
     });
     generated.push(s.path);
   }
+}
+
+// Comparatifs concurrents (ECO CVC vs IZI by EDF, Hello Watt, Effy)
+for (const cc of comparatifsConcurrents) {
+  const ccPath = `/vs/${cc.slug}`;
+  const ccBody = `
+    ${breadcrumbHtml([
+      { label: "Accueil", href: "/" },
+      { label: "Comparatifs", href: "/" },
+      { label: `ECO CVC vs ${cc.competitorName}` },
+    ])}
+    <h1>${escape(cc.h1)}</h1>
+    ${cc.intro.map((p) => `<p>${escape(p)}</p>`).join("")}
+    <h2>Points positifs de ${escape(cc.competitorName)}</h2>
+    <ul>${cc.pour.map((p) => `<li>${escape(p)}</li>`).join("")}</ul>
+    <h2>Points à connaître</h2>
+    <ul>${cc.contre.map((p) => `<li>${escape(p)}</li>`).join("")}</ul>
+    <h2>Comparaison ECO CVC vs ${escape(cc.competitorName)}</h2>
+    <ul>${cc.diffEcoCvc.map((d) => `<li><strong>${escape(d.sujet)}</strong> — ${escape(cc.competitorName)} : ${escape(d.competitor)} · ECO CVC : ${escape(d.ecocvc)}</li>`).join("")}</ul>
+    <h2>Notre conseil honnête</h2>
+    <p>${escape(cc.recoFinale)}</p>
+    <h2>Questions fréquentes</h2>
+    <dl>${cc.faq.map((f) => `<dt><strong>${escape(f.q)}</strong></dt><dd>${escape(f.a)}</dd>`).join("")}</dl>
+    <p><a href="/audit-devis-pac">Auditer un devis ${escape(cc.competitorName)}</a> · <a href="/contact">Demander un devis ECO CVC</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
+  `;
+  const ccJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: cc.h1,
+      description: cc.metaDescription,
+      datePublished: cc.updatedAt,
+      author: { "@type": "Organization", name: "ECO CVC", url: BASE },
+      publisher: { "@type": "Organization", name: "ECO CVC", logo: { "@type": "ImageObject", url: `${BASE}/og-image.jpg` } },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: cc.faq.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ];
+  await writeRoute(ccPath, {
+    title: cc.metaTitle,
+    description: cc.metaDescription,
+    canonical: `${BASE}${ccPath}`,
+    jsonLd: ccJsonLd,
+    bodyHtml: ccBody,
+  });
+  generated.push(ccPath);
 }
 
 // Articles

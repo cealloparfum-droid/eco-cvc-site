@@ -11,6 +11,7 @@ import MobileStickyCTA from "./components/MobileStickyCTA";
 import DevisFloatingBar from "./components/DevisFloatingBar";
 import ExitIntentPopup from "./components/ExitIntentPopup";
 import SeasonalUrgencyBanner from "./components/SeasonalUrgencyBanner";
+import MaPrimeRenovCountdown from "./components/MaPrimeRenovCountdown";
 import SocialProofTicker from "./components/SocialProofTicker";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -82,6 +83,7 @@ const ClimGite = lazy(() => import("./pages/ClimGiteAirbnb"));
 const PlanDuSite = lazy(() => import("./pages/PlanDuSite"));
 const QuartierPage = lazy(() => import("./pages/QuartierPage"));
 const ServiceVillePage = lazy(() => import("./pages/ServiceVillePage"));
+const ComparatifConcurrentPage = lazy(() => import("./pages/ComparatifConcurrentPage"));
 
 const PageFallback = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -164,6 +166,7 @@ const App = () => (
               <Route path="/vmc/:ville" element={<ServiceVillePage serviceType="vmc" />} />
               <Route path="/depannage-rapide/:ville" element={<ServiceVillePage serviceType="depannage" />} />
               <Route path="/entretien-pac/:ville" element={<ServiceVillePage serviceType="entretien" />} />
+              <Route path="/vs/:slug" element={<ComparatifConcurrentPage />} />
               <Route path="/:slug" element={<DevisLandingWrapper />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
@@ -173,6 +176,7 @@ const App = () => (
           <DevisFloatingBar />
           <ExitIntentPopup />
           <SeasonalUrgencyBanner />
+          <MaPrimeRenovCountdown />
           <SocialProofTicker />
           <WhatsAppFloat />
         </ErrorBoundary>
