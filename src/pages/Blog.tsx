@@ -18,20 +18,34 @@ const Blog = () => {
       "Tous nos guides experts sur la pompe à chaleur, la climatisation réversible, les aides 2026 (MaPrimeRénov', CEE) et le choix d'équipement pour votre logement en Isère et Rhône-Alpes.",
     canonical: `${baseUrl}/blog`,
     ogImage: `${baseUrl}/og-image.jpg`,
-    jsonLd: {
-      "@context": "https://schema.org",
-      "@type": "Blog",
-      name: "Blog ECO CVC",
-      url: `${baseUrl}/blog`,
-      publisher: { "@type": "Organization", name: "ECO CVC", url: baseUrl },
-      blogPost: articles.map((a) => ({
-        "@type": "BlogPosting",
-        headline: a.title,
-        url: `${baseUrl}/blog/${a.slug}`,
-        datePublished: a.publishedAt,
-        dateModified: a.updatedAt,
-      })),
-    },
+    pinterestKeywords: ["pompe à chaleur", "climatisation", "MaPrimeRénov", "rénovation énergétique", "PAC air-eau", "aides 2026"],
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        name: "Blog ECO CVC",
+        url: `${baseUrl}/blog`,
+        publisher: { "@type": "Organization", name: "ECO CVC", url: baseUrl },
+        blogPost: articles.map((a) => ({
+          "@type": "BlogPosting",
+          headline: a.title,
+          url: `${baseUrl}/blog/${a.slug}`,
+          datePublished: a.publishedAt,
+          dateModified: a.updatedAt,
+        })),
+      },
+      {
+        // ItemList = Google peut afficher les articles en carrousel direct
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        itemListElement: articles.slice(0, 20).map((a, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `${baseUrl}/blog/${a.slug}`,
+          name: a.title,
+        })),
+      },
+    ],
   });
 
   const categories = Array.from(new Set(articles.map((a) => a.category)));

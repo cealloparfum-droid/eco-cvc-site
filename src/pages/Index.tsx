@@ -25,6 +25,7 @@ import CTABand from "@/components/CTABand";
 import StatsBand from "@/components/StatsBand";
 import VoiceLeadSection from "@/components/VoiceLeadSection";
 import GoogleReviewsBlock from "@/components/GoogleReviewsBlock";
+import { useSeo } from "@/lib/useSeo";
 import photoExt1 from "@/assets/photo-install-exterieur-1.jpeg";
 import photoExt3 from "@/assets/photo-install-exterieur-3.jpeg";
 import photoInt from "@/assets/photo-install-interieur.jpeg";
@@ -88,7 +89,48 @@ const brands = [
   { name: "Panasonic" },
 ];
 
+// FAQ rich snippet pour la home — apparaîtra directement dans les résultats Google
+const HOME_FAQ = [
+  {
+    q: "Combien coûte une pompe à chaleur en 2026 ?",
+    a: "Pour une maison 100-150 m² en Isère ou Rhône-Alpes, comptez 11 000 à 17 000 € HT posée. Après aides 2026 (MaPrimeRénov' + CEE + sortie fioul), le reste à charge peut descendre à 2 000-7 000 € selon votre profil de revenus.",
+  },
+  {
+    q: "ECO CVC est-il certifié RGE QualiPAC ?",
+    a: "Oui, ECO CVC est artisan RGE QualiPAC certifié, ce qui rend nos installations éligibles à MaPrimeRénov', CEE Coup de pouce et toutes les aides 2026. Numéro RGE vérifiable sur france-renov.gouv.fr.",
+  },
+  {
+    q: "Quelle est la zone d'intervention d'ECO CVC ?",
+    a: "Nous intervenons en Isère (Bourgoin, Vienne, La Tour-du-Pin, Voiron, Grenoble), Rhône (Lyon et Métropole), Loire (Saint-Étienne), Savoie (Chambéry) et Haute-Savoie (Annecy). Devis gratuit sous 24h.",
+  },
+  {
+    q: "Combien de temps pour installer une pompe à chaleur ?",
+    a: "Comptez 2-4 jours sur place pour la pose. Le délai global signature -> mise en service est de 4-8 semaines (commande matériel + déposition dossier MaPrimeRénov' + chantier).",
+  },
+  {
+    q: "Quelles aides 2026 puis-je cumuler pour une PAC ?",
+    a: "MaPrimeRénov' (jusqu'à 5 000 €), CEE Coup de pouce (jusqu'à 5 000 €), bonus sortie fioul (+1 000 €), TVA 5,5 %, éco-PTZ et aides locales. Cumul possible jusqu'à 14 000 € selon votre profil. Utilisez notre simulateur gratuit.",
+  },
+];
+
 const Index = () => {
+  useSeo({
+    title: "ECO CVC — Pompe à chaleur, climatisation & froid en Isère et Rhône-Alpes | RGE QualiPAC",
+    description: "ECO CVC, artisan RGE QualiPAC en Isère. Installation, entretien et dépannage de pompes à chaleur, climatisations réversibles, VMC et froid commercial. Devis gratuit, aides MaPrimeRénov' & CEE.",
+    canonical: "https://www.ecocvc.pro/",
+    ogImage: "https://www.ecocvc.pro/og-image.jpg",
+    pinterestKeywords: ["pompe à chaleur", "climatisation réversible", "MaPrimeRénov 2026", "RGE QualiPAC", "rénovation énergétique", "PAC air-eau", "Isère", "Lyon"],
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: HOME_FAQ.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  });
+
   return (
     <PageTransition>
       <div className="min-h-screen bg-background">

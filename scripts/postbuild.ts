@@ -70,6 +70,42 @@ ${sortedArticles
 await fs.writeFile(path.join(DIST, "feed.xml"), rss, "utf-8");
 console.log(`✓ RSS feed: ${sortedArticles.length} articles → dist/feed.xml`);
 
+// 2bis. Sitemap NEWS (Google News protocol — articles publiés/MAJ <48h)
+// Permet une indexation en HEURES au lieu de semaines, et apparition dans
+// Google News + Discover sur mobile Android.
+{
+  const now = Date.now();
+  const recentArticles = sortedArticles.filter((a) => {
+    const updated = new Date(a.updatedAt || a.publishedAt).getTime();
+    return now - updated < 2 * 24 * 60 * 60 * 1000; // <48h
+  });
+
+  const newsXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+${recentArticles
+  .map((a) => {
+    const pubDate = new Date(a.publishedAt).toISOString();
+    return `  <url>
+    <loc>${BASE}/blog/${a.slug}</loc>
+    <news:news>
+      <news:publication>
+        <news:name>ECO CVC</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>${pubDate}</news:publication_date>
+      <news:title>${rssEscape(a.title)}</news:title>
+    </news:news>
+  </url>`;
+  })
+  .join("\n")}
+</urlset>
+`;
+
+  await fs.writeFile(path.join(DIST, "sitemap_news.xml"), newsXml, "utf-8");
+  console.log(`✓ Sitemap News (Google News) : ${recentArticles.length} articles récents → dist/sitemap_news.xml`);
+}
+
 // 2bis. Sitemap HTML humain (utile aux visiteurs ET au crawl)
 const baseTpl = await fs.readFile(path.join(DIST, "index.html"), "utf-8");
 const linkList = (title: string, items: { href: string; label: string }[]) =>
@@ -224,10 +260,12 @@ ${entries
   }
 
   // Sitemap index (le fichier maître que Google lit en premier)
+  // Inclut aussi sitemap_news.xml pour le crawl rapide des articles récents
   const validSitemaps = sitemapFiles.filter((sm) => sm.entries.length > 0);
   const indexXml = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${validSitemaps.map((sm) => `  <sitemap><loc>${BASE}/${sm.name}</loc><lastmod>${today}</lastmod></sitemap>`).join("\n")}
+  <sitemap><loc>${BASE}/sitemap_news.xml</loc><lastmod>${today}</lastmod></sitemap>
 </sitemapindex>
 `;
   await fs.writeFile(path.join(DIST, "sitemap_index.xml"), indexXml, "utf-8");

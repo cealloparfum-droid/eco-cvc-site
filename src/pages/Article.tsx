@@ -23,6 +23,11 @@ const Article = () => {
       article.sections.some((s) => /^\d+\.|^étape\s\d/i.test(s.heading))
     : false;
 
+  // Article publié ou mis à jour il y a <30 jours → éligible Google News (schema NewsArticle)
+  const isRecent = article
+    ? Date.now() - new Date(article.updatedAt || article.publishedAt).getTime() < 30 * 24 * 60 * 60 * 1000
+    : false;
+
   useSeo({
     title: article ? article.metaTitle : "Article",
     description: article ? article.metaDescription : "",
@@ -33,7 +38,7 @@ const Article = () => {
           "@context": "https://schema.org",
           "@graph": [
             {
-              "@type": "Article",
+              "@type": isRecent ? "NewsArticle" : "Article",
               headline: article.title,
               description: article.metaDescription,
               datePublished: article.publishedAt,
