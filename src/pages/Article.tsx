@@ -9,6 +9,7 @@ import { findArticle, articles } from "@/data/articles";
 import { findCity } from "@/data/cities";
 import { useSeo } from "@/lib/useSeo";
 import NewsletterInline from "@/components/NewsletterInline";
+import ArticleToolsCTA from "@/components/ArticleToolsCTA";
 
 const Article = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -82,6 +83,9 @@ const Article = () => {
                   {p}
                 </p>
               ))}
+
+              {/* CTA outils early : capture le lecteur dès l'intro */}
+              <ArticleToolsCTA category={article.category} variant="inline" />
             </motion.div>
           </div>
         </article>
@@ -126,6 +130,10 @@ const Article = () => {
               </div>
             );
           })}
+
+          {/* CTA outils late : version highlighted juste avant la FAQ —
+              le visiteur a fini la lecture, c'est le moment de convertir */}
+          <ArticleToolsCTA category={article.category} variant="highlighted" />
 
           <section className="mt-16 pt-10 border-t border-border">
             <h2 className="font-display text-2xl md:text-3xl font-bold mb-7">Questions fréquentes</h2>
