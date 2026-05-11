@@ -1355,7 +1355,7 @@ for (const q of quartiers) {
             itemCondition: "https://schema.org/NewCondition",
             seller: { "@type": "Organization", name: "ECO CVC" },
           },
-          aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "127" },
+          aggregateRating: { "@type": "AggregateRating", ratingValue: "5.0", reviewCount: "22" },
         },
         {
           "@type": "FAQPage",

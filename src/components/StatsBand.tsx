@@ -18,28 +18,28 @@ interface Stat {
   tint: "blue" | "red" | "green" | "amber";
 }
 
+// Stats 100 % vérifiables (chiffres réels ECO CVC, mai 2026)
 const stats: Stat[] = [
   {
-    value: 1247,
-    label: "installations",
-    sub: "réalisées en Rhône-Alpes",
-    icon: Wrench,
-    tint: "blue",
-  },
-  {
-    value: 4.9,
+    value: 5.0,
     decimals: 1,
     suffix: " / 5",
-    label: "avis Google",
-    sub: "sur 312 avis vérifiés",
+    label: "note Google",
+    sub: "sur 22 avis vérifiés",
     icon: Star,
     tint: "amber",
   },
   {
-    value: 98,
-    suffix: " %",
-    label: "clients satisfaits",
-    sub: "recommandent eco cvc",
+    value: 22,
+    label: "avis Google 5★",
+    sub: "publics et vérifiables",
+    icon: Sparkles,
+    tint: "blue",
+  },
+  {
+    value: 4,
+    label: "équipes terrain",
+    sub: "Isère, Rhône-Alpes",
     icon: Users,
     tint: "green",
   },

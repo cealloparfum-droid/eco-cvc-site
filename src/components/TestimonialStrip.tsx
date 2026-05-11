@@ -215,8 +215,8 @@ const TestimonialStrip = ({ context = "general", variant = "compact", title, cla
               ))}
             </div>
             <div>
-              <div className="text-2xl font-extrabold text-slate-900 leading-none">4,9 / 5</div>
-              <div className="text-xs text-muted-foreground">sur 312 avis Google</div>
+              <div className="text-2xl font-extrabold text-slate-900 leading-none">5,0 / 5</div>
+              <div className="text-xs text-muted-foreground">sur 22 avis Google</div>
             </div>
           </div>
         </div>

@@ -69,8 +69,8 @@ const QuartierPage = () => {
           priceRange: "€€",
           aggregateRating: {
             "@type": "AggregateRating",
-            ratingValue: "4.9",
-            reviewCount: "127",
+            ratingValue: "5.0",
+            reviewCount: "22",
           },
         },
         {
@@ -219,7 +219,7 @@ const QuartierPage = () => {
               {[
                 { icon: Award, label: "RGE QualiPAC" },
                 { icon: Shield, label: "F-Gaz cat. 1" },
-                { icon: Star, label: "4,9/5 (127 avis)" },
+                { icon: Star, label: "5,0/5 (22 avis Google)" },
                 { icon: MapPin, label: `Intervention ${quartier.name}` },
               ].map((t) => (
                 <div

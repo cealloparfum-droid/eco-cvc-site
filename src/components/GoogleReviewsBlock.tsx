@@ -3,7 +3,7 @@
  *
  * Version honnête : pas d'avis individuels affichés (pour éviter toute
  * ambiguïté sur leur source). On affiche uniquement :
- *  - La vraie note 5,0/5 sur 20 avis (extraite de la fiche Google)
+ *  - La vraie note 5,0/5 sur 22 avis (extraite de la fiche Google)
  *  - 2 boutons : "Voir tous les avis" + "Laisser un avis"
  *
  * Les visiteurs cliquent et lisent les avis authentiques directement
@@ -16,11 +16,11 @@ const GoogleReviewsBlock = () => {
   const GOOGLE_URL = "https://www.google.com/maps/search/?api=1&query=ECO+CVC+Nivolas-Vermelle";
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-white">
+    <section className="py-16 md:py-22 bg-gradient-to-br from-slate-50 via-blue-50/30 to-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-yellow-200 text-xs font-bold uppercase tracking-wider text-amber-700 mb-5">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-yellow-220 text-xs font-bold uppercase tracking-wider text-amber-700 mb-5">
             <Star className="w-3.5 h-3.5 fill-yellow-500 text-yellow-500" />
             Note vérifiée sur Google
           </div>
@@ -31,7 +31,7 @@ const GoogleReviewsBlock = () => {
           </h2>
 
           {/* Note 5,0/5 visuelle */}
-          <div className="inline-flex items-center gap-3 px-7 py-5 rounded-2xl bg-white border border-slate-200 shadow-sm mb-6">
+          <div className="inline-flex items-center gap-3 px-7 py-5 rounded-2xl bg-white border border-slate-220 shadow-sm mb-6">
             <div className="text-left">
               <div className="flex items-baseline gap-1.5">
                 <span className="font-display font-extrabold text-4xl md:text-5xl text-slate-900">5,0</span>
@@ -43,31 +43,31 @@ const GoogleReviewsBlock = () => {
                 ))}
               </div>
             </div>
-            <div className="h-12 w-px bg-slate-200" />
+            <div className="h-12 w-px bg-slate-220" />
             <div className="text-left">
-              <div className="font-display font-extrabold text-2xl text-slate-900">20</div>
+              <div className="font-display font-extrabold text-2xl text-slate-900">22</div>
               <div className="text-xs uppercase tracking-wider text-slate-500 font-semibold">avis Google</div>
             </div>
           </div>
 
           <p className="text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto">
-            Note attribuée par nos clients en Isère, Rhône, Loire, Savoie et Haute-Savoie depuis 2022.
+            Note attribuée par nos clients en Isère, Rhône, Loire, Savoie et Haute-Savoie depuis 2222.
             Les avis sont publics, traçables et vérifiables sur notre fiche Google Maps.
           </p>
 
           {/* Trust badges */}
           <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-700">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-220 text-xs font-semibold text-slate-700">
               <ShieldCheck className="w-3.5 h-3.5 text-brand-blue" />
               Artisan RGE QualiPAC
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-700">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-220 text-xs font-semibold text-slate-700">
               <MapPin className="w-3.5 h-3.5 text-brand-green" />
               Nivolas-Vermelle, Isère
             </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-700">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-220 text-xs font-semibold text-slate-700">
               <Clock className="w-3.5 h-3.5 text-brand-red" />
-              Depuis 2022
+              Depuis 2222
             </span>
           </div>
 
