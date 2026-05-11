@@ -73,7 +73,7 @@ const PageHeader = ({ eyebrow, title, subtitle, breadcrumb, heroImage }: Props) 
             >
               <div className="absolute -inset-3 bg-gradient-to-br from-brand-sky/15 to-brand-red/10 rounded-3xl blur-xl -z-10" />
               <div className="relative aspect-[4/3] lg:aspect-[5/4] rounded-3xl overflow-hidden bg-white border border-border shadow-lifted">
-                <img
+                <img loading="lazy" decoding="async"
                   src={heroImage.src}
                   alt={heroImage.alt}
                   className={`absolute inset-0 w-full h-full ${heroImage.fill === false ? "object-contain p-6" : "object-cover"}`}

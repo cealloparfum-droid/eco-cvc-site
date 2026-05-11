@@ -1386,7 +1386,7 @@ const Ventilation = () => {
               className="rounded-3xl border border-border bg-white shadow-soft overflow-hidden hover:shadow-lifted hover:-translate-y-1 transition-all"
             >
               <div className={`aspect-[4/3] ${h.cover ? "" : "bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-6"}`}>
-                <img src={h.img} alt={h.name} className={h.cover ? "w-full h-full object-cover" : "max-w-full max-h-full object-contain"} />
+                <img loading="lazy" decoding="async" src={h.img} alt={h.name} className={h.cover ? "w-full h-full object-cover" : "max-w-full max-h-full object-contain"} />
               </div>
               <div className="p-5">
                 <div className="text-[10px] uppercase tracking-wider font-bold text-brand-red mb-1">{h.p}</div>
@@ -1597,7 +1597,7 @@ const Ventilation = () => {
               </div>
               {/* reflet sol */}
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-6 bg-slate-900/15 blur-xl rounded-full" />
-              <img
+              <img loading="lazy" decoding="async"
                 src={variateurAlvene}
                 alt="Variateur ALVENE"
                 className="relative max-h-full max-w-full object-contain drop-shadow-2xl"
@@ -1637,7 +1637,7 @@ const Ventilation = () => {
                 <div className="w-3/4 h-3/4 rounded-full bg-brand-blue/10 blur-3xl" />
               </div>
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-6 bg-slate-900/15 blur-xl rounded-full" />
-              <img
+              <img loading="lazy" decoding="async"
                 src={variateurSenseo}
                 alt="SENSEO DRIVE"
                 className="relative max-h-full max-w-full object-contain drop-shadow-2xl"
@@ -1721,7 +1721,7 @@ const Ventilation = () => {
       >
         <div className="grid lg:grid-cols-[1.2fr,1fr] gap-8 items-center mb-10">
           <div className="rounded-3xl border border-border shadow-lifted overflow-hidden bg-slate-900">
-            <img
+            <img loading="lazy" decoding="async"
               src={moteurDirect}
               alt="Moteur direct TMD — ventilateur centrifuge à double ouïe"
               className="w-full h-auto object-cover"
@@ -1808,7 +1808,7 @@ const Ventilation = () => {
                 </div>
                 {/* reflet sol */}
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-6 bg-slate-900/15 blur-xl rounded-full" />
-                <img
+                <img loading="lazy" decoding="async"
                   src={c.img}
                   alt={c.title}
                   className="relative max-w-full max-h-full object-contain drop-shadow-2xl"
@@ -1882,7 +1882,7 @@ const Ventilation = () => {
                 </div>
                 {/* reflet sol */}
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-6 bg-slate-900/15 blur-xl rounded-full" />
-                <img
+                <img loading="lazy" decoding="async"
                   src={p.img}
                   alt={p.name}
                   className="relative max-w-full max-h-full object-contain drop-shadow-2xl"
@@ -1962,7 +1962,7 @@ const Ventilation = () => {
                 <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-sky/20 rounded-full blur-3xl" />
                 <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-blue/15 rounded-full blur-3xl" />
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-3 bg-slate-900/15 rounded-[100%] blur-md" />
-                <img src={c.img} alt={c.name} className="relative max-w-full max-h-full object-contain drop-shadow-2xl" />
+                <img loading="lazy" decoding="async" src={c.img} alt={c.name} className="relative max-w-full max-h-full object-contain drop-shadow-2xl" />
               </div>
               <div className="md:w-3/5 p-6 flex flex-col">
                 <div className="text-[10px] uppercase tracking-wider font-bold text-brand-red mb-1">{c.tag}</div>

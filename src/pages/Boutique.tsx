@@ -444,7 +444,7 @@ const Boutique = () => {
                 transition={{ duration: 0.7 }}
                 className="relative rounded-3xl overflow-hidden border border-border shadow-lifted aspect-[4/3]"
               >
-                <img
+                <img loading="lazy" decoding="async"
                   src={poseMural}
                   alt="Pose d'une climatisation murale split intérieur par technicien eco cvc — installation Daikin Perfera salon"
                   className="absolute inset-0 w-full h-full object-cover"
@@ -520,7 +520,7 @@ const Boutique = () => {
                 transition={{ duration: 0.7 }}
                 className="relative rounded-3xl overflow-hidden border border-border shadow-lifted aspect-[4/3]"
               >
-                <img
+                <img loading="lazy" decoding="async"
                   src={poseGainable}
                   alt="Installation d'un climatiseur gainable Daikin SkyAir dans un faux-plafond — pose technique eco cvc"
                   className="absolute inset-0 w-full h-full object-cover"

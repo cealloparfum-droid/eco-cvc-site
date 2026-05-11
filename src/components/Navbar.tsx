@@ -72,7 +72,7 @@ const Navbar = () => {
       >
         <div className="w-full pl-4 pr-3 md:pl-6 md:pr-4 xl:pl-8 xl:pr-6 h-20 flex items-center gap-4">
           <RouterNavLink to="/" className="flex items-center shrink-0">
-            <img src={logo} alt="eco cvc" className="h-12 md:h-14 w-auto" />
+            <img loading="lazy" decoding="async" src={logo} alt="eco cvc" className="h-12 md:h-14 w-auto" />
           </RouterNavLink>
 
           <nav className="hidden xl:flex items-center gap-4 2xl:gap-6 text-sm font-medium text-foreground/70 whitespace-nowrap">
@@ -145,7 +145,7 @@ const Navbar = () => {
             exit={{ opacity: 0 }}
           >
             <div className="flex items-center justify-between">
-              <img src={logo} alt="eco cvc" className="h-12 w-auto" />
+              <img loading="lazy" decoding="async" src={logo} alt="eco cvc" className="h-12 w-auto" />
               <button
                 className="w-10 h-10 flex items-center justify-center text-foreground/80 rounded-full hover:bg-secondary"
                 onClick={() => setMobileOpen(false)}

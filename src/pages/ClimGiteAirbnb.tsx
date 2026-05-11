@@ -215,7 +215,7 @@ const ClimGite = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                <img
+                <img loading="lazy" decoding="async"
                   src={jSeriesCozy}
                   alt="Climatisation discrète posée dans un séjour de gîte rural"
                   className="rounded-3xl border-4 border-white/20 shadow-lifted w-full h-72 md:h-80 object-cover"

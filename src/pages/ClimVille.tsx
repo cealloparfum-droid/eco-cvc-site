@@ -180,7 +180,7 @@ const ClimVille = () => {
                 className="relative"
               >
                 <div className="relative overflow-hidden rounded-3xl border-4 border-white/20 shadow-lifted">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={promoIndoor}
                     alt={`Climatisation réversible AUX 3,5 kW posée à ${city.name}`}
                     className="w-full h-72 md:h-80 object-cover"

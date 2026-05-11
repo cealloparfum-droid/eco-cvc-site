@@ -413,7 +413,7 @@ const VitrinesRefrigerees = () => {
             <div className="grid md:grid-cols-2 gap-6 mt-14">
               <div className="bg-white rounded-3xl border border-border overflow-hidden hover:shadow-lifted transition-shadow group">
                 <div className="aspect-[16/10] overflow-hidden relative">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={vitrineAtelier}
                     alt="Atelier 3A Distribution à Alfortville — chaîne de fabrication d'une vitrine boulangerie sur mesure, façade bois et plateau CORIAN"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -443,7 +443,7 @@ const VitrinesRefrigerees = () => {
 
               <div className="bg-white rounded-3xl border border-border overflow-hidden hover:shadow-lifted transition-shadow group">
                 <div className="aspect-[16/10] overflow-hidden relative">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={vitrineMokaFacade}
                     alt="Boulangerie Moka Artisan-Boulanger en façade — installation vitrines 3A Distribution × eco cvc, éclairage LED façade"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -795,7 +795,7 @@ const VitrinesRefrigerees = () => {
                 className="bg-white rounded-3xl border border-border overflow-hidden hover:shadow-lifted transition-all"
               >
                 <div className="aspect-[16/10] overflow-hidden relative">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={vitrineNeutreLed}
                     alt="Vitrine neutre 3A Distribution avec façade bois clair et éclairage LED bandeau bas — modèle BVNC"
                     className="w-full h-full object-cover"
@@ -842,7 +842,7 @@ const VitrinesRefrigerees = () => {
                 className="bg-white rounded-3xl border border-border overflow-hidden hover:shadow-lifted transition-all"
               >
                 <div className="aspect-[16/10] overflow-hidden relative">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={vitrinePainSpecial}
                     alt="Vitrine pains spéciaux 3A Distribution avec étagères bois lattés sur fond brique — modèle BVPS"
                     className="w-full h-full object-cover"
@@ -906,7 +906,7 @@ const VitrinesRefrigerees = () => {
                 className="bg-white rounded-3xl border border-border overflow-hidden hover:shadow-lifted hover:border-brand-blue/40 transition-all"
               >
                 <div className="aspect-[16/10] overflow-hidden relative bg-slate-50">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={vitrinePatisserie}
                     alt="Vitrine réfrigérée pâtisserie BVR sans réserve — installation noir et or, éclairage LED haut de gamme"
                     className="w-full h-full object-cover"
@@ -940,7 +940,7 @@ const VitrinesRefrigerees = () => {
                 className="bg-white rounded-3xl border border-border overflow-hidden hover:shadow-lifted hover:border-brand-blue/40 transition-all"
               >
                 <div className="aspect-[16/10] overflow-hidden relative bg-slate-50">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={vitrineMokaEnsemble}
                     alt="Ensemble vitrines réfrigérées avec réserve — boulangerie Moka, configuration U avec marquage logo et éclairage LED"
                     className="w-full h-full object-cover"
@@ -974,7 +974,7 @@ const VitrinesRefrigerees = () => {
                 className="bg-white rounded-3xl border border-border overflow-hidden hover:shadow-lifted hover:border-brand-blue/40 transition-all"
               >
                 <div className="aspect-[16/10] overflow-hidden relative bg-slate-50">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={vitrineOrangina}
                     alt="Vitrine réfrigérée d'angle BVAR avec réserve — installation boulangerie ORANGINA, marbre noir et angles intérieur/extérieur"
                     className="w-full h-full object-cover"

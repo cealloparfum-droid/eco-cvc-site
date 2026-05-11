@@ -157,7 +157,7 @@ const PhotoDepannageForm = () => {
               <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3">
                 {photos.map((p, i) => (
                   <motion.div key={i} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="relative aspect-square">
-                    <img src={p.preview} alt={`Photo ${i + 1}`} className="w-full h-full object-cover rounded-xl border border-border" />
+                    <img loading="lazy" decoding="async" src={p.preview} alt={`Photo ${i + 1}`} className="w-full h-full object-cover rounded-xl border border-border" />
                     <button
                       type="button"
                       onClick={() => removePhoto(i)}

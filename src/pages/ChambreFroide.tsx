@@ -448,7 +448,7 @@ const ChambreFroide = () => {
             <div className="grid md:grid-cols-2 gap-6 mt-14">
               <div className="bg-white rounded-3xl border border-border overflow-hidden hover:shadow-lifted transition-shadow group">
                 <div className="aspect-[16/10] overflow-hidden relative">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={panasonicLifestyle}
                     alt="Gamme Panasonic CR — groupes extérieurs CO₂ R744 ET41, ET54 et ET44 pour chambre froide positive"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -479,7 +479,7 @@ const ChambreFroide = () => {
 
               <div className="bg-white rounded-3xl border border-border overflow-hidden hover:shadow-lifted transition-shadow group">
                 <div className="aspect-[16/10] overflow-hidden relative">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={emersonLifestyle}
                     alt="Groupes Emerson Copeland Scroll en façade — intégration architecturale haut de gamme"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -509,7 +509,7 @@ const ChambreFroide = () => {
 
               <div className="bg-white rounded-3xl border border-border overflow-hidden hover:shadow-lifted transition-shadow group">
                 <div className="aspect-[16/10] overflow-hidden relative">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={danfossLifestyle}
                     alt="Gamme Danfoss — Optyma Plus IP54 outdoor + Optyma Slim Pack compact + groupes Maneurop pour chambre froide"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -539,7 +539,7 @@ const ChambreFroide = () => {
 
               <div className="bg-white rounded-3xl border border-border overflow-hidden hover:shadow-lifted transition-shadow group">
                 <div className="aspect-[16/10] overflow-hidden relative">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={tecumsehLifestyle}
                     alt="Tecumseh Silensys Outdoor Condensing Unit — groupe de condensation extérieur silencieux Made in France"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -882,7 +882,7 @@ const ChambreFroide = () => {
               transition={{ duration: 0.7 }}
               className="mt-14 relative rounded-3xl overflow-hidden border border-border shadow-lifted aspect-[21/9]"
             >
-              <img
+              <img loading="lazy" decoding="async"
                 src={panasonicShowcase}
                 alt="Épicerie fine Gourmet Provisions — chambre froide inox, vitrine produits frais et comptoir, chaîne du froid Panasonic intégrée"
                 className="absolute inset-0 w-full h-full object-cover"
@@ -915,7 +915,7 @@ const ChambreFroide = () => {
                 transition={{ duration: 0.7 }}
                 className="relative rounded-3xl overflow-hidden border border-border shadow-lifted aspect-[4/5]"
               >
-                <img
+                <img loading="lazy" decoding="async"
                   src={paciNxLifestyle}
                   alt="Cave à vin équipée Panasonic PACi NX Elite R32 — mural, cassette 4 voies et gainable, +12 °C TH, plage 2,1 → 23,2 kW"
                   className="absolute inset-0 w-full h-full object-cover"
@@ -978,7 +978,7 @@ const ChambreFroide = () => {
                   className="group bg-white rounded-3xl border border-border overflow-hidden hover:shadow-lifted transition-all"
                 >
                   <div className="aspect-[16/10] overflow-hidden bg-slate-50 relative">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={s.image}
                       alt={`Emerson ${s.code} — application métier`}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -1031,7 +1031,7 @@ const ChambreFroide = () => {
                   className="group bg-white rounded-3xl border border-border overflow-hidden hover:shadow-lifted transition-all"
                 >
                   <div className="aspect-[16/10] overflow-hidden bg-slate-50 relative">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={s.image}
                       alt={`Danfoss ${s.code} — produit`}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -1084,7 +1084,7 @@ const ChambreFroide = () => {
                   className="group bg-white rounded-3xl border border-border overflow-hidden hover:shadow-lifted transition-all"
                 >
                   <div className="aspect-[4/3] overflow-hidden bg-slate-50 relative">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={s.image}
                       alt={`Tecumseh ${s.code} — produit`}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

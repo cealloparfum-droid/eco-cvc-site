@@ -224,7 +224,7 @@ const Produits = () => {
           <div className="container mx-auto">
             <div className="grid lg:grid-cols-[1fr,1.2fr] gap-10 items-center">
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3] border border-border shadow-soft">
-                <img src={outdoorPool} alt="Unité extérieure AUX DC Inverter en bord de piscine" className="absolute inset-0 w-full h-full object-cover" />
+                <img loading="lazy" decoding="async" src={outdoorPool} alt="Unité extérieure AUX DC Inverter en bord de piscine" className="absolute inset-0 w-full h-full object-cover" />
               </div>
               <div>
                 <div className="text-[11px] font-bold tracking-widest uppercase text-brand-red mb-3">AUX Group · Depuis 1986</div>
@@ -267,7 +267,7 @@ const Produits = () => {
                   className="group relative bg-white rounded-3xl border border-border overflow-hidden hover:shadow-lifted transition-all"
                 >
                   <div className="aspect-[16/10] overflow-hidden relative">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={s.image}
                       alt={`AUX ${s.name} en situation`}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
@@ -318,7 +318,7 @@ const Produits = () => {
                 transition={{ duration: 0.7 }}
                 className="rounded-3xl overflow-hidden border border-border shadow-lifted aspect-[16/10]"
               >
-                <img src={qSeriesDualTemp} alt="AUX Q Series : chauffe jusqu'à −25 °C, refroidit jusqu'à +65 °C" className="w-full h-full object-cover" />
+                <img loading="lazy" decoding="async" src={qSeriesDualTemp} alt="AUX Q Series : chauffe jusqu'à −25 °C, refroidit jusqu'à +65 °C" className="w-full h-full object-cover" />
               </motion.div>
               <div>
                 <SectionHeading
@@ -379,7 +379,7 @@ const Produits = () => {
             <div className="grid lg:grid-cols-[1fr,1.2fr] gap-12">
               <div>
                 <div className="relative rounded-3xl overflow-hidden aspect-[4/5] border border-border shadow-soft">
-                  <img src={minimalLiving} alt="Intérieur minimaliste équipé d'une climatisation AUX" className="absolute inset-0 w-full h-full object-cover" />
+                  <img loading="lazy" decoding="async" src={minimalLiving} alt="Intérieur minimaliste équipé d'une climatisation AUX" className="absolute inset-0 w-full h-full object-cover" />
                 </div>
                 <SectionHeading
                   align="left"
@@ -489,7 +489,7 @@ const Produits = () => {
                 </ul>
               </div>
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3] border border-border shadow-lifted">
-                <img src={outdoorNature} alt="Unité extérieure AUX dans un environnement naturel" className="absolute inset-0 w-full h-full object-cover" />
+                <img loading="lazy" decoding="async" src={outdoorNature} alt="Unité extérieure AUX dans un environnement naturel" className="absolute inset-0 w-full h-full object-cover" />
               </div>
             </div>
           </div>

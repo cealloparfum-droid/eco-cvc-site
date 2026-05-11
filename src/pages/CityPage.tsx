@@ -140,7 +140,7 @@ const CityPage = () => {
               </motion.div>
 
               <div className="hidden lg:block rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl">
-                <img src={photoInstall} alt={`Installation pompe à chaleur à ${city.name} par ECO CVC`} className="w-full h-full object-cover" />
+                <img loading="lazy" decoding="async" src={photoInstall} alt={`Installation pompe à chaleur à ${city.name} par ECO CVC`} className="w-full h-full object-cover" />
               </div>
             </div>
           </div>

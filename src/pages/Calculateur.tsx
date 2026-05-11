@@ -361,7 +361,7 @@ const Calculateur = () => {
                     {/* Reco product */}
                     <div className="rounded-2xl overflow-hidden border-2 border-white/15">
                       <div className="relative h-32 overflow-hidden">
-                        <img src={result.reco.image} alt={result.reco.name} className="absolute inset-0 w-full h-full object-cover" />
+                        <img loading="lazy" decoding="async" src={result.reco.image} alt={result.reco.name} className="absolute inset-0 w-full h-full object-cover" />
                         {result.reco.badge && (
                           <span className="absolute top-2 right-2 bg-brand-red text-white text-[10px] font-bold tracking-wider uppercase px-2 py-1 rounded-full shadow-lifted">
                             {result.reco.badge}

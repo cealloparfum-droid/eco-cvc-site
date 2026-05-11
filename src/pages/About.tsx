@@ -66,7 +66,7 @@ const About = () => {
                 className="relative"
               >
                 <div className="relative aspect-[4/5] rounded-3xl overflow-hidden border border-border shadow-lifted">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={photoAbout}
                     alt="Technicien eco cvc en pose d'une unité extérieure AUX"
                     className="absolute inset-0 w-full h-full object-cover"

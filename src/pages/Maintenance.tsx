@@ -105,7 +105,7 @@ const Maintenance = () => {
                 transition={{ duration: 0.7 }}
                 className="relative rounded-3xl overflow-hidden shadow-lifted border border-border"
               >
-                <img
+                <img loading="lazy" decoding="async"
                   src={photoFrigo}
                   alt="Technicien eco cvc contrôlant les pressions du fluide frigorigène"
                   className="w-full aspect-[4/5] object-cover"

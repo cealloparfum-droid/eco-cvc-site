@@ -231,7 +231,7 @@ const ClimCopro = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                <img
+                <img loading="lazy" decoding="async"
                   src={outdoor}
                   alt="Pose discrète d'une unité extérieure de climatisation en copropriété"
                   className="rounded-3xl border-4 border-white/20 shadow-lifted w-full h-72 md:h-80 object-cover"

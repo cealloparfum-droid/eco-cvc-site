@@ -17,6 +17,12 @@ const Article = () => {
   const baseUrl = "https://ecocvc.pro";
   const canonical = `${baseUrl}/blog/${slug}`;
 
+  // Détection automatique : article tutoriel ("Comment X", "Etape", "Choisir") → schema HowTo
+  const isHowTo = article
+    ? /^comment\b|^choisir\b|^pour choisir\b|étape|checklist|guide pas-à-pas/i.test(article.title) ||
+      article.sections.some((s) => /^\d+\.|^étape\s\d/i.test(s.heading))
+    : false;
+
   useSeo({
     title: article ? article.metaTitle : "Article",
     description: article ? article.metaDescription : "",
@@ -25,27 +31,74 @@ const Article = () => {
     jsonLd: article
       ? {
           "@context": "https://schema.org",
-          "@type": "Article",
-          headline: article.title,
-          description: article.metaDescription,
-          datePublished: article.publishedAt,
-          dateModified: article.updatedAt,
-          author: { "@type": "Organization", name: "ECO CVC", url: baseUrl },
-          publisher: {
-            "@type": "Organization",
-            name: "ECO CVC",
-            logo: { "@type": "ImageObject", url: `${baseUrl}/og-image.jpg` },
-          },
-          mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
-          image: `${baseUrl}/og-image.jpg`,
-          articleSection: article.category,
+          "@graph": [
+            {
+              "@type": "Article",
+              headline: article.title,
+              description: article.metaDescription,
+              datePublished: article.publishedAt,
+              dateModified: article.updatedAt,
+              author: { "@type": "Organization", name: "ECO CVC", url: baseUrl },
+              publisher: {
+                "@type": "Organization",
+                name: "ECO CVC",
+                logo: { "@type": "ImageObject", url: `${baseUrl}/og-image.jpg` },
+              },
+              mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+              image: `${baseUrl}/og-image.jpg`,
+              articleSection: article.category,
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Accueil", item: baseUrl },
+                { "@type": "ListItem", position: 2, name: "Blog", item: `${baseUrl}/blog` },
+                { "@type": "ListItem", position: 3, name: article.category },
+                { "@type": "ListItem", position: 4, name: article.title, item: canonical },
+              ],
+            },
+            ...(article.faq.length > 0
+              ? [
+                  {
+                    "@type": "FAQPage",
+                    mainEntity: article.faq.map((f) => ({
+                      "@type": "Question",
+                      name: f.q,
+                      acceptedAnswer: { "@type": "Answer", text: f.a },
+                    })),
+                  },
+                ]
+              : []),
+            ...(isHowTo
+              ? [
+                  {
+                    "@type": "HowTo",
+                    name: article.title,
+                    description: article.metaDescription,
+                    image: `${baseUrl}/og-image.jpg`,
+                    totalTime: `PT${article.readingMinutes}M`,
+                    step: article.sections.map((s, i) => ({
+                      "@type": "HowToStep",
+                      position: i + 1,
+                      name: s.heading,
+                      text: s.paragraphs.join(" ") + (s.list ? " " + s.list.join(" · ") : ""),
+                    })),
+                  },
+                ]
+              : []),
+          ],
         }
       : undefined,
   });
 
   if (!article) return <Navigate to="/blog" replace />;
 
-  const others = articles.filter((a) => a.slug !== article.slug).slice(0, 3);
+  // Maillage interne intelligent : on prend 3 articles de la MÊME catégorie
+  // (cohérence sémantique) + 3 de catégories différentes (élargissement).
+  // → 6 liens internes vers d'autres articles = meilleure distribution PageRank.
+  const sameCat = articles.filter((a) => a.slug !== article.slug && a.category === article.category).slice(0, 3);
+  const otherCat = articles.filter((a) => a.slug !== article.slug && a.category !== article.category).slice(0, 3);
+  const others = [...sameCat, ...otherCat];
 
   return (
     <PageTransition>
@@ -202,7 +255,7 @@ const Article = () => {
         <section className="bg-slate-50/60 py-14 md:py-20">
           <div className="container mx-auto">
             <h2 className="font-display text-2xl md:text-3xl font-bold mb-8">Articles similaires</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
               {others.map((a) => (
                 <Link key={a.slug} to={`/blog/${a.slug}`} className="group p-6 rounded-2xl bg-white border border-border hover:border-brand-blue/40 hover:shadow-lg transition-all">
                   <span className="text-xs font-bold uppercase tracking-wider text-brand-blue mb-3 block">{a.category}</span>

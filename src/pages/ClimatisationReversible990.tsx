@@ -307,7 +307,7 @@ const ClimReversible990 = () => {
                 className="relative"
               >
                 <div className="relative overflow-hidden rounded-3xl border-4 border-white/20 shadow-lifted">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={promoIndoor}
                     alt="Climatisation réversible AUX 3,5 kW posée à 990 € TTC par ECO CVC"
                     className="w-full h-80 md:h-96 object-cover"
@@ -426,7 +426,7 @@ const ClimReversible990 = () => {
             </p>
 
             <div className="grid md:grid-cols-[1fr,1.3fr] gap-6 items-center">
-              <img
+              <img loading="lazy" decoding="async"
                 src={jSeriesCozy}
                 alt="Unité intérieure AUX J-Smart 3,5 kW posée dans un séjour"
                 className="rounded-2xl shadow-soft w-full"

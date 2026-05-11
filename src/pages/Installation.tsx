@@ -159,7 +159,7 @@ const Installation = () => {
                 className="sticky top-28 grid gap-4"
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-lifted border border-border">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={photoInstall}
                     alt="Pose d'un split mural par un technicien eco cvc"
                     className="w-full aspect-[4/3] object-cover"
@@ -171,7 +171,7 @@ const Installation = () => {
                   </div>
                 </div>
                 <div className="relative rounded-3xl overflow-hidden border border-border shadow-soft">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={photoRoof}
                     alt="Installation d'une unité extérieure en toiture"
                     className="w-full aspect-[5/3] object-cover"

@@ -49,7 +49,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="bg-white rounded-xl p-4 inline-block mb-6">
-              <img src={logo} alt="eco cvc" className="h-14 w-auto" />
+              <img loading="lazy" decoding="async" src={logo} alt="eco cvc" className="h-14 w-auto" />
             </div>
             <p className="text-sm text-slate-400 leading-relaxed mb-6">
               Artisan spécialiste de la climatisation réversible et de la pompe à
