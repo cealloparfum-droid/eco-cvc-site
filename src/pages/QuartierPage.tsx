@@ -17,6 +17,8 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
+import ArticleToolsCTA from "@/components/ArticleToolsCTA";
+import LeadMagnetCard from "@/components/LeadMagnetCard";
 import { useSeo } from "@/lib/useSeo";
 import { quartiers } from "@/data/quartiers";
 import { cities } from "@/data/cities";
@@ -403,6 +405,24 @@ const QuartierPage = () => {
               </Link>
             </div>
           </div>
+        </section>
+
+        {/* Outils + Lead magnet */}
+        <section className="container mx-auto max-w-4xl px-4 pt-12 pb-2">
+          <ArticleToolsCTA
+            preset="quartier"
+            variant="highlighted"
+            title={`Outils gratuits pour ${quartier.nom}`}
+            subtitle="Simulez vos aides, calculez la puissance idéale, vérifiez un devis reçu — résultats instantanés."
+          />
+        </section>
+        <section className="container mx-auto max-w-4xl px-4 pb-16">
+          <LeadMagnetCard
+            source={`quartier-${slug}`}
+            variant="banner"
+            title={`Guide PAC & Clim ${quartier.nom} — gratuit`}
+            subtitle={`Spécificités du quartier, aides locales 2026, marques fiables, arnaques à éviter — guide complet en PDF.`}
+          />
         </section>
       </main>
       <Footer />

@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { ChevronRight, Trophy, Leaf, Wallet, Sparkles, ArrowRight, Phone, Info, Mail, CheckCircle2, Send } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import LeadMagnetCard from "@/components/LeadMagnetCard";
+import ArticleToolsCTA from "@/components/ArticleToolsCTA";
 import PageTransition from "@/components/PageTransition";
 import { useSeo } from "@/lib/useSeo";
 import { compareAll, formatEuro, type CompareInput } from "@/lib/chauffage-comparator";
@@ -298,6 +300,19 @@ const ComparateurChauffages = () => {
               )}
             </div>
           </div>
+        </section>
+
+        {/* Lead magnet + outils complémentaires */}
+        <section className="container mx-auto max-w-4xl px-4 py-2">
+          <LeadMagnetCard
+            source="comparateur-chauffages"
+            variant="banner"
+            title="Guide PAC vs autres chauffages — gratuit"
+            subtitle="Comparatif détaillé fioul / gaz / granulés / PAC sur 15 ans, basé sur les coûts réels 2026."
+          />
+        </section>
+        <section className="container mx-auto max-w-4xl px-4 pb-12">
+          <ArticleToolsCTA preset="comparatif" variant="inline" title="Continuez avec ces outils" />
         </section>
 
         <Footer />

@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import CTABand from "@/components/CTABand";
+import ArticleToolsCTA from "@/components/ArticleToolsCTA";
+import LeadMagnetCard from "@/components/LeadMagnetCard";
 import { findCity } from "@/data/cities";
 import { useSeo } from "@/lib/useSeo";
 import photoInstall from "@/assets/photo-install-exterieur-1.jpeg";
@@ -172,6 +174,26 @@ const CityPage = () => {
             <SectionCommunes city={city} />
           </>
         )}
+
+        {/* Outils gratuits — pousse vers les calculateurs (lead gen) */}
+        <section className="container mx-auto max-w-4xl px-4 py-2">
+          <ArticleToolsCTA
+            preset="ville-pac"
+            variant="highlighted"
+            title={`Estimez vos aides et le bon dimensionnement pour ${city.name}`}
+            subtitle="3 outils gratuits — résultat personnalisé en moins de 2 minutes, basé sur les barèmes officiels 2026."
+          />
+        </section>
+
+        {/* Lead magnet — capture email contre Guide PAC PDF gratuit */}
+        <section className="container mx-auto max-w-4xl px-4 py-6">
+          <LeadMagnetCard
+            source={`city-pac-${ville}`}
+            variant="banner"
+            title={`Guide PAC ${city.name} 2026 — gratuit`}
+            subtitle={`Aides exactes, marques fiables, arnaques à éviter et checklist signature — pour les habitants de ${city.name} et environs.`}
+          />
+        </section>
 
         <CTABand />
         <Footer />

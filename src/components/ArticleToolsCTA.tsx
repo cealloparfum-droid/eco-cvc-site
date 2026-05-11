@@ -113,14 +113,72 @@ const ACCENT_CLASSES: Record<Tool["accent"], { bg: string; icon: string; border:
   },
 };
 
+// Presets pour les pages non-articles (villes, quartiers, marques, etc.)
+export type ToolsPreset =
+  | "ville-pac"           // Page PAC d'une ville
+  | "ville-clim"          // Page clim d'une ville
+  | "quartier"            // Page quartier Lyon/Grenoble
+  | "code-erreur"         // Page code erreur SAV
+  | "depannage"           // Page dépannage par cas
+  | "marque"              // Page marque (Daikin etc.)
+  | "aides-locales"       // Page aide collectivité
+  | "metier-pro"          // Page métier B2B (boulangerie etc.)
+  | "remplacement-fioul"  // Sortie fioul
+  | "remplacement-gaz"    // Sortie gaz
+  | "zfe-lyon"            // ZFE Lyon
+  | "mythes"              // Mythes PAC
+  | "comparatif";         // Comparatif marques
+
+const PRESET_MAP: Record<ToolsPreset, string[]> = {
+  "ville-pac":          ["simulateur", "calculateur", "audit"],
+  "ville-clim":         ["calculateur", "simulateur", "comparateur"],
+  "quartier":           ["simulateur", "calculateur", "audit"],
+  "code-erreur":        ["audit", "calculateur", "simulateur"],
+  "depannage":          ["audit", "calculateur", "simulateur"],
+  "marque":             ["comparateur", "audit", "calculateur"],
+  "aides-locales":      ["simulateur", "eligibilite", "calendrier"],
+  "metier-pro":         ["calculateur", "audit", "simulateur"],
+  "remplacement-fioul": ["simulateur", "eligibilite", "calculateur"],
+  "remplacement-gaz":   ["simulateur", "comparateur", "calculateur"],
+  "zfe-lyon":           ["simulateur", "calculateur", "eligibilite"],
+  "mythes":             ["comparateur", "calculateur", "simulateur"],
+  "comparatif":         ["comparateur", "calculateur", "audit"],
+};
+
 interface ArticleToolsCTAProps {
-  category: Article["category"];
+  /** Catégorie d'article (mode legacy) */
+  category?: Article["category"];
+  /** Preset pour pages non-articles */
+  preset?: ToolsPreset;
+  /** Override manuel des outils à afficher (3 max recommandé) */
+  tools?: string[];
   variant?: "inline" | "highlighted";
   className?: string;
+  /** Titre personnalisé pour cette page */
+  title?: string;
+  /** Sous-titre personnalisé */
+  subtitle?: string;
 }
 
-const ArticleToolsCTA = ({ category, variant = "inline", className = "" }: ArticleToolsCTAProps) => {
-  const toolKeys = CATEGORY_MAP[category] ?? CATEGORY_MAP["Pratique"];
+const ArticleToolsCTA = ({
+  category,
+  preset,
+  tools: customTools,
+  variant = "inline",
+  className = "",
+  title,
+  subtitle,
+}: ArticleToolsCTAProps) => {
+  let toolKeys: string[];
+  if (customTools && customTools.length > 0) {
+    toolKeys = customTools;
+  } else if (preset) {
+    toolKeys = PRESET_MAP[preset];
+  } else if (category) {
+    toolKeys = CATEGORY_MAP[category] ?? CATEGORY_MAP["Pratique"];
+  } else {
+    toolKeys = ["simulateur", "calculateur", "audit"]; // default général
+  }
   const tools = toolKeys.map((k) => TOOLS[k]).filter(Boolean);
 
   return (
@@ -136,12 +194,14 @@ const ArticleToolsCTA = ({ category, variant = "inline", className = "" }: Artic
           Outils gratuits ECO CVC
         </p>
         <h3 className="font-display text-xl md:text-2xl font-bold text-foreground">
-          {variant === "highlighted"
-            ? "Passez à l'action en 60 secondes"
-            : "Pour aller plus loin, utilisez nos calculateurs gratuits"}
+          {title ??
+            (variant === "highlighted"
+              ? "Passez à l'action en 60 secondes"
+              : "Pour aller plus loin, utilisez nos calculateurs gratuits")}
         </h3>
         <p className="text-sm text-muted-foreground mt-1.5">
-          Calculs personnalisés, sans inscription obligatoire, basés sur les barèmes officiels 2026.
+          {subtitle ??
+            "Calculs personnalisés, sans inscription obligatoire, basés sur les barèmes officiels 2026."}
         </p>
       </div>
 

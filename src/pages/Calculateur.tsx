@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import LeadMagnetCard from "@/components/LeadMagnetCard";
+import ArticleToolsCTA from "@/components/ArticleToolsCTA";
 import PageTransition from "@/components/PageTransition";
 import PageHeader from "@/components/PageHeader";
 import SectionHeading from "@/components/SectionHeading";
@@ -479,6 +481,19 @@ const Calculateur = () => {
               </p>
             </div>
           </div>
+        </section>
+
+        {/* Lead magnet + outils complémentaires */}
+        <section className="container mx-auto max-w-4xl px-4 py-2">
+          <LeadMagnetCard
+            source="calculateur-puissance"
+            variant="banner"
+            title="Recevez votre calcul + le guide PAC complet"
+            subtitle="PDF récapitulatif personnalisé + guide 10 pages : marques fiables, aides 2026, arnaques."
+          />
+        </section>
+        <section className="container mx-auto max-w-4xl px-4 pb-12">
+          <ArticleToolsCTA preset="ville-pac" variant="inline" title="Continuez avec ces outils" />
         </section>
 
         <Footer />

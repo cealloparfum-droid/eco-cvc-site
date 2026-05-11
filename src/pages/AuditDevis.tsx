@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { ChevronRight, AlertTriangle, AlertCircle, CheckCircle2, ShieldCheck, Phone, Send, Mail, Sparkles, Info } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import LeadMagnetCard from "@/components/LeadMagnetCard";
+import ArticleToolsCTA from "@/components/ArticleToolsCTA";
 import PageTransition from "@/components/PageTransition";
 import { useSeo } from "@/lib/useSeo";
 import { submitForm } from "@/lib/submit-form";
@@ -341,6 +343,25 @@ const AuditDevis = () => {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Lead magnet — audit honnête : conversion énorme */}
+        <section className="container mx-auto max-w-4xl px-4 py-2">
+          <LeadMagnetCard
+            source="audit-devis-pac"
+            variant="banner"
+            title="Recevez votre audit détaillé par email"
+            subtitle="On vous renvoie sous 24h une analyse écrite du devis : ce qui est honnête, ce qui est surévalué, ce qui manque."
+            bullets={[
+              "Analyse écrite ligne par ligne",
+              "Comparatif marché 2026",
+              "Estimation reste à charge après aides",
+              "Liste des questions à poser à l'installateur",
+            ]}
+          />
+        </section>
+        <section className="container mx-auto max-w-4xl px-4 pb-12">
+          <ArticleToolsCTA preset="comparatif" variant="inline" title="Continuez avec ces outils" />
         </section>
 
         <Footer />

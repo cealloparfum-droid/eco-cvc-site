@@ -18,6 +18,8 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
+import ArticleToolsCTA from "@/components/ArticleToolsCTA";
+import LeadMagnetCard from "@/components/LeadMagnetCard";
 import { useSeo } from "@/lib/useSeo";
 import { cities } from "@/data/cities";
 import promoIndoor from "@/assets/catalog/aux-global.jpg";
@@ -434,6 +436,24 @@ const ClimVille = () => {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Outils + Lead magnet — capture conversion */}
+        <section className="container mx-auto max-w-4xl px-4 py-2">
+          <ArticleToolsCTA
+            preset="ville-clim"
+            variant="highlighted"
+            title={`Calculez votre clim idéale pour ${city.name}`}
+            subtitle="Puissance, prix, aides — résultats personnalisés en moins de 2 minutes."
+          />
+        </section>
+        <section className="container mx-auto max-w-4xl px-4 pb-12">
+          <LeadMagnetCard
+            source={`clim-ville-${ville}`}
+            variant="banner"
+            title={`Guide Climatisation ${city.name} — gratuit`}
+            subtitle={`Choisir la bonne puissance, comparer les marques, éviter les pièges — guide complet pour ${city.name}.`}
+          />
         </section>
       </main>
       <Footer />

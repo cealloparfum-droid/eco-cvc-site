@@ -4,6 +4,8 @@ import { ChevronRight, Phone, AlertCircle, AlertTriangle, Check, Wrench, ArrowRi
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
+import ArticleToolsCTA from "@/components/ArticleToolsCTA";
+import LeadMagnetCard from "@/components/LeadMagnetCard";
 import { findCodeErreur, codesErreur } from "@/data/codes-erreur";
 import { useSeo } from "@/lib/useSeo";
 
@@ -162,6 +164,24 @@ const CodeErreurPage = () => {
               ))}
             </div>
           </div>
+        </section>
+
+        {/* Outils + Lead magnet — viseur SAV */}
+        <section className="container mx-auto max-w-4xl px-4 py-2">
+          <ArticleToolsCTA
+            preset="code-erreur"
+            variant="highlighted"
+            title="Avant de réparer — vérifiez ces 3 points"
+            subtitle="Outils gratuits : audit devis, simulateur aides (remplacement à envisager ?), calculateur de puissance."
+          />
+        </section>
+        <section className="container mx-auto max-w-4xl px-4 pb-12">
+          <LeadMagnetCard
+            source={`code-erreur-${c.slug}`}
+            variant="banner"
+            title="Faut-il réparer ou remplacer ?"
+            subtitle="Guide gratuit : quand une réparation devient un mauvais investissement, quand basculer en PAC neuve avec aides 2026 — décision en 5 minutes."
+          />
         </section>
 
         <Footer />

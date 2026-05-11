@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, ChevronLeft, CheckCircle2, AlertCircle, ArrowRight, Send, Mail, Phone, Sparkles } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import LeadMagnetCard from "@/components/LeadMagnetCard";
+import ArticleToolsCTA from "@/components/ArticleToolsCTA";
 import PageTransition from "@/components/PageTransition";
 import { useSeo } from "@/lib/useSeo";
 import { submitForm } from "@/lib/submit-form";
@@ -285,6 +287,19 @@ const QuizEligibilite = () => {
               )}
             </AnimatePresence>
           </div>
+        </section>
+
+        {/* Lead magnet — capture sur visiteurs qui viennent de tester l'éligibilité */}
+        <section className="container mx-auto max-w-4xl px-4 py-2">
+          <LeadMagnetCard
+            source="quiz-eligibilite-maprimerenov"
+            variant="banner"
+            title="Recevez le détail des aides 2026 pour votre profil"
+            subtitle="Guide PDF personnalisé : montant exact, démarche pas-à-pas, pièces à fournir, planning conseillé."
+          />
+        </section>
+        <section className="container mx-auto max-w-4xl px-4 pb-12">
+          <ArticleToolsCTA preset="aides-locales" variant="inline" title="Continuez avec ces outils" />
         </section>
 
         <Footer />

@@ -26,6 +26,8 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import LeadMagnetCard from "@/components/LeadMagnetCard";
+import ArticleToolsCTA from "@/components/ArticleToolsCTA";
 import PageTransition from "@/components/PageTransition";
 import { useSeo } from "@/lib/useSeo";
 import {
@@ -504,6 +506,29 @@ const SimulateurAides = () => {
               />
             </div>
           </div>
+        </section>
+
+        {/* Lead magnet — capture sur visiteurs HYPER qualifiés (ils simulent leurs aides) */}
+        <section className="container mx-auto max-w-4xl px-4 py-2">
+          <LeadMagnetCard
+            source="simulateur-aides"
+            variant="banner"
+            title="Recevez votre simulation complète par email"
+            subtitle="Guide PAC 2026 + détail du calcul personnalisé envoyé en PDF. Utile pour comparer plusieurs devis ensuite."
+            bullets={[
+              "Récap PDF de votre simulation",
+              "Barèmes officiels MaPrimeRénov' 2026",
+              "Liste des artisans RGE de votre département",
+              "7 arnaques à éviter avant de signer",
+            ]}
+          />
+        </section>
+        <section className="container mx-auto max-w-4xl px-4 pb-12">
+          <ArticleToolsCTA
+            preset="aides-locales"
+            variant="inline"
+            title="Continuez avec ces outils"
+          />
         </section>
 
         <Footer />
