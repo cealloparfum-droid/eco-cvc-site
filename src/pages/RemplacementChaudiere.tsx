@@ -185,7 +185,7 @@ const RemplacementChaudiereView = ({ config }: { config: Config }) => {
           provider: {
             "@type": "LocalBusiness",
             name: "ECO CVC",
-            telephone: "+33758459900",
+            telephone: "+33629634045",
             address: {
               "@type": "PostalAddress",
               streetAddress: "1074 Route Départementale 1085",
@@ -265,11 +265,11 @@ const RemplacementChaudiereView = ({ config }: { config: Config }) => {
 
               <div className="flex flex-wrap gap-3 mt-7">
                 <a
-                  href="tel:+33758459900"
+                  href="tel:+33629634045"
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-brand-red text-white font-bold text-sm hover:bg-red-600 transition-colors shadow-lifted"
                 >
                   <Phone className="w-4 h-4" />
-                  07 58 45 99 00
+                  06 29 63 40 45
                 </a>
                 <Link
                   to="/devis-pompe-a-chaleur"
@@ -553,7 +553,7 @@ const RemplacementChaudiereView = ({ config }: { config: Config }) => {
             </h2>
             <p className="text-sm md:text-base text-slate-600 mb-10 text-center max-w-2xl mx-auto">
               {config.faq.length} questions concrètes que nos clients posent en
-              visite technique. Une autre question ? Appelez le 07 58 45 99 00.
+              visite technique. Une autre question ? Appelez le 06 29 63 40 45.
             </p>
 
             <div className="max-w-3xl mx-auto space-y-3">

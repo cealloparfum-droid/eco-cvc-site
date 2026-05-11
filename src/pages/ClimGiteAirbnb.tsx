@@ -185,10 +185,10 @@ const ClimGite = () => {
                 </p>
                 <div className="flex flex-wrap gap-3 mb-5">
                   <a
-                    href="tel:+33758459900"
+                    href="tel:+33629634045"
                     className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white text-orange-600 font-bold hover:bg-slate-100 transition shadow-lifted"
                   >
-                    <Phone className="w-4 h-4" /> 07 58 45 99 00
+                    <Phone className="w-4 h-4" /> 06 29 63 40 45
                   </a>
                   <Link
                     to="/contact"
@@ -372,10 +372,10 @@ const ClimGite = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href="tel:+33758459900"
+                href="tel:+33629634045"
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white text-orange-600 font-extrabold hover:bg-slate-100 transition shadow-lifted"
               >
-                <Phone className="w-4 h-4" /> 07 58 45 99 00
+                <Phone className="w-4 h-4" /> 06 29 63 40 45
               </a>
               <Link
                 to="/contact"

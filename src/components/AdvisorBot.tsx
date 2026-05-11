@@ -27,10 +27,10 @@ import { MicButton } from "@/components/MicButton";
  *  Configuration
  *  ----------------------------------------------------------------*/
 
-const PHONE_1 = "07 58 45 99 00";
-const PHONE_1_HREF = "tel:+33758459900";
-const PHONE_2 = "06 29 63 40 45";
-const PHONE_2_HREF = "tel:+33629634045";
+const PHONE_1 = "06 29 63 40 45";
+const PHONE_1_HREF = "tel:+33629634045";
+const PHONE_2 = "07 58 45 99 00";
+const PHONE_2_HREF = "tel:+33758459900";
 const TARGET_EMAIL = "ecocvc69@gmail.com";
 
 type ServiceKey =
@@ -454,7 +454,7 @@ const AdvisorBot = () => {
       if (!res.ok) {
         throw new Error(
           data.error ||
-            "Le chat IA est temporairement indisponible. Vous pouvez nous appeler au 07 58 45 99 00.",
+            "Le chat IA est temporairement indisponible. Vous pouvez nous appeler au 06 29 63 40 45.",
         );
       }
       const reply = (data.reply || "").toString();
@@ -466,7 +466,7 @@ const AdvisorBot = () => {
       const msg =
         err instanceof Error
           ? err.message
-          : "Erreur réseau. Réessayez ou appelez-nous au 07 58 45 99 00.";
+          : "Erreur réseau. Réessayez ou appelez-nous au 06 29 63 40 45.";
       setAiError(msg);
     } finally {
       setAiLoading(false);

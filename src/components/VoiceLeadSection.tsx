@@ -65,7 +65,7 @@ const VoiceLeadSection = () => {
     } catch {
       toast({
         title: "Problème d'envoi",
-        description: "Appelez-nous au 07 58 45 99 00.",
+        description: "Appelez-nous au 06 29 63 40 45.",
         variant: "destructive",
       });
     } finally {

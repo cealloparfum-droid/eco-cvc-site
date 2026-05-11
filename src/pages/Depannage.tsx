@@ -96,18 +96,18 @@ const Depannage = () => {
               </div>
               <div className="flex flex-col sm:flex-row gap-2.5">
                 <a
-                  href="tel:+33758459900"
+                  href="tel:+33629634045"
                   className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white text-brand-red font-extrabold hover:bg-slate-100 transition-colors shadow-lifted"
                 >
                   <Phone className="w-5 h-5" />
-                  07 58 45 99 00
+                  06 29 63 40 45
                 </a>
                 <a
-                  href="tel:+33629634045"
+                  href="tel:+33758459900"
                   className="inline-flex items-center gap-3 px-6 py-3 rounded-full border-2 border-white text-white font-extrabold hover:bg-white/15 transition-colors"
                 >
                   <Phone className="w-5 h-5" />
-                  06 29 63 40 45
+                  07 58 45 99 00
                 </a>
               </div>
             </div>

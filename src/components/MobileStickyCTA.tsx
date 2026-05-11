@@ -50,7 +50,7 @@ const MobileStickyCTA = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/10 via-transparent to-brand-red/10 pointer-events-none" />
             <div className="relative flex items-stretch gap-2 p-2">
               <a
-                href="tel:+33758459900"
+                href="tel:+33629634045"
                 className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-3 rounded-xl border-2 border-brand-red text-brand-red font-bold text-sm hover:bg-brand-red hover:text-white transition-colors"
               >
                 <Phone className="w-4 h-4" />

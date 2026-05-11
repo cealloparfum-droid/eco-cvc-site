@@ -21,7 +21,7 @@ const DepannagePhoto = () => {
       "@context": "https://schema.org",
       "@type": "Service",
       serviceType: "Dépannage avec pré-diagnostic photo",
-      provider: { "@type": "HVACBusiness", name: "ECO CVC", url: baseUrl, telephone: "+33758459900" },
+      provider: { "@type": "HVACBusiness", name: "ECO CVC", url: baseUrl, telephone: "+33629634045" },
       areaServed: ["Isère", "Rhône", "Savoie", "Haute-Savoie", "Loire"],
       url: canonical,
     },
@@ -57,8 +57,8 @@ const DepannagePhoto = () => {
                 <a href="#formulaire" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-red-600 text-white font-bold hover:bg-red-700 transition-colors text-base shadow-lg">
                   <Camera className="w-5 h-5" /> Envoyer mes photos
                 </a>
-                <a href="tel:+33758459900" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-foreground font-semibold border border-border hover:border-brand-blue/50">
-                  <Phone className="w-4 h-4" /> 07 58 45 99 00
+                <a href="tel:+33629634045" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-foreground font-semibold border border-border hover:border-brand-blue/50">
+                  <Phone className="w-4 h-4" /> 06 29 63 40 45
                 </a>
               </div>
             </motion.div>

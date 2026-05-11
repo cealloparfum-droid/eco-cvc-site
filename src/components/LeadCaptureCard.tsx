@@ -93,7 +93,7 @@ const LeadCaptureCard = ({ context, summary, extraData, className = "" }: Props)
     } catch {
       toast({
         title: "Oups, problème d'envoi",
-        description: "Appelez-nous au 07 58 45 99 00, on s'occupe de tout.",
+        description: "Appelez-nous au 06 29 63 40 45, on s'occupe de tout.",
         variant: "destructive",
       });
     } finally {

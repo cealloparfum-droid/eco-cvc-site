@@ -229,7 +229,7 @@ const Contact = () => {
     } catch {
       toast({
         title: "Problème d'envoi",
-        description: "Réessayez ou appelez-nous au 07 58 45 99 00.",
+        description: "Réessayez ou appelez-nous au 06 29 63 40 45.",
         variant: "destructive",
       });
     } finally {
@@ -512,18 +512,18 @@ const Contact = () => {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-2">
                       <a
-                        href="tel:+33758459900"
+                        href="tel:+33629634045"
                         className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-brand-red hover:bg-red-600 font-extrabold transition-colors"
                       >
                         <Phone className="w-4 h-4" />
-                        07 58 45 99 00
+                        06 29 63 40 45
                       </a>
                       <a
-                        href="tel:+33629634045"
+                        href="tel:+33758459900"
                         className="inline-flex items-center gap-3 px-6 py-3 rounded-full border-2 border-white/40 hover:bg-white/10 font-extrabold transition-colors"
                       >
                         <Phone className="w-4 h-4" />
-                        06 29 63 40 45
+                        07 58 45 99 00
                       </a>
                     </div>
                   </div>
@@ -532,7 +532,7 @@ const Contact = () => {
                 <div className="bg-white rounded-3xl border border-border p-8 shadow-soft">
                   <h3 className="font-extrabold text-slate-900 mb-6">Nous contacter</h3>
                   <ul className="space-y-5">
-                    <InfoLine icon={Phone} title="Téléphone" lines={["07 58 45 99 00", "06 29 63 40 45"]} tint="red" />
+                    <InfoLine icon={Phone} title="Téléphone" lines={["06 29 63 40 45", "07 58 45 99 00"]} tint="red" />
                     <InfoLine icon={Mail} title="Email" lines={["ecocvc69@gmail.com"]} tint="blue" />
                     <InfoLine icon={MapPin} title="Zone d'intervention" lines={["Région Rhône-Alpes", "Rhône 69 · Loire 42 · Isère 38", "Savoie 73 · Haute-Savoie 74"]} tint="green" />
                     <InfoLine

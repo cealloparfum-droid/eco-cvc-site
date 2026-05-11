@@ -54,7 +54,7 @@ const QuartierPage = () => {
         {
           "@type": "LocalBusiness",
           name: `ECO CVC — Climatisation ${quartier.name}`,
-          telephone: "+33758459900",
+          telephone: "+33629634045",
           address: {
             "@type": "PostalAddress",
             addressLocality: cityLabel,
@@ -183,10 +183,10 @@ const QuartierPage = () => {
               <p className="text-lg text-white/90 mb-6 max-w-3xl">{quartier.intro}</p>
               <div className="flex flex-wrap gap-3 mb-5">
                 <a
-                  href="tel:+33758459900"
+                  href="tel:+33629634045"
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white text-brand-bluedark font-bold hover:bg-slate-100 transition shadow-lifted"
                 >
-                  <Phone className="w-4 h-4" /> 07 58 45 99 00
+                  <Phone className="w-4 h-4" /> 06 29 63 40 45
                 </a>
                 <Link
                   to="/contact"
@@ -390,10 +390,10 @@ const QuartierPage = () => {
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a
-                href="tel:+33758459900"
+                href="tel:+33629634045"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-brand-bluedark font-bold hover:bg-slate-100 transition shadow-lifted"
               >
-                <Phone className="w-4 h-4" /> 07 58 45 99 00
+                <Phone className="w-4 h-4" /> 06 29 63 40 45
               </a>
               <Link
                 to="/contact"

@@ -77,7 +77,7 @@ const ExitIntentPopup = () => {
     } catch {
       toast({
         title: "Oups, problème d'envoi",
-        description: "Réessayez ou appelez-nous au 07 58 45 99 00.",
+        description: "Réessayez ou appelez-nous au 06 29 63 40 45.",
         variant: "destructive",
       });
     } finally {
@@ -124,7 +124,7 @@ const ExitIntentPopup = () => {
                 <h3 className="font-display text-2xl font-bold mb-3">Merci !</h3>
                 <p className="text-muted-foreground">
                   Le guide MaPrimeRénov' 2026 arrive dans votre boîte mail. Si vous voulez avancer plus vite,
-                  appelez-nous au <a href="tel:+33758459900" className="text-brand-blue font-semibold">07 58 45 99 00</a>.
+                  appelez-nous au <a href="tel:+33629634045" className="text-brand-blue font-semibold">06 29 63 40 45</a>.
                 </p>
               </div>
             ) : (

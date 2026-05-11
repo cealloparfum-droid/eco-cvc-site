@@ -2110,11 +2110,11 @@ const Ventilation = () => {
                 Voir mon devis ({quote.count})
               </button>
               <a
-                href="tel:+33758459900"
+                href="tel:+33629634045"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border-2 border-white/70 text-white font-bold hover:bg-white/10 transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                07 58 45 99 00
+                06 29 63 40 45
               </a>
             </div>
           </div>

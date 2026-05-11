@@ -803,11 +803,11 @@ const ChambreFroide = () => {
                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                       </Link>
                       <a
-                        href="tel:+33758459900"
+                        href="tel:+33629634045"
                         className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border-2 border-white/40 text-white font-bold hover:bg-white/10 transition-colors text-sm"
                       >
                         <Phone className="w-4 h-4" />
-                        07 58 45 99 00
+                        06 29 63 40 45
                       </a>
                     </div>
                   </div>

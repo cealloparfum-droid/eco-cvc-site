@@ -39,7 +39,7 @@ const CodeErreurPage = () => {
             "@context": "https://schema.org",
             "@type": "Service",
             serviceType: "Dépannage pompe à chaleur et climatisation",
-            provider: { "@type": "HVACBusiness", name: "ECO CVC", url: baseUrl, telephone: "+33758459900" },
+            provider: { "@type": "HVACBusiness", name: "ECO CVC", url: baseUrl, telephone: "+33629634045" },
             areaServed: ["Isère", "Rhône", "Savoie", "Haute-Savoie", "Loire"],
             url: canonical,
           },
@@ -79,10 +79,10 @@ const CodeErreurPage = () => {
 
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="tel:+33758459900"
+                  href="tel:+33629634045"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-red-600 text-white font-bold hover:bg-red-700 transition-colors text-base shadow-lg"
                 >
-                  <Phone className="w-5 h-5" /> Appeler maintenant — 07 58 45 99 00
+                  <Phone className="w-5 h-5" /> Appeler maintenant — 06 29 63 40 45
                 </a>
                 {c.resoluble_diy && (
                   <span className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-green-50 text-green-900 text-sm font-semibold border border-green-200">
@@ -134,10 +134,10 @@ const CodeErreurPage = () => {
                 ECO CVC est partenaire {c.marqueLabel} et dispose de l'outillage de diagnostic spécifique. {c.delai}
               </p>
               <a
-                href="tel:+33758459900"
+                href="tel:+33629634045"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white font-semibold hover:bg-brand-blue/90 transition-colors"
               >
-                <Phone className="w-4 h-4" /> 07 58 45 99 00
+                <Phone className="w-4 h-4" /> 06 29 63 40 45
               </a>
             </div>
           </div>

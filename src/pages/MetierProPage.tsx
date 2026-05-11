@@ -29,7 +29,7 @@ const MetierProPage = () => {
               "@type": "HVACBusiness",
               name: "ECO CVC",
               url: baseUrl,
-              telephone: "+33758459900",
+              telephone: "+33629634045",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "1074 Route Départementale 1085",
@@ -88,10 +88,10 @@ const MetierProPage = () => {
               <p className="text-lg text-muted-foreground leading-relaxed mb-7">{metier.tagline}</p>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="tel:+33758459900"
+                  href="tel:+33629634045"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white font-semibold hover:bg-brand-blue/90 transition-colors"
                 >
-                  <Phone className="w-4 h-4" /> 07 58 45 99 00
+                  <Phone className="w-4 h-4" /> 06 29 63 40 45
                 </a>
                 <Link
                   to="/devis-froid-commercial"

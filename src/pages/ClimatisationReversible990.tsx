@@ -60,7 +60,7 @@ const TIMELINE = [
     step: 1,
     icon: Phone,
     title: "Vous nous appelez",
-    desc: "Au 07 58 45 99 00 ou via formulaire. On vous donne un créneau visite technique sous 48h ouvrées.",
+    desc: "Au 06 29 63 40 45 ou via formulaire. On vous donne un créneau visite technique sous 48h ouvrées.",
   },
   {
     step: 2,
@@ -195,7 +195,7 @@ const ClimReversible990 = () => {
         {
           "@type": "LocalBusiness",
           name: "ECO CVC",
-          telephone: "+33758459900",
+          telephone: "+33629634045",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Nivolas-Vermelle",
@@ -273,11 +273,11 @@ const ClimReversible990 = () => {
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                   <a
-                    href="tel:+33758459900"
+                    href="tel:+33629634045"
                     className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border-2 border-white/50 text-white font-bold hover:bg-white/10 transition-colors"
                   >
                     <Phone className="w-4 h-4" />
-                    07 58 45 99 00
+                    06 29 63 40 45
                   </a>
                 </div>
 
@@ -540,11 +540,11 @@ const ClimReversible990 = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href="tel:+33758459900"
+                href="tel:+33629634045"
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white text-brand-bluedark font-extrabold hover:bg-slate-100 transition shadow-lifted"
               >
                 <Phone className="w-4 h-4" />
-                07 58 45 99 00
+                06 29 63 40 45
               </a>
               <Link
                 to="/contact"

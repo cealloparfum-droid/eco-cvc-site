@@ -58,7 +58,7 @@ const Hero = () => {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
-                href="tel:+33758459900"
+                href="tel:+33629634045"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white border-2 border-brand-red text-brand-red font-semibold hover:bg-brand-red hover:text-white transition-colors"
               >
                 <Phone className="w-4 h-4" />

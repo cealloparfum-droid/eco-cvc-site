@@ -85,11 +85,11 @@ const SeasonalUrgencyBanner = () => {
                 </div>
                 <p className="text-xs text-white/85 leading-relaxed mb-3">{config.body}</p>
                 <a
-                  href="tel:+33758459900"
+                  href="tel:+33629634045"
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white text-foreground font-bold text-xs hover:bg-white/90 transition-colors"
                 >
                   <Phone className="w-3.5 h-3.5" />
-                  07 58 45 99 00
+                  06 29 63 40 45
                 </a>
               </div>
             </div>

@@ -73,11 +73,11 @@ class ErrorBoundary extends Component<Props, State> {
                 Accueil
               </a>
               <a
-                href="tel:+33758459900"
+                href="tel:+33629634045"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-red text-white font-bold text-sm hover:bg-red-600 transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                07 58 45 99 00
+                06 29 63 40 45
               </a>
             </div>
 

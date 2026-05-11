@@ -156,8 +156,8 @@ const MythesPac = () => {
               Notre équipe RGE QualiPAC répond honnêtement à vos questions, même les plus pointues. Pas de blabla commercial, juste de l'expertise terrain.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <a href="tel:+33758459900" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white font-semibold hover:bg-brand-blue/90 transition-colors">
-                <Phone className="w-4 h-4" /> 07 58 45 99 00
+              <a href="tel:+33629634045" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white font-semibold hover:bg-brand-blue/90 transition-colors">
+                <Phone className="w-4 h-4" /> 06 29 63 40 45
               </a>
               <Link to="/faq" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-foreground font-semibold border border-border hover:border-brand-blue/50">
                 FAQ complète <ArrowRight className="w-4 h-4" />

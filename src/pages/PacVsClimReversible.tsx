@@ -282,10 +282,10 @@ export default function PacVsClimReversible() {
               </p>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="tel:+33758459900"
+                  href="tel:+33629634045"
                   className="inline-flex items-center gap-2 px-5 py-3 bg-brand-blue text-white rounded-lg font-semibold hover:bg-brand-blue/90 transition"
                 >
-                  <Phone className="w-4 h-4" /> 07 58 45 99 00
+                  <Phone className="w-4 h-4" /> 06 29 63 40 45
                 </a>
                 <Link
                   to="/contact"

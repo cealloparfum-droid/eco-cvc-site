@@ -86,7 +86,7 @@ const PhotoDepannageForm = () => {
     } catch (err) {
       toast({
         title: "Problème d'envoi",
-        description: "Photos trop lourdes ? Appelez-nous directement au 07 58 45 99 00.",
+        description: "Photos trop lourdes ? Appelez-nous directement au 06 29 63 40 45.",
         variant: "destructive",
       });
     } finally {
@@ -108,8 +108,8 @@ const PhotoDepannageForm = () => {
             <>Un technicien examine vos photos et vous rappelle sous 4h ouvrées avec un pré-diagnostic et une proposition d'intervention.</>
           )}
         </p>
-        <a href="tel:+33758459900" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white font-semibold hover:bg-brand-blue/90 transition-colors">
-          <Phone className="w-4 h-4" /> Préférer appeler — 07 58 45 99 00
+        <a href="tel:+33629634045" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white font-semibold hover:bg-brand-blue/90 transition-colors">
+          <Phone className="w-4 h-4" /> Préférer appeler — 06 29 63 40 45
         </a>
       </motion.div>
     );
@@ -270,7 +270,7 @@ const PhotoDepannageForm = () => {
 
         <p className="text-xs text-muted-foreground text-center">
           Préférer appeler ?{" "}
-          <a href="tel:+33758459900" className="text-brand-blue font-semibold underline">07 58 45 99 00</a>
+          <a href="tel:+33629634045" className="text-brand-blue font-semibold underline">06 29 63 40 45</a>
         </p>
       </form>
     </div>

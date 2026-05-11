@@ -48,8 +48,8 @@ const PacSolaireBatterie = () => {
                 <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white font-semibold hover:bg-brand-blue/90 transition-colors">
                   Étude personnalisée gratuite <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a href="tel:+33758459900" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-foreground font-semibold border border-border hover:border-brand-blue/50">
-                  <Phone className="w-4 h-4" /> 07 58 45 99 00
+                <a href="tel:+33629634045" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-foreground font-semibold border border-border hover:border-brand-blue/50">
+                  <Phone className="w-4 h-4" /> 06 29 63 40 45
                 </a>
               </div>
             </motion.div>

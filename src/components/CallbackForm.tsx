@@ -69,7 +69,7 @@ const CallbackForm = () => {
     } catch {
       toast({
         title: "Problème d'envoi",
-        description: "Appelez-nous au 07 58 45 99 00, on s'occupe de tout.",
+        description: "Appelez-nous au 06 29 63 40 45, on s'occupe de tout.",
         variant: "destructive",
       });
     } finally {
@@ -96,7 +96,7 @@ const CallbackForm = () => {
               </div>
               <h3 className="text-xl font-extrabold text-slate-900 mb-2">Rappel programmé !</h3>
               <p className="text-sm text-muted-foreground max-w-md mx-auto">
-                Un technicien vous rappelle au <strong>{form.phone}</strong> dans les meilleurs délais. En cas d'urgence absolue, appelez le 07 58 45 99 00.
+                Un technicien vous rappelle au <strong>{form.phone}</strong> dans les meilleurs délais. En cas d'urgence absolue, appelez le 06 29 63 40 45.
               </p>
             </motion.div>
           ) : (

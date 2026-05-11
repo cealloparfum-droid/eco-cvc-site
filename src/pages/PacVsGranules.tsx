@@ -292,11 +292,11 @@ const PacVsGranules = () => {
                   Simuler mes aides
                 </Link>
                 <a
-                  href="tel:+33758459900"
+                  href="tel:+33629634045"
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-brand-red font-bold text-sm hover:text-red-700 transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  07 58 45 99 00
+                  06 29 63 40 45
                 </a>
               </div>
             </motion.div>

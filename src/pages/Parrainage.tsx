@@ -55,7 +55,7 @@ const Parrainage = () => {
         toast({ title: "Recommandation enregistrée", description: "Nous contactons votre filleul sous 48h." });
       }
     } catch {
-      toast({ title: "Problème d'envoi", description: "Appelez 07 58 45 99 00.", variant: "destructive" });
+      toast({ title: "Problème d'envoi", description: "Appelez 06 29 63 40 45.", variant: "destructive" });
     } finally {
       setLoading(false);
     }
@@ -93,7 +93,7 @@ const Parrainage = () => {
           <div className="container mx-auto">
             <h2 className="font-display text-2xl md:text-3xl font-bold mb-10">Comment ça marche</h2>
             <div className="grid md:grid-cols-3 gap-5">
-              <Step n="1" icon={Users} title="Vous nous recommandez" body="Donnez-nous le nom et numéro d'un proche intéressé via le formulaire ci-dessous, ou faites-leur citer votre nom au 07 58 45 99 00." />
+              <Step n="1" icon={Users} title="Vous nous recommandez" body="Donnez-nous le nom et numéro d'un proche intéressé via le formulaire ci-dessous, ou faites-leur citer votre nom au 06 29 63 40 45." />
               <Step n="2" icon={Phone} title="On les contacte sous 48h" body="Visite technique gratuite, devis personnalisé. Pas de pression, ils décident librement." />
               <Step n="3" icon={Wallet} title="Si pose réalisée : tout le monde gagne" body="100 € en chèque ou virement pour vous (parrain). 100 € de remise sur le devis pour votre filleul. Pas de plafond — vous pouvez parrainer plusieurs proches." />
             </div>

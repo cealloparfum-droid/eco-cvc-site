@@ -248,10 +248,10 @@ const staticPages: { path: string; title: string; description: string; h1: strin
     path: "/contact",
     title: "Contact ECO CVC — devis gratuit, Isère & Rhône-Alpes",
     description:
-      "Contactez ECO CVC pour un devis gratuit pompe à chaleur, climatisation, ventilation ou froid commercial. Tél 07 58 45 99 00, Nivolas-Vermelle (38).",
+      "Contactez ECO CVC pour un devis gratuit pompe à chaleur, climatisation, ventilation ou froid commercial. Tél 06 29 63 40 45, Nivolas-Vermelle (38).",
     h1: "Nous contacter",
     intro:
-      "Notre équipe est à votre disposition pour un devis gratuit ou un conseil technique. Tél : 07 58 45 99 00 ou 06 29 63 40 45. Email : ecocvc69@gmail.com. Adresse : 1074 Route Départementale 1085, 38300 Nivolas-Vermelle.",
+      "Notre équipe est à votre disposition pour un devis gratuit ou un conseil technique. Tél : 06 29 63 40 45 ou 07 58 45 99 00. Email : ecocvc69@gmail.com. Adresse : 1074 Route Départementale 1085, 38300 Nivolas-Vermelle.",
   },
   {
     path: "/mentions-legales",
@@ -349,7 +349,7 @@ for (const c of cities) {
     <ul>${c.communesVoisines.map((cv) => `<li>${escape(cv)}</li>`).join("")}</ul>
     ${faqHtml(c.faq)}
     <h2>Demander un devis</h2>
-    <p><a href="/devis-pompe-a-chaleur">Devis pompe à chaleur</a> · <a href="/devis-climatisation">Devis climatisation</a> · Tél <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p><a href="/devis-pompe-a-chaleur">Devis pompe à chaleur</a> · <a href="/devis-climatisation">Devis climatisation</a> · Tél <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
 
   const jsonLd = [
@@ -361,7 +361,7 @@ for (const c of cities) {
         "@type": "HVACBusiness",
         name: "ECO CVC",
         url: BASE,
-        telephone: "+33758459900",
+        telephone: "+33629634045",
         address: {
           "@type": "PostalAddress",
           streetAddress: "1074 Route Départementale 1085",
@@ -477,7 +477,7 @@ for (const d of devisConfigs) {
     <h2>Pourquoi choisir ECO CVC</h2>
     <ul>${d.whyUs.map((w) => `<li><strong>${escape(w.title)}</strong> — ${escape(w.body)}</li>`).join("")}</ul>
     ${faqHtml(d.faq)}
-    <p>Tél <a href="tel:+33758459900">07 58 45 99 00</a> · <a href="/contact">Formulaire de contact</a></p>
+    <p>Tél <a href="tel:+33629634045">06 29 63 40 45</a> · <a href="/contact">Formulaire de contact</a></p>
   `;
   await writeRoute(`/${d.slug}`, {
     title: d.metaTitle,
@@ -552,14 +552,14 @@ for (const m of metiers) {
     <h2>Pourquoi ECO CVC</h2>
     <ul>${m.whyEcoCvc.map((w) => `<li>${escape(w)}</li>`).join("")}</ul>
     ${faqHtml(m.faq)}
-    <p><a href="tel:+33758459900">Appeler 07 58 45 99 00</a> · <a href="/devis-froid-commercial">Devis froid commercial</a></p>
+    <p><a href="tel:+33629634045">Appeler 06 29 63 40 45</a> · <a href="/devis-froid-commercial">Devis froid commercial</a></p>
   `;
   const jsonLd = [
     {
       "@context": "https://schema.org",
       "@type": "Service",
       serviceType: `Frigoriste ${m.name}`,
-      provider: { "@type": "HVACBusiness", name: "ECO CVC", url: BASE, telephone: "+33758459900" },
+      provider: { "@type": "HVACBusiness", name: "ECO CVC", url: BASE, telephone: "+33629634045" },
       areaServed: ["Isère", "Rhône", "Savoie", "Haute-Savoie", "Loire"],
       url: canonical,
     },
@@ -585,7 +585,7 @@ for (const d of depannageCases) {
   const bodyHtml = `
     ${breadcrumbHtml([{ label: "Accueil", href: "/" }, { label: "Dépannage", href: "/depannage" }, { label: d.problem }])}
     <h1>${escape(d.h1)}</h1>
-    <p><a href="tel:+33758459900"><strong>Appeler 07 58 45 99 00</strong></a> — ${escape(d.delaiIntervention)}</p>
+    <p><a href="tel:+33629634045"><strong>Appeler 06 29 63 40 45</strong></a> — ${escape(d.delaiIntervention)}</p>
     <h2>Symptômes</h2>
     <ul>${d.symptomes.map((s) => `<li>${escape(s)}</li>`).join("")}</ul>
     <h2>Causes possibles</h2>
@@ -595,14 +595,14 @@ for (const d of depannageCases) {
     ${d.solutionDiy ? `<h2>Ce que vous pouvez faire</h2><p>${escape(d.solutionDiy)}</p>` : ""}
     <h2>Intervention ECO CVC</h2>
     <p>${escape(d.solutionPro)}</p>
-    <p><a href="tel:+33758459900">Appeler maintenant — 07 58 45 99 00</a></p>
+    <p><a href="tel:+33629634045">Appeler maintenant — 06 29 63 40 45</a></p>
   `;
   const jsonLd = [
     {
       "@context": "https://schema.org",
       "@type": "Service",
       serviceType: "Dépannage pompe à chaleur et climatisation",
-      provider: { "@type": "HVACBusiness", name: "ECO CVC", url: BASE, telephone: "+33758459900" },
+      provider: { "@type": "HVACBusiness", name: "ECO CVC", url: BASE, telephone: "+33629634045" },
       areaServed: ["Isère", "Rhône", "Savoie", "Haute-Savoie", "Loire"],
       url: canonical,
       description: d.problem,
@@ -749,7 +749,7 @@ for (const ch of [
       <li>Pose en 2 jours, démontage de l'ancienne chaudière inclus</li>
       <li>Mise en service, formation 15 min, visite de suivi à 12 mois</li>
     </ol>
-    <p><a href="/devis-pompe-a-chaleur">Demander un devis gratuit</a> · <a href="/simulateur-aides">Simuler mes aides</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p><a href="/devis-pompe-a-chaleur">Demander un devis gratuit</a> · <a href="/simulateur-aides">Simuler mes aides</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
   await writeRoute(`/${ch.slug}`, {
     title: ch.title,
@@ -811,7 +811,7 @@ for (const ch of [
       <li><strong>Garanties écrites</strong> (constructeur 5-10 ans, pose 2 ans, décennale)</li>
       <li><strong>Aides simulées + montage du dossier</strong> (inclus, pas en option)</li>
     </ul>
-    <p><a href="/audit-devis-pac">Auditer un devis reçu</a> · <a href="/simulateur-aides">Simulateur aides 2026</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p><a href="/audit-devis-pac">Auditer un devis reçu</a> · <a href="/simulateur-aides">Simulateur aides 2026</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
   await writeRoute(`/${slug}`, {
     title,
@@ -898,7 +898,7 @@ for (const ch of [
       <li>Égalité quasi parfaite — mais la PAC offre la clim et zéro corvée d'approvisionnement.</li>
     </ul>
     ${faqHtml(faq)}
-    <p><a href="/comparateur-chauffages">Comparateur tous chauffages</a> · <a href="/simulateur-aides">Simulateur aides 2026</a> · <a href="/audit-devis-pac">Auditer un devis</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p><a href="/comparateur-chauffages">Comparateur tous chauffages</a> · <a href="/simulateur-aides">Simulateur aides 2026</a> · <a href="/audit-devis-pac">Auditer un devis</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
   await writeRoute(`/${slug}`, {
     title,
@@ -971,7 +971,7 @@ for (const ch of [
       <li>On se rémunère sur la pose, pas sur le matériel</li>
     </ul>
     ${faqHtml(faq)}
-    <p><a href="/climatisation-reversible-990-euros">Détail offre 990 €</a> · <a href="/calculateur">Calculateur de puissance</a> · <a href="/produits">Gamme AUX</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p><a href="/climatisation-reversible-990-euros">Détail offre 990 €</a> · <a href="/calculateur">Calculateur de puissance</a> · <a href="/produits">Gamme AUX</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
   await writeRoute(`/${slug}`, {
     title,
@@ -1025,7 +1025,7 @@ for (const city of cities) {
     <p>Sans frais de déplacement supplémentaires : ${city.communesVoisines.map(escape).join(", ")}.</p>
     ${city.quartiers && city.quartiers.length > 0 ? `<h2>Quartiers de ${escape(city.name)} desservis</h2><p>${city.quartiers.map(escape).join(" · ")}</p>` : ""}
     ${faqHtml(city.faq)}
-    <p><a href="/climatisation-reversible-990-euros">Offre 990 € détaillée</a> · <a href="/tarifs-climatisation-reversible">Tous nos tarifs</a> · <a href="/pompe-a-chaleur/${city.slug}">PAC à ${escape(city.name)}</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p><a href="/climatisation-reversible-990-euros">Offre 990 € détaillée</a> · <a href="/tarifs-climatisation-reversible">Tous nos tarifs</a> · <a href="/pompe-a-chaleur/${city.slug}">PAC à ${escape(city.name)}</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
   await writeRoute(`/${slug}`, {
     title,
@@ -1037,7 +1037,7 @@ for (const city of cities) {
         {
           "@type": "LocalBusiness",
           name: `ECO CVC — Climatisation ${city.name}`,
-          telephone: "+33758459900",
+          telephone: "+33629634045",
           address: {
             "@type": "PostalAddress",
             addressLocality: city.name,
@@ -1104,7 +1104,7 @@ for (const q of quartiers) {
     <h2>Prix indicatif</h2>
     <p>${escape(q.prixIndicatif)} (devis ferme après visite technique gratuite).</p>
     ${faqHtml(q.faq)}
-    <p>${city ? `<a href="/climatisation-reversible/${city.slug}">Toute la page ${escape(q.cityName)}</a> · ` : ""}<a href="/climatisation-reversible-990-euros">Offre 990 € détaillée</a> · <a href="/contact">Demander un devis</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p>${city ? `<a href="/climatisation-reversible/${city.slug}">Toute la page ${escape(q.cityName)}</a> · ` : ""}<a href="/climatisation-reversible-990-euros">Offre 990 € détaillée</a> · <a href="/contact">Demander un devis</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
   await writeRoute(`/${slug}`, {
     title,
@@ -1116,7 +1116,7 @@ for (const q of quartiers) {
         {
           "@type": "LocalBusiness",
           name: `ECO CVC — Climatisation ${q.name}`,
-          telephone: "+33758459900",
+          telephone: "+33629634045",
           address: {
             "@type": "PostalAddress",
             addressLocality: q.cityName,
@@ -1202,7 +1202,7 @@ for (const q of quartiers) {
     <ul>${specs.map((x) => `<li>${escape(x)}</li>`).join("")}</ul>
     <h2>De l'appel à la fraîcheur en 3 semaines</h2>
     <ol>
-      <li><strong>Vous nous appelez</strong> au 07 58 45 99 00 — créneau visite technique sous 48h ouvrées.</li>
+      <li><strong>Vous nous appelez</strong> au 06 29 63 40 45 — créneau visite technique sous 48h ouvrées.</li>
       <li><strong>Visite technique gratuite</strong> (30 min) : on valide l'emplacement, l'électricité, on remet le devis ferme à 990 €.</li>
       <li><strong>Pose en 1 journée</strong> : équipe sur place 8h-17h, raccordement, mise en service, démo télécommande.</li>
       <li><strong>Vous profitez</strong> : chauffage + clim dès le soir même, suivi ECO CVC.</li>
@@ -1210,7 +1210,7 @@ for (const q of quartiers) {
     <h2>Zone d'intervention</h2>
     <p>Isère (38), Rhône (69), Ain (01), Savoie (73), Haute-Savoie (74). Rayon 60 km autour de Nivolas-Vermelle.</p>
     ${faqHtml(faq)}
-    <p><a href="/calculateur">Calculateur de puissance</a> · <a href="/produits">Toute la gamme AUX</a> · <a href="/contact">Réserver visite technique</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p><a href="/calculateur">Calculateur de puissance</a> · <a href="/produits">Toute la gamme AUX</a> · <a href="/contact">Réserver visite technique</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
   await writeRoute(`/${slug}`, {
     title,
@@ -1311,7 +1311,7 @@ for (const q of quartiers) {
     <h2>Verdict honnête</h2>
     <p>Dans 80 % des cas (remplacement d'une chaudière + recherche d'aides), la <strong>PAC air-eau</strong> gagne. Dans 20 % des cas (appartement, climat doux, priorité clim été), la <strong>clim réversible</strong> reste pertinente — et coûte 3 fois moins cher. ECO CVC pose les deux et vous oriente honnêtement après visite technique.</p>
     ${faqHtml(faq)}
-    <p><a href="/pac-vs-granules">PAC vs granulés</a> · <a href="/comparateur-chauffages">Comparateur chauffages</a> · <a href="/simulateur-aides">Simulateur aides 2026</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p><a href="/pac-vs-granules">PAC vs granulés</a> · <a href="/comparateur-chauffages">Comparateur chauffages</a> · <a href="/simulateur-aides">Simulateur aides 2026</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
   await writeRoute(`/${slug}`, {
     title,
@@ -1372,7 +1372,7 @@ for (const q of quartiers) {
       <li>Règlement de copropriété : lire l'article sur les modifications de façade</li>
     </ul>
     ${faqHtml(faq)}
-    <p><a href="/climatisation-reversible-990-euros">Offre 990 € détaillée</a> · <a href="/tarifs-climatisation-reversible">Tous nos tarifs</a> · <a href="/climatisation-gite-airbnb">Clim pour gîte / Airbnb</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p><a href="/climatisation-reversible-990-euros">Offre 990 € détaillée</a> · <a href="/tarifs-climatisation-reversible">Tous nos tarifs</a> · <a href="/climatisation-gite-airbnb">Clim pour gîte / Airbnb</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
   await writeRoute(`/${slug}`, {
     title: "Climatisation en copropriété : démarches, AG, prix | ECO CVC Lyon Isère",
@@ -1437,7 +1437,7 @@ for (const q of quartiers) {
       <li><strong>Modèles renforcés :</strong> filtres lavables, télécommande IR + 1 secours, finition robuste.</li>
     </ul>
     ${faqHtml(faq)}
-    <p><a href="/climatisation-reversible-990-euros">Offre 990 € détaillée</a> · <a href="/tarifs-climatisation-reversible">Tous nos tarifs</a> · <a href="/climatisation-copropriete">Clim en copropriété</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p><a href="/climatisation-reversible-990-euros">Offre 990 € détaillée</a> · <a href="/tarifs-climatisation-reversible">Tous nos tarifs</a> · <a href="/climatisation-copropriete">Clim en copropriété</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
   await writeRoute(`/${slug}`, {
     title: "Climatisation pour gîte / Airbnb : ROI dès la 1ère saison | ECO CVC",
@@ -1542,7 +1542,7 @@ for (const d of dimensionnements) {
       <li>Aides Eco-Rénov Lyon Métropole jusqu'à 3 500 € additionnels</li>
       <li>Valorisation immobilière 5-15% à la revente</li>
     </ul>
-    <p><a href="/aides-locales/lyon-metropole">Aides Lyon Métropole en détail</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p><a href="/aides-locales/lyon-metropole">Aides Lyon Métropole en détail</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
   await writeRoute("/zfe-lyon-sortir-fioul-gaz", { title, description, canonical: `${BASE}/zfe-lyon-sortir-fioul-gaz`, bodyHtml });
   generated.push("/zfe-lyon-sortir-fioul-gaz");
@@ -1570,7 +1570,7 @@ for (const d of dimensionnements) {
       <li>Tableau électrique (disjoncteur, voyants)</li>
     </ul>
     <p>Service gratuit, sans engagement. Réactivité accrue (30 min en urgence, 4h en rapide, 24-48h en non urgent).</p>
-    <p><a href="tel:+33758459900">Appeler 07 58 45 99 00</a></p>
+    <p><a href="tel:+33629634045">Appeler 06 29 63 40 45</a></p>
   `;
   await writeRoute("/depannage-photo", { title, description, canonical: `${BASE}/depannage-photo`, bodyHtml });
   generated.push("/depannage-photo");
@@ -1593,7 +1593,7 @@ for (const d of dimensionnements) {
     </ul>
     <h2>Coût d'attendre 1 à 3 ans</h2>
     <p>Pour un ménage Jaune : aides 2026 = 8 500 €. Aides estimées 2029 = 5 800 €. <strong>Différence : 2 700 €</strong> à cumulés à la perte d'économies de chauffage immédiates.</p>
-    <p><a href="/simulateur-aides">Simuler mes aides 2026</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p><a href="/simulateur-aides">Simuler mes aides 2026</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
   await writeRoute("/calendrier-aides-2026", { title, description, canonical: `${BASE}/calendrier-aides-2026`, bodyHtml });
   generated.push("/calendrier-aides-2026");
@@ -1663,7 +1663,7 @@ for (const c of comparatifsMarques) {
     <p>${escape(description)}</p>
     <h2>Comment ça marche</h2>
     <ol>
-      <li>Vous nous recommandez un proche via formulaire ou téléphone (07 58 45 99 00)</li>
+      <li>Vous nous recommandez un proche via formulaire ou téléphone (06 29 63 40 45)</li>
       <li>Nous contactons le filleul sous 48h pour visite technique gratuite</li>
       <li>Si pose réalisée : 100 € pour vous (parrain) + 100 € de remise pour votre filleul</li>
     </ol>
@@ -1697,7 +1697,7 @@ for (const c of comparatifsMarques) {
     </ul>
     <h2>Verdict en 3 niveaux</h2>
     <p>Score 80-100 : devis correct. 55-79 : devis acceptable mais à vérifier. <55 : devis suspect.</p>
-    <p><a href="/contact">Demander un 2nd avis</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p><a href="/contact">Demander un 2nd avis</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
   await writeRoute("/audit-devis-pac", { title, description, canonical: `${BASE}/audit-devis-pac`, bodyHtml });
   generated.push("/audit-devis-pac");
@@ -1742,7 +1742,7 @@ for (const c of comparatifsMarques) {
     </ul>
     <h2>Cas concret : maison 130 m² en Isère</h2>
     <p>PAC air-eau Daikin 11 kW + kit solaire 4 kWc avec onduleur hybride. Investissement total 24 000 €, aides cumulées 10 480 €, reste à charge 13 520 €. Facture annuelle passe de 2 800 €/an (chaudière fioul) à 650 €/an. Économie cumulée 25 ans : 53 750 €.</p>
-    <p><a href="/contact">Étude personnalisée gratuite</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p><a href="/contact">Étude personnalisée gratuite</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
   await writeRoute("/solaire-pompe-a-chaleur", {
     title,
@@ -1773,7 +1773,7 @@ for (const c of comparatifsMarques) {
       <li>Outillage pro (Daikin DTA, Mitsubishi MELCloud, manomètres pro)</li>
       <li>Stabilité, mutuelle, prime panier</li>
     </ul>
-    <p>Candidature : <a href="mailto:ecocvc69@gmail.com">ecocvc69@gmail.com</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p>Candidature : <a href="mailto:ecocvc69@gmail.com">ecocvc69@gmail.com</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
   await writeRoute("/recrutement", { title, description, canonical: `${BASE}/recrutement`, bodyHtml });
   generated.push("/recrutement");
@@ -1798,7 +1798,7 @@ for (const m of marques) {
     <h2>Pour qui ?</h2>
     <p>${escape(m.pourQui)}</p>
     ${faqHtml(m.faq)}
-    <p><a href="tel:+33758459900">Appeler 07 58 45 99 00</a> · <a href="/contact">Demande de devis</a></p>
+    <p><a href="tel:+33629634045">Appeler 06 29 63 40 45</a> · <a href="/contact">Demande de devis</a></p>
   `;
   const jsonLd = [
     {
@@ -1832,7 +1832,7 @@ for (const c of codesErreur) {
     <h1>${escape(c.h1)}</h1>
     <p>${escape(c.signification)}</p>
     <p><strong>Sévérité :</strong> ${c.severite} · ${escape(c.delai)}</p>
-    <p><a href="tel:+33758459900"><strong>Appeler 07 58 45 99 00</strong></a></p>
+    <p><a href="tel:+33629634045"><strong>Appeler 06 29 63 40 45</strong></a></p>
     <h2>Causes possibles</h2>
     <ul>${c.causes.map((x) => `<li>${escape(x)}</li>`).join("")}</ul>
     <h2>Diagnostic étape par étape</h2>
@@ -1881,7 +1881,7 @@ for (const c of codesErreur) {
     </ul>
     <h2>Pourquoi comparer avant de choisir</h2>
     <p>Sur 15 ans, l'écart entre l'option la plus chère et la moins chère atteint souvent 20 000 à 35 000 € pour une maison standard. Les aides 2026 ont aussi profondément évolué : la chaudière gaz n'est plus éligible à MaPrimeRénov', le fioul est interdit en neuf depuis 2022, et les pompes à chaleur sont massivement subventionnées.</p>
-    <p><a href="/simulateur-aides">Simulateur d'aides détaillé</a> · <a href="/contact">Demander un devis</a> · <a href="tel:+33758459900">07 58 45 99 00</a></p>
+    <p><a href="/simulateur-aides">Simulateur d'aides détaillé</a> · <a href="/contact">Demander un devis</a> · <a href="tel:+33629634045">06 29 63 40 45</a></p>
   `;
   const jsonLd = {
     "@context": "https://schema.org",
@@ -1919,14 +1919,14 @@ for (const a of aidesCollectivites) {
     <h2>Communes desservies</h2>
     <ul>${a.communes.map((c) => `<li>${escape(c)}</li>`).join("")}</ul>
     ${faqHtml(a.faq)}
-    <p><a href="/simulateur-aides">Simuler mes aides personnalisées</a> · <a href="tel:+33758459900">Tél 07 58 45 99 00</a></p>
+    <p><a href="/simulateur-aides">Simuler mes aides personnalisées</a> · <a href="tel:+33629634045">Tél 06 29 63 40 45</a></p>
   `;
   const jsonLd = [
     {
       "@context": "https://schema.org",
       "@type": "Service",
       serviceType: "Conseil et installation pompe à chaleur avec aides locales",
-      provider: { "@type": "HVACBusiness", name: "ECO CVC", url: BASE, telephone: "+33758459900" },
+      provider: { "@type": "HVACBusiness", name: "ECO CVC", url: BASE, telephone: "+33629634045" },
       areaServed: { "@type": "AdministrativeArea", name: a.name },
       url: canonical,
     },

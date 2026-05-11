@@ -181,18 +181,18 @@ const CTABand = ({ variant = "default", title, subtitle, primaryLabel, primaryHr
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="tel:+33758459900"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border-2 border-white/70 text-white font-bold hover:bg-white/10 transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              07 58 45 99 00
-            </a>
-            <a
               href="tel:+33629634045"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border-2 border-white/70 text-white font-bold hover:bg-white/10 transition-colors"
             >
               <Phone className="w-4 h-4" />
               06 29 63 40 45
+            </a>
+            <a
+              href="tel:+33758459900"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border-2 border-white/70 text-white font-bold hover:bg-white/10 transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              07 58 45 99 00
             </a>
           </div>
         </motion.div>

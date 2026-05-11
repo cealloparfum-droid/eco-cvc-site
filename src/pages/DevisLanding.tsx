@@ -38,7 +38,7 @@ const DevisLanding = () => {
             "@type": "HVACBusiness",
             name: "ECO CVC",
             url: baseUrl,
-            telephone: "+33758459900",
+            telephone: "+33629634045",
             address: {
               "@type": "PostalAddress",
               streetAddress: "1074 Route Départementale 1085",
@@ -85,7 +85,7 @@ const DevisLanding = () => {
     } catch {
       toast({
         title: "Problème d'envoi",
-        description: "Appelez-nous directement au 07 58 45 99 00.",
+        description: "Appelez-nous directement au 06 29 63 40 45.",
         variant: "destructive",
       });
     } finally {
@@ -145,7 +145,7 @@ const DevisLanding = () => {
                   href={`tel:${cfg.ctaPhone}`}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white font-semibold hover:bg-brand-blue/90 transition-colors"
                 >
-                  <Phone className="w-4 h-4" /> Préférer appeler — 07 58 45 99 00
+                  <Phone className="w-4 h-4" /> Préférer appeler — 06 29 63 40 45
                 </a>
               </motion.div>
 
@@ -167,7 +167,7 @@ const DevisLanding = () => {
                     <h3 className="font-display text-2xl font-bold mb-3">Merci, demande reçue</h3>
                     <p className="text-muted-foreground">
                       Nous vous rappelons sous 24h ouvrées. Pour aller plus vite, appelez-nous au{" "}
-                      <a href="tel:+33758459900" className="text-brand-blue font-semibold">07 58 45 99 00</a>.
+                      <a href="tel:+33629634045" className="text-brand-blue font-semibold">06 29 63 40 45</a>.
                     </p>
                   </div>
                 ) : (

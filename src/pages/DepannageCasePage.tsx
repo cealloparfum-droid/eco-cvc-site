@@ -49,7 +49,7 @@ const DepannageCasePage = () => {
               "@type": "HVACBusiness",
               name: "ECO CVC",
               url: baseUrl,
-              telephone: "+33758459900",
+              telephone: "+33629634045",
             },
             areaServed: ["Isère", "Rhône", "Savoie", "Haute-Savoie", "Loire"],
             url: canonical,
@@ -107,10 +107,10 @@ const DepannageCasePage = () => {
               </p>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="tel:+33758459900"
+                  href="tel:+33629634045"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-red-600 text-white font-bold hover:bg-red-700 transition-colors text-base shadow-lg"
                 >
-                  <Phone className="w-5 h-5" /> Appeler maintenant — 07 58 45 99 00
+                  <Phone className="w-5 h-5" /> Appeler maintenant — 06 29 63 40 45
                 </a>
                 <Link
                   to="/contact?service=depannage"
@@ -211,10 +211,10 @@ const DepannageCasePage = () => {
               </div>
               <p className="text-foreground/85 leading-relaxed mb-4">{c.solutionPro}</p>
               <a
-                href="tel:+33758459900"
+                href="tel:+33629634045"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white font-semibold hover:bg-brand-blue/90 transition-colors"
               >
-                <Phone className="w-4 h-4" /> Appeler le 07 58 45 99 00
+                <Phone className="w-4 h-4" /> Appeler le 06 29 63 40 45
               </a>
             </div>
           </div>

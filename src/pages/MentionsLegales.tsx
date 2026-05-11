@@ -46,7 +46,7 @@ const MentionsLegales = () => {
 
       <h2>2. Coordonnées</h2>
       <ul>
-        <li>Téléphone : <a href="tel:+33758459900">07 58 45 99 00</a> / <a href="tel:+33629634045">06 29 63 40 45</a></li>
+        <li>Téléphone : <a href="tel:+33629634045">06 29 63 40 45</a> / <a href="tel:+33758459900">07 58 45 99 00</a></li>
         <li>Email : <a href="mailto:ecocvc69@gmail.com">ecocvc69@gmail.com</a></li>
         <li>Zone d'intervention : Rhône-Alpes (Rhône 69, Loire 42, Isère 38, Savoie 73, Haute-Savoie 74)</li>
       </ul>

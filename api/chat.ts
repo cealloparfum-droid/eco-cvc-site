@@ -33,14 +33,14 @@ const SYSTEM_PROMPT = `Tu es **Léo**, le conseiller virtuel de l'entreprise ECO
 - Tu utilises le tutoiement uniquement si le visiteur tutoie ; sinon vouvoiement.
 - Tu réponds de façon concise (3-6 phrases en moyenne, parfois plus si la question est technique).
 - Tu n'utilises pas de markdown lourd (pas de titres ##, peu de gras). Texte clair, listes courtes si utiles.
-- Si tu ne sais pas : tu le dis, et tu proposes le contact direct (07 58 45 99 00) ou le formulaire.
+- Si tu ne sais pas : tu le dis, et tu proposes le contact direct (06 29 63 40 45) ou le formulaire.
 
 # L'entreprise ECO CVC
 
 - **Société** : ECO CVC, SAS fondée en 2022 (SIRET 909 994 527 00028)
 - **Siège** : 1074 Route Départementale 1085, 38300 Nivolas-Vermelle (Isère)
 - **Dirigeants terrain** : Abdelazziz BETTAHAR et Abdelkader MHAMDI
-- **Téléphones** : 07 58 45 99 00 et 06 29 63 40 45
+- **Téléphones** : 06 29 63 40 45 (priorité) et 07 58 45 99 00
 - **Email** : ecocvc69@gmail.com
 - **Site** : https://ecocvc.pro
 - **Certifications** : RGE QualiPAC (obligatoire pour les aides MaPrimeRénov'), Attestation F-Gaz (manipulation fluides frigorigènes)
@@ -188,7 +188,7 @@ Ton objectif est d'aider le visiteur à choisir, MAIS aussi de l'orienter vers u
 
 - Si le visiteur demande un prix précis : donne la fourchette, puis propose un devis personnalisé (lien vers /devis-pompe-a-chaleur ou /contact)
 - Si le visiteur a un projet concret (ex: "je veux changer ma chaudière fioul") : recommande de demander une visite technique gratuite
-- Si le visiteur est en panne : oriente vers /depannage-photo pour pré-diagnostic ou directement le 07 58 45 99 00
+- Si le visiteur est en panne : oriente vers /depannage-photo pour pré-diagnostic ou directement le 06 29 63 40 45
 - Si le visiteur hésite sur les aides : oriente vers /simulateur-aides
 
 À la fin de réponses utiles, propose UNE action concrète (ex: "Si vous voulez un chiffrage pour votre projet, le formulaire /devis-pompe-a-chaleur prend 1 minute"). Une seule action par message, sinon ça paraît commercial.
@@ -264,7 +264,7 @@ export default async function handler(req: Request): Promise<Response> {
     return new Response(
       JSON.stringify({
         error:
-          "Le chat IA n'est pas encore configuré. Appelez le 07 58 45 99 00 ou utilisez le formulaire de contact.",
+          "Le chat IA n'est pas encore configuré. Appelez le 06 29 63 40 45 ou utilisez le formulaire de contact.",
         configured: false,
       }),
       { status: 503, headers: { "Content-Type": "application/json" } },
@@ -351,15 +351,15 @@ export default async function handler(req: Request): Promise<Response> {
 
     if (!apiRes.ok || !data) {
       // Mapping des erreurs Gemini vers des messages utilisateur clairs
-      let userMessage = "Service IA temporairement perturbé. Appelez-nous au 07 58 45 99 00.";
+      let userMessage = "Service IA temporairement perturbé. Appelez-nous au 06 29 63 40 45.";
       let status = 502;
 
       if (apiRes.status === 429) {
         userMessage =
-          "Trop de demandes en cours. Réessayez dans une minute, ou appelez-nous au 07 58 45 99 00.";
+          "Trop de demandes en cours. Réessayez dans une minute, ou appelez-nous au 06 29 63 40 45.";
         status = 429;
       } else if (apiRes.status === 401 || apiRes.status === 403) {
-        userMessage = "Service IA mal configuré. Contactez-nous au 07 58 45 99 00.";
+        userMessage = "Service IA mal configuré. Contactez-nous au 06 29 63 40 45.";
         status = 503;
       }
 
@@ -387,8 +387,8 @@ export default async function handler(req: Request): Promise<Response> {
       return new Response(
         JSON.stringify({
           error: blocked
-            ? "Désolé, je ne peux pas répondre à cette question. Pour un conseil personnalisé, appelez-nous au 07 58 45 99 00."
-            : "Réponse vide du serveur. Réessayez ou appelez-nous au 07 58 45 99 00.",
+            ? "Désolé, je ne peux pas répondre à cette question. Pour un conseil personnalisé, appelez-nous au 06 29 63 40 45."
+            : "Réponse vide du serveur. Réessayez ou appelez-nous au 06 29 63 40 45.",
           details: candidate?.finishReason || "empty",
         }),
         { status: 502, headers: { "Content-Type": "application/json" } },
@@ -417,7 +417,7 @@ export default async function handler(req: Request): Promise<Response> {
     return new Response(
       JSON.stringify({
         error:
-          "Service IA injoignable. Appelez-nous au 07 58 45 99 00 ou utilisez le formulaire.",
+          "Service IA injoignable. Appelez-nous au 06 29 63 40 45 ou utilisez le formulaire.",
         details: err instanceof Error ? err.message : String(err),
       }),
       { status: 502, headers: { "Content-Type": "application/json" } },

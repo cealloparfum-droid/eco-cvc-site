@@ -19,7 +19,7 @@ export const depannageCases: DepannageCase[] = [
     problem: "Ma pompe à chaleur ne chauffe plus",
     metaTitle: "Pompe à chaleur ne chauffe plus — diagnostic et solution | ECO CVC",
     metaDescription:
-      "Pompe à chaleur ne chauffe plus en Isère et Rhône-Alpes : causes possibles, diagnostic, solution. Intervention sous 24h ECO CVC. Tél 07 58 45 99 00.",
+      "Pompe à chaleur ne chauffe plus en Isère et Rhône-Alpes : causes possibles, diagnostic, solution. Intervention sous 24h ECO CVC. Tél 06 29 63 40 45.",
     h1: "Pompe à chaleur qui ne chauffe plus : diagnostic & dépannage",
     urgence: "haute",
     symptomes: [

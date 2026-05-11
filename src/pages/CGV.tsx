@@ -219,7 +219,7 @@ const CGV = () => {
       <h2>Article 17 — Contact</h2>
       <p>
         Pour toute question relative aux présentes CGV : <a href="mailto:ecocvc69@gmail.com">ecocvc69@gmail.com</a>{" "}
-        ou <a href="tel:+33758459900">07 58 45 99 00</a>.
+        ou <a href="tel:+33629634045">06 29 63 40 45</a>.
       </p>
     </LegalLayout>
   );

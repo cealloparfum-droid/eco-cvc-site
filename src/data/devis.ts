@@ -68,7 +68,7 @@ export const devisConfigs: DevisConfig[] = [
         a: "Toute la région Rhône-Alpes : Isère, Rhône, Savoie, Haute-Savoie, Loire. Atelier basé à Nivolas-Vermelle (38).",
       },
     ],
-    ctaPhone: "+33758459900",
+    ctaPhone: "+33629634045",
     formContext: "calculateur",
   },
   {
@@ -124,7 +124,7 @@ export const devisConfigs: DevisConfig[] = [
         a: "Oui jusqu'à -10/-15 °C selon modèle. C'est même très efficace : 1 kWh consommé = 3 kWh restitués.",
       },
     ],
-    ctaPhone: "+33758459900",
+    ctaPhone: "+33629634045",
     formContext: "clim",
   },
   {
@@ -176,7 +176,7 @@ export const devisConfigs: DevisConfig[] = [
         a: "4 500 à 8 000 € en maison plain-pied, 7 000 à 10 500 € en maison étagée. MaPrimeRénov' couvre 1 500 à 2 500 €.",
       },
     ],
-    ctaPhone: "+33758459900",
+    ctaPhone: "+33629634045",
     formContext: "ventilation",
   },
   {
@@ -228,7 +228,7 @@ export const devisConfigs: DevisConfig[] = [
         a: "Oui, contrat annuel avec interventions préventives + dépannage prioritaire.",
       },
     ],
-    ctaPhone: "+33758459900",
+    ctaPhone: "+33629634045",
     formContext: "chambre-froide",
   },
 ];

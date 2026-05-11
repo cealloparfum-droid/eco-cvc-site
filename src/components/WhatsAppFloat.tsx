@@ -10,7 +10,7 @@ import { MessageCircle, X } from "lucide-react";
  * deviennent des leads (vs ~2% pour un formulaire classique).
  */
 
-const WHATSAPP_NUMBER = "33758459900"; // +33 7 58 45 99 00 sans le +
+const WHATSAPP_NUMBER = "33629634045"; // +33 6 29 63 40 45 sans le +
 const PREFILLED_MESSAGE =
   "Bonjour ECO CVC, je m'intéresse à un devis pour ma maison. Pouvez-vous me rappeler ?";
 

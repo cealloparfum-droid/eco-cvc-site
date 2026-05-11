@@ -35,7 +35,7 @@ const CityPage = () => {
                 "@type": "HVACBusiness",
                 name: "ECO CVC",
                 url: baseUrl,
-                telephone: "+33758459900",
+                telephone: "+33629634045",
                 address: {
                   "@type": "PostalAddress",
                   streetAddress: "1074 Route Départementale 1085",
@@ -112,7 +112,7 @@ const CityPage = () => {
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <a
-                    href="tel:+33758459900"
+                    href="tel:+33629634045"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white font-semibold hover:bg-brand-blue/90 transition-colors"
                   >
                     <Phone className="w-4 h-4" /> Appeler — devis gratuit

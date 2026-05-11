@@ -104,11 +104,11 @@ const Navbar = () => {
 
           <div className="ml-auto flex items-center gap-2.5 shrink-0">
             <a
-              href="tel:+33758459900"
+              href="tel:+33629634045"
               className="hidden 2xl:inline-flex items-center gap-2 text-sm font-semibold text-brand-red hover:text-brand-bluedark transition-colors whitespace-nowrap"
             >
               <Phone className="w-4 h-4" />
-              07 58 45 99 00
+              06 29 63 40 45
             </a>
             <motion.a
               href="/contact"
@@ -180,11 +180,11 @@ const Navbar = () => {
             </nav>
             <div className="mt-auto space-y-3 pt-6">
               <a
-                href="tel:+33758459900"
+                href="tel:+33629634045"
                 className="flex items-center justify-center gap-2 w-full py-4 rounded-full border-2 border-brand-red text-brand-red font-semibold"
               >
                 <Phone className="w-4 h-4" />
-                07 58 45 99 00
+                06 29 63 40 45
               </a>
               <a
                 href="/contact"
