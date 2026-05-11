@@ -18,7 +18,34 @@
  */
 
 const WEB3FORMS_KEY = (import.meta.env.VITE_WEB3FORMS_KEY as string | undefined) || "";
+/** Webhook Make.com (Sheets + WhatsApp + email confirmation auto).
+ *  À configurer dans Vercel env vars : VITE_FORM_WEBHOOK_URL */
+const MAKE_WEBHOOK_URL = (import.meta.env.VITE_FORM_WEBHOOK_URL as string | undefined) || "";
 export const TARGET_EMAIL = "ecocvc69@gmail.com";
+
+/**
+ * Notifie en parallèle (fire-and-forget) le webhook Make.com.
+ * Ne bloque jamais le flux principal — c'est de l'enrichissement.
+ */
+function notifyMakeWebhook(subject: string, fields: Record<string, unknown>): void {
+  if (!MAKE_WEBHOOK_URL) return;
+  try {
+    fetch(MAKE_WEBHOOK_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        subject,
+        receivedAt: new Date().toISOString(),
+        ...fields,
+      }),
+      keepalive: true,
+    }).catch(() => {
+      /* silent fail */
+    });
+  } catch {
+    /* never throw */
+  }
+}
 
 export interface SubmitPayload {
   /** Sujet de l'e-mail reçu */
@@ -37,6 +64,10 @@ export interface SubmitResult {
  * Envoie un formulaire vers eco cvc avec la meilleure méthode disponible.
  */
 export async function submitForm({ subject, fields }: SubmitPayload): Promise<SubmitResult> {
+  // Notification Make.com en parallèle (fire-and-forget)
+  // -> alimente Google Sheets + WhatsApp + email confirmation automatique
+  notifyMakeWebhook(subject, fields);
+
   // ── Méthode 1 : Web3Forms (si clé configurée) ─────────────────────
   if (WEB3FORMS_KEY) {
     try {
@@ -95,6 +126,10 @@ export async function submitFormWithFiles({
   fields,
   files,
 }: SubmitPayload & { files: File[] }): Promise<SubmitResult> {
+  // Notification Make.com en parallèle (sans les fichiers — la photo
+  // reste sur Formsubmit pour l'instant ; le lead est notifié séparément)
+  notifyMakeWebhook(subject, { ...fields, hasPhotos: files.length });
+
   const formData = new FormData();
   formData.append("_subject", subject);
   formData.append("_captcha", "false");
