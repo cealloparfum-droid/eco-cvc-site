@@ -106,6 +106,66 @@ ${recentArticles
   console.log(`✓ Sitemap News (Google News) : ${recentArticles.length} articles récents → dist/sitemap_news.xml`);
 }
 
+// 2quater. Sitemap IMAGES (drive du trafic Google Images)
+// Indexe systématiquement les photos de chantier sur les pages villes,
+// avec captions et titres descriptifs.
+{
+  const today = new Date().toISOString().split("T")[0];
+  const xmlEsc = (s: string) =>
+    s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+  // 5 photos types disponibles dans le projet
+  const photos = [
+    { name: "photo-install-exterieur-1", caption: "Installation pompe à chaleur extérieure" },
+    { name: "photo-install-exterieur-2", caption: "Pose unité extérieure PAC air-eau" },
+    { name: "photo-install-exterieur-3", caption: "Chantier PAC en cours d'installation" },
+    { name: "photo-install-toit", caption: "Installation PAC en toiture" },
+    { name: "photo-install-interieur", caption: "Module intérieur pompe à chaleur" },
+  ];
+
+  // Hash déterministe (même fonction que CityPage.tsx) pour matcher les images
+  const pickPhotoForCity = (slug: string) => {
+    let h = 0;
+    for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
+    return photos[h % photos.length];
+  };
+
+  const entries: string[] = [];
+
+  // 1 entrée par ville avec sa photo de chantier
+  for (const c of cities) {
+    const photo = pickPhotoForCity(c.slug);
+    entries.push(`  <url>
+    <loc>${BASE}/pompe-a-chaleur/${c.slug}</loc>
+    <image:image>
+      <image:loc>${BASE}/assets/${photo.name}.jpeg</image:loc>
+      <image:title>${xmlEsc(`Installation pompe à chaleur à ${c.name}`)}</image:title>
+      <image:caption>${xmlEsc(`${photo.caption} à ${c.name} (${c.postalCode}) par ECO CVC, artisan RGE QualiPAC en ${c.department}`)}</image:caption>
+    </image:image>
+  </url>`);
+  }
+
+  // + Logo + image OG sur la home
+  entries.unshift(`  <url>
+    <loc>${BASE}/</loc>
+    <image:image>
+      <image:loc>${BASE}/og-image.jpg</image:loc>
+      <image:title>ECO CVC — Artisan RGE QualiPAC Isère et Rhône-Alpes</image:title>
+      <image:caption>ECO CVC, artisan certifié RGE QualiPAC à Nivolas-Vermelle (38). Pompe à chaleur, climatisation, ventilation, froid commercial en Isère et Rhône-Alpes.</image:caption>
+    </image:image>
+  </url>`);
+
+  const imagesXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${entries.join("\n")}
+</urlset>
+`;
+
+  await fs.writeFile(path.join(DIST, "sitemap_images.xml"), imagesXml, "utf-8");
+  console.log(`✓ Sitemap Images (Google Images) : ${entries.length} entrées → dist/sitemap_images.xml`);
+}
+
 // 2bis. Sitemap HTML humain (utile aux visiteurs ET au crawl)
 const baseTpl = await fs.readFile(path.join(DIST, "index.html"), "utf-8");
 const linkList = (title: string, items: { href: string; label: string }[]) =>
@@ -266,6 +326,7 @@ ${entries
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${validSitemaps.map((sm) => `  <sitemap><loc>${BASE}/${sm.name}</loc><lastmod>${today}</lastmod></sitemap>`).join("\n")}
   <sitemap><loc>${BASE}/sitemap_news.xml</loc><lastmod>${today}</lastmod></sitemap>
+  <sitemap><loc>${BASE}/sitemap_images.xml</loc><lastmod>${today}</lastmod></sitemap>
 </sitemapindex>
 `;
   await fs.writeFile(path.join(DIST, "sitemap_index.xml"), indexXml, "utf-8");

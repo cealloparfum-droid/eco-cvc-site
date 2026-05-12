@@ -13,6 +13,7 @@ import ExitIntentPopup from "./components/ExitIntentPopup";
 import SeasonalUrgencyBanner from "./components/SeasonalUrgencyBanner";
 import MaPrimeRenovCountdown from "./components/MaPrimeRenovCountdown";
 import CookieBanner from "./components/CookieBanner";
+import SearchPalette from "./components/SearchPalette";
 import SocialProofTicker from "./components/SocialProofTicker";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -186,6 +187,7 @@ const App = () => (
           <SeasonalUrgencyBanner />
           <MaPrimeRenovCountdown />
           <CookieBanner />
+          <SearchPalette />
           <SocialProofTicker />
           <WhatsAppFloat />
         </ErrorBoundary>

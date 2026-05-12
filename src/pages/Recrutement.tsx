@@ -43,18 +43,60 @@ const Recrutement = () => {
       "ECO CVC recrute en Isère et Rhône-Alpes : frigoriste, technicien CVC, apprenti BTS FED. CDI, alternance. Esprit d'équipe, montée en compétences, RGE QualiPAC.",
     canonical,
     ogImage: `${baseUrl}/og-image.jpg`,
-    jsonLd: POSTES.map((p) => ({
+    // Schema JobPosting enrichi pour apparition dans Google Jobs
+    jsonLd: POSTES.map((p, idx) => ({
       "@context": "https://schema.org",
       "@type": "JobPosting",
       title: p.titre,
-      description: p.description,
-      employmentType: p.type,
-      hiringOrganization: { "@type": "Organization", name: "ECO CVC", sameAs: baseUrl },
-      jobLocation: {
-        "@type": "Place",
-        address: { "@type": "PostalAddress", addressLocality: "Nivolas-Vermelle", postalCode: "38300", addressCountry: "FR" },
+      description: `<p>${p.description}</p><p>ECO CVC est artisan RGE QualiPAC en Isère et Rhône-Alpes. Nous recrutons pour accompagner notre développement sur Bourgoin-Jallieu, Lyon, Vienne et toute la région.</p>`,
+      identifier: {
+        "@type": "PropertyValue",
+        name: "ECO CVC",
+        value: `ECO-CVC-2026-${idx + 1}`,
       },
       datePosted: "2026-05-07",
+      validThrough: "2027-05-07T00:00:00",
+      employmentType: p.type === "Alternance" ? "INTERN" : "FULL_TIME",
+      hiringOrganization: {
+        "@type": "Organization",
+        name: "ECO CVC",
+        sameAs: baseUrl,
+        logo: `${baseUrl}/og-image.jpg`,
+      },
+      jobLocation: {
+        "@type": "Place",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "1074 Route Départementale 1085",
+          addressLocality: "Nivolas-Vermelle",
+          postalCode: "38300",
+          addressRegion: "Isère",
+          addressCountry: "FR",
+        },
+      },
+      applicantLocationRequirements: {
+        "@type": "Country",
+        name: "France",
+      },
+      jobLocationType: "TELECOMMUTE" === "TELECOMMUTE" ? undefined : undefined,
+      baseSalary: {
+        "@type": "MonetaryAmount",
+        currency: "EUR",
+        value: {
+          "@type": "QuantitativeValue",
+          unitText: "MONTH",
+          value: p.type === "Alternance" ? 900 : 2400,
+          minValue: p.type === "Alternance" ? 700 : 2200,
+          maxValue: p.type === "Alternance" ? 1200 : 3200,
+        },
+      },
+      qualifications: p.requis ?? "Permis B obligatoire, attestation F-Gaz appréciée, sens du contact client",
+      educationRequirements: p.type === "Alternance" ? "BTS Fluides Énergies Domotique (FED) ou équivalent en cours" : "CAP/BEP minimum en froid et climatisation",
+      experienceRequirements: p.type === "Alternance" ? "Pas d'expérience requise" : "Minimum 2 ans en CVC",
+      industry: "Génie climatique et chauffage",
+      occupationalCategory: "49-9021.00 Heating, Air Conditioning, and Refrigeration Mechanics",
+      directApply: true,
+      url: canonical,
     })),
   });
 

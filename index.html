@@ -87,6 +87,29 @@
     <meta name="twitter:description" content="Artisan RGE QualiPAC. Installation, entretien et dépannage. Devis gratuit sous 24h." />
     <meta name="twitter:image" content="https://ecocvc.pro/og-image.jpg" />
 
+    <!-- WebSite schema avec SearchAction : Google affiche une barre de
+         recherche directement sous le résultat ecocvc.pro dans les SERP -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://ecocvc.pro/#website",
+      "url": "https://ecocvc.pro/",
+      "name": "ECO CVC",
+      "description": "Artisan RGE QualiPAC en Isère et Rhône-Alpes — pompe à chaleur, climatisation, ventilation, froid commercial.",
+      "inLanguage": "fr-FR",
+      "publisher": { "@id": "https://ecocvc.pro/#business" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.ecocvc.pro/blog?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -114,6 +137,15 @@
         "latitude": 45.575,
         "longitude": 5.297
       },
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 45.575,
+          "longitude": 5.297
+        },
+        "geoRadius": 80000
+      },
       "areaServed": [
         { "@type": "AdministrativeArea", "name": "Isère" },
         { "@type": "AdministrativeArea", "name": "Rhône" },
@@ -122,6 +154,38 @@
         { "@type": "AdministrativeArea", "name": "Haute-Savoie" },
         { "@type": "AdministrativeArea", "name": "Auvergne-Rhône-Alpes" }
       ],
+      "sameAs": [
+        "https://www.google.com/maps/search/?api=1&query=ECO+CVC+Nivolas-Vermelle",
+        "https://www.facebook.com/ecocvc",
+        "https://www.instagram.com/ecocvc",
+        "https://www.linkedin.com/company/ecocvc",
+        "https://www.pagesjaunes.fr/pros/ecocvc"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Équipe ECO CVC"
+      },
+      "foundingDate": "2022",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": 8,
+        "minValue": 6,
+        "maxValue": 10
+      },
+      "knowsAbout": [
+        "Pompe à chaleur air-eau",
+        "Pompe à chaleur air-air",
+        "Pompe à chaleur géothermique",
+        "Climatisation réversible",
+        "Ventilation VMC simple et double flux",
+        "Chambre froide commerciale",
+        "Vitrines réfrigérées",
+        "MaPrimeRénov' 2026",
+        "Certificats d'économies d'énergie (CEE)",
+        "Sortie de chaudière fioul"
+      ],
+      "paymentAccepted": ["Cash", "Credit Card", "Check", "Bank Transfer"],
+      "currenciesAccepted": "EUR",
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
