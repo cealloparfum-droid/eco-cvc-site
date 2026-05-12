@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Star, ChevronRight, Quote, MapPin, Calendar, MessageSquare, ExternalLink } from "lucide-react";
+import { Star, ChevronRight, Quote, MapPin, Calendar, MessageSquare, ExternalLink, Heart, Sparkles, Gift } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -11,10 +11,18 @@ import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 import { useEffect, useState } from "react";
 import type { GoogleReviewsData } from "@/components/GoogleReviewsWidget";
 
+// Lien direct vers le formulaire d'avis Google ECO CVC
+// (à remplacer par g.page/r/XXXXX/review quand Anthony aura récupéré
+// le lien court depuis sa fiche Google Business Profile)
+const GOOGLE_REVIEW_URL = "https://www.google.com/maps/search/?api=1&query=ECO+CVC+Nivolas-Vermelle";
+
 const Avis = () => {
   const baseUrl = "https://ecocvc.pro";
   const stats = aggregateRating();
   const [googleData, setGoogleData] = useState<GoogleReviewsData | null>(null);
+  const [searchParams] = useSearchParams();
+  // ?source=sms permet de tracker qui arrive depuis un SMS d'invitation
+  const fromSms = searchParams.get("source") === "sms";
 
   useEffect(() => {
     fetch("/api/google-reviews")
@@ -68,39 +76,122 @@ const Avis = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
 
-        <section className="pt-44 pb-10 md:pt-48 md:pb-14">
-          <div className="container mx-auto">
+        {/* HERO — Optimisé pour la conversion SMS / partage WhatsApp.
+            Si ?source=sms → message d'accueil personnalisé "vous nous
+            connaissez déjà, un petit avis ?" */}
+        <section className="pt-32 pb-12 md:pt-36 md:pb-16 bg-gradient-to-br from-brand-blue/8 via-white to-brand-green/8">
+          <div className="container mx-auto max-w-5xl px-4">
             <nav className="flex items-center gap-1.5 text-xs text-muted-foreground mb-6">
               <Link to="/" className="hover:text-brand-blue transition-colors">Accueil</Link>
               <ChevronRight className="w-3 h-3" />
               <span className="text-foreground font-medium">Avis clients</span>
             </nav>
 
-            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="max-w-3xl">
-              <span className="inline-block text-xs font-bold uppercase tracking-wider text-brand-blue mb-4">
-                Témoignages clients
-              </span>
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5">
-                Vos avis sur <span className="text-gradient-brand">ECO CVC</span>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-3xl"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-yellow-200 text-xs font-bold uppercase tracking-wider text-amber-700 mb-5">
+                <Heart className="w-3.5 h-3.5 fill-brand-red text-brand-red" />
+                {fromSms ? "Merci beaucoup pour votre temps !" : "Vos retours nous portent"}
+              </div>
+
+              <h1 className="font-display text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5">
+                {fromSms ? (
+                  <>Un <span className="text-gradient-brand">petit avis Google</span>, et un grand merci 🙏</>
+                ) : (
+                  <>Vos avis sur <span className="text-gradient-brand">ECO CVC</span></>
+                )}
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Parce que la confiance se construit, nous publions ici les retours de nos clients particuliers et professionnels en Isère et Rhône-Alpes.
+
+              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed mb-7">
+                {fromSms ? (
+                  <>
+                    Si notre intervention vous a satisfait, un <strong>petit avis Google</strong>{" "}
+                    nous aiderait énormément à faire connaître notre travail localement.
+                    <br />
+                    <span className="text-base text-muted-foreground">
+                      Ça prend <strong>30 secondes</strong> max — un immense merci d'avance.
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    Parce que la confiance se construit, nous publions ici les retours de nos clients
+                    particuliers et professionnels en Isère et Rhône-Alpes.
+                  </>
+                )}
               </p>
 
-              {stats && (
-                <div className="inline-flex items-center gap-5 px-6 py-4 rounded-2xl bg-white border border-border shadow-soft mt-8">
-                  <div className="flex items-center gap-1">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <div>
-                    <div className="font-display text-2xl font-bold leading-none">
-                      {stats.ratingValue}<span className="text-base text-muted-foreground font-normal">/5</span>
+              {/* CARTE NOTE + CTA GROS BOUTON GOOGLE */}
+              <div className="rounded-3xl bg-white border-2 border-brand-blue/20 p-6 md:p-8 shadow-lifted">
+                {stats && (
+                  <div className="flex items-center gap-5 mb-6 pb-6 border-b border-border">
+                    <div className="flex items-center gap-1">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                      ))}
                     </div>
-                    <div className="text-xs text-muted-foreground mt-1">{stats.reviewCount} avis clients</div>
+                    <div>
+                      <div className="font-display text-3xl font-bold leading-none">
+                        {stats.ratingValue}<span className="text-lg text-muted-foreground font-normal">/5</span>
+                      </div>
+                      <div className="text-xs text-muted-foreground mt-1 font-semibold">
+                        sur {stats.reviewCount} avis Google
+                      </div>
+                    </div>
                   </div>
+                )}
+
+                <p className="text-sm text-slate-700 mb-5 leading-relaxed">
+                  {fromSms
+                    ? "👉 Cliquez sur le gros bouton bleu ci-dessous, choisissez 5 étoiles, écrivez 2 mots et c'est fait. Pas de connexion compliquée requise."
+                    : "Vous êtes client ECO CVC ? Un avis Google nous aide à nous développer localement."}
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={GOOGLE_REVIEW_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-brand-blue text-white font-bold text-base hover:bg-brand-bluedark transition-colors shadow-lifted"
+                  >
+                    <Star className="w-5 h-5 fill-yellow-300 text-yellow-300" />
+                    Laisser un avis Google
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={GOOGLE_REVIEW_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-4 rounded-xl bg-white border-2 border-brand-blue/20 text-brand-blue font-bold hover:bg-brand-blue/5 transition-colors"
+                  >
+                    Lire les avis
+                  </a>
                 </div>
+
+                {fromSms && (
+                  <div className="mt-5 pt-5 border-t border-border">
+                    <div className="flex items-start gap-3 text-sm text-slate-600">
+                      <Sparkles className="w-5 h-5 text-brand-green shrink-0 mt-0.5" />
+                      <p className="leading-relaxed">
+                        <strong>Bonus pour vous remercier :</strong> via notre programme de parrainage,
+                        vous touchez <strong>200 €</strong> à chaque proche qui devient client chez nous.{" "}
+                        <Link to="/parrainage" className="text-brand-blue font-semibold underline">
+                          Voir le programme
+                        </Link>
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {!fromSms && (
+                <p className="text-sm text-muted-foreground mt-6">
+                  Nous publions ici les avis Google vérifiés. Cliquez ci-dessus pour
+                  laisser le vôtre — 30 secondes.
+                </p>
               )}
             </motion.div>
           </div>
@@ -127,7 +218,7 @@ const Avis = () => {
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center">
                   <a
-                    href="https://www.google.com/search?q=ECO+CVC+Nivolas-Vermelle"
+                    href={GOOGLE_REVIEW_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-blue text-white font-semibold hover:bg-brand-blue/90 transition-colors"
