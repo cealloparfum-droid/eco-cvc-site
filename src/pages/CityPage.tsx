@@ -9,7 +9,21 @@ import ArticleToolsCTA from "@/components/ArticleToolsCTA";
 import LeadMagnetCard from "@/components/LeadMagnetCard";
 import { findCity } from "@/data/cities";
 import { useSeo } from "@/lib/useSeo";
-import photoInstall from "@/assets/photo-install-exterieur-1.jpeg";
+import { getCityClimate } from "@/lib/cityClimate";
+import photoExt1 from "@/assets/photo-install-exterieur-1.jpeg";
+import photoExt2 from "@/assets/photo-install-exterieur-2.jpeg";
+import photoExt3 from "@/assets/photo-install-exterieur-3.jpeg";
+import photoToit from "@/assets/photo-install-toit.jpeg";
+import photoInterieur from "@/assets/photo-install-interieur.jpeg";
+
+// Rotation déterministe des 5 photos selon le hash du slug ville
+// (chaque ville garde toujours la MÊME photo, mais elles sont réparties)
+const CITY_PHOTOS = [photoExt1, photoExt2, photoExt3, photoToit, photoInterieur];
+function pickPhotoForCity(slug: string) {
+  let h = 0;
+  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
+  return CITY_PHOTOS[h % CITY_PHOTOS.length];
+}
 
 const CityPage = () => {
   const { ville } = useParams<{ ville: string }>();
@@ -140,7 +154,14 @@ const CityPage = () => {
               </motion.div>
 
               <div className="hidden lg:block rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl">
-                <img loading="lazy" decoding="async" src={photoInstall} alt={`Installation pompe à chaleur à ${city.name} par ECO CVC`} className="w-full h-full object-cover" />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src={pickPhotoForCity(city.slug)}
+                  alt={`Installation pompe à chaleur et climatisation réversible à ${city.name} (${city.postalCode}) par ECO CVC, artisan RGE QualiPAC en ${city.department}`}
+                  title={`PAC ${city.name} — ECO CVC`}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -150,6 +171,7 @@ const CityPage = () => {
         {city.variant === "A" && (
           <>
             <SectionContext city={city} />
+            <SectionClimat city={city} />
             <SectionServices services={services} city={city} />
             <SectionHabitat city={city} />
             <SectionCommunes city={city} />
@@ -159,6 +181,7 @@ const CityPage = () => {
         {city.variant === "B" && (
           <>
             <SectionServices services={services} city={city} />
+            <SectionClimat city={city} />
             <SectionContext city={city} />
             <SectionCommunes city={city} />
             <SectionHabitat city={city} />
@@ -169,6 +192,7 @@ const CityPage = () => {
           <>
             <SectionHabitat city={city} />
             <SectionContext city={city} />
+            <SectionClimat city={city} />
             <SectionServices services={services} city={city} />
             <SectionFaq city={city} />
             <SectionCommunes city={city} />
@@ -320,6 +344,71 @@ const SectionCommunes = ({ city }: { city: ReturnType<typeof findCity> & object 
     </div>
   </section>
 );
+
+/**
+ * SectionClimat — contenu climat ULTRA local, unique par ville,
+ * généré automatiquement à partir de getCityClimate().
+ * Booste l'unicité de chaque page ville (anti-duplicate content).
+ */
+const SectionClimat = ({ city }: { city: ReturnType<typeof findCity> & object }) => {
+  const climate = getCityClimate(city);
+  return (
+    <section className="py-14 md:py-20 bg-gradient-to-br from-brand-sky/5 via-white to-brand-blue/5 border-y border-border">
+      <div className="container mx-auto max-w-4xl px-4">
+        <span className="text-xs font-bold uppercase tracking-wider text-brand-blue mb-3 block">
+          Climat local — {climate.zoneLabel}
+        </span>
+        <h2 className="font-display text-2xl md:text-4xl font-bold mb-6">
+          Pourquoi une PAC est adaptée à {city.name}
+        </h2>
+
+        <p className="text-foreground/85 leading-relaxed mb-7">{climate.paragraphe}</p>
+
+        <div className="grid sm:grid-cols-2 gap-5 mb-6">
+          <div className="p-5 rounded-2xl bg-white border border-border">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-2xl">❄️</span>
+              <p className="text-[11px] font-bold uppercase tracking-wider text-brand-blue">Hiver typique</p>
+            </div>
+            <p className="font-display text-3xl font-bold text-foreground">
+              {climate.tempHiverMin}°C
+            </p>
+            <p className="text-sm text-muted-foreground">température minimale en vague de froid</p>
+          </div>
+          <div className="p-5 rounded-2xl bg-white border border-border">
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-2xl">☀️</span>
+              <p className="text-[11px] font-bold uppercase tracking-wider text-brand-red">Été typique</p>
+            </div>
+            <p className="font-display text-3xl font-bold text-foreground">
+              {climate.tempEteMax}°C
+            </p>
+            <p className="text-sm text-muted-foreground">température maximale en canicule</p>
+          </div>
+        </div>
+
+        <div className="rounded-2xl bg-white border border-border p-6 mb-6">
+          <h3 className="font-bold text-foreground mb-3">Phénomènes climatiques observés à {city.name}</h3>
+          <ul className="space-y-2">
+            {climate.phenomenes.map((p, i) => (
+              <li key={i} className="flex items-start gap-2.5 text-foreground/80">
+                <Check className="w-5 h-5 text-brand-green shrink-0 mt-0.5" />
+                <span className="text-sm leading-relaxed">{p}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="rounded-2xl bg-brand-blue/5 border border-brand-blue/20 p-6">
+          <p className="text-[11px] font-bold uppercase tracking-wider text-brand-blue mb-1.5">
+            Notre recommandation technique pour {city.name}
+          </p>
+          <p className="text-foreground/85 leading-relaxed">{climate.recoTypePAC}</p>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const SectionFaq = ({ city }: { city: ReturnType<typeof findCity> & object }) => (
   <section className="py-14 md:py-20">

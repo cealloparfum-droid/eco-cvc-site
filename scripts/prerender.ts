@@ -25,6 +25,7 @@ import { articles } from "../src/data/articles";
 import { devisConfigs } from "../src/data/devis";
 import { comparatifsConcurrents } from "../src/data/comparatifs-concurrents";
 import { topics } from "../src/data/topics";
+import { getCityClimate } from "../src/lib/cityClimate";
 import { faqGroups } from "../src/data/faq";
 import { glossary } from "../src/data/glossary";
 import { metiers } from "../src/data/metiers-pro";
@@ -336,6 +337,9 @@ for (const c of cities) {
   const description = `Installation, entretien et dépannage de pompes à chaleur et climatisations à ${c.name} (${c.postalCode}). Artisan RGE QualiPAC à ${c.distanceKm} km. Devis gratuit, aides MaPrimeRénov' et CEE.`;
   const canonical = `${BASE}/pompe-a-chaleur/${c.slug}`;
 
+  // Climat local unique par ville (anti-duplicate content)
+  const climate = getCityClimate(c);
+
   const bodyHtml = `
     ${breadcrumbHtml([{ label: "Accueil", href: "/" }, { label: "Zones d'intervention" }, { label: c.name }])}
     <h1>Pompe à chaleur & climatisation à ${escape(c.name)}</h1>
@@ -343,6 +347,13 @@ for (const c of cities) {
     <h2>Le marché PAC à ${escape(c.name)}</h2>
     <p>${escape(c.localContext)}</p>
     <ul>${c.specificites.map((s) => `<li>${escape(s)}</li>`).join("")}</ul>
+    <h2>Climat local — ${escape(climate.zoneLabel)}</h2>
+    <p>${escape(climate.paragraphe)}</p>
+    <p><strong>Hiver typique :</strong> ${climate.tempHiverMin} °C en vague de froid · <strong>Été typique :</strong> ${climate.tempEteMax} °C en canicule.</p>
+    <h3>Phénomènes observés à ${escape(c.name)}</h3>
+    <ul>${climate.phenomenes.map((p) => `<li>${escape(p)}</li>`).join("")}</ul>
+    <h3>Notre recommandation technique</h3>
+    <p>${escape(climate.recoTypePAC)}</p>
     <h2>L'habitat à ${escape(c.name)}</h2>
     <p>${escape(c.habitatNotes)}</p>
     ${c.quartiers && c.quartiers.length ? `<h2>Quartiers desservis à ${escape(c.name)}</h2><ul>${c.quartiers.map((q) => `<li>${escape(q)}</li>`).join("")}</ul>` : ""}
