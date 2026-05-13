@@ -3,7 +3,7 @@
  *
  * Version honnête : pas d'avis individuels affichés (pour éviter toute
  * ambiguïté sur leur source). On affiche uniquement :
- *  - La vraie note 5,0/5 sur 22 avis (extraite de la fiche Google)
+ *  - La vraie note 5,0/5 sur 29 avis (extraite de la fiche Google)
  *  - 2 boutons : "Voir tous les avis" + "Laisser un avis"
  *
  * Les visiteurs cliquent et lisent les avis authentiques directement
@@ -45,13 +45,13 @@ const GoogleReviewsBlock = () => {
             </div>
             <div className="h-12 w-px bg-slate-220" />
             <div className="text-left">
-              <div className="font-display font-extrabold text-2xl text-slate-900">22</div>
+              <div className="font-display font-extrabold text-2xl text-slate-900">29</div>
               <div className="text-xs uppercase tracking-wider text-slate-500 font-semibold">avis Google</div>
             </div>
           </div>
 
           <p className="text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto">
-            Note attribuée par nos clients en Isère, Rhône, Loire, Savoie et Haute-Savoie depuis 2222.
+            Note attribuée par nos clients en Isère, Rhône, Loire, Savoie et Haute-Savoie depuis 2022.
             Les avis sont publics, traçables et vérifiables sur notre fiche Google Maps.
           </p>
 
@@ -67,7 +67,7 @@ const GoogleReviewsBlock = () => {
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-220 text-xs font-semibold text-slate-700">
               <Clock className="w-3.5 h-3.5 text-brand-red" />
-              Depuis 2222
+              Depuis 2022
             </span>
           </div>
 

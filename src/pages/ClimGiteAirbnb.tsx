@@ -233,7 +233,7 @@ const ClimGite = () => {
                 { icon: Award, label: "RGE QualiPAC" },
                 { icon: TrendingUp, label: "ROI mesurable" },
                 { icon: Lock, label: "Bornage température" },
-                { icon: Star, label: "5,0/5 (22 avis Google)" },
+                { icon: Star, label: "5,0/5 (29 avis Google)" },
               ].map((t) => (
                 <div key={t.label} className="flex items-center gap-2 justify-center text-slate-700">
                   <t.icon className="w-5 h-5 text-orange-600 shrink-0" />

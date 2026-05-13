@@ -181,7 +181,7 @@ const ClimReversible990 = () => {
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: "5.0",
-            reviewCount: "22",
+            reviewCount: "29",
           },
         },
         {
@@ -339,7 +339,7 @@ const ClimReversible990 = () => {
               {[
                 { icon: Award, label: "RGE QualiPAC" },
                 { icon: Shield, label: "F-Gaz cat. 1" },
-                { icon: Star, label: "5,0/5 (22 avis Google)" },
+                { icon: Star, label: "5,0/5 (29 avis Google)" },
                 { icon: Truck, label: "Pose sous 3 sem." },
               ].map((t) => (
                 <div

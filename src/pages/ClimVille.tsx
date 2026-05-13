@@ -76,7 +76,7 @@ const ClimVille = () => {
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: "5.0",
-            reviewCount: "22",
+            reviewCount: "29",
           },
         },
         {
@@ -204,7 +204,7 @@ const ClimVille = () => {
               {[
                 { icon: Award, label: "RGE QualiPAC" },
                 { icon: Shield, label: "F-Gaz cat. 1" },
-                { icon: Star, label: "5,0/5 (22 avis Google)" },
+                { icon: Star, label: "5,0/5 (29 avis Google)" },
                 { icon: Truck, label: `Atelier à ${city.distanceKm} km` },
               ].map((t) => (
                 <div key={t.label} className="flex items-center gap-2 justify-center text-slate-700">

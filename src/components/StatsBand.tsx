@@ -25,7 +25,7 @@ const stats: Stat[] = [
     decimals: 1,
     suffix: " / 5",
     label: "note Google",
-    sub: "sur 22 avis vérifiés",
+    sub: "sur 29 avis vérifiés",
     icon: Star,
     tint: "amber",
   },

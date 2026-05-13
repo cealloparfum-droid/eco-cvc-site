@@ -70,7 +70,7 @@ const QuartierPage = () => {
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: "5.0",
-            reviewCount: "22",
+            reviewCount: "29",
           },
         },
         {
@@ -219,7 +219,7 @@ const QuartierPage = () => {
               {[
                 { icon: Award, label: "RGE QualiPAC" },
                 { icon: Shield, label: "F-Gaz cat. 1" },
-                { icon: Star, label: "5,0/5 (22 avis Google)" },
+                { icon: Star, label: "5,0/5 (29 avis Google)" },
                 { icon: MapPin, label: `Intervention ${quartier.name}` },
               ].map((t) => (
                 <div

@@ -249,7 +249,7 @@ const ClimCopro = () => {
                 { icon: Award, label: "RGE QualiPAC" },
                 { icon: Shield, label: "Décennale + RC pro" },
                 { icon: FileText, label: "Dossiers AG clés en main" },
-                { icon: Star, label: "5,0/5 (22 avis Google)" },
+                { icon: Star, label: "5,0/5 (29 avis Google)" },
               ].map((t) => (
                 <div key={t.label} className="flex items-center gap-2 justify-center text-slate-700">
                   <t.icon className="w-5 h-5 text-brand-blue shrink-0" />
